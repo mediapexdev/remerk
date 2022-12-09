@@ -1,0 +1,47 @@
+@php
+	$body_classes = "app-default";
+@endphp
+
+@extends('transporteur.layout')
+
+@section('title')
+	<title>Remerk - Expéditions</title>
+@endsection
+
+@section('component-body-content')
+{{-- <!--begin::Row--> --}}
+<div class="d-block">
+    {{-- <!--begin::Toolbar--> --}}
+    @include('transporteur.components.expeditions.infos.toolbar')
+    {{-- <!--end::Toolbar--> --}}
+    {{-- <!--begin::Content--> --}}
+    <div class="d-flex flex-column gap-7 gap-lg-10">
+        {{-- <!--begin::Tab content--> --}}
+        <div class="tab-content">
+            {{-- <!--begin::Tab pane--> --}}
+            <div id="kt_expedition_summary" class="tab-pane fade show active" role="tab-panel">
+                {{-- <!--begin::Expedition Summary--> --}}
+                @include('transporteur.components.expeditions.infos.details.index')
+                {{-- <!--end::Expedition Summary--> --}}
+            </div>
+            {{-- <!--end::Tab pane--> --}}
+            {{-- <!--begin::Tab pane--> --}}
+            <div id="kt_expedition_history" class="tab-pane fade" role="tab-panel">
+                {{-- <!--begin::Expedition History--> --}}
+                @include('transporteur.components.expeditions.infos.history.history')
+                {{-- <!--end::Expedition History--> --}}
+            </div>
+            {{-- <!--end::Tab pane--> --}}
+        </div>
+        {{-- <!--end::Tab content--> --}}
+    </div>
+    {{-- <!--end::Content--> --}}
+</div>
+{{-- <!--end::Row--> --}}
+@endsection
+
+@section('component-modals')
+    {{-- @include('transporteur.components.expeditionDetail.modal-suivi') --}}
+    {{-- @include('transporteur.components.modals.postulat') --}}
+    {{-- @include('transporteur.components.modal-voir-postulat') --}}
+@endsection

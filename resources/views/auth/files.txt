@@ -1,0 +1,103 @@
+<!--Modal verification-->
+<!-- Modal -->
+<div class="modal" tabindex="-1" role="dialog" id="myModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="d-flex flex-center w-lg-50 p-10" style="width:500px">
+            <!--begin::Card-->
+            <div class="modal-content">
+                {{-- <div class="modal-header"> --}}
+                    <div class="card rounded-3 w-md-550px">
+                        <!--begin::Card body-->
+                        <div class="card-body p-10 p-lg-20">
+                            <!--begin::Form-->
+                            <form class="form w-100 mb-13" method="POST" id="kt_sing_in_two_steps_form"
+                                action="{{route('password.new')}}">
+                                @csrf
+                                <div class="alert alert-danger" id="showError" style="display: none;"></div>
+                                <!--begin::Icon-->
+                                <div class="text-center mb-10">
+                                    <img alt="Logo" class="mh-125px" src="assets/media/svg/misc/smartphone-2.svg" />
+                                </div>
+                                <!--end::Icon-->
+                                <!--begin::Heading-->
+                                <div class="text-center mb-10">
+                                    <!--begin::Title-->
+                                    <h1 class="text-dark mb-3">Two Step Verification</h1>
+                                    <!--end::Title-->
+                                    <!--begin::Sub-title-->
+                                    <input type="hidden" name="phone" id="phone" value="">
+                                    <div class="text-muted fw-semibold fs-5 mb-5">Enter the verification code we
+                                        sent to</div>
+                                    <!--end::Sub-title-->
+                                    <!--begin::Mobile no-->
+                                    <div class="fw-bold text-dark fs-3">**********</div>
+                                    <!--end::Mobile no-->
+                                </div>
+                                <!--end::Heading-->
+                                <!--begin::Section-->
+                                {{-- <input type="hidden" name="phone" value={{$phone}} /> --}}
+                                <div class="mb-10">
+                                    <!--begin::Label-->
+                                    <div class="fw-bold text-start text-dark fs-6 mb-1 ms-1">Type your 6 digit
+                                        security code</div>
+                                    <!--end::Label-->
+                                    <!--begin::Input group-->
+                                    <div class="d-flex flex-wrap flex-stack">
+                                        <input type="text" name="code_1" id="code_1"
+                                            data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1"
+                                            class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2"
+                                            value="" />
+                                        <input type="text" name="code_2" id="code_2"
+                                            data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1"
+                                            class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2"
+                                            value="" />
+                                        <input type="text" name="code_3" id="code_3"
+                                            data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1"
+                                            class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2"
+                                            value="" />
+                                        <input type="text" name="code_4" id="code_4"
+                                            data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1"
+                                            class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2"
+                                            value="" />
+                                        <input type="text" name="code_5" id="code_5"
+                                            data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1"
+                                            class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2"
+                                            value="" />
+                                        <input type="text" name="code_6" id="code_6"
+                                            data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1"
+                                            class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2"
+                                            value="" />
+                                    </div>
+                                    <!--begin::Input group-->
+                                </div>
+                                <!--end::Section-->
+                                <!--begin::Submit-->
+                                <div class="d-flex flex-center">
+                                    <button type="button" id="kt_sing_in_two_steps_submit"
+                                        class="btn btn-lg btn-primary fw-bold" onclick="verifyPhoneNumber()">
+                                        <span class="indicator-label">Submit</span>
+                                        <span class="indicator-progress">Please wait...
+                                            <span
+                                                class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                    </button>
+                                </div>
+                                <!--end::Submit-->
+                            </form>
+                            <!--end::Form-->
+                            <!--begin::Notice-->
+                            <div class="text-center fw-semibold fs-5">
+                                <span class="text-muted me-1">Didn’t get the code ?</span>
+                                <a href="#" class="link-primary fs-5 me-1">Resend</a>
+                                <span class="text-muted me-1">or</span>
+                                <a href="#" class="link-primary fs-5">Call Us</a>
+                            </div>
+                            <!--end::Notice-->
+                        </div>
+                        <!--end::Card body-->
+                    </div>
+                </div>
+            </div>
+            <!--end::Card-->
+        </div>
+    </div>
+</div>
