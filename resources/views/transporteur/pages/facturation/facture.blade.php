@@ -43,7 +43,7 @@
 @section('component-body-content')
 
 @if (!$expeditions->count())
-    @include('expediteur.components.default')
+    @include('expediteur.components.globals.default')
 @else
 {{-- <!--begin::Card--> --}}
 <div class="card card-flush">
