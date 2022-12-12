@@ -51,7 +51,9 @@ class PostulantController extends Controller
     public function detailsPostulant($id)
     {
         $postulant = Postulants::find($id);
-        return view('expediteur.components.modals.details-postulant', compact('postulant'));
+        $transporteur = $postulant->transporteur;
+        return view('transporteur.components.modals.details-transporteur', compact('transporteur'));
+        // return view('expediteur.components.modals.details-postulant', compact('postulant'));
     }
 
     /**

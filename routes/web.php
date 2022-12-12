@@ -114,7 +114,6 @@ Route::get('/expeditions', function () {
             case User::ADMIN:
                 return view('admin.pages.expeditions.index');
                 break;
-                break;
             case User::EXPEDITEUR:
                 return view('expediteur.pages.expeditions.expeditions');
                 break;
@@ -123,6 +122,7 @@ Route::get('/expeditions', function () {
                 break;
             default:
                 return redirect()->back()->withErrors('404 not found');
+                break;
         }
     } else {
         return redirect()->route('login');
@@ -300,6 +300,7 @@ Route::middleware(['auth'])->group(function () {
      */
     Route::post('update-password', [RegisteredUserController::class, 'updatePassword'])
         ->name('user.updatePassword');
+
     Route::post('update-phone-number', [RegisteredUserController::class, 'updatePhoneNumber'])
         ->name('admin.updatePhoneNumber');
 
@@ -351,12 +352,57 @@ Route::middleware(['auth'])->group(function () {
                     return (!$expedition) ?
                         redirect()->back()->withErrors('404 not found') :
                         view('transporteur.components.expeditions.tracking.view', compact('expedition'));
-                    break;
+                        break;
             }
         } else {
             return redirect()->route('login');
         }
     })->name('expedition.suivi');
+
+    /**
+     * 
+     */
+    Route::get('expeditions/postulants', function () {
+        if (null !== ($user = Auth::user())) {
+            switch ($user->role_id) {
+                case User::EXPEDITEUR:
+                    return view('expediteur.pages.expeditions.postulants.postulants');
+                    break;
+                case User::ADMIN:
+                case User::TRANSPORTEUR:
+                default:
+                    return redirect()->back()->withErrors('404 not found');
+                    break;
+            }
+        }
+        else {
+            return redirect()->route('login');
+        }
+    })->name('expeditions.postulants');
+
+    /**
+     * 
+     */
+    Route::get('expediteur/{id}/details', function ($id) {
+        if (null !== ($user = Auth::user())) {
+            switch ($user->role_id) {
+                case User::ADMIN:
+                case User::EXPEDITEUR:
+                case User::TRANSPORTEUR:
+                    $expediteur = Expediteur::find($id);
+                    return (!$expediteur) ?
+                        redirect()->back()->withErrors('404 not found') :
+                        view('expediteur.components.modals.details-expediteur', compact('expediteur'));
+                break;
+                default:
+                    return redirect()->back()->withErrors('404 not found');
+                break;
+            }
+        }
+        else {
+            return redirect()->route('login');
+        }
+    })->name('expediteur.details');
 
     /**
      * 

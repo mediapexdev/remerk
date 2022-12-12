@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Camion;
 use App\Models\Expedition;
 use App\Models\ExpeditionsArrivee;
 use App\Models\ExpeditionsDepart;
@@ -19,10 +18,6 @@ use Illuminate\Support\Facades\Auth;
 
 class ExpeditionController extends Controller
 {
-    public function listCamion()
-    {
-        return response()->json(Camion::all());
-    }
     /**
      * Get communes by region.
      *

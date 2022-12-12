@@ -29,7 +29,7 @@ $camions = Camion::where('transporteur_id', $transporteur->id)->orderByDesc('cre
         </h3>
         <div class="card-toolbar">
             <div class="row text-end">
-                <div class="col-sm-7 p-1">
+                <div class="col-sm-7">
                     <div class="input-group input-group-sm">
                         <span class="input-group-text" id="addon-wrapping">
                             {{--
@@ -46,7 +46,7 @@ $camions = Camion::where('transporteur_id', $transporteur->id)->orderByDesc('cre
                         <input type="search" class="form-control" placeholder="Recherche" id="searchInput">
                     </div>
                 </div>
-                <div class="col-sm-5 p-1">
+                <div class="col-sm-5">
                     <button data-bs-toggle="modal" href="#kt_modal_create_camion"
                         class="me-0 btn btn-sm h-100 w-100 btn-light-info">
                         <!--begin::Svg Icon | icon: <i class="bi bi-plus-square"></i>-->

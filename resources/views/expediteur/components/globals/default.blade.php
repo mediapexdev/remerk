@@ -27,10 +27,8 @@
         </div>
         <!--begin::Wrapper-->
         <!--begin::Illustration-->
-        <img class="mx-auto h-200px h-lg-250px theme-light-show" src="assets/images/Fitting_piece.gif"
-            alt="" />
-        <img class="mx-auto h-200px h-lg-250px theme-dark-show" src="assets/images/Fitting_piece-dark.gif"
-            alt="" />
+        <img class="mx-auto h-200px h-lg-250px theme-light-show" src="{{URL::asset('assets/images/Fitting_piece.gif')}}">
+        <img class="mx-auto h-200px h-lg-250px theme-dark-show" src="{{URL::asset('assets/images/Fitting_piece-dark.gif')}}">
         <!--end::Illustration-->
     </div>
     <!--end::Body-->

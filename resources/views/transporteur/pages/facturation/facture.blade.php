@@ -113,8 +113,7 @@
                                         {{-- <!--begin:: Avatar --> --}}
                                         <div id="expediteur_avatar_{{ $expediteur->id }}"
                                             class="symbol symbol-circle symbol-50px overflow-hidden me-0 expediteur_avatar cursor-pointer"
-                                            {{-- data-method="GET" data-route="{{ route('expediteur.details', $expediteur->id) }}"> --}}
-                                            data-method="GET" data-route="">
+                                            data-method="GET" data-route="{{ route('expediteur.details', $expediteur->id) }}">
                                             @if($expediteur->hasAvatar())
                                                 <div class="symbol-label">
                                                     <img class="w-100" src="{{$expediteur->avatar()}}" alt="{{$expediteur->fullName()}}">
@@ -128,8 +127,7 @@
                                         <div class="ms-5">
                                             <span id="expediteur_title_{{ $expediteur->id }}"
                                                 class="expediteur_title text-gray-800 text-hover-primary fs-5 fw-bold cursor-pointer"
-                                                {{-- data-route="{{ route('expediteur.details', $expediteur->id) }}">{{ $expediteur->fullName() }}</span> --}}
-                                                data-route="">{{ $expediteur->fullName() }}</span>
+                                                data-route="{{ route('expediteur.details', $expediteur->id) }}">{{ $expediteur->fullName() }}</span>
                                         </div>
                                         {{-- <!--end::Title--> --}}
                                     </div>
@@ -176,7 +174,7 @@
                                             <a href="#">Contactez-nous</a>
                                         </p>
                                         <div>
-                                            <img class="text-center" src={{ asset('assets/images/18770.png') }} alt="" height="250px">
+                                            <img class="text-center" src="{{ asset('assets/images/18770.png') }}" alt="" height="250px">
                                             <div class="text-center">
                                                 <button class="btn btn-sm btn-light-primary" data-bs-toggle="modal"
                                                     data-bs-target="#kt_modal_create_expedition">Vous n'avez achevé aucune expédition pour le moment</button>
@@ -205,10 +203,10 @@
 @endif
 @endsection
 @section('component-modals')
-<div id="modal_details_transporteur_wrapper"></div>
+<div id="modal_details_expediteur_wrapper"></div>
 @endsection
 
 @section('custom-js')
-<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/expeditions/sender/facturation/facturation.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/expeditions/sender/facturation/listing/factures.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/expeditions/carrier/facturation/facturation.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/expeditions/carrier/facturation/listing/factures.js')}}"></script>
 @endsection

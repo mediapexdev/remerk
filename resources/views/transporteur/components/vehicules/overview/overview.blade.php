@@ -4,7 +4,7 @@
     $camions = Camion::where('transporteur_id', $transporteur->id)->orderByDesc('created_at')->get();
 @endphp
 {{-- <!--begin::Tables widget--> --}}
-<div class="card card-flush">
+<div class="card card-flush h-xl-100">
     {{-- <!--begin::Card Header--> --}}
     <div class="card-header pt-7">
         {{-- <!--begin::Card Title--> --}}

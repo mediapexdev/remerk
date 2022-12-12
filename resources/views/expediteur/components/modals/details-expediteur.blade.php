@@ -1,10 +1,10 @@
 @php
     use App\Core\Util;
 
-    $avatar = (($transporteur->hasAvatar()) ? $transporteur->avatar() : Util::getDefaultUserAvatar());
+    $avatar = (($expediteur->hasAvatar()) ? $expediteur->avatar() : Util::getDefaultUserAvatar());
 @endphp
 {{-- <!--begin::Modal--> --}}
-<div id="modal_details_transporteur" class="modal fade" tabindex="-1" role="dialog">
+<div id="modal_details_expediteur" class="modal fade" tabindex="-1" role="dialog">
     {{-- <!--begin::Modal dialog--> --}}
     <div class="modal-dialog modal-dialog-centered" role="document">
         {{-- <!--begin::Modal content--> --}}
@@ -12,7 +12,7 @@
             {{-- <!--begin::Modal header--> --}}
             <div class="modal-header">
                 {{-- <!--begin::Modal title--> --}}
-                <h5 class="modal-title h3">Détails transporteur</h5>
+                <h5 class="modal-title h3">Détails expéditeur</h5>
                 {{-- <!--end::Modal title--> --}}
                 {{-- <!--begin::Button close--> --}}
                 <button type="button" class="btn btn-sm btn-icon btn-active-color-primary ms-2" data-bs-dismiss="modal">
@@ -40,7 +40,7 @@
                             <table class="table table-sm align-middle fs-6 gy-5 mb-0 min-w-300px">
                                 {{-- <!--begin::Table body--> --}}
                                 <tbody class="fw-semibold text-gray-700">
-                                    {{-- <!--begin::Transporteur Info--> --}}
+                                    {{-- <!--begin::Expéditeur Info--> --}}
                                     <tr>
                                         <td class="text-gray-700 text-muted">
                                             <div class="d-flex align-items-center">
@@ -53,18 +53,18 @@
                                                     </svg>
                                                 </span>
                                                 {{-- <!--end::Svg Icon--> --}}
-                                                <span>Transporteur</span>
+                                                <span>Expéditeur</span>
                                             </div>
                                         </td>
                                         <td class="text-gray-700 fw-bold text-end">
                                             <div class="d-flex align-items-center justify-content-end">
                                                 {{-- <!--begin::Full Name--> --}}
-                                                <span class="text-gray-700">{{ $transporteur->fullName() }}</span>
+                                                <span class="text-gray-700">{{ $expediteur->fullName() }}</span>
                                                 {{-- <!--end::Full Name--> --}}
                                             </div>
                                         </td>
                                     </tr>
-                                    {{-- <!--end::Transporteur Info--> --}}
+                                    {{-- <!--end::Expéditeur Info--> --}}
                                     {{-- <!--begin::Separator--> --}}
                                     <tr>
                                         <td class="text-gray-700 py-0" scope="row" colspan="2">
@@ -72,7 +72,7 @@
                                         </td>
                                     </tr>
                                     {{-- <!--end::Separator--> --}}
-                                    {{-- <!--begin::vehicles number --> --}}
+                                    {{-- <!--begin::vehicle number --> --}}
                                     <tr>
                                         <td class="text-gray-700 text-muted">
                                             <div class="d-flex align-items-center">
@@ -87,10 +87,10 @@
                                             </div>
                                         </td>
                                         <td class="fw-bold text-end">
-                                            <span>{{ $transporteur->vehicules()->count() }}</span>
+                                            {{-- <span>{{ $expediteur->vehicules()->count() }}</span> --}}
                                         </td>
                                     </tr>
-                                    {{-- <!--end::vehicles number--> --}}
+                                    {{-- <!--end::vehicle number--> --}}
                                     {{-- <!--begin::Separator--> --}}
                                     <tr>
                                         <td class="text-gray-700 py-0" scope="row" colspan="2">
@@ -113,7 +113,7 @@
                                             </div>
                                         </td>
                                         <td class="fw-bold text-end">
-                                            <span>{{ $transporteur->expeditionsEndedCount() }}</span>
+                                            <span>{{ $expediteur->expeditionsEndedCount() }}</span>
                                         </td>
                                     </tr>
                                     {{-- <!--end::Number of expeditions made--> --}}
@@ -124,7 +124,7 @@
                                         </td>
                                     </tr>
                                     {{-- <!--end::Separator--> --}}
-                                    {{-- <!--begin::Notes--> --}}
+                                    {{-- <!--begin::Vehicles Number--> --}}
                                     <tr>
                                         <td class="text-gray-700 text-muted">
                                             <div class="d-flex align-items-center">
@@ -140,6 +140,7 @@
                                         </td>
                                         <td class="fw-bold text-end">
                                             <div class="d-flex justify-content-end">
+                                                {{-- <!--begin::Note--> --}}
                                                 <div class="rating">
                                                     <div class="rating-label checked">
                                                         <i class="bi bi-star-fill"></i>
@@ -157,10 +158,11 @@
                                                         <i class="bi bi-star-fill"></i>
                                                     </div>
                                                 </div>
+                                                {{-- <!--end::Note--> --}}
                                             </div>
                                         </td>
                                     </tr>
-                                    {{-- <!--end::Note--> --}}
+                                    {{-- <!--end::Vehicles Number--> --}}
                                 </tbody>
                                 {{-- <!--end::Table body--> --}}
                             </table>

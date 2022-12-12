@@ -30,24 +30,10 @@
             {{-- <!--end::Col--> --}}
             {{-- <!--begin::Col--> --}}
             <div class="col-xl-8 mb-5 mb-xl-10">
-                @include('expediteur.components.expeditions.postulants.postulants')
+                @include('expediteur.components.expeditions.postulants.overview')
             </div>
             {{-- <!--end::Col--> --}}
         </div>
-        <!--end::Row-->
-        <!--begin::Row-->
-        {{-- <div class="row gy-5 g-xl-10">
-            <!--begin::Col-->
-            <div class="col-xl-4 mb-xl-10">
-                @include('expediteur.components.call_to_action')
-            </div>
-            <!--end::Col-->
-            <!--begin::Col-->
-            <div class="col-xl-8 mb-5 mb-xl-10">
-                @include('expediteur.components.stats')
-            </div>
-            <!--end::Col-->
-        </div> --}}
         <!--end::Row-->
     @endif
 @endsection
