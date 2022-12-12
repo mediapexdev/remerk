@@ -3,7 +3,7 @@
 
 	use App\Core\Util;
 	use App\Models\Expedition;
-	use App\Models\transporteur;
+	use App\Models\Transporteur;
 
 	$__transporteur = Transporteur::where('user_id', Auth::user()->id)->first();
 	$__expeditions_count = Expedition::where('transporteur_id', $__transporteur->id)->count();

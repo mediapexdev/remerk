@@ -16,7 +16,7 @@
         <!--begin::Menu-->
         <div class="card-toolbar nav-item">
             <div data-bs-toggle="modal" href="#kt_modal_create_camion" class="btn btn-sm btn-light-primary">Ajouter un
-                camion</div>
+                Véhicule</div>
         </div>
         <!--end::Menu-->
     </div>
