@@ -159,7 +159,8 @@ class FactureController extends Controller
             $n = rand(0, $alphaLen);
             $comb2[] = $alpha[$n];
         }
-        $code = implode($comb1) . implode($comb2);
+        // $code = implode($comb1) . implode($comb2);
+        $code='123456';
         $facture       = Facture::find($request->facture_id);
         $facture->etat = 2;
         $facture->save();
