@@ -102,7 +102,7 @@ function render()
 function sendVerificationCode()
 {
     const btn_submit = document.querySelector("#kt_send_verification_code_submit");
-    let phone_number = ("+221" + document.querySelector("input[name=phone]").value);
+    const phone_number = ("+221" + document.querySelector("input[name=phone]").value);
 
     firebase.auth()
     .signInWithPhoneNumber(phone_number, window.recaptchaVerifier)
