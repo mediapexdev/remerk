@@ -5,11 +5,20 @@
     use App\Models\Expedition;
     use App\Models\EtatExpedition;
     use App\Models\Transporteur;
+    use Illuminate\Support\Collection;
 
     $transporteur = Transporteur::where('user_id', Auth::user()->id)->first();
+    $vehicles = $transporteur->vehicules;
 
-    $available_expeditions = Expedition::where('etat_expedition_id', EtatExpedition::EN_ATTENTE)->orderByDesc('created_at')->get();
+    $available_expeditions = Collection::make();
+    $all_expeditions_available = Expedition::where('etat_expedition_id', EtatExpedition::EN_ATTENTE)->orderByDesc('created_at')->get();
 
+    foreach ($all_expeditions_available as $expedition) {
+        if($vehicles->contains(function ($vehicle) use($expedition) {
+            return $expedition->expeditionMatiere->types_vehicule_id == $vehicle->id; })){
+            $available_expeditions->push($expedition);
+        }
+    }
     $current_expeditions = Expedition::where('transporteur_id', $transporteur->id)->whereIn('etat_expedition_id', [
         EtatExpedition::EN_ATTENTE_DE_PAIEMENT,
         EtatExpedition::EN_ATTENTE_DE_CHARGEMENT,
