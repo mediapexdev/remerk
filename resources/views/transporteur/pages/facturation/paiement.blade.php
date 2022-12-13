@@ -5,7 +5,7 @@
 @extends('transporteur.layout')
 
 @section('title')
-	<title>Dashboard - Remërk</title>
+	<title>Facture - Remërk</title>
 @endsection
 
 @section('component-body-content')

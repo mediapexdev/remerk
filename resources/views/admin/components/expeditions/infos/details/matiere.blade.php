@@ -1,4 +1,4 @@
-<div class="card card-flush flex-row-fluid">
+<div class="card card-flush">
     {{-- <!--begin::Card header--> --}}
     <div class="card-header">
         {{-- <!--begin::Card Title--> --}}

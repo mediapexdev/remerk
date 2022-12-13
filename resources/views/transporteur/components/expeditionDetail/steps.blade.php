@@ -1,8 +1,8 @@
- @php
-    use App\Models\EtatExpedition;
+@php
+use App\Models\EtatExpedition;
 @endphp
- <!--begin::Form-->
- <form class="form w-lg-500px mx-auto" novalidate="novalidate" id="kt_stepper_example_basic_form">
+<!--begin::Form-->
+<form class="form w-lg-500px mx-auto" novalidate="novalidate" id="kt_stepper_example_basic_form">
     <!--begin::Group-->
     <div class="mb-5">
         <!--begin::Step 1-->
@@ -16,11 +16,11 @@
                 </div>
                 <div class="card-body">
                     @if ($suivi_charge)
-                        Chargé à: {{ $suivi_charge->created_at }}
+                    Chargé à: {{ $suivi_charge->created_at }}
                     @else
-                        <button type="button" class="btn btn-success" id="bouton_modifier_etat_1"
-                            onclick="update_suivi({{ $expedition->id }},{{ EtatExpedition::CHARGE }},this)"> Confirmer
-                            Chargement </button>
+                    <button type="button" class="btn btn-success" id="bouton_modifier_etat_1"
+                        onclick="update_suivi({{ $expedition->id }},{{ EtatExpedition::CHARGE }},this)"> Confirmer
+                        Chargement </button>
                     @endif
                 </div>
             </div>
@@ -39,15 +39,15 @@
                 </div>
                 <div class="card-body">
                     @if ($suivi_transit)
-                        Arrivé le: {{$suivi_transit->created_at}}
+                    Arrivé le: {{$suivi_transit->created_at}}
                     @else
-                        @if ($suivi_charge)
-                            <button type="button" class="btn btn-success" id="bouton_modifier_etat_2"
-                                onclick="update_suivi({{ $expedition->id }},{{ EtatExpedition::EN_TRANSIT }},this)">
-                                Confirmer Arrivee </button>
-                        @else
-                            <span class="btn btn-danger">Pas chargé d'abord </span>
-                        @endif
+                    @if ($suivi_charge)
+                    <button type="button" class="btn btn-success" id="bouton_modifier_etat_2"
+                        onclick="update_suivi({{ $expedition->id }},{{ EtatExpedition::EN_TRANSIT }},this)">
+                        Confirmer Arrivee </button>
+                    @else
+                    <span class="btn btn-danger">Pas chargé d'abord </span>
+                    @endif
                     @endif
                 </div>
             </div>
@@ -66,16 +66,16 @@
                 </div>
                 <div class="card-body">
                     @if ($suivi_decharge)
-                        Déchargé le: {{ $suivi_decharge->created_at }}
+                    Déchargé le: {{ $suivi_decharge->created_at }}
                     @else
-                        @if ($suivi_transit)
-                            <button type="button" class="btn btn-success" id="bouton_modifier_etat_3"
-                                onclick="update_suivi({{ $expedition->id }},{{ EtatExpedition::DECHARGE }},this)">
-                                Confirmer
-                                Déchargement </button>
-                        @else
-                            <span class="btn btn-danger">Pas encore arrivée </span>
-                        @endif
+                    @if ($suivi_transit)
+                    <button type="button" class="btn btn-success" id="bouton_modifier_etat_3"
+                        onclick="update_suivi({{ $expedition->id }},{{ EtatExpedition::DECHARGE }},this)">
+                        Confirmer
+                        Déchargement </button>
+                    @else
+                    <span class="btn btn-danger">Pas encore arrivée </span>
+                    @endif
                     @endif
                 </div>
             </div>
@@ -94,16 +94,15 @@
                 </div>
                 <div class="card-body">
                     @if ($suivi_termine)
-                        Terminé le: {{ $suivi_termine->created_at }}
+                    Terminé le: {{ $suivi_termine->created_at }}
                     @else
-                        @if ($suivi_decharge)
-                            <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                                onclick="show_modal_suivi()">
-                                Finaliser
-                            </button>
-                        @else
-                            <span class="btn btn-danger">Pas encore déchargé </span>
-                        @endif
+                    @if ($suivi_decharge)
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" onclick="show_modal_suivi()">
+                        Finaliser
+                    </button>
+                    @else
+                    <span class="btn btn-danger">Pas encore déchargé </span>
+                    @endif
 
                     @endif
                 </div>
