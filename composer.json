@@ -18,7 +18,8 @@
         "symfony/http-client": "^6.1",
         "symfony/mailgun-mailer": "^6.1",
         "twilio/sdk": "^6.43",
-        "vonage/client": "^3.0"
+        "vonage/client": "^3.0",
+        "ext-gd":" *"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
