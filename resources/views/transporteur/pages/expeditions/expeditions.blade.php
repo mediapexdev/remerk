@@ -30,7 +30,7 @@
 @extends('transporteur.layout')
 
 @section('title')
-	<title>Remerk - Expéditions</title>
+	<title>Expéditions - Remërk</title>
 @endsection
 
 @section('component-body-content')

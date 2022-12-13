@@ -3,7 +3,7 @@
     <div class="card-header">
         {{-- <!--begin::Card title--> --}}
         <div class="card-title">
-            <h2 class="fw-bold">Expédition ({{ $expedition->id }})</h2>
+            <h2 class="fw-bold">Expédition [{{ $expedition->string_id }}]</h2>
         </div>
         {{-- <!--end::Card title--> --}}
     </div>

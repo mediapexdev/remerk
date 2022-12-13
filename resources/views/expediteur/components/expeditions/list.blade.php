@@ -30,7 +30,7 @@
             @endphp
         <tr>
             <td>
-                <a href="{{route('expediteur.detailExpedition',$expedition->id)}}" class="text-gray-600 text-hover-primary">{{$expedition->id}}</a>
+                <a href="{{route('expediteur.detailExpedition',$expedition->id)}}" class="text-gray-600 text-hover-primary">{{$expedition->string_id}}</a>
             </td>
             <td>
                 {{$expedition->expeditionMatiere->matiere->type}}

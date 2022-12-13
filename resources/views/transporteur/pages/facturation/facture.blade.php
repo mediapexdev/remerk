@@ -99,8 +99,7 @@
                             <tr>
                                 {{-- <!--begin::Expédition--> --}}
                                 <td class="text-truncate">
-                                    <a class="text-gray-600 text-hover-primary" href="{{ route('expedition.infos', $facture->expedition->id) }}">{{$facture->expedition->id}}</a>
-                                    {{-- <a class="text-gray-600 text-hover-primary mb-1" href="{{ route('expedition.infos', $facture->expedition->id) }}">{{$facture->expedition->string_id}}</a> --}}
+                                    <a class="text-gray-600 text-hover-primary" href="{{ route('expedition.infos', $facture->expedition->id) }}">{{$facture->expedition->string_id}}</a>
                                 </td>
                                 {{-- <!--end::Expédition--> --}}
                                 {{-- <!--begin::Expéditeur--> --}}

@@ -5,7 +5,7 @@
 @extends('expediteur.layout')
 
 @section('title')
-	<title>Remerk - Détails Expédition</title>
+	<title>Détails Expédition - Remërk</title>
 @endsection
 
 @section('component-body-content')

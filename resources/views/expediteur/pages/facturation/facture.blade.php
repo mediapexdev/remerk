@@ -47,9 +47,9 @@
                 {{-- <!--begin::Card header--> --}}
                 <div class="card-header border-0">
                     {{-- <!--begin::Card title--> --}}
-                    <div class="card-title">
+                    {{-- <div class="card-title">
                         <h2>Factures</h2>
-                    </div>
+                    </div> --}}
                     {{-- <!--end::Card title--> --}}
                 </div>
                 {{-- <!--end::Card header--> --}}
@@ -83,14 +83,9 @@
                             {{-- <!--begin::Table row--> --}}
                             <tr>
                                 {{-- <!--begin::order--> --}}
-                                {{-- <td>
-                                    <a class="text-gray-600 text-hover-primary mb-1">{{$facture->id}}</a>
-                                </td> --}}
-                                {{-- <!--end::order--> --}}
-                                {{-- <!--begin::Expédition--> --}}
+                                {{-- <!--begin::Expédition id--> --}}
                                 <td class="text-truncate">
-                                    <a class="text-gray-600 text-hover-primary" href="{{ route('expedition.infos', $facture->expedition->id) }}">{{$facture->expedition->id}}</a>
-                                    {{-- <a class="text-gray-600 text-hover-primary mb-1" href="{{ route('expedition.infos', $facture->expedition->id) }}">{{$facture->expedition->string_id}}</a> --}}
+                                    <a class="text-gray-600 text-hover-primary" href="{{ route('expedition.infos', $facture->expedition->id) }}">{{$facture->expedition->string_id}}</a>
                                 </td>
                                 {{-- <!--end::Expédition--> --}}
                                 {{-- <!--begin::Transporteur--> --}}
