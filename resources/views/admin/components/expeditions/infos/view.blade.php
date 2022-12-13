@@ -1,7 +1,7 @@
 @extends('admin.layout')
 
 @section('title')
-<title>Détails Expedition - Remërk</title>
+<title>Détails expédition - Remërk</title>
 @endsection
 
 @section('component-body-content')

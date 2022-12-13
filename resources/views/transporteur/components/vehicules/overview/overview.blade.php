@@ -15,7 +15,8 @@
         {{-- <!--end::Card Title--> --}}
         {{-- <!--begin::Card Toolbar--> --}}
         <div class="card-toolbar nav-item">
-            <button class="btn btn-sm btn-light-primary" data-bs-toggle="modal" href="#kt_modal_create_camion">
+            <a href="{{route('vehicules')}}" class="btn btn-sm btn-secondary m-1">Voir tout</a>
+            <button class="btn btn-sm btn-light-primary m-1" data-bs-toggle="modal" href="#kt_modal_create_camion">
                 <span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
                         <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
@@ -40,7 +41,6 @@
                         {{-- <!--begin::Table head--> --}}
                         <thead>
                             <tr class="fs-5 fw-bold text-gray-500 border-bottom-0">
-                                <th class="min-w-150px">Marque</th>
                                 <th class="min-w-150px">Type</th>
                                 <th class="min-w-150px">Matricule</th>
                                 <th>Status</th>
@@ -51,9 +51,9 @@
                         @foreach ($camions as $camion)
                         <tbody class="cursor-pointer">
                             <tr class="">
-                                <td>
+                                {{-- <td>
                                     <p class="text-gray-800 fw-bold d-block mb-1 fs-6">{{$camion->marque->nom}}</p>
-                                </td>
+                                </td> --}}
                                 <td>
                                     <div class="d-flex align-items-center">
                                         <div class="d-flex justify-content-start flex-column">
