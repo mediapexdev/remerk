@@ -1,7 +1,6 @@
 <div class="d-flex flex-wrap flex-stack gap-5 gap-lg-10">
     {{-- <!--begin::Menu--> --}}
     <ul id="expeditions_nav" class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-0 fs-5 fw-semibold mb-4 mb-xl-10 me-auto">
-    {{-- <ul id="expeditions_nav" class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-0 fs-5 fw-semibold mb-lg-n2 me-auto"> --}}
         {{-- <!--begin::Item--> --}}
         <li class="nav-item mt-2">
             {{-- <!--begin::Link--> --}}
