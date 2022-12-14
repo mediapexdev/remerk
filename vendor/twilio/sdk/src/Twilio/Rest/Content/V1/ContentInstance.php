@@ -12,6 +12,7 @@ namespace Twilio\Rest\Content\V1;
 use Twilio\Deserialize;
 use Twilio\Exceptions\TwilioException;
 use Twilio\InstanceResource;
+use Twilio\Rest\Content\V1\Content\ApprovalFetchList;
 use Twilio\Values;
 use Twilio\Version;
 
@@ -30,6 +31,8 @@ use Twilio\Version;
  * @property array $links
  */
 class ContentInstance extends InstanceResource {
+    protected $_approvalFetch;
+
     /**
      * Initialize the ContentInstance
      *
@@ -89,6 +92,13 @@ class ContentInstance extends InstanceResource {
      */
     public function delete(): bool {
         return $this->proxy()->delete();
+    }
+
+    /**
+     * Access the approvalFetch
+     */
+    protected function getApprovalFetch(): ApprovalFetchList {
+        return $this->proxy()->approvalFetch;
     }
 
     /**

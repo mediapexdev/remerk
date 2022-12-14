@@ -1,4 +1,4 @@
-<ul id="expeditions_nav" class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-semibold mb-8 mb-xl-10">
+<ul id="expeditions_nav" class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-4 fw-semibold mb-8 mb-xl-10">
     {{-- <!--begin::Item--> --}}
     <li class="nav-item mt-2">
         {{-- <!--begin::Link--> --}}

@@ -30,7 +30,7 @@
 @extends('expediteur.layout')
 
 @section('title')
-	<title>Remerk - Expéditions</title>
+	<title>Mes expéditions - Remërk</title>
 @endsection
 
 @section('component-body-content')
@@ -42,7 +42,7 @@
         <div class="card-header">
             {{-- <!--begin::Card title--> --}}
             <div class="card-title">
-                <h3 class="fw-bold">Liste des expéditions</h3>
+                <h3 class="fw-bold">Mes expéditions</h3>
             </div>
             {{-- <!--end::Card title--> --}}
             {{-- <div class="card-toolbar"></div> --}}

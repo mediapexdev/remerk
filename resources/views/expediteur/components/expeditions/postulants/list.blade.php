@@ -61,7 +61,7 @@
                 {{-- <!--end::Transporteur--> --}}
                 {{-- <!--begin::Montant--> --}}
                 <td class="text-truncate">
-                    <span class="fw-bold">{{ $postulant->montant_propose }}</span>
+                    <span class="fw-bold">{{number_format($postulant->montant_propose, 2, ',', ' ')}}</span>
                 </td>
                 {{-- <!--end::Montant--> --}}
                 {{-- <!--begin::Date--> --}}

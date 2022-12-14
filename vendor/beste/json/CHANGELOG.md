@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## [1.2.0] - 2022-12-01
+
+* Added more checks when decoding JSON Files
+
 ## [1.1.0] - 2022-11-04
 
 Dropped support for PHP <8.1
