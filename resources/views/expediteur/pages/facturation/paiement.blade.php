@@ -3,7 +3,9 @@ $body_classes = 'app-default';
 @endphp
 
 @extends('expediteur.layout')
-
+@section('styles')
+<link rel="stylesheet" href="https://paytech.sn/cdn/paytech.min.css">
+@endsection
 @section('title')
 <title>Ma facture - Remërk</title>
 @endsection
@@ -135,7 +137,7 @@ $body_classes = 'app-default';
                                 @csrf
                                 <input type="hidden" name="expedition_id" value="{{$facture->expedition_id}}">
                                 <input type="hidden" name="facture_id" value="{{$facture->id}}">
-                                <button type="submit" class="btn btn-sm btn-success">Payer</button>
+                                <button type="submit" class="btn btn-sm btn-success" onclick="buy(btn)">Payer</button>
                             </form>
                             @else
                             <a href="{{route('facturation')}}">
@@ -228,4 +230,31 @@ $body_classes = 'app-default';
 @endsection
 
 @section('custom-js')
+<script src="https://paytech.sn/cdn/paytech.min.js"></script>
+
+<script>
+    function buy(btn) {
+        (new PayTech({
+            some_post_data_1          :   2, //will be sent to paiement.php page
+            some_post_data_3          :   4,
+        })).withOption({
+            requestTokenUrl           :   'paiement.php',
+            method              :   'POST',
+            headers             :   {
+                "Accept"          :    "text/html"
+            },
+            prensentationMode   :   PayTech.OPEN_IN_POPUP,
+            willGetToken        :   function () {
+            },
+            didGetToken         : function (token, redirectUrl) {
+            },
+            didReceiveError: function (error) {
+            },
+            didReceiveNonSuccessResponse: function (jsonResponse) {
+            }
+        }).send();
+
+        //.send params are optional
+    }
+</script>
 @endsection
