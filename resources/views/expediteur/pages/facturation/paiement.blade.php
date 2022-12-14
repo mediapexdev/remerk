@@ -123,7 +123,7 @@ $body_classes = 'app-default';
                 </div>
                 <!--end::Content-->
                 <!--begin::Sidebar-->
-                <div class="m-0">
+                <div class="m-0 p-0">
                     <!--begin::Invoice 2 sidebar-->
                     <div
                         class="d-print-none border border-dashed border-gray-300 card-rounded h-lg-100 min-w-md-350px p-9 bg-lighten">
