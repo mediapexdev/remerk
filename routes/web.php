@@ -480,7 +480,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('facturation', [FactureController::class, 'store'])
         ->name('facture.store');
 
-    Route::post('afficher-facture', [FactureController::class, 'show'])
+    Route::post('ma-facture', [FactureController::class, 'show'])
         ->name('facture.show');
 
     Route::post('transporteur/facture/{id}', [FactureController::class, 'show'])

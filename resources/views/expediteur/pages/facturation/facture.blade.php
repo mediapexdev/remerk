@@ -21,7 +21,7 @@
 @extends('expediteur.layout')
 
 @section('title')
-    <title>Factures - Remërk</title>
+    <title>Mes factures - Remërk</title>
 @endsection
 
 @section('component-body-content')
@@ -64,7 +64,7 @@
                             <tr class="text-start text-muted text-uppercase gs-0">
                                 {{-- <th class="">No.</th> --}}
                                 <th>Expédition</th>
-                                <th>Destinataire</th>
+                                <th>Transporteur</th>
                                 <th>Status</th>
                                 <th>Montant</th>
                                 <th>Date</th>
@@ -130,7 +130,7 @@
                                 </td>
                                 {{-- <!--end::Status--> --}}
                                 {{-- <!--begin::Amount--> --}}
-                                <td><span>{{$facture->montant}}</span></td>
+                                <td><span>{{number_format($facture->montant, 0, ',', ' ')}}</span> <span class="text-gray-600">FrCFA</span></td>
                                 {{-- <!--end::Amount--> --}}
                                 {{-- <!--begin::Date--> --}}
                                 <td class="text-truncate"><span>{{\date('d-m-Y', \strtotime($facture->created_at))}}</span></td>
@@ -192,4 +192,5 @@
 @section('custom-js')
 <script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/expeditions/sender/facturation/facturation.js')}}"></script>
 <script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/expeditions/sender/facturation/listing/factures.js')}}"></script>
+<script src="{{Url::asset('assets/js/custom/apps/')}} "></script>
 @endsection
