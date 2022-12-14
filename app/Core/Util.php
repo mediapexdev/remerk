@@ -16,7 +16,7 @@ final class Util
      */
     public static function colorClassNames() : array
     {
-        return ['danger', 'info', 'primary', 'success', 'warning'];
+        return ['danger', 'dark', 'info', 'primary', 'success', 'warning'];
     }
 
     /**

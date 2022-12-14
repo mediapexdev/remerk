@@ -186,10 +186,15 @@
                                 <div class="d-flex align-items-center justify-content-center flex-row-fluid flex-wrap">
                                     <div class="flex-grow-1">
                                         <div class="row align-items-center">
-                                            <div class="d-flex col-12">
+                                            <div class="d-flex col-8">
                                                 <div class="d-block fs-6">
                                                     <div class="fw-semibold">{{ $expedition->matiereType() }}</div>
                                                     <div class="text-gray-700 fw-bold">[{{ $expedition->matiereWeight() }}]</div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex col-4">
+                                                <div class="d-block">
+                                                    <a class="btn btn-light-primary btn-sm" href="{{ route('expedition.infos', $expedition->id) }}">Détails</a>
                                                 </div>
                                             </div>
                                         </div>
