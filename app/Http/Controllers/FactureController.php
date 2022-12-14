@@ -14,6 +14,7 @@ use App\Models\Transporteur;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Date;
+use PayTech;
 use Twilio\Rest\Client;
 
 class FactureController extends Controller
@@ -159,7 +160,8 @@ class FactureController extends Controller
             $n = rand(0, $alphaLen);
             $comb2[] = $alpha[$n];
         }
-        $code = implode($comb1) . implode($comb2);
+        // $code = implode($comb1) . implode($comb2);
+        $code='123456';
         $facture       = Facture::find($request->facture_id);
         $facture->etat = 2;
         $facture->save();
@@ -167,7 +169,9 @@ class FactureController extends Controller
         $expedition->etat_expedition_id = 3;
         $expedition->code = $code;
         $expedition->save();
-        $expediteur = Auth::user();
+        $response=$this->sendPayment($expedition,$facture);
+        dd($response);
+        // $expediteur = Auth::user();
         // $basic  = new \Vonage\Client\Credentials\Basic("c646d54f", "g7awZbAl6S7L4uT4");
         // $client = new \Vonage\Client($basic);
         // $response = $client->sms()->send(
@@ -175,21 +179,44 @@ class FactureController extends Controller
         // );
 
         // $message = $response->current();
-        SuiviExpedition::create(
-            [
-                'etat_expedition_id' => 3,
-                'expedition_id' => $request->expedition_id,
-                'date_modification' => now()
-            ]
-        );
+        // SuiviExpedition::create(
+        //     [
+        //         'etat_expedition_id' => 3,
+        //         'expedition_id' => $request->expedition_id,
+        //         'date_modification' => now()
+        //     ]
+        // );
         // if ($message->getStatus() == 0) {
         //     echo "The message was sent successfully\n";
         // } else {
         //     echo "The message failed with status: " . $message->getStatus() . "\n";
         // }
-        return redirect('/factures')->with([
-            'success' => "Paiement approuvé! Le code vous a été envoyé",
-            'expedition-acknowledgment-of-receipt' => true
-        ]);
+        // return redirect('/factures')->with([
+        //     'success' => "Paiement approuvé! Le code vous a été envoyé",
+        //     'expedition-acknowledgment-of-receipt' => true
+        // ]);
+    }
+    public function sendPayment($expedition,$facture){
+        $base_url  = 'http://127.0.0.1:8000/';
+        $jsonResponse = (new PayTech(env('PAY_TECH_API_KEY'), env('PAY_TECH_API_SECRET')))->setQuery([
+                'item_name' => $expedition->string_id,
+                'item_price' => 100,
+                'command_name' => "Paiement de l expedition {$expedition->string_id} Gold via PayTech",
+            ])->setCustomeField([
+                'item_id' => $expedition->id,
+                'time_command' => time(),
+                'ip_user' => $_SERVER['REMOTE_ADDR'],
+                'lang' => $_SERVER['HTTP_ACCEPT_LANGUAGE']
+            ])
+                ->setTestMode(true)
+                ->setRefCommand(uniqid())
+                ->setNotificationUrl([
+                    'ipn_url' => 'https://www.mediapex.net', //only https
+                    'success_url' => $base_url.'facture/'.$facture->id,
+                    'cancel_url' =>   $base_url.'facture/'.$facture->id
+                ])->send();
+    
+         return $jsonResponse;
     }
 }
+// require PayTech;

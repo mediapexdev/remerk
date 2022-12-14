@@ -100,7 +100,6 @@
         // Stepper lement
         var element = document.querySelector("#kt_stepper_example_clickable");
         current_step = {{ $expedition->etat_expedition_id - 2 }};
-        alert(current_step)
         // Initialize Stepper
         var stepper = new KTStepper(element);
         stepper.goTo(current_step);
