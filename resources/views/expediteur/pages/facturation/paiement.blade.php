@@ -137,8 +137,11 @@ $body_classes = 'app-default';
                                 @csrf
                                 <input type="hidden" name="expedition_id" value="{{$facture->expedition_id}}">
                                 <input type="hidden" name="facture_id" value="{{$facture->id}}">
-                                <button type="submit" class="btn btn-sm btn-success" onclick="buy(btn)">Payer</button>
+                                <button type="submit" class="btn btn-sm btn-success"
+                                    >Payer</button>
                             </form>
+                            {{-- <button type="submit" class="btn btn-sm btn-success" onclick="buy()">Payer</button>
+                            --}}
                             @else
                             <a href="{{route('facturation')}}">
                                 <button class="btn btn-sm btn-info">
@@ -231,17 +234,35 @@ $body_classes = 'app-default';
 
 @section('custom-js')
 <script src="https://paytech.sn/cdn/paytech.min.js"></script>
+<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+
 
 <script>
-    function buy(btn) {
+    function new_paiement(expedition_id, facture_id)
+    {
+        axios.post('/ma-facture', {
+                    {{$expedition->id}},
+                    1
+                })
+                .then(function(response) {
+                    console.log(response);
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
+    }
+</script>
+
+<script>
+    function buy(token, redirectUrl) {
         (new PayTech({
-            some_post_data_1          :   2, //will be sent to paiement.php page
-            some_post_data_3          :   4,
+            some_post_data_1    :   2, //will be sent to paiement.php page
+            some_post_data_3    :   4,
         })).withOption({
-            requestTokenUrl           :   'paiement.php',
+            requestTokenUrl     :   'paiement.php',
             method              :   'POST',
             headers             :   {
-                "Accept"          :    "text/html"
+                "Accept"        :    "text/html"
             },
             prensentationMode   :   PayTech.OPEN_IN_POPUP,
             willGetToken        :   function () {
