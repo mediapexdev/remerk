@@ -225,6 +225,7 @@ class FactureController extends Controller
         ])
         ->send();
         return $jsonResponse;
+        //test
     }
 }
 // require PayTech;
