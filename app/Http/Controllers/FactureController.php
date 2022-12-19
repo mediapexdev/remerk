@@ -171,7 +171,10 @@ class FactureController extends Controller
         $expedition->save();
         $response=$this->sendPayment($expedition,$facture);
         //dd($response['redirect_url']);
-        return redirect($to = $response['redirect_url']);
+        //return redirect($to = $response['redirect_url']);
+        // return view('expediteur.pages.facturation.facture', compact('response'));
+        return redirect()->route('facturation')->with(['rep' =>$response]);
+
 
         // $expediteur = Auth::user();
         // $basic  = new \Vonage\Client\Credentials\Basic("c646d54f", "g7awZbAl6S7L4uT4");
@@ -218,7 +221,7 @@ class FactureController extends Controller
         ->setNotificationUrl([
                 'ipn_url'     => 'https://www.mediapex.net', //only https
                 'success_url' => $base_url.'factures',
-                'cancel_url'  => $base_url.'facture/'.$facture->id
+                'cancel_url'  => $base_url.'factures/'
         ])
         ->send();
         return $jsonResponse;
