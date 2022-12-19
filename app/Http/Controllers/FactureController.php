@@ -170,11 +170,7 @@ class FactureController extends Controller
         $expedition->code = $code;
         $expedition->save();
         $response=$this->sendPayment($expedition,$facture);
-        //dd($response['redirect_url']);
-        //return redirect($to = $response['redirect_url']);
-        // return view('expediteur.pages.facturation.facture', compact('response'));
-        return redirect()->route('facturation')->with(['rep' =>$response]);
-
+        return response()->json($response);
 
         // $expediteur = Auth::user();
         // $basic  = new \Vonage\Client\Credentials\Basic("c646d54f", "g7awZbAl6S7L4uT4");
