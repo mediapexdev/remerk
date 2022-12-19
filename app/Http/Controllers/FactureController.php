@@ -163,14 +163,19 @@ class FactureController extends Controller
         // $code = implode($comb1) . implode($comb2);
         $code='123456';
         $facture       = Facture::find($request->facture_id);
-        $facture->etat = 2;
-        $facture->save();
+        // $facture->etat = 2;
+        // $facture->save();
         $expedition    = Expedition::find($request->expedition_id);
         $expedition->etat_expedition_id = 3;
         $expedition->code = $code;
         $expedition->save();
         $response=$this->sendPayment($expedition,$facture);
-        dd($response);
+        //dd($response['redirect_url']);
+        //return redirect($to = $response['redirect_url']);
+        // return view('expediteur.pages.facturation.facture', compact('response'));
+        return redirect()->route('facturation')->with(['rep' =>$response]);
+
+
         // $expediteur = Auth::user();
         // $basic  = new \Vonage\Client\Credentials\Basic("c646d54f", "g7awZbAl6S7L4uT4");
         // $client = new \Vonage\Client($basic);
@@ -196,27 +201,30 @@ class FactureController extends Controller
         //     'expedition-acknowledgment-of-receipt' => true
         // ]);
     }
-    public function sendPayment($expedition,$facture){
+    public function sendPayment($expedition,$facture)
+    {
         $base_url  = 'http://127.0.0.1:8000/';
-        $jsonResponse = (new PayTech(env('PAY_TECH_API_KEY'), env('PAY_TECH_API_SECRET')))->setQuery([
-                'item_name' => $expedition->string_id,
-                'item_price' => 100,
-                'command_name' => "Paiement de l expedition {$expedition->string_id} Gold via PayTech",
-            ])->setCustomeField([
-                'item_id' => $expedition->id,
-                'time_command' => time(),
-                'ip_user' => $_SERVER['REMOTE_ADDR'],
-                'lang' => $_SERVER['HTTP_ACCEPT_LANGUAGE']
-            ])
-                ->setTestMode(true)
-                ->setRefCommand(uniqid())
-                ->setNotificationUrl([
-                    'ipn_url' => 'https://www.mediapex.net', //only https
-                    'success_url' => $base_url.'facture/'.$facture->id,
-                    'cancel_url' =>   $base_url.'facture/'.$facture->id
-                ])->send();
-    
-         return $jsonResponse;
+        $jsonResponse = (new PayTech(env('PAY_TECH_API_KEY'), env('PAY_TECH_API_SECRET')))
+        ->setQuery([
+            'item_name'    => $expedition->string_id,
+            'item_price'   => 100,
+            'command_name' => "Paiement de l expedition {$expedition->string_id} Gold via PayTech",
+        ])
+        ->setCustomeField([
+            'item_id'      => $expedition->id,
+            'time_command' => time(),
+            'ip_user'      => $_SERVER['REMOTE_ADDR'],
+            'lang'         => $_SERVER['HTTP_ACCEPT_LANGUAGE']
+        ])
+        ->setTestMode(true)
+        ->setRefCommand(uniqid())
+        ->setNotificationUrl([
+                'ipn_url'     => 'https://www.mediapex.net', //only https
+                'success_url' => $base_url.'factures',
+                'cancel_url'  => $base_url.'factures/'
+        ])
+        ->send();
+        return $jsonResponse;
     }
 }
 // require PayTech;
