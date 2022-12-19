@@ -40,10 +40,10 @@
                 <span class="text-dark fw-bold d-block mb-1 fs-6">{{$camion->immatriculation}}</span>
             </td>
             <td>
-                <span class="text-dark fw-bold d-block mb-1 fs-6">{{ $camion->poids_a_vide }} Kg</span>
+                <span class="text-dark fw-bold d-block mb-1 fs-6">{{ $camion->poids_a_vide }} Tonnes</span>
             </td>
             <td>
-                <span class="badge badge-light text-dark fs-7 fw-bold">{{ $camion->capacite }} Kg</span>
+                <span class="badge badge-light text-dark fs-7 fw-bold">{{ $camion->capacite }} Tonnes</span>
             </td>
             <td class="">
                 <span class="fs-7 fw-bold">{{
