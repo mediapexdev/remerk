@@ -38,13 +38,6 @@
         <li class="nav-item mt-2">
             {{-- <!--begin::Link--> --}}
             <a class="nav-link ms-0 me-10 py-5" href="#kt_tab_expeditions_made" data-bs-toggle="tab">Effectuées
-                @if(0 !== $completed_expeditions->count())
-                <span class="m-3">
-                    <span class="position-absolute translate-middle p-2 bg-primary border border-light rounded-circle d-inline">
-                        <span class="visually-hidden">New alerts</span>
-                    </span>
-                </span>
-                @endif
             </a>
             {{-- <!--end::Link--> --}}
         </li>
