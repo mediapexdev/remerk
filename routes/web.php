@@ -492,7 +492,7 @@ Route::middleware(['auth'])->group(function () {
     /*
     **/
 
-    Route::get('testNotif', [FCMController::class, 'index'])
+    Route::get('testNotif', [FCMController::class, 'test'])
         ->name('test');
 
     Route::post('save-fcm-token', [FCMController::class, 'save_fcm_token'])

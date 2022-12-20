@@ -56,65 +56,66 @@ class FCMController extends Notification
             // OR ->asMessage($deviceTokens);
     }
     function test(){
-        $title = 'My Notification Title';
-        $body = 'My Notification Body';
-        $imageUrl = 'http://lorempixel.com/400/200/';
+//         $title = 'My Notification Title';
+//         $body = 'My Notification Body';
+//         $imageUrl = 'http://lorempixel.com/400/200/';
 
-        $notification = MessagingNotification::fromArray([
-            'title' => $title,
-            'body' => $body,
-            'image' => $imageUrl,
-        ]);
-        $notification = MessagingNotification::create($title, $body);
-        $changedNotification = $notification
-            ->withTitle('Changed title')
-            ->withBody('Changed body')
-            ->withImageUrl('http://lorempixel.com/200/400/');
-        $messaging = app('firebase.messaging');;
+//         $notification = MessagingNotification::fromArray([
+//             'title' => $title,
+//             'body' => $body,
+//             'image' => $imageUrl,
+//         ]);
+//         $notification = MessagingNotification::create($title, $body);
+//         $changedNotification = $notification
+//             ->withTitle('Changed title')
+//             ->withBody('Changed body')
+//             ->withImageUrl('http://lorempixel.com/200/400/');
+//         $messaging = app('firebase.messaging');;
+//         $firebaseToken = User::whereNotNull('fcm_token')->pluck('fcm_token')->all();
+//         $message = CloudMessage::new();
+//         $message=$message->withNotification($notification);
+//  // Any instance of Kreait\Messaging\Message
+//         // echo $firebaseToken;
+//         $report = $messaging->sendMulticast($message, $firebaseToken);
+//         echo 'Successful sends: '.$report->successes()->count().PHP_EOL;
+//         echo 'Failed sends: '.$report->failures()->count().PHP_EOL;
+
+//         if ($report->hasFailures()) {
+//             foreach ($report->failures()->getItems() as $failure) {
+//                 echo $failure->error()->getMessage().PHP_EOL;
+//             }
+//         }
         $firebaseToken = User::whereNotNull('fcm_token')->pluck('fcm_token')->all();
-        $message = CloudMessage::new();
-        $message=$message->withNotification($notification);
- // Any instance of Kreait\Messaging\Message
-        // echo $firebaseToken;
-        $report = $messaging->sendMulticast($message, $firebaseToken);
-        echo 'Successful sends: '.$report->successes()->count().PHP_EOL;
-        echo 'Failed sends: '.$report->failures()->count().PHP_EOL;
+        $SERVER_API_KEY = 'AAAAbQlH7Qw:APA91bEx9nC01HGG8Ao-tQ8ZYKExsRYxXE34nKHGI9b9oWEQWqQYAh3H1WaRW0-yD_QlMfs4UTqvoN1HxXXz1bsncnNhpIrtcHQ9rknkJTey0sE6a3dKbYxwiiaPDSRrd4AMLjOa1I3W';
 
-        if ($report->hasFailures()) {
-            foreach ($report->failures()->getItems() as $failure) {
-                echo $failure->error()->getMessage().PHP_EOL;
-            }
-        }
-        // $SERVER_API_KEY = 'AAAAbQlH7Qw:APA91bEx9nC01HGG8Ao-tQ8ZYKExsRYxXE34nKHGI9b9oWEQWqQYAh3H1WaRW0-yD_QlMfs4UTqvoN1HxXXz1bsncnNhpIrtcHQ9rknkJTey0sE6a3dKbYxwiiaPDSRrd4AMLjOa1I3W';
+        $data = [
+            "registration_ids" => $firebaseToken,
+            "notification" => [
+                "title" => 'test',
+                "body" => 'ceci est une notification test',
+                "content_available" => true,
+                "priority" => "high",
+            ]
+        ];
+        $dataString = json_encode($data);
 
-        // $data = [
-        //     "registration_ids" => $firebaseToken,
-        //     "notification" => [
-        //         "title" => 'test',
-        //         "body" => 'ceci est une notification test',
-        //         "content_available" => true,
-        //         "priority" => "high",
-        //     ]
-        // ];
-        // $dataString = json_encode($data);
+        $headers = [
+            'Authorization: key=' . $SERVER_API_KEY,
+            'Content-Type: application/json',
+        ];
 
-        // $headers = [
-        //     'Authorization: key=' . $SERVER_API_KEY,
-        //     'Content-Type: application/json',
-        // ];
+        $ch = curl_init();
 
-        // $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'https://fcm.googleapis.com/fcm/send');
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $dataString);
 
-        // curl_setopt($ch, CURLOPT_URL, 'https://fcm.googleapis.com/fcm/send');
-        // curl_setopt($ch, CURLOPT_POST, true);
-        // curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-        // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        // curl_setopt($ch, CURLOPT_POSTFIELDS, $dataString);
+        $response = curl_exec($ch);
 
-        // $response = curl_exec($ch);
-
-        // dd($response);
+        dd($response);
     }
     // public function sendNotification()
     // {
