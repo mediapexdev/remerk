@@ -35,7 +35,7 @@ $expeditions_facture[] = $expedition;
     <div class="row gy-5 g-xl-10">
         {{--
         <!--begin::Col--> --}}
-        <div class="col-xl-4 mb-xl-10">
+        <div class="col-xl-4 mb-xl-10 d-none d-xl-block d-xxl-block">
             {{--
             <!--begin::Engage widget 3--> --}}
             <img class="img-fluid theme-dark-show rounded" src="{{URL::asset('assets/images/Fitting_piece-dark.gif')}}"
@@ -58,9 +58,9 @@ $expeditions_facture[] = $expedition;
                 <div class="card-header border-0">
                     {{--
                     <!--begin::Card title--> --}}
-                    {{-- <div class="card-title">
-                        <h2>Factures</h2>
-                    </div> --}}
+                    <div class="card-title">
+                        <h2>Mes factures</h2>
+                    </div>
                     {{--
                     <!--end::Card title--> --}}
                 </div>

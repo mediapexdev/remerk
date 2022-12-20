@@ -1,4 +1,4 @@
-<div class="card card-flush py-4 flex-row-fluid">
+<div class="card card-flush py-4 flex-row-fluid h-100">
     {{--
     <!--begin::Card header--> --}}
     <div class="card-header">

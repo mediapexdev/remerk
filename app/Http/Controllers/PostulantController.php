@@ -19,7 +19,7 @@ class PostulantController extends Controller
         $request->validate([
             'postulant_id' => ['required', 'exists:postulants,id']
         ]);
-        $postulant = Postulants::where('id', $request->postulant_id)->first();
+        $postulant  = Postulants::where('id', $request->postulant_id)->first();
         
         $expedition = Expedition::where('id', $postulant->expedition_id)->first();
         $expedition->etat_expedition_id = EtatExpedition::EN_ATTENTE_DE_PAIEMENT;
