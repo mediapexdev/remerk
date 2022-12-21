@@ -28,7 +28,7 @@ $postulants = Postulants::where('expedition_id', $expedition->id)->orderByDesc('
         <div class="row gy-5 g-xl-10">
             {{--
             <!--begin::Col--> --}}
-            <div class="col-xl-4 mb-xl-10">
+            <div class="col-xl-4 mb-xl-10 d-none d-xl-block d-xxl-block">
                 {{--
                 <!--begin::Engage widget 3--> --}}
                 <img class="img-fluid theme-dark-show rounded"
@@ -148,9 +148,6 @@ $postulants = Postulants::where('expedition_id', $expedition->id)->orderByDesc('
                         <div class="d-flex justify-content-center">
                             <p class="h4 text-center p-5">Merci de patienter, votre demande est en cours de traitement.
                             </p>
-                            <div class="">
-                                <span class="pulse-ring border-4"></span>
-                            </div>
                         </div>
                         @endif
                     </tbody>
