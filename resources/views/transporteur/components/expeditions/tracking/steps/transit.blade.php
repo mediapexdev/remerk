@@ -21,7 +21,7 @@
     }
 @endphp
 <!--begin::Stepper-->
-<div class="stepper-item mx-8 my-4 {{$status_class}}" data-kt-stepper-element="nav" data-kt-stepper-action="step">
+<div class="stepper-item mx-8 my-4 {{$status_class}}" data-kt-stepper-element="nav">
     <!--begin::Wrapper-->
     <div class="stepper-wrapper d-flex d-flex flex-column align-items-center">
         <!--begin::Icon-->

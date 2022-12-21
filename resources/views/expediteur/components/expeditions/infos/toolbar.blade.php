@@ -3,7 +3,7 @@
     <div class="card-header">
         {{-- <!--begin::Card title--> --}}
         <div class="card-title">
-            <h2 class="fw-bold">Expédition [{{ $expedition->string_id }}]</h2>
+            <h2 class="fw-bold">Expédition : {{$expedition->string_id}}</h2>
         </div>
         {{-- <!--end::Card title--> --}}
     </div>
@@ -26,7 +26,7 @@
                         data-bs-toggle="tab" href="#kt_expedition_history">Historique</a>
                 </li>
                 {{-- <!--end:::Tab item--> --}}
-                @if ($expedition->transporteur===NULL)
+                @if (NULL === $expedition->transporteur)
                 {{-- <!--begin:::Tab item--> --}}
                 <li class="nav-item mt-2">
                     <a class="nav-link text-active-primary ms-0 me-10 py-5"

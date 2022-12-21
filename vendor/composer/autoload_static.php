@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitc3950687511d4ecf0c53596a3d77935c
+class ComposerStaticInit3651bccbfbe1b017a95541cf46c4dee4
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -456,8 +456,8 @@ class ComposerStaticInitc3950687511d4ecf0c53596a3d77935c
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -752,6 +752,7 @@ class ComposerStaticInitc3950687511d4ecf0c53596a3d77935c
         'App\\Http\\Controllers\\EtatExpeditionController' => __DIR__ . '/../..' . '/app/Http/Controllers/EtatExpeditionController.php',
         'App\\Http\\Controllers\\ExpediteurController' => __DIR__ . '/../..' . '/app/Http/Controllers/ExpediteurController.php',
         'App\\Http\\Controllers\\ExpeditionController' => __DIR__ . '/../..' . '/app/Http/Controllers/ExpeditionController.php',
+        'App\\Http\\Controllers\\ExpeditionsTrackingController' => __DIR__ . '/../..' . '/app/Http/Controllers/ExpeditionsTrackingController.php',
         'App\\Http\\Controllers\\FCMController' => __DIR__ . '/../..' . '/app/Http/Controllers/FCMController.php',
         'App\\Http\\Controllers\\FactureController' => __DIR__ . '/../..' . '/app/Http/Controllers/FactureController.php',
         'App\\Http\\Controllers\\FirebaseAuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/FirebaseAuthController.php',
@@ -764,7 +765,6 @@ class ComposerStaticInitc3950687511d4ecf0c53596a3d77935c
         'App\\Http\\Controllers\\PostulantController' => __DIR__ . '/../..' . '/app/Http/Controllers/PostulantController.php',
         'App\\Http\\Controllers\\RegionController' => __DIR__ . '/../..' . '/app/Http/Controllers/RegionController.php',
         'App\\Http\\Controllers\\ReponseController' => __DIR__ . '/../..' . '/app/Http/Controllers/ReponseController.php',
-        'App\\Http\\Controllers\\SuiviExpeditionController' => __DIR__ . '/../..' . '/app/Http/Controllers/SuiviExpeditionController.php',
         'App\\Http\\Controllers\\TransporteurController' => __DIR__ . '/../..' . '/app/Http/Controllers/TransporteurController.php',
         'App\\Http\\Controllers\\TypesVehiculeController' => __DIR__ . '/../..' . '/app/Http/Controllers/TypesVehiculeController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
@@ -794,6 +794,7 @@ class ComposerStaticInitc3950687511d4ecf0c53596a3d77935c
         'App\\Models\\ExpeditionsArrivee' => __DIR__ . '/../..' . '/app/Models/ExpeditionsArrivee.php',
         'App\\Models\\ExpeditionsDepart' => __DIR__ . '/../..' . '/app/Models/ExpeditionsDepart.php',
         'App\\Models\\ExpeditionsMatiere' => __DIR__ . '/../..' . '/app/Models/ExpeditionsMatiere.php',
+        'App\\Models\\ExpeditionsTracking' => __DIR__ . '/../..' . '/app/Models/ExpeditionsTracking.php',
         'App\\Models\\Facture' => __DIR__ . '/../..' . '/app/Models/Facture.php',
         'App\\Models\\LocaliteExpedition' => __DIR__ . '/../..' . '/app/Models/LocaliteExpedition.php',
         'App\\Models\\LocaliteVehicule' => __DIR__ . '/../..' . '/app/Models/LocaliteVehicule.php',
@@ -805,7 +806,6 @@ class ComposerStaticInitc3950687511d4ecf0c53596a3d77935c
         'App\\Models\\Region' => __DIR__ . '/../..' . '/app/Models/Region.php',
         'App\\Models\\Reponse' => __DIR__ . '/../..' . '/app/Models/Reponse.php',
         'App\\Models\\Role' => __DIR__ . '/../..' . '/app/Models/Role.php',
-        'App\\Models\\SuiviExpedition' => __DIR__ . '/../..' . '/app/Models/SuiviExpedition.php',
         'App\\Models\\TemporaryUserData' => __DIR__ . '/../..' . '/app/Models/TemporaryUserData.php',
         'App\\Models\\Transporteur' => __DIR__ . '/../..' . '/app/Models/Transporteur.php',
         'App\\Models\\TypesVehicule' => __DIR__ . '/../..' . '/app/Models/TypesVehicule.php',
@@ -4261,6 +4261,7 @@ class ComposerStaticInitc3950687511d4ecf0c53596a3d77935c
         'League\\Flysystem\\UnixVisibility\\PortableVisibilityConverter' => __DIR__ . '/..' . '/league/flysystem/src/UnixVisibility/PortableVisibilityConverter.php',
         'League\\Flysystem\\UnixVisibility\\VisibilityConverter' => __DIR__ . '/..' . '/league/flysystem/src/UnixVisibility/VisibilityConverter.php',
         'League\\Flysystem\\UnreadableFileEncountered' => __DIR__ . '/..' . '/league/flysystem/src/UnreadableFileEncountered.php',
+        'League\\Flysystem\\UrlGeneration\\ChainedPublicUrlGenerator' => __DIR__ . '/..' . '/league/flysystem/src/UrlGeneration/ChainedPublicUrlGenerator.php',
         'League\\Flysystem\\UrlGeneration\\PrefixPublicUrlGenerator' => __DIR__ . '/..' . '/league/flysystem/src/UrlGeneration/PrefixPublicUrlGenerator.php',
         'League\\Flysystem\\UrlGeneration\\PublicUrlGenerator' => __DIR__ . '/..' . '/league/flysystem/src/UrlGeneration/PublicUrlGenerator.php',
         'League\\Flysystem\\UrlGeneration\\ShardedPrefixPublicUrlGenerator' => __DIR__ . '/..' . '/league/flysystem/src/UrlGeneration/ShardedPrefixPublicUrlGenerator.php',
@@ -7963,6 +7964,11 @@ class ComposerStaticInitc3950687511d4ecf0c53596a3d77935c
         'Twilio\\Rest\\FlexApi\\V1\\WebChannelList' => __DIR__ . '/..' . '/twilio/sdk/src/Twilio/Rest/FlexApi/V1/WebChannelList.php',
         'Twilio\\Rest\\FlexApi\\V1\\WebChannelOptions' => __DIR__ . '/..' . '/twilio/sdk/src/Twilio/Rest/FlexApi/V1/WebChannelOptions.php',
         'Twilio\\Rest\\FlexApi\\V1\\WebChannelPage' => __DIR__ . '/..' . '/twilio/sdk/src/Twilio/Rest/FlexApi/V1/WebChannelPage.php',
+        'Twilio\\Rest\\FlexApi\\V2' => __DIR__ . '/..' . '/twilio/sdk/src/Twilio/Rest/FlexApi/V2.php',
+        'Twilio\\Rest\\FlexApi\\V2\\WebChannelsInstance' => __DIR__ . '/..' . '/twilio/sdk/src/Twilio/Rest/FlexApi/V2/WebChannelsInstance.php',
+        'Twilio\\Rest\\FlexApi\\V2\\WebChannelsList' => __DIR__ . '/..' . '/twilio/sdk/src/Twilio/Rest/FlexApi/V2/WebChannelsList.php',
+        'Twilio\\Rest\\FlexApi\\V2\\WebChannelsOptions' => __DIR__ . '/..' . '/twilio/sdk/src/Twilio/Rest/FlexApi/V2/WebChannelsOptions.php',
+        'Twilio\\Rest\\FlexApi\\V2\\WebChannelsPage' => __DIR__ . '/..' . '/twilio/sdk/src/Twilio/Rest/FlexApi/V2/WebChannelsPage.php',
         'Twilio\\Rest\\FrontlineApi' => __DIR__ . '/..' . '/twilio/sdk/src/Twilio/Rest/FrontlineApi.php',
         'Twilio\\Rest\\FrontlineApi\\V1' => __DIR__ . '/..' . '/twilio/sdk/src/Twilio/Rest/FrontlineApi/V1.php',
         'Twilio\\Rest\\FrontlineApi\\V1\\UserContext' => __DIR__ . '/..' . '/twilio/sdk/src/Twilio/Rest/FrontlineApi/V1/UserContext.php',
@@ -8318,6 +8324,10 @@ class ComposerStaticInitc3950687511d4ecf0c53596a3d77935c
         'Twilio\\Rest\\Numbers\\V2\\RegulatoryCompliance\\SupportingDocumentTypePage' => __DIR__ . '/..' . '/twilio/sdk/src/Twilio/Rest/Numbers/V2/RegulatoryCompliance/SupportingDocumentTypePage.php',
         'Twilio\\Rest\\Oauth' => __DIR__ . '/..' . '/twilio/sdk/src/Twilio/Rest/Oauth.php',
         'Twilio\\Rest\\Oauth\\V1' => __DIR__ . '/..' . '/twilio/sdk/src/Twilio/Rest/Oauth/V1.php',
+        'Twilio\\Rest\\Oauth\\V1\\DeviceCodeInstance' => __DIR__ . '/..' . '/twilio/sdk/src/Twilio/Rest/Oauth/V1/DeviceCodeInstance.php',
+        'Twilio\\Rest\\Oauth\\V1\\DeviceCodeList' => __DIR__ . '/..' . '/twilio/sdk/src/Twilio/Rest/Oauth/V1/DeviceCodeList.php',
+        'Twilio\\Rest\\Oauth\\V1\\DeviceCodeOptions' => __DIR__ . '/..' . '/twilio/sdk/src/Twilio/Rest/Oauth/V1/DeviceCodeOptions.php',
+        'Twilio\\Rest\\Oauth\\V1\\DeviceCodePage' => __DIR__ . '/..' . '/twilio/sdk/src/Twilio/Rest/Oauth/V1/DeviceCodePage.php',
         'Twilio\\Rest\\Oauth\\V1\\OauthContext' => __DIR__ . '/..' . '/twilio/sdk/src/Twilio/Rest/Oauth/V1/OauthContext.php',
         'Twilio\\Rest\\Oauth\\V1\\OauthInstance' => __DIR__ . '/..' . '/twilio/sdk/src/Twilio/Rest/Oauth/V1/OauthInstance.php',
         'Twilio\\Rest\\Oauth\\V1\\OauthList' => __DIR__ . '/..' . '/twilio/sdk/src/Twilio/Rest/Oauth/V1/OauthList.php',
@@ -9633,10 +9643,10 @@ class ComposerStaticInitc3950687511d4ecf0c53596a3d77935c
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitc3950687511d4ecf0c53596a3d77935c::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitc3950687511d4ecf0c53596a3d77935c::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitc3950687511d4ecf0c53596a3d77935c::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitc3950687511d4ecf0c53596a3d77935c::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit3651bccbfbe1b017a95541cf46c4dee4::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit3651bccbfbe1b017a95541cf46c4dee4::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit3651bccbfbe1b017a95541cf46c4dee4::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit3651bccbfbe1b017a95541cf46c4dee4::$classMap;
 
         }, null, ClassLoader::class);
     }
