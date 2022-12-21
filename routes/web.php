@@ -12,6 +12,7 @@ use App\Http\Controllers\FCMController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ReponseController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\ExpeditionsTrackingController;
 use App\Http\Controllers\SuiviExpeditionController;
 use App\Models\Camion;
 use App\Models\Expediteur;
@@ -474,13 +475,26 @@ Route::middleware(['auth'])->group(function () {
     /**
      * 
      */
+
+    Route::post('creer-suivi', [ExpeditionsTrackingController::class, 'store'])
+        ->name('tracking.store');
+
+    Route::post('mettre-a-jour-suivi', [ExpeditionsTrackingController::class, 'update'])
+        ->name('tracking.update');
+
+    Route::post('finaliser-suivi', [ExpeditionsTrackingController::class, 'finalize'])
+        ->name('tracking.finaliser');
+
+    /**
+     * 
+     */
     Route::get('facturation/{id}/detail', [DevisController::class, 'details'])
         ->name('devis.detail');
 
     Route::post('facturation', [FactureController::class, 'store'])
         ->name('facture.store');
 
-    Route::post('afficher-facture', [FactureController::class, 'show'])
+    Route::post('ma-facture', [FactureController::class, 'show'])
         ->name('facture.show');
 
     Route::post('transporteur/facture/{id}', [FactureController::class, 'show'])
@@ -521,14 +535,6 @@ Route::middleware(['auth'])->group(function () {
     /**
      * 
      */
-    Route::post('update-suivi', [SuiviExpeditionController::class, 'update_suivi'])
-        ->name('suivi.update');
-
-    Route::post('finaliser-suivi', [SuiviExpeditionController::class, 'finaliser_expedition'])
-        ->name('suivi.finaliser');
-
-    Route::get('/refresh-suivi/{id}', [SuiviExpeditionController::class, 'updateData'])
-        ->name('suivi.refresh');
 
     Route::get('/all-transporteurs', function () {
         if (null !== ($user = Auth::user())) {
@@ -541,6 +547,9 @@ Route::middleware(['auth'])->group(function () {
         }
     })->name('admin.transporteurs.all');
 
+    /**
+     * 
+     */
     Route::get('/all-expediteurs', function () {
         if (null !== ($user = Auth::user())) {
             if (User::ADMIN == $user->role_id)
@@ -567,6 +576,9 @@ Route::middleware(['auth'])->group(function () {
         }
     })->name('admin.transporteur.detail');
 
+    /**
+     * 
+     */
     Route::get('/expediteur/{id}', function ($id) {
         if (null !== ($user = Auth::user())) {
             if (User::ADMIN == $user->role_id) {
@@ -599,17 +611,19 @@ Route::middleware(['auth'])->group(function () {
     })->name('admin.transporteur.approuver-camion');
 });
 
+/**
+ * 
+ */
 Route::get('/noscript', function () {
     if (null !== ($user = Auth::user())) {
         switch ($user->role_id) {
             case User::ADMIN:
-                return view('notFound');
-                break;
             case User::EXPEDITEUR:
-                return view('notFound');
-                break;
             case User::TRANSPORTEUR:
                 return view('notFound');
+                break;
+            default:
+                return redirect()->route('login');
                 break;
         }
     }

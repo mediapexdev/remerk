@@ -5,10 +5,7 @@
 @extends('layouts.app')
 
 @section('component-head')
-    @section('styles')
-    @include('components.styles')
-    <link type="text/css" rel="stylesheet" href="{{URL::asset('assets/css/account.css')}}">
-    @endsection
+    @include('transporteur.components.globals.styles')
 @endsection
 
 @section('component-header')

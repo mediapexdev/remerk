@@ -2,18 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\EtatExpedition;
 use App\Models\Expediteur;
 use App\Models\Expedition;
 use App\Models\ExpeditionsMatiere;
+use App\Models\ExpeditionsTracking;
 use App\Models\User;
 use App\Models\Facture;
 use App\Models\Matiere;
 use App\Models\PoidsMatiere;
-use App\Models\SuiviExpedition;
 use App\Models\Transporteur;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Date;
+use PayTech;
 use Twilio\Rest\Client;
 
 class FactureController extends Controller
@@ -47,9 +49,11 @@ class FactureController extends Controller
     public function store(Request $request)
     {
         $Facture = Facture::where('expedition_id', $request->expedition_id);
+
         if ($Facture->exists()) {
             return $this->show(new Request(['id' => $Facture->first()->id]));
-        } else {
+        }
+        else {
             $Facture = Facture::create([
                 'expedition_id'    => $request->expedition_id,
                 'montant'          => $request->montant,
@@ -162,35 +166,67 @@ class FactureController extends Controller
         // $code = implode($comb1) . implode($comb2);
         $code='123456';
         $facture       = Facture::find($request->facture_id);
-        $facture->etat = 2;
-        $facture->save();
+        // $facture->etat = 2;
+        // $facture->save();
         $expedition    = Expedition::find($request->expedition_id);
         $expedition->etat_expedition_id = 3;
         $expedition->code = $code;
         $expedition->save();
-        $expediteur = Auth::user();
+        $response=$this->sendPayment($expedition,$facture);
+        return response()->json($response);
+
+        // $expediteur = Auth::user();
         // $basic  = new \Vonage\Client\Credentials\Basic("c646d54f", "g7awZbAl6S7L4uT4");
         // $client = new \Vonage\Client($basic);
         // $response = $client->sms()->send(
         //     new \Vonage\SMS\Message\SMS("221".$expediteur->phone, "Remerk", 'Votre code est: '.$code)
         // );
-
         // $message = $response->current();
-        SuiviExpedition::create(
-            [
-                'etat_expedition_id' => 3,
-                'expedition_id' => $request->expedition_id,
-                'date_modification' => now()
-            ]
-        );
+
+        $expedition_tracking = ExpeditionsTracking::where('expedition_id', $expedition->id)->first();
+        $expedition_tracking->etat_expedition_id = EtatExpedition::EN_ATTENTE_DE_CHARGEMENT;
+        $expedition_tracking->date_paiement = now(new \DateTimeZone('UTC'));
+        $expedition_tracking->save();
+
         // if ($message->getStatus() == 0) {
         //     echo "The message was sent successfully\n";
         // } else {
         //     echo "The message failed with status: " . $message->getStatus() . "\n";
         // }
-        return redirect('/factures')->with([
-            'success' => "Paiement approuvé! Le code vous a été envoyé",
-            'expedition-acknowledgment-of-receipt' => true
-        ]);
+        // return redirect('/factures')->with([
+        //     'success' => "Paiement approuvé! Le code vous a été envoyé",
+        //     'expedition-acknowledgment-of-receipt' => true
+        // ]);
+    }
+
+    /**
+     * 
+     */
+    public function sendPayment($expedition,$facture)
+    {
+        $base_url  = 'http://127.0.0.1:8000/';
+        $jsonResponse = (new PayTech(env('PAY_TECH_API_KEY'), env('PAY_TECH_API_SECRET')))
+        ->setQuery([
+            'item_name'    => $expedition->string_id,
+            'item_price'   => 100,
+            'command_name' => "Paiement de l expedition {$expedition->string_id} Gold via PayTech",
+        ])
+        ->setCustomeField([
+            'item_id'      => $expedition->id,
+            'time_command' => time(),
+            'ip_user'      => $_SERVER['REMOTE_ADDR'],
+            'lang'         => $_SERVER['HTTP_ACCEPT_LANGUAGE']
+        ])
+        ->setTestMode(true)
+        ->setRefCommand(uniqid())
+        ->setNotificationUrl([
+                'ipn_url'     => 'https://www.mediapex.net', //only https
+                'success_url' => $base_url.'factures',
+                'cancel_url'  => $base_url.'factures/'
+        ])
+        ->send();
+        return $jsonResponse;
+        //test
     }
 }
+// require PayTech;

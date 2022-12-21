@@ -6,7 +6,7 @@
     
     $transporteur = isset($transporteur) ? $transporteur :
         Transporteur::where('user_id', Auth::user()->id)->first();
-    $vehicles = $transporteur->vehicules;
+    /*$vehicles = $transporteur->vehicules;
 
     $available_expeditions = Collection::make();
     $all_expeditions_available = Expedition::where('etat_expedition_id', EtatExpedition::EN_ATTENTE)->orderByDesc('created_at')->limit(5)->get();
@@ -16,7 +16,9 @@
             return $expedition->expeditionMatiere->types_vehicule_id == $vehicle->id; })){
             $available_expeditions->push($expedition);
         }
-    }
+    }*/
+    $available_expeditions = Expedition::where('etat_expedition_id', EtatExpedition::EN_ATTENTE)->orderByDesc('created_at')->limit(5)->get();
+
     $current_expeditions = Expedition::where('transporteur_id', $transporteur->id)->whereIn('etat_expedition_id', [
         EtatExpedition::EN_ATTENTE_DE_PAIEMENT,
         EtatExpedition::EN_ATTENTE_DE_CHARGEMENT,

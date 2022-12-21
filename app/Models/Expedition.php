@@ -106,7 +106,7 @@ class Expedition extends Model
 
     public function etat()
     {
-        return $this->hasOne(EtatExpedition::class, 'id','etat_expedition_id');
+        return $this->hasOne(EtatExpedition::class, 'id', 'etat_expedition_id');
     }
 
     /**

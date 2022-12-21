@@ -139,7 +139,7 @@
             <!--begin::Label--> --}}
             <div class="col fv-row">
                 <label class="d-flex align-items-center fs-6 fw-semibold form-label mb-2">
-                    <span class="required">Poids à vide (en kg)</span>
+                    <span class="required">Poids à vide (en Tonnes)</span>
                     <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
                         title="Saisir le poids à vide du camion"></i>
                 </label>
@@ -156,7 +156,7 @@
                 {{--
                 <!--begin::Label--> --}}
                 <label class="d-flex align-items-center fs-6 fw-semibold form-label mb-2">
-                    <span class="required">La capacité (en kg)</span>
+                    <span class="required">La capacité (en Tonnes)</span>
                     <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
                         title="Entrer la capacicité"></i>
                 </label>

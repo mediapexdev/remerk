@@ -1,0 +1,54 @@
+#kt_stepper_expedition_tracking.stepper.stepper-pills .stepper-item.current .stepper-icon {
+    background-color: var(--kt-stepper-icon-bg-color);
+    border: var(--kt-stepper-icon-border);
+}
+/*
+#kt_stepper_expedition_tracking.stepper.stepper-pills .stepper-item .stepper-icon {
+    background-color: transparent;
+    border: none;
+}
+*/
+/*
+#kt_stepper_expedition_tracking.stepper.stepper-pills .stepper-item .stepper-icon {
+    background-color: var(--kt-primary);
+    border: var(--kt-stepper-icon-border);
+}
+*/
+
+#kt_stepper_expedition_tracking.stepper.stepper-pills .stepper-item .stepper-icon .icon-wrapper .icon {
+    color: var(--kt-primary);
+}
+
+#kt_stepper_expedition_tracking.stepper.stepper-pills .stepper-item.completed .stepper-icon .icon-wrapper,
+#kt_stepper_expedition_tracking.stepper.stepper-pills .stepper-item.current.mark-completed:last-child .stepper-icon .icon-wrapper {
+    display: none;
+}
+
+#kt_stepper_expedition_tracking.stepper.stepper-pills .progress .progress-bar {
+    --kt-bg-rgb-color: var(--kt-secondary-rgb);
+    background-color: var(--kt-secondary) !important;
+}
+
+#kt_stepper_expedition_tracking.stepper.stepper-pills .progress .progress-bar.current {
+    width: 50% !important;
+}
+
+#kt_stepper_expedition_tracking.stepper.stepper-pills .progress .progress-bar.completed {
+    width: 100% !important;
+}
+
+#kt_stepper_expedition_tracking.stepper.stepper-pills .progress .progress-bar.current,
+#kt_stepper_expedition_tracking.stepper.stepper-pills .progress .progress-bar.completed {
+    --kt-bg-rgb-color: var(--kt-success-rgb);
+    background-color: var(--kt-success) !important;
+}
+
+#kt_stepper_expedition_tracking.stepper.stepper-pills .stepper-item:not(.completed) .stepper-label .stepper-title {
+    color: var(--kt-stepper-label-title-color-current);
+    opacity: var(--kt-stepper-label-title-opacity-current);
+}
+
+#kt_stepper_expedition_tracking.stepper.stepper-pills .stepper-item.current .stepper-label .stepper-title {
+    color: var(--kt-stepper-label-title-color);
+    opacity: var(--kt-stepper-label-title-opacity);
+}

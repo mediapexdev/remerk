@@ -8,7 +8,7 @@
     use Illuminate\Support\Collection;
 
     $transporteur = Transporteur::where('user_id', Auth::user()->id)->first();
-    $vehicles = $transporteur->vehicules;
+    /*$vehicles = $transporteur->vehicules;
 
     $available_expeditions = Collection::make();
     $all_expeditions_available = Expedition::where('etat_expedition_id', EtatExpedition::EN_ATTENTE)->orderByDesc('created_at')->get();
@@ -18,7 +18,9 @@
             return $expedition->expeditionMatiere->types_vehicule_id == $vehicle->id; })){
             $available_expeditions->push($expedition);
         }
-    }
+    }*/
+    $available_expeditions = Expedition::where('etat_expedition_id', EtatExpedition::EN_ATTENTE)->orderByDesc('created_at')->get();
+
     $current_expeditions = Expedition::where('transporteur_id', $transporteur->id)->whereIn('etat_expedition_id', [
         EtatExpedition::EN_ATTENTE_DE_PAIEMENT,
         EtatExpedition::EN_ATTENTE_DE_CHARGEMENT,
@@ -33,7 +35,6 @@
     ])->orderByDesc('created_at')->get();
 
     $matieres = Matiere::all();
-    
 @endphp
 
 @extends('transporteur.layout')
@@ -54,7 +55,10 @@
         <div class="card-header">
             {{-- <!--begin::Card title--> --}}
             <div class="card-title">
-                <h3 class="fw-bold">Liste des expéditions</h3>
+                <div class="d-flex align-items-center">
+                    <img src="assets/icons/expedition03.png" style="height: 40px; widht:40px;">
+                <h2 class="fw-bold ms-2 mt-4">Liste des expéditions</h2>
+                </div>
             </div>
             {{-- <!--end::Card title--> --}}
             {{-- <div class="card-toolbar">
@@ -99,8 +103,8 @@
 @endsection
 
 @section('custom-js')
-<script src="{{URL::asset('assets/js/custom/apps/expeditions/carrier/postulat.js')}}"></script>
-<script src="{{URL::asset('assets/js/custom/apps/expeditions/carrier/listing/made.js')}}"></script>
-<script src="{{URL::asset('assets/js/custom/apps/expeditions/carrier/listing/available.js')}}"></script>
-<script src="{{URL::asset('assets/js/custom/apps/expeditions/carrier/listing/in-progress.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/expeditions/carrier/postulat.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/expeditions/carrier/listing/made.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/expeditions/carrier/listing/available.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/expeditions/carrier/listing/in-progress.js')}}"></script>
 @endsection

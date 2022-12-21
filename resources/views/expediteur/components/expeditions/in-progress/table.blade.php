@@ -57,7 +57,7 @@ use App\Models\EtatExpedition;
                 {{-- <!--end::Date--> --}}
                 {{-- <!--begin::Actions--> --}}
                 <td class="text-truncate text-center">
-                    <a class="btn btn-light-primary btn-sm" href="{{ route('expedition.suivi', $expedition->id) }}">Suivi</a>
+                    <a class="btn btn-light-primary btn-sm" href="{{ route('expedition.infos', $expedition->id) }}">Details</a>
                 </td>
                 {{-- <!--end::Actions--> --}}
             </tr>

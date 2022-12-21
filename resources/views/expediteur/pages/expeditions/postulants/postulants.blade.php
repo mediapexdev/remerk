@@ -32,7 +32,7 @@
 <div class="card card-flush">
     <div class="row gy-5 g-xl-10">
         {{-- <!--begin::Col--> --}}
-        <div class="col-xl-4 mb-xl-10">
+        <div class="col-xl-4 mb-xl-10 d-none d-xl-block d-xxl-block">
             {{-- <!--begin::Engage widget 3--> --}}
             <img class="img-fluid theme-dark-show rounded" src="{{URL::asset('assets/images/Fitting_piece-dark.gif')}}" alt="">
             <img class="img-fluid theme-light-show rounded" src="{{URL::asset('assets/images/Fitting_piece.gif')}}" alt="">

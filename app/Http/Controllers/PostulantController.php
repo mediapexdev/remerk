@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Expedition;
 use App\Models\Postulants;
 use App\Models\EtatExpedition;
-use App\Models\SuiviExpedition;
+use App\Models\ExpeditionsTracking;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Date;
 
@@ -19,7 +19,7 @@ class PostulantController extends Controller
         $request->validate([
             'postulant_id' => ['required', 'exists:postulants,id']
         ]);
-        $postulant = Postulants::where('id', $request->postulant_id)->first();
+        $postulant  = Postulants::where('id', $request->postulant_id)->first();
         
         $expedition = Expedition::where('id', $postulant->expedition_id)->first();
         $expedition->etat_expedition_id = EtatExpedition::EN_ATTENTE_DE_PAIEMENT;
@@ -34,11 +34,11 @@ class PostulantController extends Controller
             'is_choosen'    => 0
         ])->delete();
 
-        SuiviExpedition::create([
-            'expedition_id'         => $expedition->id,
-            'etat_expedition_id'    => EtatExpedition::EN_ATTENTE_DE_PAIEMENT,
-            'date_modification'     => now(),
-        ]);
+        $expedition_tracking = ExpeditionsTracking::where('expedition_id', $expedition->id)->first();
+        $expedition_tracking->etat_expedition_id = EtatExpedition::EN_ATTENTE_DE_PAIEMENT;
+        $expedition_tracking->date_select_postulant = now(new \DateTimeZone('UTC'));
+        $expedition_tracking->save();
+
         return (new FactureController())->store(new Request([
             'expedition_id' => $expedition->id,
             'montant'       => $postulant->montant_propose
@@ -112,8 +112,8 @@ class PostulantController extends Controller
             'montant_postulat_update' => ['required'],
             'postulant_id'            => ['required']
         ]);
-        $postulant=Postulants::find($request->postulant_id);
-        $postulant->montant_propose=$request->montant_postulat_update;
+        $postulant = Postulants::find($request->postulant_id);
+        $postulant->montant_propose = $request->montant_postulat_update;
         $postulant->save();
         $message = "Vous avez modifié avec succès le montant";
         $message_type = 'success';
