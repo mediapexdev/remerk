@@ -3,7 +3,10 @@ $body_classes = 'app-default';
 @endphp
 
 @extends('expediteur.layout')
-
+@section('styles')
+<link rel="stylesheet" href="https://paytech.sn/cdn/paytech.min.css">
+<script src="https://paytech.sn/cdn/paytech.min.js"></script>
+@endsection
 @section('title')
 <title>Ma facture - Remërk</title>
 @endsection
@@ -131,12 +134,16 @@ $body_classes = 'app-default';
                         <div class="mb-8">
                             <!--begin::Action-->
                             @if($facture->etat == 1)
-                            <form action="{{route('payerFacture')}}" method="post" class="d-inline">
+                            {{-- <form action="{{route('payerFacture')}}" method="post" class="d-inline">
                                 @csrf
                                 <input type="hidden" name="expedition_id" value="{{$facture->expedition_id}}">
                                 <input type="hidden" name="facture_id" value="{{$facture->id}}">
-                                <button type="submit" class="btn btn-sm btn-success">Payer</button>
-                            </form>
+                                <button type="submit" class="btn btn-sm btn-success"
+                                    >Payer</button>
+                            </form> --}}
+                            <button class="btn btn-sm btn-success" onclick="buy(this)">Payer</button>
+                           
+                            {{-- <button class="buy" onclick="buy(this)" data-item-id="88" >Acheter iphone (450000 XOF) --}}
                             @else
                             <a href="{{route('facturation')}}">
                                 <button class="btn btn-sm btn-info">
@@ -228,4 +235,50 @@ $body_classes = 'app-default';
 @endsection
 
 @section('custom-js')
+<script src="https://paytech.sn/cdn/paytech.min.js"></script>
+<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+
+
+<script>
+    // function new_paiement(expedition_id, facture_id)
+    // {
+    //     axios.post('/ma-facture', {
+    //                 {{$expedition->id}},
+    //                 1
+    //             })
+    //             .then(function(response) {
+    //                 console.log(response);
+    //             })
+    //             .catch(function(error) {
+    //                 console.log(error);
+    //             });
+    // }
+</script>
+
+<script>
+    function buy(btn) {
+        (new PayTech({
+            facture_id    :   {{$expedition->id}}, //will be sent to paiement.php page
+            expedition_id    :   {{$facture->id}},
+        })).withOption({
+            requestTokenUrl     :   '/payer-facture',
+            method              :   'POST',
+            headers             :   {
+                "Accept"          :    "text/html",
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            prensentationMode   :   PayTech.OPEN_IN_POPUP,
+            willGetToken        :   function () {
+            },
+            didGetToken         : function (token, redirectUrl) {
+            },
+            didReceiveError: function (error) {
+            },
+            didReceiveNonSuccessResponse: function (jsonResponse) {
+            }
+        }).send();
+
+        //.send params are optional
+    }
+</script>
 @endsection

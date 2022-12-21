@@ -28,7 +28,7 @@
     use App\Models\Transporteur;
 
     $transporteur = Transporteur::where('user_id', Auth::user()->id)->first();
-    $expeditions = Expedition::where([
+    $expeditions  = Expedition::where([
         'transporteur_id'       => $transporteur->id,
         'etat_expedition_id'    => EtatExpedition::TERMINEE
     ])->orderByDesc('created_at')->get();
@@ -42,9 +42,6 @@
 
 @section('component-body-content')
 
-@if (!$expeditions->count())
-    @include('expediteur.components.globals.default')
-@else
 {{-- <!--begin::Card--> --}}
 <div class="card card-flush">
     <div class="row gy-5 g-xl-10">
@@ -199,7 +196,6 @@
         {{-- <!--end::Col--> --}}
     </div>
 </div>
-@endif
 @endsection
 @section('component-modals')
 <div id="modal_details_expediteur_wrapper"></div>

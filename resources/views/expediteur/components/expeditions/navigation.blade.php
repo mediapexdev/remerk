@@ -4,21 +4,41 @@
         {{-- <!--begin::Item--> --}}
         <li class="nav-item mt-2">
             {{-- <!--begin::Link--> --}}
-            <a class="nav-link ms-0 me-10 py-5 active" href="#kt_tab_pending_expeditions" data-bs-toggle="tab">En attente</a>
+            <a class="nav-link ms-0 me-10 py-5 active" href="#kt_tab_pending_expeditions" data-bs-toggle="tab">En attente
+                @if(0 !== $pending_expeditions->count())
+                <span class="m-5">
+                    <span class="text-white position-absolute translate-middle badge rounded-pill bg-primary">
+                        +{{$pending_expeditions->count()}}
+                        <span class="visually-hidden">unread messages</span>
+                    </span>
+                </span>
+                @endif
+                
+            </a>
             {{-- <!--end::Link--> --}}
         </li>
         {{-- <!--end::Item--> --}}
         {{-- <!--begin::Item--> --}}
         <li class="nav-item mt-2">
             {{-- <!--begin::Link--> --}}
-            <a class="nav-link ms-0 me-10 py-5" href="#kt_tab_expeditions_in_progress" data-bs-toggle="tab">En cours</a>
+            <a class="nav-link ms-0 me-10 py-5" href="#kt_tab_expeditions_in_progress" data-bs-toggle="tab">En cours
+                @if(0 !== $current_expeditions->count())
+                <span class="m-5">
+                    <span class="text-white position-absolute translate-middle badge rounded-pill bg-primary">
+                        +{{$current_expeditions->count()}}
+                        <span class="visually-hidden">unread messages</span>
+                    </span>
+                </span>
+                @endif
+            </a>
             {{-- <!--end::Link--> --}}
         </li>
         {{-- <!--end::Item--> --}}
         {{-- <!--begin::Item--> --}}
         <li class="nav-item mt-2">
             {{-- <!--begin::Link--> --}}
-            <a class="nav-link ms-0 me-10 py-5" href="#kt_tab_expeditions_made" data-bs-toggle="tab">Effectuées</a>
+            <a class="nav-link ms-0 me-10 py-5" href="#kt_tab_expeditions_made" data-bs-toggle="tab">Effectuées
+            </a>
             {{-- <!--end::Link--> --}}
         </li>
         {{-- <!--end::Item--> --}}
