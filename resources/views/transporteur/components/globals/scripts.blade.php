@@ -64,7 +64,13 @@
             });
         messaging.onMessage((payload) => {
             console.log('Message received. ', payload);
-            appendMessage(payload);
+            const title = payload.notification.title;
+            const options = {
+                body: payload.notification.body,
+                icon: payload.notification.icon,
+            };
+            // appendMessage(payload);
+            new Notification(title, options);
         });
 
         function appendMessage(payload) {
