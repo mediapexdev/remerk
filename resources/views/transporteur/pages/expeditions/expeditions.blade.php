@@ -100,8 +100,8 @@
 @endsection
 
 @section('custom-js')
-<script src="{{URL::asset('assets/js/custom/apps/expeditions/carrier/postulat.js')}}"></script>
-<script src="{{URL::asset('assets/js/custom/apps/expeditions/carrier/listing/made.js')}}"></script>
-<script src="{{URL::asset('assets/js/custom/apps/expeditions/carrier/listing/available.js')}}"></script>
-<script src="{{URL::asset('assets/js/custom/apps/expeditions/carrier/listing/in-progress.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/expeditions/carrier/postulat.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/expeditions/carrier/listing/made.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/expeditions/carrier/listing/available.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/expeditions/carrier/listing/in-progress.js')}}"></script>
 @endsection

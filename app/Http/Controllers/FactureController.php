@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\EtatExpedition;
 use App\Models\Expediteur;
 use App\Models\Expedition;
 use App\Models\ExpeditionsMatiere;
+use App\Models\ExpeditionsTracking;
 use App\Models\User;
 use App\Models\Facture;
 use App\Models\Matiere;
 use App\Models\PoidsMatiere;
-use App\Models\SuiviExpedition;
 use App\Models\Transporteur;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -48,9 +49,11 @@ class FactureController extends Controller
     public function store(Request $request)
     {
         $Facture = Facture::where('expedition_id', $request->expedition_id);
+
         if ($Facture->exists()) {
             return $this->show(new Request(['id' => $Facture->first()->id]));
-        } else {
+        }
+        else {
             $Facture = Facture::create([
                 'expedition_id'    => $request->expedition_id,
                 'montant'          => $request->montant,
@@ -178,15 +181,13 @@ class FactureController extends Controller
         // $response = $client->sms()->send(
         //     new \Vonage\SMS\Message\SMS("221".$expediteur->phone, "Remerk", 'Votre code est: '.$code)
         // );
-
         // $message = $response->current();
-        // SuiviExpedition::create(
-        //     [
-        //         'etat_expedition_id' => 3,
-        //         'expedition_id' => $request->expedition_id,
-        //         'date_modification' => now()
-        //     ]
-        // );
+
+        $expedition_tracking = ExpeditionsTracking::where('expedition_id', $expedition->id)->first();
+        $expedition_tracking->etat_expedition_id = EtatExpedition::EN_ATTENTE_DE_CHARGEMENT;
+        $expedition_tracking->date_paiement = now(new \DateTimeZone('UTC'));
+        $expedition_tracking->save();
+
         // if ($message->getStatus() == 0) {
         //     echo "The message was sent successfully\n";
         // } else {
@@ -197,6 +198,10 @@ class FactureController extends Controller
         //     'expedition-acknowledgment-of-receipt' => true
         // ]);
     }
+
+    /**
+     * 
+     */
     public function sendPayment($expedition,$facture)
     {
         $base_url  = 'http://127.0.0.1:8000/';
