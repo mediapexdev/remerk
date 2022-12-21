@@ -27,8 +27,8 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 {{-- <!-- end::Jquery Easing --> --}}
 
+<<<<<<< HEAD
 {{-- <!-- begin:: --> --}}
-<script type="text/javascript" src="https://apps.elfsight.com/p/platform.js" defer></script>
 {{-- <!-- end:: --> --}}
 
 <script>
@@ -36,9 +36,10 @@
     $('.app-container a[href="' + aurl + '"]').parent('app-container').addClass('active');
 </script>
 {{-- <!-- begin::Zendesk Widget script --> --}}
-<script id="ze-snippet" type="text/javascript" src="https://static.zdassets.com/ekr/snippet.js?key=b58dbfda-1148-4978-8db7-8a67e0da618a"></script>
 {{-- <!-- end::Zendesk Widget script --> --}}
 
+=======
+>>>>>>> 53544430d37bfa1f3257ad27c12771872ea1abc5
 {{-- <!--end::Vendors Javascript--> --}}
 
 {{-- <!--begin::Custom Javascript--> --}}

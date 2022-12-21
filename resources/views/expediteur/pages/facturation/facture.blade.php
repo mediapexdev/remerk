@@ -59,7 +59,10 @@ $expeditions_facture[] = $expedition;
                     {{--
                     <!--begin::Card title--> --}}
                     <div class="card-title">
-                        <h2>Mes factures</h2>
+                        <div class="d-flex align-items-center">
+                            <img src="assets/icons/facture01.png" style="height: 35px; widht:35px;">
+                            <h2 class="ms-2">Mes factures</h2>
+                        </div>
                     </div>
                     {{--
                     <!--end::Card title--> --}}

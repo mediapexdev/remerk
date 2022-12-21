@@ -4,13 +4,9 @@
         {{-- <!--begin::Link--> --}}
         <a class="nav-link active d-flex justify-content-center w-100 border-0 h-100" data-bs-toggle="pill" href="#kt_tab_expeditions_disponibles">
             {{-- <!--begin::Subtitle--> --}}
-            <span class="nav-text text-gray-800 fw-bold fs-6 mb-3">Disponibles
+            <span class="nav-text text-gray-800 fw-bold fs-6 mb-3 min-w-125px min-w-100px">Disponibles
                 @if(0 !== $available_expeditions->count())
-                <span class="m-2">
-                    <span class="position-absolute p-2 bg-primary border border-light rounded-circle">
-                        <span class="visually-hidden">New alerts</span>
-                    </span>
-                </span>
+                <span class="badge badge-circle badge-primary ">{{$available_expeditions->count()}}</span>
                 @endif
             </span>
             {{-- <!--end::Subtitle--> --}}
@@ -26,14 +22,9 @@
         {{-- <!--begin::Link--> --}}
         <a class="nav-link d-flex justify-content-center w-100 border-0 h-100" data-bs-toggle="pill" href="#kt_tab_expeditions_en_cours">
             {{-- <!--begin::Subtitle--> --}}
-            <span class="nav-text text-gray-800 fw-bold fs-6 mb-3">En cours
+            <span class="nav-text text-gray-800 fw-bold fs-6 mb-3 min-w-100px ms-5">En cours
                 @if(0 !== $current_expeditions->count())
-                <span class="m-5">
-                    <span class="text-white position-absolute translate-middle badge rounded-pill bg-primary">
-                        +{{$current_expeditions->count()}}
-                        <span class="visually-hidden">unread messages</span>
-                    </span>
-                </span>
+                <span class="badge badge-circle badge-light-primary ">{{$current_expeditions->count()}}</span>
                 @endif
             </span>
             {{-- <!--end::Subtitle--> --}}
@@ -49,7 +40,11 @@
         {{-- <!--begin::Link--> --}}
         <a class="nav-link d-flex justify-content-center w-100 border-0 h-100" data-bs-toggle="pill" href="#kt_tab_expeditions_achevees">
             {{-- <!--begin::Subtitle--> --}}
-            <span class="nav-text text-gray-800 fw-bold fs-6 mb-3">Achevées</span>
+            <span class="nav-text text-gray-800 fw-bold fs-6 mb-3">Achevées
+                @if(0 !== $completed_expeditions->count())
+                <span class="badge badge-circle badge-light-primary ">{{$completed_expeditions->count()}}</span>
+                @endif
+            </span>
             {{-- <!--end::Subtitle--> --}}
             {{-- <!--begin::Bullet--> --}}
             <span class="bullet-custom position-absolute z-index-2 bottom-0 w-100 h-4px bg-primary rounded"></span>

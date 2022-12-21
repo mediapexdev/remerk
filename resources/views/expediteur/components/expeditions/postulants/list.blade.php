@@ -12,8 +12,9 @@
             <tr class="text-start text-gray-500 fw-bold fs-7 text-uppercase gs-0">
                 <th class="text-truncate text-center">Expédition ID</th>
                 <th class="text-truncate">Transporteur</th>
-                <th class="text-truncate">Montant <span class="text-gray-400 text-capitalize">(frcfa)</span></th>
-                <th class="text-truncate">Date</th>
+                {{-- <th class="text-truncate">Montant <span class="text-gray-400 text-capitalize">(frcfa)</span></th> --}}
+                <th class="text-truncate">Destination</th>
+                <th class="text-truncate">Montant</th>
                 <th class="text-truncate text-center">Actions</th>
             </tr>
             {{-- <!--end::Table row--> --}}
@@ -26,7 +27,7 @@
             <tr>
                 {{-- <!--begin::Expédition ID--> --}}
                 <td class="text-truncate text-center">
-                    <span class="fw-bold fs-5">Expédition n° {{ $postulant->expedition->id }}</span>
+                    <span class="fw-bold fs-5">Expédition: {{ $postulant->expedition->string_id }}</span>
                 </td>
                 {{-- <!--end::Expédition ID--> --}}
                 {{-- <!--begin::Transporteur--> --}}
@@ -59,16 +60,16 @@
                     </div>
                 </td>
                 {{-- <!--end::Transporteur--> --}}
+                {{-- <!--begin::destination--> --}}
+                <td class="text-truncate">
+                    <span class="fw-bold">{{$postulant->expedition->depart->adresseComplet() .' - ' .$postulant->expedition->arrivee->adresseComplet()}}</span>
+                </td>
+                {{-- <!--end::destination--> --}}
                 {{-- <!--begin::Montant--> --}}
                 <td class="text-truncate">
-                    <span class="fw-bold">{{number_format($postulant->montant_propose, 2, ',', ' ')}}</span>
+                    <span class="fw-bold">{{number_format($postulant->montant_propose, 0, ',', ' ')}}</span>
                 </td>
                 {{-- <!--end::Montant--> --}}
-                {{-- <!--begin::Date--> --}}
-                <td class="text-truncate">
-                    <span class="fw-bold">{{\date('d-m-Y', \strtotime($postulant->created_at))}}</span>
-                </td>
-                {{-- <!--end::Date--> --}}
                 {{-- <!--begin::Actions--> --}}
                 <td class="text-truncate text-center">
                     @if(!$postulant->is_choosen)

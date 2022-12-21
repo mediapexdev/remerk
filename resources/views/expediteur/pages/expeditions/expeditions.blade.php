@@ -37,12 +37,15 @@
 {{-- <!--begin::Row--> --}}
 <div class="d-block">
     {{-- <!--begin::Expeditions--> --}}
-    <div class="card mb-5 mb-xl-10">
+    <div class="card container-fluid mb-5 mb-xl-10">
         {{-- <!--begin::Card header--> --}}
         <div class="card-header">
             {{-- <!--begin::Card title--> --}}
             <div class="card-title">
-                <h3 class="fw-bold">Mes expéditions</h3>
+                <div class="d-flex align-items-center">
+                    <img src="assets/icons/expedition03.png" style="height: 40px; widht:40px;">
+                    <h2 class="ms-2 mt-4">Mes expéditions</h2>
+                </div>
             </div>
             {{-- <!--end::Card title--> --}}
             {{-- <div class="card-toolbar"></div> --}}
