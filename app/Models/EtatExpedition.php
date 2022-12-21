@@ -14,16 +14,17 @@ class EtatExpedition extends Model
      * The different stages of an expedition.
      */
 
-    const EN_ATTENTE               = 1;
-    const EN_ATTENTE_DE_PAIEMENT   = 2;
-    const EN_ATTENTE_DE_CHARGEMENT = 3;
-    const CHARGE                   = 4;
-    const EN_TRANSIT               = 5;
-    const DECHARGE                 = 6;
-    const TERMINEE                 = 7;
-    const ANNULEE                  = 8;
+    const EN_ATTENTE                    = 1;
+    const EN_ATTENTE_DE_PAIEMENT        = 2;
+    const EN_ATTENTE_DE_CHARGEMENT      = 3;
+    const CHARGE                        = 4;
+    const EN_TRANSIT                    = 5;
+    const EN_ATTENTE_DE_DECHARGEMENT    = 6;
+    const DECHARGE                      = 7;
+    const TERMINEE                      = 8;
+    const ANNULEE                       = 9;
 
     protected $guarded  = [];
 
-    protected $fillable = ['nom','comment'];
+    protected $fillable = ['nom', 'comment'];
 }

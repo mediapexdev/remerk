@@ -5,11 +5,7 @@
 @extends('layouts.app')
 
 @section('component-head')
-    @section('styles')
-    @include('components.styles')
-    <link type="text/css" rel="stylesheet" href="{{URL::asset('assets/css/custom/utilities/modals/create-expedition.css')}}">
-    <link type="text/css" rel="stylesheet" href="{{URL::asset('assets/css/account.css')}}">
-    @endsection
+    @include('expediteur.components.globals.styles')
 @endsection
 
 @section('component-header')

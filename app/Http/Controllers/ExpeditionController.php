@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\EtatExpedition;
+use App\Models\Expediteur;
 use App\Models\Expedition;
 use App\Models\ExpeditionsArrivee;
 use App\Models\ExpeditionsDepart;
 use App\Models\ExpeditionsMatiere;
+use App\Models\ExpeditionsTracking;
 use Illuminate\Http\Request;
 use App\Models\Devis;
-use App\Models\Expediteur;
 use App\Models\Region;
 use App\Models\Commune;
 use App\Models\Matiere;
@@ -93,11 +95,10 @@ class ExpeditionController extends Controller
         ]);
         $expedition = Expedition::create([
             'expediteur_id'         => $request->expediteur_id,
-            // 'transporteur_id'       => 1, //Doit etre donnée par admin
-            'etat_expedition_id'    => 1,
+            'etat_expedition_id'    => EtatExpedition::EN_ATTENTE,
         ]);
 
-        $code=$this->generateCode($expedition->id);
+        $code = $this->generateCode($expedition->id);
         $expedition->string_id = $code;
         $expedition->save();
 
@@ -137,6 +138,10 @@ class ExpeditionController extends Controller
         catch(\Exception $exception) {
             return redirect()->back()->withErrors($exception->getMessage());
         }
+        ExpeditionsTracking::create([
+            'expedition_id'         => $expedition->id,
+            'etat_expedition_id'    => EtatExpedition::EN_ATTENTE
+        ]);
         return redirect()->back()->with([
             'success' => "L'expédition a été ajoutée avec succès !",
             'expedition-acknowledgment-of-receipt' => true
@@ -203,11 +208,20 @@ class ExpeditionController extends Controller
         return redirect()->back()->with('success', "L'expédition a été supprimé avec succès.");
     }
 
-    public function generateCode($id){
+    /**
+     * Generate a code for the specified expedition and returns it.
+     *
+     * @param  integer  $id     the ID of the specified expedition
+     *
+     * @return string
+     */
+    public function generateCode($id) : string
+    {
         $alpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $comb2 = [];
         $alphaLen = strlen($alpha) - 1;
         $comb1 = [];
+
         for ($i = 0; $i < 3; $i++) {
             $comb1[] = rand(0, 9);
         }
@@ -215,7 +229,7 @@ class ExpeditionController extends Controller
             $n = rand(0, $alphaLen);
             $comb2[] = $alpha[$n];
         }
-        $code= 'RK-'.implode($comb1).implode($comb2).'-'.$id;
+        $code = 'RK-'.implode($comb1).implode($comb2).'-'.$id;
         return $code;
     }
 }
