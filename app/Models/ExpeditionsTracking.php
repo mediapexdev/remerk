@@ -17,8 +17,10 @@ class ExpeditionsTracking extends Model
         'etat_expedition_id',
         'date_select_postulant',
         'date_paiement',
+        'date_chargement',
         'date_depart',
         'date_arrivee',
+        'date_dechargement',
         'date_livraison'
     ];
 
