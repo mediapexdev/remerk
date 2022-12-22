@@ -42,7 +42,6 @@
 
         function sendTokenTokenToServer(fcm_token) {
             const user_id = '{{ Auth::user()->id }}'
-            alert(fcm_token);
             axios.post('/save-fcm-token', {
                     fcm_token,
                     user_id

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Core\PayTech;
 use App\Models\EtatExpedition;
 use App\Models\Expediteur;
 use App\Models\Expedition;
@@ -15,7 +16,6 @@ use App\Models\Transporteur;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Date;
-use PayTech;
 use Twilio\Rest\Client;
 
 class FactureController extends Controller
@@ -229,4 +229,3 @@ class FactureController extends Controller
         //test
     }
 }
-// require PayTech;
