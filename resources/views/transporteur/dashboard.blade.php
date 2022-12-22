@@ -13,7 +13,6 @@
 @endsection
 
 @section('component-body-content')
-<a href="{{route('test')}}"><button >send Message</button></a>
 {{-- <!--begin::Row--> --}}
 <div class="row gy-5 g-xl-10">
     {{-- <!--begin::Col--> --}}

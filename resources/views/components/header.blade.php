@@ -1,7 +1,5 @@
-<div class="elfsight-app-239c37fd-e965-44a3-9097-a32d34a806d5"></div>
-<div class="mb-10"></div>
 {{-- <!--begin::Header--> --}}
-<div id="kt_app_header" class="app-header fixed-top" style="margin:0 auto; width:100%">
+<div id="kt_app_header" class="app-header navbar-nav-scroll scroll-y" style="margin:0 auto; width:100%">
     {{-- <!--begin::Header container--> --}}
     <div id="kt_app_header_container" class="app-container container-fluid d-flex align-items-stretch justify-content-between">
         {{-- <!--begin::Mobile logo--> --}}
