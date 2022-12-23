@@ -11,6 +11,7 @@
 @section('component-header')
     {{-- <!--begin::Header--> --}}
     @include('expediteur.components.globals.header')
+    @include('expediteur.components.globals.mobileMenu')
     {{-- <!--end::Header--> --}}
 @endsection
 
