@@ -87,7 +87,7 @@
                     {{-- src="{{URL::asset('assets/media/illustrations/other/fablab-mobile-resized.png')}}" --}}
                     {{-- data-src="assets/media/illustrations/other/4811.jpg" --}}
                     class="lozad rounded mw-100"
-                    alt="">
+                    alt="illustration">
                 </div>
             </div>
         </div>
