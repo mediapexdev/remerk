@@ -10,29 +10,32 @@
                 data-tns-prev-button="#kt_team_slider_prev1" data-tns-next-button="#kt_team_slider_next1">
 
                 <!--begin::Item-->
-                <div class="text-center">
-                    <img src="assets/images/2D Pics/resizes/vehicle2-07-01.png" class="card-rounded img-fluid" alt="" />
-                    <button>test</button>
+                <div class="text-center d-grid">
+                    <img src="assets/images/2D Pics/resizes/vehicle2-07-01.png" class="card-rounded h-50  img-fluid" alt="" />
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est sed sequi, corrupti rerum ad praesentium quam fuga placeat, corporis mollitia sint incidunt libero iste officiis voluptas totam! Sint, modi voluptatibus?
+                        </p>
+                    <button class="btn btn-primary d-block">Faire une expédition</button>
                 </div>
                 <!--end::Item-->
                 <!--begin::Item-->
                 <div class="text-center">
-                    <img src="assets/images/2D Pics/resizes/vehicle2-08-05.png" class="card-rounded img-fluid" alt="" />
+                    <img src="assets/images/2D Pics/resizes/vehicle2-08-05.png" class="card-rounded h-50 img-fluid" alt="" />
                 </div>
                 <!--end::Item-->
                 <!--begin::Item-->
                 <div class="text-center">
-                    <img src="assets/images/2D Pics/resizes/vehicle2-07-02.png" class="card-rounded img-fluid" alt="" />
+                    <img src="assets/images/2D Pics/resizes/vehicle2-07-02.png" class="card-rounded h-50 img-fluid" alt="" />
                 </div>
                 <!--end::Item-->
                 <!--begin::Item-->
                 <div class="text-center">
-                    <img src="assets/images/2D Pics/resizes/vehicle2-08-02.png" class="card-rounded img-fluid" alt="" />
+                    <img src="assets/images/2D Pics/resizes/vehicle2-08-02.png" class="card-rounded h-50 img-fluid" alt="" />
                 </div>
                 <!--end::Item-->
                 <!--begin::Item-->
                 <div class="text-center">
-                    <img src="assets/images/2D Pics/resizes/vehicle2-07-03.png" class="card-rounded img-fluid" alt="" />
+                    <img src="assets/images/2D Pics/resizes/vehicle2-07-03.png" class="card-rounded h-50 img-fluid" alt="" />
                 </div>
                 <!--end::Item-->
                 ...
