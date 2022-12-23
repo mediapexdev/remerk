@@ -78,6 +78,18 @@
                 <!--end::Step 6-->
             </div>
             <!--end::Nav-->
+            <div class="d-flex flex-center">
+                <div class="h-200px w-600px bg-light">
+                    <img
+                    src="{{URL::asset('assets/media/illustrations/other/4811-resized.jpg')}}"
+                    {{-- src="{{URL::asset('assets/media/illustrations/other/4c75f379-dc5a-4d0a-9b21-7075d3e0130a.png')}}" --}}
+                    {{-- src="{{URL::asset('assets/media/illustrations/other/4818.jpg')}}" --}}
+                    {{-- src="{{URL::asset('assets/media/illustrations/other/fablab-mobile-resized.png')}}" --}}
+                    {{-- data-src="assets/media/illustrations/other/4811.jpg" --}}
+                    class="lozad rounded mw-100"
+                    alt="">
+                </div>
+            </div>
         </div>
         <!--end::Stepper-->
         @else
@@ -106,7 +118,7 @@
         @endif
     </div>
     {{-- <!--end::Card body--> --}}
-    @if(!$expedition_completed)
+    @if(!$expedition_completed && $tracking_started)
     <!--begin::Card footer-->
     <div class="card-footer pt-0">
         <!--begin::Form-->

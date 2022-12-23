@@ -27,19 +27,6 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 {{-- <!-- end::Jquery Easing --> --}}
 
-<<<<<<< HEAD
-{{-- <!-- begin:: --> --}}
-{{-- <!-- end:: --> --}}
-
-<script>
-    var aurl = window.location.pathname;
-    $('.app-container a[href="' + aurl + '"]').parent('app-container').addClass('active');
-</script>
-{{-- <!-- begin::Zendesk Widget script --> --}}
-{{-- <!-- end::Zendesk Widget script --> --}}
-
-=======
->>>>>>> 53544430d37bfa1f3257ad27c12771872ea1abc5
 {{-- <!--end::Vendors Javascript--> --}}
 
 {{-- <!--begin::Custom Javascript--> --}}

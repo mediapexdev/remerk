@@ -73,7 +73,7 @@ $avatar = (($transporteur->hasAvatar()) ? $transporteur->avatar() : Util::getDef
                                     {{-- <!--begin::Separator--> --}}
                                     <tr>
                                         <td class="text-gray-700 py-0" scope="row" colspan="2">
-                                            <div class="separator mt-0 mb-0"></div>
+                                            <div class="separator my-0"></div>
                                         </td>
                                     </tr>
                                     {{-- <!--end::Separator--> --}}
@@ -99,7 +99,7 @@ $avatar = (($transporteur->hasAvatar()) ? $transporteur->avatar() : Util::getDef
                                     {{-- <!--begin::Separator--> --}}
                                     <tr>
                                         <td class="text-gray-700 py-0" scope="row" colspan="2">
-                                            <div class="separator mt-0 mb-0"></div>
+                                            <div class="separator my-0"></div>
                                         </td>
                                     </tr>
                                     {{-- <!--end::Separator--> --}}
@@ -125,7 +125,7 @@ $avatar = (($transporteur->hasAvatar()) ? $transporteur->avatar() : Util::getDef
                                     {{-- <!--begin::Separator--> --}}
                                     <tr>
                                         <td class="text-gray-700 py-0" scope="row" colspan="2">
-                                            <div class="separator mt-0 mb-0"></div>
+                                            <div class="separator my-0"></div>
                                         </td>
                                     </tr>
                                     {{-- <!--end::Separator--> --}}
