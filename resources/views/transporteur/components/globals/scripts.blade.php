@@ -33,7 +33,7 @@
 
         firebase.initializeApp(config);
 
-        function sendTokenTokenToServer(fcm_token) {
+        function sendTokenToServer(fcm_token) {
             const user_id = '{{ Auth::user()->id }}'
             axios.post('/save-fcm-token', {
                     fcm_token,
@@ -55,11 +55,11 @@
                 return messaging.getToken()
             })
             .then(function(token) {
-                sendTokenTokenToServer(token);
+                sendTokenToServer(token);
                 tokenElement.innerHTML = token
             })
             .catch(function(err) {
-                errorElement.innerHTML = err
+                // errorElement.innerHTML = err
                 console.log('Unable to get permission to notify.', err);
             });
         messaging.onMessage((payload) => {
