@@ -14,19 +14,20 @@
     ];
 @endphp
 <div class="card card-flush py-4 flex-row-fluid">
-    <!--begin::Card header-->
+    {{-- <!--begin::Card header--> --}}
     <div class="card-header">
         <div class="card-title">
             <h3>Historique de l'expédition</h3>
         </div>
     </div>
-    <!--end::Card header-->
-    <!--begin::Card body-->
+    {{-- <!--end::Card header--> --}}
+    {{-- <!--begin::Card body--> --}}
     <div class="card-body pt-0">
+        {{-- <!--begin::Table Wrapper--> --}}
         <div class="table-responsive">
-            <!--begin::Table-->
+            {{-- <!--begin::Table--> --}}
             <table class="table align-middle fs-6 gy-5 mb-0">
-                <!--begin::Table head-->
+                {{-- <!--begin::Table head--> --}}
                 <thead>
                     <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
                         <th class="min-w-100px">Date</th>
@@ -36,65 +37,65 @@
                     {{-- <!--begin::Separator--> --}}
                     <tr>
                         <td class="text-gray-700 py-0" scope="row" colspan="3">
-                            <div class="separator my-0"></div>
+                            <div class="separator separator-dashed my-0"></div>
                         </td>
                     </tr>
                     {{-- <!--end::Separator--> --}}
                 </thead>
-                <!--end::Table head-->
-                <!--begin::Table body-->
+                {{-- <!--end::Table head--> --}}
+                {{-- <!--begin::Table body--> --}}
                 <tbody class="fw-semibold text-gray-600">
                     <tr>
-                        <!--begin::Date-->
+                        {{-- <!--begin::Date--> --}}
                         <td>{{ (new \DateTime($expedition->created_at, new \DateTimeZone('UTC')))->format('d/m/Y') }}</td>
-                        <!--end::Date-->
-                        <!--begin::Status-->
+                        {{-- <!--end::Date--> --}}
+                        {{-- <!--begin::Status--> --}}
                         <td>
-                            <!--begin::Badges-->
+                            {{-- <!--begin::Badges--> --}}
                             <span class="badge badge-light-primary">En attente</span>
-                            <!--end::Badges-->
+                            {{-- <!--end::Badges--> --}}
                         </td>
-                        <!--end::Status-->
-                        <!--begin::Comment-->
+                        {{-- <!--end::Status--> --}}
+                        {{-- <!--begin::Comment--> --}}
                         <td>En attente de postulant</td>
-                        <!--end::Comment-->
+                        {{-- <!--end::Comment--> --}}
                     </tr>
                     @foreach ($infos as $id => $date)
                         @php
                             $etat = EtatExpedition::find($id);
                         @endphp
-                        @if($expedition_tracking->$date)
+                        @if(isset($expedition_tracking->$date))
                             {{-- <!--begin::Separator--> --}}
                             <tr>
                                 <td class="text-gray-700 py-0" scope="row" colspan="3">
-                                    <div class="separator my-0"></div>
+                                    <div class="separator separator-dashed my-0"></div>
                                 </td>
                             </tr>
                             {{-- <!--end::Separator--> --}}
                             <tr>
-                                <!--begin::Date-->
+                                {{-- <!--begin::Date--> --}}
                                 {{-- <td>{{ (new \DateTime($expedition_tracking->$date, new \DateTimeZone('UTC')))->format('d/m/Y H:i') }}</td> --}}
                                 <td>{{ (new \DateTime($expedition_tracking->$date, new \DateTimeZone('UTC')))->format('d/m/Y') }}</td>
-                                <!--end::Date-->
-                                <!--begin::Status-->
+                                {{-- <!--end::Date--> --}}
+                                {{-- <!--begin::Status--> --}}
                                 <td>
-                                    <!--begin::Badges-->
+                                    {{-- <!--begin::Badges--> --}}
                                     <span class="badge badge-light-primary">{{$etat->nom}}</span>
-                                    <!--end::Badges-->
+                                    {{-- <!--end::Badges--> --}}
                                 </td>
-                                <!--end::Status-->
-                                <!--begin::Comment-->
+                                {{-- <!--end::Status--> --}}
+                                {{-- <!--begin::Comment--> --}}
                                 <td>{{$etat->comment}}</td>
-                                <!--end::Comment-->
+                                {{-- <!--end::Comment--> --}}
                             </tr>
                         @endif
                     @endforeach
                 </tbody>
-                <!--end::Table body-->
+                {{-- <!--end::Table body--> --}}
             </table>
-            <!--end::Table-->
+            {{-- <!--end::Table--> --}}
         </div>
-        <!--end::Table Wrapper-->
+        {{-- <!--end::Table Wrapper--> --}}
     </div>
-    <!--end::Card body-->
+    {{-- <!--end::Card body--> --}}
 </div>

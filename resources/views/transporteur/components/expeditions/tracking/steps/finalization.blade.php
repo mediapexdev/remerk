@@ -29,11 +29,6 @@
         <!--end::Icon-->
         <!--begin::Label-->
         <div class="stepper-label align-items-center py-4">
-            <!--begin::Line-->
-            {{-- <div class="progress h-5px w-100px bg-light mb-2">
-                <div class="progress-bar rounded h-5px" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-            </div> --}}
-            <!--end::Line-->
             <h6 class="stepper-title fs-5">Livré</h6>
             <div class="stepper-desc">{{ (!isset($expedition_tracking) || !isset($expedition_tracking->date_livraison)) ? '----------' : \date('d-m-Y', \strtotime($expedition_tracking->date_livraison)) }}</div>
         </div>

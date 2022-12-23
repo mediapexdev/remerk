@@ -52,3 +52,13 @@
     color: var(--kt-stepper-label-title-color);
     opacity: var(--kt-stepper-label-title-opacity);
 }
+
+#kt_stepper_expedition_tracking.stepper.stepper-pills .line {
+    color: var(--kt-gray-900) !important;
+}
+
+#kt_stepper_expedition_tracking.stepper.stepper-pills .line.current,
+#kt_stepper_expedition_tracking.stepper.stepper-pills .line.completed {
+    color: var(--kt-success) !important;
+    opacity: 1;
+}
