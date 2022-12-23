@@ -16,6 +16,8 @@ use App\Models\Commune;
 use App\Models\Matiere;
 use App\Models\PoidsMatiere;
 use App\Models\Postulants;
+use App\Models\Role;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class ExpeditionController extends Controller
@@ -142,6 +144,8 @@ class ExpeditionController extends Controller
             'expedition_id'         => $expedition->id,
             'etat_expedition_id'    => EtatExpedition::EN_ATTENTE
         ]);
+        $notif=$this->sendNotification();
+        dd($notif);
         return redirect()->back()->with([
             'success' => "L'expédition a été ajoutée avec succès !",
             'expedition-acknowledgment-of-receipt' => true
@@ -231,5 +235,37 @@ class ExpeditionController extends Controller
         }
         $code = 'RK-'.implode($comb1).implode($comb2).'-'.$id;
         return $code;
+    }
+    function sendNotification(){
+
+        $firebaseToken = User::whereNotNull('fcm_token')->where('role_id',3)->pluck('fcm_token')->all();
+        $SERVER_API_KEY = 'AAAAbQlH7Qw:APA91bEx9nC01HGG8Ao-tQ8ZYKExsRYxXE34nKHGI9b9oWEQWqQYAh3H1WaRW0-yD_QlMfs4UTqvoN1HxXXz1bsncnNhpIrtcHQ9rknkJTey0sE6a3dKbYxwiiaPDSRrd4AMLjOa1I3W';
+
+        $data = [
+            "registration_ids" => $firebaseToken,
+            "notification" => [
+                "title" => 'expédition en cours',
+                "body" => 'Une nouvelle expédition en cours. Veuillez vérifier',
+                "icon" => "images/Fitting_piece.gif"
+            ]
+        ];
+        $dataString = json_encode($data);
+
+        $headers = [
+            'Authorization: key=' . $SERVER_API_KEY,
+            'Content-Type: application/json',
+        ];
+
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, 'https://fcm.googleapis.com/fcm/send');
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $dataString);
+        $response = curl_exec($ch);
+        // dd($response);
+        return $response;
     }
 }
