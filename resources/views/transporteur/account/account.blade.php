@@ -3,7 +3,7 @@
 
 	use App\Core\Util;
 	use App\Models\Expedition;
-	use App\Models\transporteur;
+	use App\Models\Transporteur;
 
 	$__transporteur = Transporteur::where('user_id', Auth::user()->id)->first();
 	$__expeditions_count = Expedition::where('transporteur_id', $__transporteur->id)->count();
@@ -12,7 +12,7 @@
 @extends('transporteur.layout')
 
 @section('title')
-	<title>Remerk - Compte</title>
+	<title>Mon profile - Rëmerk</title>
 @endsection
 @section('component-body-content')
     {{-- <!--begin::Navbar--> --}}

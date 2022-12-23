@@ -39,9 +39,3 @@
 </div>
 {{-- <!--end::Row--> --}}
 @endsection
-
-@section('component-modals')
-    {{-- @include('transporteur.components.expeditionDetail.modal-suivi') --}}
-    {{-- @include('transporteur.components.modals.postulat') --}}
-    {{-- @include('transporteur.components.modal-voir-postulat') --}}
-@endsection
