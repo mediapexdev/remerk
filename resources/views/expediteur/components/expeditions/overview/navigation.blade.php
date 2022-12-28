@@ -11,7 +11,7 @@
             <span class="nav-text text-gray-800 fw-bold fs-6 mb-3 min-w-100px">
                 En attente
                 @if(0 !== $pending_expeditions->count())
-                <span class="badge badge-circle badge-light-primary ">{{$pending_expeditions->count()}}</span>
+                <span class="badge badge-circle badge-light-info ms-1">{{$pending_expeditions->count()}}</span>
                 @endif
                 {{--
                 <!--end::Subtitle--> --}}
@@ -36,10 +36,11 @@
             href="#kt_tab_expeditions_en_cours">
             {{--
             <!--begin::Subtitle--> --}}
-            <span class="nav-text text-gray-800 fw-bold fs-6 mb-3 min-w-100px ms-2">
+            <span class="nav-text text-gray-800 fw-bold fs-6 mb-3 min-w-100px ms-2 position-relative">
                 En cours
                 @if(0 !== $current_expeditions->count())
-                <span class="badge badge-circle badge-primary ">{{$current_expeditions->count()}}</span>
+                {{-- <span class="badge badge-circle badge-light-info position-absolute top-0 start-100 translate-middle">{{$current_expeditions->count()}}</span> --}}
+                <span class="badge badge-circle badge-light-info ms-1">{{$current_expeditions->count()}}</span>
                 @endif
             </span>
             {{--
@@ -66,7 +67,7 @@
             <!--begin::Subtitle--> --}}
             <span class="nav-text text-gray-800 fw-bold fs-6 mb-3">Achevées
                 @if(0 !== $completed_expeditions->count())
-                <span class="badge badge-circle badge-primary ">{{$completed_expeditions->count()}}</span>
+                <span class="badge badge-circle badge-light-info ms-1">{{$completed_expeditions->count()}}</span>
                 @endif
             </span>
             {{--
