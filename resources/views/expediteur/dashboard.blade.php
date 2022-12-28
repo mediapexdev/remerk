@@ -17,7 +17,9 @@
 
 @section('component-body-content')
     @if (!$expeditions->count())
+    <div class="h-100">
         @include('expediteur.components.globals.default')
+    </div>
     @else
         {{-- <!--begin::Row--> --}}
         <div class="row gy-5 g-xl-10">
