@@ -19,7 +19,8 @@
     }*/
     $available_expeditions = Expedition::where('etat_expedition_id', EtatExpedition::EN_ATTENTE)->orderByDesc('created_at')->limit(5)->get();
 
-    $current_expeditions = Expedition::where('transporteur_id', $transporteur->id)->whereIn('etat_expedition_id', [
+    $current_expeditions = Expedition::where('transporteur_id', $transporteur->id)
+    ->whereIn('etat_expedition_id', [
         EtatExpedition::EN_ATTENTE_DE_PAIEMENT,
         EtatExpedition::EN_ATTENTE_DE_CHARGEMENT,
         EtatExpedition::CHARGE,
@@ -37,7 +38,8 @@
     {{-- <!--begin::Header--> --}}
     <div class="card-header pt-7">
         @php
-            $expeditions_count = $available_expeditions->count();
+            // $expeditions_count = $available_expeditions->count();
+            $expeditions_count = Expedition::where('etat_expedition_id', EtatExpedition::EN_ATTENTE)->count();
             $data_text = ((1 >= $expeditions_count) ? 'expédition disponible' : 'expéditions disponibles');
         @endphp
         {{-- <!--begin::Title--> --}}
@@ -132,7 +134,15 @@
             </div>
             {{-- <!--end::Tap pane--> --}}
             @php
-                $expeditions_count = $current_expeditions->count();
+                // $expeditions_count = $current_expeditions->count();
+                $expeditions_count = Expedition::where('transporteur_id', $transporteur->id)
+                ->whereIn('etat_expedition_id', [
+                    EtatExpedition::EN_ATTENTE_DE_PAIEMENT,
+                    EtatExpedition::EN_ATTENTE_DE_CHARGEMENT,
+                    EtatExpedition::CHARGE,
+                    EtatExpedition::EN_TRANSIT,
+                    EtatExpedition::DECHARGE
+                ])->count();
                 $data_text = (1 >= $expeditions_count) ? 'expédition ' : 'expéditions ';
                 $data_text .= 'en cours';
             @endphp
@@ -191,7 +201,11 @@
             </div>
             {{-- <!--end::Tap pane--> --}}
             @php
-                $expeditions_count = $completed_expeditions->count();
+                // $expeditions_count = $completed_expeditions->count();
+                $expeditions_count = Expedition::where([
+                    'transporteur_id'       => $transporteur->id,
+                    'etat_expedition_id'    => EtatExpedition::TERMINEE,
+                ])->count();
                 $data_text = (1 >= $expeditions_count) ? 'expédition achevée' : 'expéditions achevées';
             @endphp
             {{-- <!--begin::Tap pane--> --}}
