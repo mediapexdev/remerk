@@ -86,9 +86,6 @@ $t_colors_classes = ['danger', 'info', 'primary', 'success', 'warning'];
                     @else
                     <div class="d-flex justify-content-center">
                         <p class="h4 text-center p-5">Merci de patienter, votre demande est en cours de traitement.</p>
-                        <div class="">
-                            <span class="pulse-ring border-4"></span>
-                        </div>
                     </div>
                     @endif
                 </tbody>
