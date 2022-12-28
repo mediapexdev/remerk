@@ -27,6 +27,12 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 {{-- <!-- end::Jquery Easing --> --}}
 
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<script>
+    var aurl = window.location.pathname;
+    // $('.app-container a[href$="' + aurl + '"]').parent('app-container').addClass('active');
+    $('.app-container a[href="' + aurl + '"]').parent('app-container').addClass('active');
+</script>
 {{-- <!--end::Vendors Javascript--> --}}
 
 {{-- <!--begin::Custom Javascript--> --}}

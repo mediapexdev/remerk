@@ -15,6 +15,10 @@
 	<title>Dashboard - Remërk</title>
 @endsection
 
+@section('styles')
+<link type="text/css" rel="stylesheet" href="{{URL::asset('assets/css/custom/expeditions/overview.css')}}">
+@endsection
+
 @section('component-body-content')
     @if (!$expeditions->count())
         @include('expediteur.components.globals.default')

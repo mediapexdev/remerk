@@ -12,6 +12,10 @@
 	<title>Dashboard - Remërk</title>
 @endsection
 
+@section('styles')
+<link type="text/css" rel="stylesheet" href="{{URL::asset('assets/css/custom/expeditions/overview.css')}}">
+@endsection
+
 @section('component-body-content')
 {{-- <!--begin::Row--> --}}
 <div class="row gy-5 g-xl-10">

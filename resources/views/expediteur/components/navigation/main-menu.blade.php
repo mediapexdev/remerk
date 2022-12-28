@@ -23,10 +23,10 @@
         {{-- <!--begin:Menu item--> --}}
         <div class="menu-item menu-lg-down-accordion menu-here-bg me-0 me-lg-2"
             data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start">
-            <!--begin:Menu link-->
-            <a href="/factures" >
-                <span class="menu-link {{ 'factures' == request()->path() ? 'active' : '' }}">
-                    <span class="menu-title">Facturation</span>
+            {{-- <!--begin:Menu link--> --}}
+            <a href="/expeditions">
+                <span class="menu-link {{ 'expeditions' == request()->path() ? 'active' : '' }}">
+                    <span class="menu-title">Expéditions</span>
                 </span>
             </a>
             {{-- <!--end:Menu link--> --}}
@@ -35,10 +35,10 @@
         {{-- <!--begin:Menu item--> --}}
         <div class="menu-item menu-lg-down-accordion menu-here-bg me-0 me-lg-2"
             data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start">
-            {{-- <!--begin:Menu link--> --}}
-            <a href="/expeditions">
-                <span class="menu-link {{ 'expeditions' == request()->path() ? 'active' : '' }}">
-                    <span class="menu-title">Expéditions</span>
+            <!--begin:Menu link-->
+            <a href="/factures" >
+                <span class="menu-link {{ 'factures' == request()->path() ? 'active' : '' }}">
+                    <span class="menu-title">Facturation</span>
                 </span>
             </a>
             {{-- <!--end:Menu link--> --}}

@@ -1,3 +1,30 @@
-::-ms-reveal {          /* masquer l'oeil sur les entrées de mot de passe sous Microsoft Edge */
+/* masquer l'oeil sur les entrées de mot de passe sous Microsoft Edge */
+
+::-ms-reveal
+{
     display: none;
+}
+
+[data-theme="dark"] .app-header-menu .menu .menu-item .menu-link:not(:hover):not(.active) .menu-title,
+[data-theme="dark"] #app-navbar-item-theme-menu .menu-item .menu-link:not(:hover):not(.active) .menu-title,
+[data-theme="dark"] #app-navbar-item-user-menu-toggle .menu-item .menu-link:not(:hover):not(.active),
+[data-theme="dark"] #app-navbar-item-user-menu-toggle .menu-item .menu-link:not(:hover):not(.active) .menu-title
+{
+    color: var(--kt-gray-900) !important;
+}
+
+[data-theme="dark"] #app-navbar-item-theme-menu .btn.btn-icon:not(:hover):not(.btn-active) .svg-icon,
+[data-theme="dark"] #app-navbar-item-theme-menu .btn.btn-icon:not(:hover):not(.btn-active) i,
+[data-theme="dark"] #app-navbar-item-theme-menu .menu-item .menu-link:not(:hover):not(.active) .menu-icon,
+[data-theme="dark"] #app-navbar-item-theme-menu .menu-item .menu-link:not(:hover):not(.active) .menu-icon .svg-icon,
+[data-theme="dark"] #app-navbar-item-theme-menu .menu-item .menu-link:not(:hover):not(.active) .menu-icon i,
+[data-theme="dark"] #app-navbar-item-chat-drawer-toggle .btn.btn-icon:not(:hover):not(.btn-active) .svg-icon,
+[data-theme="dark"] #app-navbar-item-chat-drawer-toggle .btn.btn-icon:not(:hover):not(.btn-active) i
+{
+    color: var(--kt-gray-800) !important;
+}
+
+[data-theme="dark"] #app-navbar-item-user-menu-toggle .menu-item .menu-link .phone-number-label
+{
+    color: var(--kt-gray-700) !important;
 }

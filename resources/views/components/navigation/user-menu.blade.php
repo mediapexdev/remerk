@@ -1,10 +1,11 @@
-<div id="kt_header_user_menu_toggle" class="app-navbar-item ms-1 ms-lg-3">
-    @php
-        use App\Core\Util;
+@php
+    use App\Core\Util;
 
-        $has_avatar = Auth::user()->hasAvatar();
-        $avatar = (($has_avatar) ? Auth::user()->avatar : Util::getDefaultUserAvatar());
-    @endphp
+    $has_avatar = Auth::user()->hasAvatar();
+    $avatar = (($has_avatar) ? Auth::user()->avatar : Util::getDefaultUserAvatar());
+@endphp
+{{-- <div id="kt_header_user_menu_toggle" class="app-navbar-item ms-1 ms-lg-3"> --}}
+<div id="app-navbar-item-user-menu-toggle" class="app-navbar-item ms-1 ms-lg-3">
     {{-- <!--begin::Menu Toggle--> --}}
     <div class="cursor-pointer symbol symbol-35px symbol-md-40px"
         data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
@@ -27,8 +28,8 @@
                     {{-- <!--end::Avatar--> --}}
                     {{-- <!--begin::Username--> --}}
                     <div class="d-flex flex-column">
-                        <div class="fw-bold d-flex align-items-center fs-5">{{Auth::user()->fullName()}}</div>
-                        <div class="fw-semibold text-muted fs-7">{{Auth::user()->formattedPhoneNumber()}}</div>
+                        <div class="full-name-label fw-bold d-flex align-items-center fs-5">{{Auth::user()->fullName()}}</div>
+                        <div class="phone-number-label fw-semibold text-muted fs-7">{{Auth::user()->formattedPhoneNumber()}}</div>
                     </div>
                     {{-- <!--end::Username--> --}}
                 </div>
