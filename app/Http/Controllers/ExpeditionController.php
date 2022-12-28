@@ -145,7 +145,6 @@ class ExpeditionController extends Controller
             'etat_expedition_id'    => EtatExpedition::EN_ATTENTE
         ]);
         $notif=$this->sendNotification();
-        dd($notif);
         return redirect()->back()->with([
             'success' => "L'expédition a été ajoutée avec succès !",
             'expedition-acknowledgment-of-receipt' => true
@@ -265,7 +264,6 @@ class ExpeditionController extends Controller
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $dataString);
         $response = curl_exec($ch);
-        // dd($response);
         return $response;
     }
 }
