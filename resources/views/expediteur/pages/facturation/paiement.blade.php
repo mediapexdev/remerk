@@ -1,19 +1,19 @@
 @php
-$body_classes = 'app-default';
+    $body_classes = 'app-default';
 @endphp
 
 @extends('expediteur.layout')
-@section('styles')
-<link rel="stylesheet" href="https://paytech.sn/cdn/paytech.min.css">
-<script src="https://paytech.sn/cdn/paytech.min.js"></script>
-@endsection
+
 @section('title')
 <title>Ma facture - Remërk</title>
 @endsection
 
+@section('styles')
+<link type="text/css" rel="stylesheet" href="https://paytech.sn/cdn/paytech.min.css">
+@endsection
+
 @section('component-body-content')
-{{--
-<!--begin::Row--> --}}
+{{-- <!--begin::Row--> --}}
 <div class="row gy-5 g-xl-10">
     <!--begin::Paiement -->
     <div class="card">
@@ -30,8 +30,7 @@ $body_classes = 'app-default';
                             <!--begin::Logo-->
                             <div class="col-6">
                                 <div class="container-fluid">
-                                    <img class="d-block h-50px"
-                                        src="{{URL::asset('assets/images/Logo-2-removebg.png')}}" alt="Logo">
+                                    <img class="d-block h-50px" src="{{URL::asset('assets/images/Logo-2-removebg.png')}}" alt="Logo">
                                     <div class="fw-semibold fs-7 text-gray-600 m-3">
                                         <div><span>S15 Hann Maristes</span></div>
                                         <div><span>Dakar, Sénégal</span></div>
@@ -46,13 +45,11 @@ $body_classes = 'app-default';
                                         <div class="fw-bold fs-5 text-gray-800 mb-4">
                                             <span>Facture N° R-00{{$facture->id}}</span>
                                             <br>
-                                            <span>Date: {{\date('d/m/Y',
-                                                \strtotime($facture->created_at))}}</span>
+                                            <span>Date: {{\date('d/m/Y', \strtotime($facture->created_at))}}</span>
                                         </div>
                                         <div class="fw-bold fs-6 text-gray-800">{{$expediteur->fullName()}}</div>
                                         <div class="fw-semibold fs-7 text-gray-600">{{$expediteur->adresse}}</div>
-                                        <div class="fw-semibold fs-7 text-gray-600">{{$expediteur->phoneNumber(true)}}
-                                        </div>
+                                        <div class="fw-semibold fs-7 text-gray-600">{{$expediteur->phoneNumber(true)}}</div>
                                     </div>
                                 </div>
                             </div>
@@ -100,7 +97,7 @@ $body_classes = 'app-default';
                                         <!--begin::Item-->
                                         <div class="d-flex flex-stack">
                                             <!--begin::Code-->
-                                            <div class="fw-semibold pe-10 text-gray-600 fs-5">Montant net à payer:</div>
+                                            <div class="fw-semibold pe-10 text-gray-600 fs-5">Montant net à payer :</div>
                                             <!--end::Code-->
                                             <!--begin::Label-->
                                             <div class="text-start fw-bold fs-4 text-gray-800">
@@ -137,8 +134,7 @@ $body_classes = 'app-default';
                 <!--begin::Sidebar-->
                 <div class="m-0 p-0">
                     <!--begin::Invoice 2 sidebar-->
-                    <div
-                        class="d-print-none border border-dashed border-gray-300 card-rounded h-lg-100 min-w-md-350px p-9 bg-lighten">
+                    <div class="d-print-none border border-dashed border-gray-300 card-rounded h-lg-100 min-w-md-350px p-9 bg-lighten">
                         <!--begin::Labels-->
                         <div class="mb-8">
                             <!--begin::Action-->
@@ -173,16 +169,14 @@ $body_classes = 'app-default';
                         <!--end::Title-->
                         <!--begin::Item-->
                         <div class="mb-6">
-                            <div class="fw-semibold text-gray-600 fs-7">Paypal:</div>
+                            <div class="fw-semibold text-gray-600 fs-7">Paypal :</div>
                             <div class="fw-bold text-gray-800 fs-6">codelabpay@codelab.co</div>
                         </div>
                         <!--end::Item-->
                         <!--begin::Item-->
                         <div class="mb-6">
-                            <div class="fw-semibold text-gray-600 fs-7">Account:</div>
-                            <div class="fw-bold text-gray-800 fs-6">Nl24IBAN34553477847370033
-                                <br />AMB NLANBZTC
-                            </div>
+                            <div class="fw-semibold text-gray-600 fs-7">Account :</div>
+                            <div class="fw-bold text-gray-800 fs-6">Nl24IBAN34553477847370033<br>AMB NLANBZTC</div>
                         </div>
                         <!--end::Item-->
                         <!--begin::Item-->
@@ -244,9 +238,8 @@ $body_classes = 'app-default';
 @endsection
 
 @section('custom-js')
-<script src="https://paytech.sn/cdn/paytech.min.js"></script>
-<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
-
+<script type="text/javascript" src="https://paytech.sn/cdn/paytech.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
 
 <script>
     // function new_paiement(expedition_id, facture_id)

@@ -27,6 +27,8 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 {{-- <!-- end::Jquery Easing --> --}}
 
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-aedb561a-2cd6-4eb2-9f37-d5dd15cbd44e"></div>
 {{-- <!--end::Vendors Javascript--> --}}
 
 {{-- <!--begin::Custom Javascript--> --}}

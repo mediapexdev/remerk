@@ -6,7 +6,7 @@
             {{-- <!--begin::Subtitle--> --}}
             <span class="nav-text text-gray-800 fw-bold fs-6 mb-3 min-w-125px min-w-100px">Disponibles
                 @if(0 !== $available_expeditions->count())
-                <span class="badge badge-circle badge-primary ">{{$available_expeditions->count()}}</span>
+                <span class="badge badge-circle badge-light-info ms-1">{{$available_expeditions->count()}}</span>
                 @endif
             </span>
             {{-- <!--end::Subtitle--> --}}
@@ -24,7 +24,8 @@
             {{-- <!--begin::Subtitle--> --}}
             <span class="nav-text text-gray-800 fw-bold fs-6 mb-3 min-w-100px ms-5">En cours
                 @if(0 !== $current_expeditions->count())
-                <span class="badge badge-circle badge-light-primary ">{{$current_expeditions->count()}}</span>
+                {{-- <span class="badge badge-circle badge-light-info position-absolute top-0 start-100 translate-middle">{{$current_expeditions->count()}}</span> --}}
+                <span class="badge badge-circle badge-light-info ms-1">{{$current_expeditions->count()}}</span>
                 @endif
             </span>
             {{-- <!--end::Subtitle--> --}}
@@ -42,7 +43,7 @@
             {{-- <!--begin::Subtitle--> --}}
             <span class="nav-text text-gray-800 fw-bold fs-6 mb-3">Achevées
                 @if(0 !== $completed_expeditions->count())
-                <span class="badge badge-circle badge-light-primary ">{{$completed_expeditions->count()}}</span>
+                <span class="badge badge-circle badge-light-info ms-1">{{$completed_expeditions->count()}}</span>
                 @endif
             </span>
             {{-- <!--end::Subtitle--> --}}

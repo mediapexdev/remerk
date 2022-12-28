@@ -1,0 +1,14 @@
+[data-theme="dark"] #expeditions_overview_widget .card-title .title
+{
+    color: var(--kt-gray-900) !important;
+}
+
+[data-theme="dark"] #expeditions_overview_widget .card-title .status
+{
+    color: var(--kt-gray-600) !important;
+}
+
+[data-theme="dark"] #expeditions_overview_widget .card-toolbar .btn-see-all
+{
+    color: var(--kt-secondary-inverse) !important;
+}
