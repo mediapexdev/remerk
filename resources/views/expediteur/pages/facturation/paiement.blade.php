@@ -121,7 +121,16 @@ $body_classes = 'app-default';
                     </div>
                     <!--end::Invoice2content-->
                     <div class="mt-20">
-                        <p class="m-5">Conditions de paiement:</p>
+                        <div class="text-gray-400 fs-10">
+                            <p class="m-5">Conditions de paiement: </p>
+                            <p class="text-gray-400">
+                                Les paiements doivent être effectués en Franc CFA.
+                                Le paiement de la totalité du prix doit être reçu avant la livraison de la marchandise.
+                                Une retenue de 10% sera appliquée en cas de paiement tardif.
+                                Nous nous réservons le droit de refuser tout paiement en cas de litige en cours.
+                                Nous nous réservons le droit de modifier ces conditions de paiement à tout moment.
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <!--end::Content-->
@@ -138,29 +147,29 @@ $body_classes = 'app-default';
                                 @csrf
                                 <input type="hidden" name="expedition_id" value="{{$facture->expedition_id}}">
                                 <input type="hidden" name="facture_id" value="{{$facture->id}}">
-                                <button type="submit" class="btn btn-sm btn-success"
-                                    >Payer</button>
+                                <button type="submit" class="btn btn-sm btn-success">Payer</button>
                             </form> --}}
                             <button class="btn btn-sm btn-success" onclick="buy(this)">Payer</button>
-                           
-                            {{-- <button class="buy" onclick="buy(this)" data-item-id="88" >Acheter iphone (450000 XOF) --}}
-                            @else
-                            <a href="{{route('facturation')}}">
-                                <button class="btn btn-sm btn-info">
-                                    <i class="bi bi-backspace"></i>
-                                    <span>Retour</span>
+
+                            {{-- <button class="buy" onclick="buy(this)" data-item-id="88">Acheter iphone (450000 XOF)
+                                --}}
+                                @else
+                                <a href="{{route('facturation')}}">
+                                    <button class="btn btn-sm btn-info">
+                                        <i class="bi bi-backspace"></i>
+                                        <span>Retour</span>
+                                    </button>
+                                </a>
+                                @endif
+                                <button type="button" class="btn btn-sm btn-primary my-1 me-12" onclick="imprimer()">
+                                    <i class="bi bi-printer-fill"></i>
+                                    <span>Imprimer ou Télécharger</span>
                                 </button>
-                            </a>
-                            @endif
-                            <button type="button" class="btn btn-sm btn-primary my-1 me-12" onclick="imprimer()">
-                                <i class="bi bi-printer-fill"></i>
-                                <span>Imprimer ou Télécharger</span>
-                            </button>
-                            <!--end::Action-->
+                                <!--end::Action-->
                         </div>
                         <!--end::Labels-->
                         <!--begin::Title-->
-                        <h6 class="mb-8 fw-bolder text-gray-600 text-hover-primary">PAYMENT DETAILS</h6>
+                        <h6 class="mb-8 fw-bolder text-gray-600 text-center ">DETAILS DU PAIEMENT</h6>
                         <!--end::Title-->
                         <!--begin::Item-->
                         <div class="mb-6">

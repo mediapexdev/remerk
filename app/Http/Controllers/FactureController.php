@@ -74,12 +74,12 @@ class FactureController extends Controller
 
     public function show(Request $request)
     {
-        $facture_id             = $request['facture_id'];
-        $facture                = Facture::find($facture_id);
+        $facture_id         = $request['facture_id'];
+        $facture            = Facture::find($facture_id);
 
-        $user                   = Auth::user();
-        if (USER::EXPEDITEUR === $user->role_id) {
-            $expediteur     =  Expediteur::where('user_id', $user->id)->first();
+        $user               = Auth::user();
+        if(USER::EXPEDITEUR === $user->role_id) {
+            $expediteur     = Expediteur::where('user_id', $user->id)->first();
             $expedition     = Expedition::where('id', $facture->expedition_id)->first();
             $transporteur   = Transporteur::find($expedition->transporteur_id);
 
@@ -172,6 +172,12 @@ class FactureController extends Controller
         $expedition->etat_expedition_id = 3;
         $expedition->code = $code;
         $expedition->save();
+
+        $expedition_tracking = ExpeditionsTracking::where('expedition_id', $expedition->id)->first();
+        $expedition_tracking->etat_expedition_id = EtatExpedition::EN_ATTENTE_DE_CHARGEMENT;
+        $expedition_tracking->date_paiement = now(new \DateTimeZone('UTC'));
+        $expedition_tracking->save();
+        
         $response=$this->sendPayment($expedition,$facture);
         return response()->json($response);
 
@@ -183,10 +189,7 @@ class FactureController extends Controller
         // );
         // $message = $response->current();
 
-        $expedition_tracking = ExpeditionsTracking::where('expedition_id', $expedition->id)->first();
-        $expedition_tracking->etat_expedition_id = EtatExpedition::EN_ATTENTE_DE_CHARGEMENT;
-        $expedition_tracking->date_paiement = now(new \DateTimeZone('UTC'));
-        $expedition_tracking->save();
+        
 
         // if ($message->getStatus() == 0) {
         //     echo "The message was sent successfully\n";
@@ -208,7 +211,7 @@ class FactureController extends Controller
         $jsonResponse = (new PayTech(env('PAY_TECH_API_KEY'), env('PAY_TECH_API_SECRET')))
         ->setQuery([
             'item_name'    => $expedition->string_id,
-            'item_price'   => 100,
+            'item_price'   => $facture->montant,
             'command_name' => "Paiement de l expedition {$expedition->string_id} Gold via PayTech",
         ])
         ->setCustomeField([
