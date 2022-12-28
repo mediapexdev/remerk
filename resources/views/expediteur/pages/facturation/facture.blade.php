@@ -32,27 +32,27 @@ $expeditions_facture[] = $expedition;
 {{--
 <!--begin::Card--> --}}
 <div class="card card-flush">
-    <div class="row gy-5 g-xl-10">
+    {{-- <div class="row gy-5 g-xl-10"> --}}
         {{--
         <!--begin::Col--> --}}
-        <div class="col-xl-4 mb-xl-10 d-none d-xl-block d-xxl-block">
+        {{-- <div class="col-xl-4 mb-xl-10 d-none d-xl-block d-xxl-block"> --}}
             {{--
             <!--begin::Engage widget 3--> --}}
-            <img class="img-fluid theme-dark-show rounded" src="{{URL::asset('assets/images/Fitting_piece-dark.gif')}}"
-                alt="">
-            <img class="img-fluid theme-light-show rounded" src="{{URL::asset('assets/images/Fitting_piece.gif')}}"
-                alt="">
+            {{-- <img class="img-fluid theme-dark-show rounded"
+                src="{{URL::asset('assets/images/Fitting_piece-dark.gif')}}" alt=""> --}}
+            {{-- <img class="img-fluid theme-light-show rounded" src="{{URL::asset('assets/images/Fitting_piece.gif')}}"
+                alt=""> --}}
             {{--
             <!--end::Engage widget 3--> --}}
-        </div>
+        {{-- </div> --}}
         {{--
         <!--end::Col--> --}}
         {{--
         <!--begin::Col--> --}}
-        <div class="col-xl-8 mb-5 mb-xl-10">
+        <div class="mx-5">
             {{--
             <!--begin::Card--> --}}
-            <div class="card card-flush border-dotted">
+            {{-- <div class="card card-flush border-dotted "> --}}
                 {{--
                 <!--begin::Card header--> --}}
                 <div class="card-header border-0">
@@ -71,7 +71,7 @@ $expeditions_facture[] = $expedition;
                 <!--end::Card header--> --}}
                 {{--
                 <!--begin::Card body--> --}}
-                <div class="card-body pt-0">
+                <div class="card-body">
                     {{--
                     <!--begin::Table--> --}}
                     <table id="kt_factures_table" class="table table-sm align-middle table-row-dashed">
@@ -204,7 +204,7 @@ $expeditions_facture[] = $expedition;
                                     <div class="m-0">
                                         <p>
                                             <span>Vous n'avez pas encore reçu de proposition ? <span>
-                                                    <a href="#">Contactez-nous</a>
+                                                    <a href="#" class="text-primary text-hover-info">Contactez-nous</a>
                                         </p>
                                         <div>
                                             <img class="text-center" src="{{ asset('assets/images/18770.png') }}" alt=""
@@ -232,10 +232,12 @@ $expeditions_facture[] = $expedition;
                 </div>
                 {{--
                 <!--end::Card body--> --}}
-            </div>
+                {{--
+            </div> --}}
             {{--
             <!--end::Card--> --}}
-        </div>
+            {{--
+        </div> --}}
         {{--
         <!--end::Col--> --}}
     </div>

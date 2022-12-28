@@ -7,8 +7,8 @@
     use App\Models\Expediteur;
     use App\Models\EtatExpedition;
 
-    $expediteur = Expediteur::where('user_id', Auth::user()->id)->first();
-
+    $expediteur          = Expediteur::where('user_id', Auth::user()->id)->first();
+    $expeditions         = Expedition::where('expediteur_id', $expediteur->id)->get();
     $pending_expeditions = Expedition::where('etat_expedition_id', EtatExpedition::EN_ATTENTE)->orderByDesc('created_at')->get();
 
     $current_expeditions = Expedition::where('expediteur_id', $expediteur->id)->whereIn('etat_expedition_id', [
@@ -36,6 +36,9 @@
 @section('component-body-content')
 {{-- <!--begin::Row--> --}}
 <div class="d-block">
+    @if(0==$expeditions->count())
+        @include('expediteur.components.globals.default')
+    @else
     {{-- <!--begin::Expeditions--> --}}
     <div class="card container-fluid mb-5 mb-xl-10">
         {{-- <!--begin::Card header--> --}}
@@ -79,6 +82,7 @@
         {{-- <!--end::Card body--> --}}
     </div>
     {{-- <!--end::Expeditions--> --}}
+    @endif
 </div>
 {{-- <!--end::Row--> --}}
 @endsection
