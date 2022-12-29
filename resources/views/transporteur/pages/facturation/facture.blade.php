@@ -185,7 +185,7 @@ $expeditions = Expedition::where([
                             <img class="text-center" src="{{ asset('assets/images/18770.png') }}" alt="" height="250px">
                             <div class="text-center">
                                 <button class="btn btn-sm btn-light-primary" data-bs-toggle="modal"
-                                    data-bs-target="#kt_modal_create_expedition">Faites une
+                                    data-bs-target="#kt_modal_create_expedition">Faire une
                                     annonce</button>
                             </div>
                         </div>
