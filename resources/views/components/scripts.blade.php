@@ -28,11 +28,7 @@
 {{-- <!-- end::Jquery Easing --> --}}
 
 <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-<script>
-    var aurl = window.location.pathname;
-    // $('.app-container a[href$="' + aurl + '"]').parent('app-container').addClass('active');
-    $('.app-container a[href="' + aurl + '"]').parent('app-container').addClass('active');
-</script>
+<div class="elfsight-app-aedb561a-2cd6-4eb2-9f37-d5dd15cbd44e"></div>
 {{-- <!--end::Vendors Javascript--> --}}
 
 {{-- <!--begin::Custom Javascript--> --}}
