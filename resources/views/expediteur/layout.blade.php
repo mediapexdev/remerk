@@ -11,8 +11,10 @@
 @section('component-header')
     {{-- <!--begin::Header--> --}}
     @include('expediteur.components.globals.header')
-    @include('expediteur.components.globals.mobileMenu')
     {{-- <!--end::Header--> --}}
+    {{-- begin::Mobile Menu--}}
+    @include('expediteur.components.globals.mobileMenu')
+    {{-- end::Mobile Menu--}}
 @endsection
 
 @section('component-body')
@@ -25,6 +27,9 @@
 @endsection
 
 @section('component-footer')
+    {{-- <!--begin::Footer--> --}}
+    @include('expediteur.components.globals.footer')
+    {{-- <!--end::Footer--> --}}
     {{-- begin::Component Footer Content --}}
     @yield('component-footer-content')
     {{-- end::Component Footer Content --}}

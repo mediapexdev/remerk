@@ -9,13 +9,13 @@
     <div class="card-header pt-7">
         {{-- <!--begin::Card Title--> --}}
         <h3 class="card-title align-items-start flex-column">
-            <span class="card-label fw-bold text-gray-800">Parc de véhicules</span>
-            <span class="text-gray-400 mt-1 fw-semibold fs-6">Total {{$camions->count()}} Véhicules</span>
+            <span class="title card-label fw-bold text-gray-800">Parc de véhicules</span>
+            <span class="sub-title text-gray-400 mt-1 fw-semibold fs-6">Total {{$camions->count()}} Véhicules</span>
         </h3>
         {{-- <!--end::Card Title--> --}}
         {{-- <!--begin::Card Toolbar--> --}}
         <div class="card-toolbar nav-item">
-            <a href="{{route('vehicules')}}" class="btn btn-sm btn-secondary m-1">Voir tout</a>
+            <a href="{{route('vehicules')}}" class="btn-see-all btn btn-sm btn-light btn-active-light-primary m-1">Voir tout</a>
             <button class="btn btn-sm btn-light-primary m-1" data-bs-toggle="modal" href="#kt_modal_create_camion">
                 <span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">

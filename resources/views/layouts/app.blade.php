@@ -42,15 +42,11 @@
                 {{-- <!--end:::Main--> --}}
             </div>
             {{-- <!--end::Wrapper--> --}}
+            {{-- begin::Components --}}
+            @yield('component-footer')
+            {{-- end::Components --}}
         </div>
-        {{-- <!--end::Content wrapper--> --}}
+        {{-- <!--end::Page--> --}}
     </div>
-    {{-- <!--end::Page--> --}}
-
     {{-- <!--end::App--> --}}
-    {{-- begin::Components --}}
-    <div>
-        @yield('component-footer')
-    </div>
-    {{-- end::Components --}}
 @endsection

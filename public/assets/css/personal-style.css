@@ -8,7 +8,8 @@
 [data-theme="dark"] .app-header-menu .menu .menu-item .menu-link:not(:hover):not(.active) .menu-title,
 [data-theme="dark"] #app-navbar-item-theme-menu .menu-item .menu-link:not(:hover):not(.active) .menu-title,
 [data-theme="dark"] #app-navbar-item-user-menu-toggle .menu-item .menu-link:not(:hover):not(.active),
-[data-theme="dark"] #app-navbar-item-user-menu-toggle .menu-item .menu-link:not(:hover):not(.active) .menu-title
+[data-theme="dark"] #app-navbar-item-user-menu-toggle .menu-item .menu-link:not(:hover):not(.active) .menu-title,
+[data-theme="dark"] .card .card-header .card-title .title
 {
     color: var(--kt-gray-900) !important;
 }
@@ -24,7 +25,13 @@
     color: var(--kt-gray-800) !important;
 }
 
+[data-theme="dark"] .card .card-header .card-title .sub-title,
 [data-theme="dark"] #app-navbar-item-user-menu-toggle .menu-item .menu-link .phone-number-label
 {
     color: var(--kt-gray-700) !important;
+}
+
+[data-theme="dark"] .btn-see-all:not(:hover):not(.btn-active)
+{
+    color: var(--kt-secondary-inverse) !important;
 }

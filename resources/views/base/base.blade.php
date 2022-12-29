@@ -57,6 +57,9 @@
         }
         </script>
         {{-- end::Theme mode setup on page load --}}
+        {{-- <!-- begin::Whatsapp chat widget --> --}}
+        <div class="elfsight-app-aedb561a-2cd6-4eb2-9f37-d5dd15cbd44e"></div>
+        {{-- <!-- end::Whatsapp chat widget --> --}}
         @yield('content')
         {{-- begin::Javascript --}}
             <script>

@@ -31,7 +31,7 @@ $(() => {
     /**
      * 
      */
-    $('#kt_postulants_all_table .btn_select_postulant, #kt_postulants_one_table .btn_select_postulant').click(e => {
+    $('#kt_postulants_all_table, #kt_postulants_one_table').on('click', '.btn_select_postulant', e => {
         e.preventDefault();
         const btn = e.currentTarget;
         const postulant_id = $(btn).attr('data-postulant-id');

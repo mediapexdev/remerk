@@ -43,7 +43,7 @@
                 <option></option>
                 <option value="all">Tout</option>
                 @foreach ($matieres as $matiere)
-                    <option value={{$matiere->type}}>{{$matiere->type}}</option> 
+                    <option value="{{$matiere->type}}">{{$matiere->type}}</option> 
                 @endforeach
             </select>
             {{-- <!--end::Select2--> --}}

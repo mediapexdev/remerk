@@ -6,7 +6,7 @@
                     href="#kt_tab_contact">
                     <div class="row">
                         <div class="col-4 d-flex align-items-center">
-                            <img src="assets/icons/contact.png" style="height: 35px; widht:35px;">
+                            <img src="assets/icons/contact.png" style="height: 35px; width:35px;">
                         </div>
                         <div class="col-8 d-flex align-items-center">
                             <h3 class="  flex-wrap">
@@ -24,7 +24,7 @@
                     href="#kt_tab_msg_recu">
                     <div class="row">
                         <div class="col-4 d-flex align-items-center">
-                            <img src="assets/icons/message.png" style="height: 35px; widht:35px;">
+                            <img src="assets/icons/message.png" style="height: 35px; width:35px;">
                         </div>
                         <div class="col-8 d-flex align-items-center">
                             <h3 class="  text-start ">
@@ -44,7 +44,7 @@
                     href="#kt_tab_msg_envoye">
                     <div class="row">
                         <div class="col-4 d-flex align-items-center">
-                            <img src="assets/icons/chatting.png" style="height: 35px; widht:35px;">
+                            <img src="assets/icons/chatting.png" style="height: 35px; width:35px;">
                         </div>
                         <div class="col-8 d-flex align-items-center">
                             <h3 class="  flex-wrap">

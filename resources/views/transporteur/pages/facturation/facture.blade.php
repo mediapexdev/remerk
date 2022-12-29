@@ -31,7 +31,7 @@ $expeditions = Expedition::where([
             <!--begin::Card title--> --}}
             <div class="card-title">
                 <div class="d-flex align-items-center">
-                    <img src="assets/icons/facture01.png" style="height: 35px; widht:35px;">
+                    <img src="assets/icons/facture01.png" style="height: 35px; width:35px;">
                     <h2 class="ms-2">Mes factures</h2>
                 </div>
             </div>
