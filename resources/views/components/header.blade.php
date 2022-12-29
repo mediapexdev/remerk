@@ -1,5 +1,5 @@
 {{-- <!--begin::Header--> --}}
-<div id="kt_app_header" class="app-header navbar-nav-scroll scroll-y" style="margin:0 auto; width:100%">
+<div id="kt_app_header" class="app-header navbar-nav-scroll scroll-y d-print-none" style="margin:0 auto; width:100%">
     {{-- <!--begin::Header container--> --}}
     <div id="kt_app_header_container" class="app-container container-fluid d-flex align-items-stretch justify-content-between">
         {{-- <!--begin::Mobile logo--> --}}
