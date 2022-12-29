@@ -50,7 +50,7 @@
                     <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
                 </span>
             </button>
-            <button type="button" class="btn btn-lg btn-primary"data-kt-stepper-action="next">
+            <button type="button" class="btn btn-lg btn-primary" data-kt-stepper-action="next">
                 <span>Continuer</span>
                 {{-- <!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg--> --}}
                 <span class="svg-icon svg-icon-3 ms-1 me-0">
