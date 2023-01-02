@@ -1,17 +1,6 @@
-[data-theme="dark"] .kt_postulants_table thead tr,
-[data-theme="dark"] .kt_postulants_table thead tr th
-{
-    color: var(--kt-text-gray-700) !important;
-}
-
-[data-theme="dark"] .kt_postulants_table tbody tr,
-[data-theme="dark"] .kt_postulants_table tbody tr th,
-[data-theme="dark"] .kt_postulants_table tbody tr td
-{
-    color: var(--kt-text-gray-800) !important;
-}
-
-[data-theme="dark"] .kt_postulants_table tbody tr td .postulant_title
+/*
+[data-theme="dark"] .kt_postulants_table tbody tr td .postulant_title:not(:hover)
 {
     color: var(--kt-text-gray-900) !important;
 }
+*/
