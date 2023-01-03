@@ -6,7 +6,7 @@
     {{-- <!--begin::Table head--> --}}
     <thead>
         {{-- <!--begin::Table row--> --}}
-        <tr class="text-start text-gray-500 fw-bold fs-7 text-uppercase gs-0">
+        <tr class="text-start text-gray-600 text-gray-700-in-dark fw-bold fs-7 text-uppercase gs-0">
             <th class="text-truncate">Expediteur</th>
             <th class="text-truncate">Matière</th>
             <th class="text-truncate">Poids</th>
@@ -19,19 +19,21 @@
     </thead>
     {{-- <!--end::Table head--> --}}
     {{-- <!--begin::Table body--> --}}
-    <tbody class="fw-semibold text-gray-700">
+    <tbody class="fw-semibold text-gray-700 text-gray-900-in-dark">
         @foreach ($completed_expeditions as $expedition)
             {{-- <!--begin::Table row--> --}}
             <tr>
                 {{-- <!--begin::Expéditeur--> --}}
                 <td class="text-truncate">
                     <div class="d-flex align-items-center">
+                        @php
+                            $expediteur = $expedition->expediteur;
+                            $color_class = Util::colorClassNames()[\mt_rand(0, 4)];
+                        @endphp
                         {{-- <!--begin:: Avatar --> --}}
-                        <div class="symbol symbol-circle symbol-50px overflow-hidden me-0">
-                            @php
-                                $expediteur = $expedition->expediteur;
-                                $color_class = Util::colorClassNames()[\mt_rand(0, 4)];
-                            @endphp
+                        <div id="expediteur_avatar_{{ $expediteur->id }}"
+                            class="symbol symbol-circle symbol-50px overflow-hidden me-0 expediteur_avatar cursor-pointer"
+                            data-method="GET" data-route="{{ route('expediteur.details', $expediteur->id) }}">
                             @if($expediteur->hasAvatar())
                                 <div class="symbol-label">
                                     <img class="w-100" src="{{$expediteur->avatar()}}" alt="{{$expediteur->fullName()}}">
@@ -43,7 +45,9 @@
                         {{-- <!--end::Avatar--> --}}
                         {{-- <!--begin::Title--> --}}
                         <div class="ms-5">
-                            <span class="text-gray-800 fs-5 fw-bold">{{ $expedition->expediteur->fullName() }}</span>
+                            <span id="expediteur_title_{{ $expediteur->id }}"
+                                class="expediteur_title text-gray-800 text-hover-primary fs-5 fw-bold cursor-pointer"
+                                data-route="{{ route('expediteur.details', $expediteur->id) }}">{{ $expedition->expediteur->fullName() }}</span>
                         </div>
                         {{-- <!--end::Title--> --}}
                     </div>

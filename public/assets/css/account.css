@@ -1,7 +1,25 @@
 #user_account_menu {
+    -webkit-box-shadow: 0 3px 20px rgb(89 105 129 / 30%),
+                        0 1px 2px rgb(0 0 0 / 5%),
+                        0 0 0 1px rgb(89 105 129 / 10%) !important;
+    -moz-box-shadow: 0 3px 20px rgb(89 105 129 / 30%),
+                    0 1px 2px rgb(0 0 0 / 5%),
+                    0 0 0 1px rgb(89 105 129 / 10%) !important;
     box-shadow: 0 3px 20px rgb(89 105 129 / 30%),
                 0 1px 2px rgb(0 0 0 / 5%),
                 0 0 0 1px rgb(89 105 129 / 10%) !important;
+}
+
+[data-theme="dark"] #user_account_menu {
+    -webkit-box-shadow: 0 3px 20px rgb(0 0 0 / 30%),
+                        0 1px 2px rgb(0 0 0 / 5%),
+                        0 0 0 1px rgb(0 0 0 / 10%) !important;
+    -moz-box-shadow: 0 3px 20px rgb(0 0 0 / 30%),
+                    0 1px 2px rgb(0 0 0 / 5%),
+                    0 0 0 1px rgb(0 0 0 / 10%) !important;
+    box-shadow: 0 3px 20px rgb(0 0 0 / 30%),
+                0 1px 2px rgb(0 0 0 / 5%),
+                0 0 0 1px rgb(0 0 0 / 10%) !important;
 }
 
 #user_account_menu .menu-item:first-child .menu-link {

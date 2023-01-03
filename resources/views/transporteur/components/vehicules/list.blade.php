@@ -1,35 +1,34 @@
 <!--begin::Table container-->
 <!--begin::Table-->
-<table class="table table-striped align-middle gs-0 gy-4" id="tableVehicule">
+<table id="tableVehicule" class="table align-middle gs-0 gy-4">
     <!--begin::Table head-->
     <thead>
-        <tr class="fw-bold text-muted bg-light">
-            <th class="ps-4  rounded-start">Véhicules</th>
+        <tr class="fw-bold bg-light text-gray-600 text-gray-700-in-dark">
+            <th class="ps-4 rounded-start">Véhicules</th>
             <th class="">Type</th>
             <th class="">Immatriculation</th>
             <th class="">Poids à vide</th>
             <th class="">Capacité</th>
             <th class="">Date mise en circulation</th>
             <th class="">Status</th>
-            <th class=" text-center rounded-end">Actions</th>
+            <th class="text-center rounded-end">Actions</th>
         </tr>
     </thead>
     <!--end::Table head-->
     <!--begin::Table body-->
     <tbody>
         @foreach ($camions as $camion)
-        <tr class="">
+        <tr>
             <td>
                 <div class="d-flex align-items-center">
-                    <button class="btn btn-sm btn-light-primary m-1 p-3 cursor-default"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-truck" viewBox="0 0 16 16">
-                        <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-                    </svg></button>
+                    <span class="svg-icon svg-icon-2 svg-icon-primary ms-2 me-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-truck" viewBox="0 0 16 16">
+                            <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                        </svg>
+                    </span>
                     <div class="d-flex justify-content-start flex-column">
-                        <span class="text-dark fw-bold mb-1 fs-6">
-                            {{$camion->modele}}
-                        </span>
-                        <span class="text-muted fw-semibold text-muted d-block fs-7"><span>{{ $camion->marque->nom
-                                }}</span></span>
+                        <span class="text-dark fw-bold fs-6">{{ $camion->modele }}</span>
+                        <span class="fw-semibold d-block fs-7 text-gray-700-in-dark">{{ $camion->marque->nom}}</span>
                     </div>
                 </div>
             </td>
@@ -46,9 +45,9 @@
                 <span class="badge badge-light text-dark fs-7 fw-bold">{{ $camion->capacite }} Tonnes</span>
             </td>
             <td class="">
-                <span class="fs-7 fw-bold">{{
-                    (new \DateTime($camion->date_mis_en_circulation, new \DateTimeZone('UTC')))->format('d/m/Y')
-                    }}</span>
+                <span class="fs-7 fw-bold">
+                    {{(new \DateTime($camion->date_mis_en_circulation, new \DateTimeZone('UTC')))->format('d/m/Y')}}
+                </span>
             </td>
             <td>
                 @if (!$camion->est_approuve)
@@ -78,7 +77,7 @@
                     @csrf
                     <input type="hidden" name="id_camion" value="{{ $camion->id }}">
                     <button type="button"  onclick="delete_camion({{$camion->id}})"
-                        class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                        class="btn btn-sm btn-icon btn-light-danger">
                         {{-- Supprimer --}}
                         <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                         <span class="svg-icon svg-icon-3">

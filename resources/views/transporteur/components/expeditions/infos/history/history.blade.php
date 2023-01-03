@@ -29,7 +29,7 @@
             <table class="table align-middle fs-6 gy-5 mb-0">
                 {{-- <!--begin::Table head--> --}}
                 <thead>
-                    <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                    <tr class="text-start text-gray-600 text-gray-700-in-dark fw-bold fs-7 text-uppercase gs-0">
                         <th class="min-w-100px">Date</th>
                         <th class="min-w-70px">Statut</th>
                         <th class="min-w-175px">Commentaire</th>
@@ -44,7 +44,7 @@
                 </thead>
                 {{-- <!--end::Table head--> --}}
                 {{-- <!--begin::Table body--> --}}
-                <tbody class="fw-semibold text-gray-600">
+                <tbody class="fw-semibold text-gray-700 text-gray-800-in-dark">
                     <tr>
                         {{-- <!--begin::Date--> --}}
                         <td>{{ (new \DateTime($expedition->created_at, new \DateTimeZone('UTC')))->format('d/m/Y') }}</td>

@@ -60,7 +60,7 @@ $expeditions_facture[] = $expedition;
                     <!--begin::Card title--> --}}
                     <div class="card-title">
                         <div class="d-flex align-items-center">
-                            <img src="assets/icons/facture01.png" style="height: 35px; width:35px;">
+                            <img src="{{URL::asset('assets/icons/facture01.png')}}" style="height: 35px; width:35px;">
                             <h2 class="ms-2">Mes factures</h2>
                         </div>
                     </div>
@@ -81,7 +81,7 @@ $expeditions_facture[] = $expedition;
                         <thead class="border-bottom border-gray-200 fs-7 fw-bold">
                             {{--
                             <!--begin::Table row--> --}}
-                            <tr class="text-start text-muted text-uppercase gs-0">
+                            <tr class="text-start text-gray-600 text-gray-700-in-dark text-uppercase gs-0">
                                 {{-- <th class="">No.</th> --}}
                                 <th>Expédition</th>
                                 <th>Transporteur</th>
@@ -112,7 +112,7 @@ $expeditions_facture[] = $expedition;
                                 {{--
                                 <!--begin::Expédition id--> --}}
                                 <td class="text-truncate">
-                                    <a class="text-gray-600 text-hover-primary"
+                                    <a class="text-gray-700 text-hover-primary"
                                         href="{{ route('expedition.infos', $facture->expedition->id) }}">{{$facture->expedition->string_id}}</a>
                                 </td>
                                 {{--

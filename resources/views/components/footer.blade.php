@@ -4,12 +4,12 @@
     <div class="app-container container-fluid d-flex flex-column flex-md-row flex-center flex-md-stack py-3">
         {{-- <!--begin::Copyright--> --}}
         <div class="text-dark order-2 order-md-1">
-            <span class="text-muted fw-semibold me-1">2022&copy;</span>
-            <a class="text-gray-800 text-hover-primary">Remerk</a>
+            <span class="text-gray-600 text-gray-700-in-dark fw-semibold me-1">2022 &copy;</span>
+            <a class="text-gray-800 text-hover-primary" href="#">Remerk</a>
         </div>
         {{-- <!--end::Copyright--> --}}
         {{-- <!--begin::Menu--> --}}
-        <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
+        <ul class="menu menu-gray-700 menu-hover-primary fw-semibold order-1">
             {{-- <!--begin::Menu Item--> --}}
             <li class="menu-item">
                 <a class="menu-link px-2">Accueil</a>
