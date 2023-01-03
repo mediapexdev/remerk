@@ -177,12 +177,14 @@ $expeditions = Expedition::where([
             @else
             <div class="container mb-10">
                 <div class="d-flex justify-content-center">
-                    <div class="text-center">
-                        <p>
-                            Vous n'avez pas encore reçu de proposition ?
+                    <div class="my-2 text-center">
+                        <p class="h5 text-center">
+                            <span>Vous n'avez pas encore reçu de proposition ? <span>
+                                    <a href="#" class="text-primary text-hover-info">Contactez-nous</a>
                         </p>
                         <div>
-                            <img class="text-center" src="{{ asset('assets/images/18770.png') }}" alt="" height="250px">
+                            <img class="text-center" src="{{ asset('assets/images/accueil2.png') }}" alt=""
+                                height="250px">
                             <div class="text-center">
                                 <button class="btn btn-sm btn-light-primary" data-bs-toggle="modal"
                                     data-bs-target="#kt_modal_create_expedition">Faire une
