@@ -10,7 +10,7 @@
 @extends('transporteur.layout')
 
 @section('title')
-<title>Suivi expéditions - Remërk</title>
+<title>Suivi expéditions | Remërk</title>
 @endsection
 
 @section('custom-css')

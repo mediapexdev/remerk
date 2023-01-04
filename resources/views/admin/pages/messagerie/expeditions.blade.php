@@ -12,7 +12,7 @@
 @endphp
 
 @section('title')
-    <title>Messagerie - Remërk</title>
+    <title>Messagerie | Remërk</title>
 @endsection
 
 @section('component-body-content')

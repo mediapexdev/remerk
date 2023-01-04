@@ -21,7 +21,7 @@ $expeditions_facture[] = $expedition;
 @extends('expediteur.layout')
 
 @section('title')
-<title>Mes factures - Remërk</title>
+<title>Mes factures | Remërk</title>
 @endsection
 
 @section('component-body-content')

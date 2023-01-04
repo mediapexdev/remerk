@@ -29,7 +29,7 @@
 @extends('expediteur.layout')
 
 @section('title')
-	<title>Mes expéditions - Remërk</title>
+	<title>Mes expéditions | Remërk</title>
 @endsection
 
 @section('component-body-content')

@@ -4,7 +4,7 @@
 @extends('base.base')
 
 @section('title')
-<title>S'inscrire - Remërk</title>
+<title>S'inscrire | Remërk</title>
 @endsection
 
 @section('content')

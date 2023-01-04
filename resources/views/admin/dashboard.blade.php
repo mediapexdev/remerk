@@ -1,7 +1,7 @@
 @extends('admin.layout')
 
 @section('title')
-<title>Admin - Remërk</title>
+<title>Admin | Remërk</title>
 @endsection
 
 @section('component-body-content')

@@ -5,7 +5,7 @@ $body_classes = 'app-default';
 @extends('expediteur.layout')
 
 @section('title')
-<title>Ma facture - Remërk</title>
+<title>Ma facture | Remërk</title>
 @endsection
 
 @section('styles')
@@ -16,7 +16,7 @@ $body_classes = 'app-default';
 {{--
 <!--begin::Row--> --}}
 <div class="row gy-0 g-xl-10">
-    {{-- <div class="container d-xxl-none d-xl-none d-lg-none pb-5">
+    <div class="container d-xxl-none d-xl-none d-lg-none pb-5">
         <div class="row d-flex flex-row-reverse d-print-none">
             <div class="col-xl-4 col-xxl-4 col-4">
                 @if($facture->etat == 1)
@@ -37,7 +37,7 @@ $body_classes = 'app-default';
                 </button>
             </div>
         </div>
-    </div> --}}
+    </div>
     <!--begin::Paiement -->
     <div class="card">
         <!--begin::Body-->
@@ -169,17 +169,17 @@ $body_classes = 'app-default';
                                         <button class="btn btn-sm btn-success w-100" onclick="buy(this)"><i class="bi bi-cash-stack"></i>
                                             <span>Payer</span>
                                         </button>
-                                        {{-- @else
+                                        @else
                                         <a href="{{route('facturation')}}" class="btn btn-sm btn-info w-100">
                                             <i class="bi bi-backspace"></i>
                                             <span>Retour</span>
-                                        </a> --}}
+                                        </a>
+                                        @endif
                                     </div>
-                                    @endif
                                     <div class="col-xl-8 col-xxl-8 col-8">
                                         <button type="button" class="btn btn-sm btn-primary my-1 me-12" onclick="imprimer()">
                                             <i class="bi bi-printer-fill"></i>
-                                            <span>Imprimer ou Télécharger</span>
+                                            <span>Imprimer-Télécharger</span>
                                         </button>
                                     </div>
                                 </div>

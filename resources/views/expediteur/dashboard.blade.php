@@ -12,7 +12,7 @@
 @extends('expediteur.layout')
 
 @section('title')
-	<title>Dashboard - Remërk</title>
+	<title>Dashboard | Remërk</title>
 @endsection
 
 @section('custom-css')

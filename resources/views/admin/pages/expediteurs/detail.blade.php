@@ -8,7 +8,7 @@
 @extends('admin.layout')
 
 @section('title')
-    <title>Expéditeurs - Remërk</title>
+    <title>Expéditeurs | Remërk</title>
 @endsection
 
 @section('component-body-content')
