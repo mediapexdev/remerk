@@ -17,7 +17,7 @@ $expeditions = Expedition::where([
 @extends('transporteur.layout')
 
 @section('title')
-<title>Factures - Remërk</title>
+<title>Factures | Remërk</title>
 @endsection
 
 @section('component-body-content')

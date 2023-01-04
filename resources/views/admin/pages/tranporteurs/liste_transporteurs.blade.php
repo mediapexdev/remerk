@@ -7,7 +7,7 @@
 @extends('admin.layout')
 
 @section('title')
-<title>Transporteurs - Remërk</title>
+<title>Transporteurs | Remërk</title>
 @endsection
 
 @section('component-body-content')

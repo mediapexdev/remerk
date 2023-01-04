@@ -11,7 +11,7 @@ $camions = Camion::where('transporteur_id', $transporteur->id)->orderByDesc('cre
 @extends('transporteur.layout')
 
 @section('title')
-<title>Mes véhicules - Remërk</title>
+<title>Mes véhicules | Remërk</title>
 @endsection
 
 @section('component-body-content')

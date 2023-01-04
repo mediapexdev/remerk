@@ -23,7 +23,7 @@ $messages = Reponse::orderBy('created_at', 'ASC')->get();
 @endsection
 
 @section('title')
-    <title>Messagerie - Remërk</title>
+    <title>Messagerie | Remërk</title>
 @endsection
 
 @section('component-body-content')

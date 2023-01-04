@@ -28,7 +28,7 @@ $t_colors_classes = ['danger', 'info', 'primary', 'success', 'warning'];
 @extends('admin.layout')
 
 @section('title')
-<title>Expéditions - Remërk</title>
+<title>Expéditions | Remërk</title>
 @endsection
 
 @section('component-body-content')

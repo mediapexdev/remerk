@@ -5,7 +5,7 @@
 @extends('admin.layout')
 
 @section('title')
-    <title>Messages reçus - Remërk</title>
+    <title>Messages reçus | Remërk</title>
 @endsection
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">

@@ -5,7 +5,7 @@ $body_classes = "app-default";
 @extends('base.base')
 
 @section('title')
-<title>Reçu - Remërk</title>
+<title>Reçu | Remërk</title>
 @endsection
 
 
