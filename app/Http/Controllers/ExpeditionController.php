@@ -145,6 +145,7 @@ class ExpeditionController extends Controller
             'etat_expedition_id'    => EtatExpedition::EN_ATTENTE
         ]);
         $notif=$this->sendNotification();
+        dd($notif);
         return redirect()->back()->with([
             'success' => "L'expédition a été ajoutée avec succès !",
             'expedition-acknowledgment-of-receipt' => true
@@ -241,11 +242,11 @@ class ExpeditionController extends Controller
         $SERVER_API_KEY = 'AAAAbQlH7Qw:APA91bEx9nC01HGG8Ao-tQ8ZYKExsRYxXE34nKHGI9b9oWEQWqQYAh3H1WaRW0-yD_QlMfs4UTqvoN1HxXXz1bsncnNhpIrtcHQ9rknkJTey0sE6a3dKbYxwiiaPDSRrd4AMLjOa1I3W';
 
         $data = [
-            "registration_ids" => $firebaseToken,
+            "registration_ids" => ['evas8GMgocCOONGlQ-8sYU:APA91bFyUZO0LJ5FAO7OCTOQyOOe2e_wcJhcJqluMS27FtEELYNHoLSDCzrP15yQFVKE4tarxmjIlmHhn5H2Y9PJJ6J6elDRgp9Wm_vrXl6zilvZwif8QNJo1epHED549fUokzgmZ6eg'],
             "notification" => [
                 "title" => 'expédition en cours',
                 "body" => 'Une nouvelle expédition en cours. Veuillez vérifier',
-                "icon" => "images/Fitting_piece.gif"
+                // "icon" => "images/Fitting_piece.gif"
             ]
         ];
         $dataString = json_encode($data);

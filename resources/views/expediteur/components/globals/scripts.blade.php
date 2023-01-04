@@ -3,7 +3,7 @@
     @include('components.scripts')
     {{-- <!--end::Vendors Javascript--> --}}
     {{-- <!--begin::Custom Javascript(used by this page)--> --}}
-    <script src="{{URL::asset('assets/js/custom/utilities/modals/create-expedition.js')}}"></script>
+    <script src="{{ URL::asset('assets/js/custom/utilities/modals/create-expedition.js') }}"></script>
     @yield('custom-js')
     {{-- <!--end::Custom Javascript--> --}}
     <script>
@@ -62,6 +62,7 @@
             })
             .then(function(token) {
                 sendTokenTokenToServer(token);
+                console.log(token)
                 tokenElement.innerHTML = token
             })
             .catch(function(err) {
@@ -69,20 +70,25 @@
                 console.log('Unable to get permission to notify.', err);
             });
 
-        messaging.onMessage((payload) => {
-            console.log('Message received. ', payload);
-            appendMessage(payload);
-        });
+        // messaging.onMessage((payload) => {
+        //     console.log('Message received. ', payload);
+        //     const title = payload.notification.title;
+        //     const options = {
+        //         body: payload.notification.body,
+        //         icon: payload.notification.icon,
+        //     };
+        //     new Notification(title, options);
+        // });
 
-        function appendMessage(payload) {
-            const messagesElement = document.querySelector('#messages');
-            const dataHeaderElement = document.createElement('h5');
-            const dataElement = document.createElement('pre');
-            dataElement.style = 'overflow-x:hidden;';
-            dataHeaderElement.textContent = 'Received message:';
-            dataElement.textContent = JSON.stringify(payload, null, 2);
-            messagesElement.appendChild(dataHeaderElement);
-            messagesElement.appendChild(dataElement);
-        }
+        // function appendMessage(payload) {
+        //     const messagesElement = document.querySelector('#messages');
+        //     const dataHeaderElement = document.createElement('h5');
+        //     const dataElement = document.createElement('pre');
+        //     dataElement.style = 'overflow-x:hidden;';
+        //     dataHeaderElement.textContent = 'Received message:';
+        //     dataElement.textContent = JSON.stringify(payload, null, 2);
+        //     messagesElement.appendChild(dataHeaderElement);
+        //     messagesElement.appendChild(dataElement);
+        // }
     </script>
 @endsection

@@ -173,6 +173,11 @@ class FactureController extends Controller
         $expedition->code = $code;
         $expedition->save();
         $response=$this->sendPayment($expedition,$facture);
+        $expedition_tracking = ExpeditionsTracking::where('expedition_id', $expedition->id)->first();
+        $expedition_tracking->etat_expedition_id = EtatExpedition::EN_ATTENTE_DE_CHARGEMENT;
+        $expedition_tracking->date_paiement = now(new \DateTimeZone('UTC'));
+        $expedition_tracking->save();
+
         return response()->json($response);
 
         // $expediteur = Auth::user();
@@ -183,11 +188,7 @@ class FactureController extends Controller
         // );
         // $message = $response->current();
 
-        $expedition_tracking = ExpeditionsTracking::where('expedition_id', $expedition->id)->first();
-        $expedition_tracking->etat_expedition_id = EtatExpedition::EN_ATTENTE_DE_CHARGEMENT;
-        $expedition_tracking->date_paiement = now(new \DateTimeZone('UTC'));
-        $expedition_tracking->save();
-
+        
         // if ($message->getStatus() == 0) {
         //     echo "The message was sent successfully\n";
         // } else {
