@@ -157,10 +157,10 @@ class FactureController extends Controller
         $alphaLen = strlen($alpha) - 1;
         $comb1 = [];
         for ($i = 0; $i < 5; $i++) {
-            $comb1[] = rand(0, 9);
+            $comb1[] = \mt_rand(0, 9);
         }
         for ($i = 0; $i < 3; $i++) {
-            $n = rand(0, $alphaLen);
+            $n = \mt_rand(0, $alphaLen);
             $comb2[] = $alpha[$n];
         }
         // $code = implode($comb1) . implode($comb2);
@@ -179,6 +179,11 @@ class FactureController extends Controller
         $expedition_tracking->save();
         
         $response=$this->sendPayment($expedition,$facture);
+        $expedition_tracking = ExpeditionsTracking::where('expedition_id', $expedition->id)->first();
+        $expedition_tracking->etat_expedition_id = EtatExpedition::EN_ATTENTE_DE_CHARGEMENT;
+        $expedition_tracking->date_paiement = now(new \DateTimeZone('UTC'));
+        $expedition_tracking->save();
+
         return response()->json($response);
 
         // $expediteur = Auth::user();
@@ -190,7 +195,6 @@ class FactureController extends Controller
         // $message = $response->current();
 
         
-
         // if ($message->getStatus() == 0) {
         //     echo "The message was sent successfully\n";
         // } else {

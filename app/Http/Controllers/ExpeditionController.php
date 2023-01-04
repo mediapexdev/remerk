@@ -145,7 +145,6 @@ class ExpeditionController extends Controller
             'etat_expedition_id'    => EtatExpedition::EN_ATTENTE
         ]);
         $notif=$this->sendNotification();
-        
         return redirect()->back()->with([
             'success' => "L'expédition a été ajoutée avec succès !",
             'expedition-acknowledgment-of-receipt' => true
@@ -227,10 +226,10 @@ class ExpeditionController extends Controller
         $comb1 = [];
 
         for ($i = 0; $i < 3; $i++) {
-            $comb1[] = rand(0, 9);
+            $comb1[] = \rand(0, 9);
         }
         for ($i = 0; $i < 3; $i++) {
-            $n = rand(0, $alphaLen);
+            $n = \rand(0, $alphaLen);
             $comb2[] = $alpha[$n];
         }
         $code = 'RK-'.implode($comb1).implode($comb2).'-'.$id;
@@ -246,7 +245,7 @@ class ExpeditionController extends Controller
             "notification" => [
                 "title" => 'expédition en cours',
                 "body" => 'Une nouvelle expédition en cours. Veuillez vérifier',
-                "icon" => "images/Fitting_piece.gif"
+                // "icon" => "images/Fitting_piece.gif"
             ]
         ];
         $dataString = json_encode($data);
@@ -265,7 +264,6 @@ class ExpeditionController extends Controller
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $dataString);
         $response = curl_exec($ch);
-        // dd($response);
         return $response;
     }
 }

@@ -512,7 +512,6 @@ Route::middleware(['auth'])->group(function () {
     Route::post('save-fcm-token', [FCMController::class, 'save_fcm_token'])
         ->name('token.store');
 
-    Route::get('/message', [FCMController::class, 'test']);
 
     /*
     **/
