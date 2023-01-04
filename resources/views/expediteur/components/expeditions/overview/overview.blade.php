@@ -40,13 +40,13 @@
         @endphp
         {{-- <!--begin::Title--> --}}
         <h3 class="card-title align-items-start flex-column">
-            <span class="title card-label fw-bold text-gray-800">Aperçu des expéditions</span>
-            <span class="status text-gray-400 mt-1 fw-semibold fs-6">{{ (!$expeditions_count ? 'Aucune' : $expeditions_count) . ' ' . $data_text }}</span>
+            <span class="title card-label fw-bold text-gray-800 text-gray-900-in-dark">Aperçu des expéditions</span>
+            <span class="sub-title text-gray-400 text-gray-700-in-dark mt-1 fw-semibold fs-6">{{ (!$expeditions_count ? 'Aucune' : $expeditions_count) . ' ' . $data_text }}</span>
         </h3>
         {{-- <!--end::Title--> --}}
         {{-- <!--begin::Toolbar--> --}}
         <div class="card-toolbar">
-            <a href="/expeditions" class="btn-see-all btn btn-sm btn-light">Voir tout</a>
+            <a href="/expeditions" class="btn-see-all btn btn-sm btn-light btn-active-light-primary">Voir tout</a>
         </div>
         {{-- <!--end::Toolbar--> --}}
     </div>

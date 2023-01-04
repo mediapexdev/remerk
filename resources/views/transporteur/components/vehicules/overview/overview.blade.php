@@ -9,13 +9,13 @@
     <div class="card-header pt-7">
         {{-- <!--begin::Card Title--> --}}
         <h3 class="card-title align-items-start flex-column">
-            <span class="card-label fw-bold text-gray-800">Parc de véhicules</span>
-            <span class="text-gray-400 mt-1 fw-semibold fs-6">Total {{$camions->count()}} Véhicules</span>
+            <span class="title card-label fw-bold text-gray-800 text-gray-900-in-dark">Parc de véhicules</span>
+            <span class="sub-title text-gray-400 text-gray-700-in-dark mt-1 fw-semibold fs-6">Total {{$camions->count()}} Véhicules</span>
         </h3>
         {{-- <!--end::Card Title--> --}}
         {{-- <!--begin::Card Toolbar--> --}}
         <div class="card-toolbar nav-item">
-            <a href="{{route('vehicules')}}" class="btn btn-sm btn-secondary m-1">Voir tout</a>
+            <a href="{{route('vehicules')}}" class="btn-see-all btn btn-sm btn-light btn-active-light-primary m-1">Voir tout</a>
             <button class="btn btn-sm btn-light-primary m-1" data-bs-toggle="modal" href="#kt_modal_create_camion">
                 <span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
@@ -37,10 +37,10 @@
                 {{-- <!--begin::Table container--> --}}
                 <div class="table-responsive">
                     {{-- <!--begin::Table--> --}}
-                    <table class="table table-row-dashed table-hover align-middle gs-0 gy-4 my-0">
+                    <table class="table table-row-dashed align-middle gs-0 gy-4 my-0">
                         {{-- <!--begin::Table head--> --}}
                         <thead>
-                            <tr class="fs-5 fw-bold text-gray-500 border-bottom-0">
+                            <tr class="fs-5 fw-bold text-gray-600 text-gray-700-in-dark border-bottom-0">
                                 <th class="min-w-150px">Type</th>
                                 <th class="min-w-150px">Matricule</th>
                                 <th>Status</th>
@@ -49,32 +49,31 @@
                         {{-- <!--end::Table head--> --}}
                         {{-- <!--begin::Table body--> --}}
                         @foreach ($camions as $camion)
-                        <tbody class="cursor-pointer">
-                            <tr class="">
+                        <tbody>
+                            <tr>
                                 {{-- <td>
                                     <p class="text-gray-800 fw-bold d-block mb-1 fs-6">{{$camion->marque->nom}}</p>
                                 </td> --}}
                                 <td>
                                     <div class="d-flex align-items-center">
                                         <div class="d-flex justify-content-start flex-column">
-                                            <p class="text-dark fw-bold  mb-1 fs-6">{{$camion->type->nom}}</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="">
-                                    <div class="d-flex align-items-center">
-                                        <div class="d-flex justify-content-start flex-column">
-                                            <p class="text-dark fw-bold  mb-1 fs-6">{{$camion->immatriculation}}
-                                            </p>
+                                            <p class="text-dark fw-bold mb-1 fs-6">{{$camion->type->nom}}</p>
                                         </div>
                                     </div>
                                 </td>
                                 <td>
-                                        @if(!$camion->est_approuve)
-                                                <span class="badge badge-pill badge-danger">Non approuvé</span>
-                                                @else
-                                                <span class="badge badge-pill badge-success">Approuvé</span>
-                                                @endif
+                                    <div class="d-flex align-items-center">
+                                        <div class="d-flex justify-content-start flex-column">
+                                            <p class="text-dark fw-bold mb-1 fs-6">{{$camion->immatriculation}}</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    @if(!$camion->est_approuve)
+                                    <span class="badge badge-pill badge-danger">Non approuvé</span>
+                                    @else
+                                    <span class="badge badge-pill badge-success">Approuvé</span>
+                                    @endif
                                 </td>
                             </tr>
                             @endforeach

@@ -1,14 +1,12 @@
-[data-theme="dark"] #expeditions_overview_widget .card-title .title
+/*
+[data-theme="dark"] #expeditions_overview_widget .nav .nav-item .nav-link .nav-text.tab-title,
+[data-theme="dark"] #expeditions_overview_widget .timeline .timeline-item .timeline-content .short-address
 {
     color: var(--kt-gray-900) !important;
 }
 
-[data-theme="dark"] #expeditions_overview_widget .card-title .status
+[data-theme="dark"] #expeditions_overview_widget .timeline .timeline-item .timeline-content .full-address
 {
-    color: var(--kt-gray-600) !important;
+    color: var(--kt-gray-700) !important;
 }
-
-[data-theme="dark"] #expeditions_overview_widget .card-toolbar .btn-see-all
-{
-    color: var(--kt-secondary-inverse) !important;
-}
+*/

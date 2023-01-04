@@ -13,10 +13,6 @@
     @yield('component-modals')
 {{-- <!--end::Modals--> --}}
 
-{{-- <!--begin::Footer--> --}}
-@include('expediteur.components.globals.footer')
-<!--end::Footer-->
-
 {{-- <!--begin::Scripts--> --}}
 @include('expediteur.components.globals.scripts')
 {{-- <!--end::Scripts--> --}}

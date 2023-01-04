@@ -8,7 +8,6 @@
     use App\Models\EtatExpedition;
 
     $expediteur          = Expediteur::where('user_id', Auth::user()->id)->first();
-    $expeditions         = Expedition::where('expediteur_id', $expediteur->id)->get();
     $pending_expeditions = Expedition::where('etat_expedition_id', EtatExpedition::EN_ATTENTE)->orderByDesc('created_at')->get();
 
     $current_expeditions = Expedition::where('expediteur_id', $expediteur->id)->whereIn('etat_expedition_id', [
@@ -36,17 +35,17 @@
 @section('component-body-content')
 {{-- <!--begin::Row--> --}}
 <div class="d-block">
-    @if(0==$expeditions->count())
+    @if(!$pending_expeditions->count() && !$current_expeditions->count() && !$completed_expeditions->count())
         @include('expediteur.components.globals.default')
     @else
     {{-- <!--begin::Expeditions--> --}}
-    <div class="card container-fluid mb-5 mb-xl-10">
+    <div class="list-expeditions-widget card container-fluid mb-5 mb-xl-10">
         {{-- <!--begin::Card header--> --}}
         <div class="card-header">
             {{-- <!--begin::Card title--> --}}
             <div class="card-title">
                 <div class="d-flex align-items-center">
-                    <img src="assets/icons/expedition03.png" style="height: 40px; widht:40px;">
+                    <img src="{{URL::asset('assets/icons/expedition03.png')}}" style="height: 40px; width:40px;">
                     <h2 class="ms-2 mt-4">Mes expéditions</h2>
                 </div>
             </div>

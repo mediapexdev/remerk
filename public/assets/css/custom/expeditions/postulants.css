@@ -1,0 +1,6 @@
+/*
+[data-theme="dark"] .kt_postulants_table tbody tr td .postulant_title:not(:hover)
+{
+    color: var(--kt-text-gray-900) !important;
+}
+*/

@@ -23,11 +23,11 @@
             <span class="fs-8 fw-bolder text-info text-uppercase">Départ</span>
             {{-- <!--begin::Label--> --}}
             {{-- <!--begin::Title--> --}}
-            <span class="fs-6 text-gray-600 fw-semibold d-block">{{ $expedition->adresseDepartComplet() }}</span>
+            <span class="full-address fs-6 text-gray-600 text-gray-700-in-dark fw-semibold d-block">{{ $expedition->adresseDepartComplet() }}</span>
             {{-- <!--end::Title--> --}}
-            {{-- <!--begin::Title--> --}}
-            <span class="fs-6 fw-bold text-gray-800">{{ $expedition->depart->commune->nom }}</span>
-            {{-- <!--end::Title--> --}}
+            {{-- <!--begin::Sub Title--> --}}
+            <span class="short-address fs-6 fw-bold text-gray-800 text-gray-900-in-dark">{{ $expedition->depart->commune->nom }}</span>
+            {{-- <!--end::Sub Title--> --}}
         </div>
         {{-- <!--end::Timeline content--> --}}
     </div>
@@ -55,11 +55,11 @@
             <span class="fs-8 fw-bolder text-success text-uppercase">Arrivée</span>
             {{-- <!--begin::Label--> --}}
             {{-- <!--begin::Title--> --}}
-            <span class="fs-6 text-gray-600 fw-semibold d-block">{{ $expedition->adresseArriveeComplet() }}</span>
+            <span class="full-address fs-6 text-gray-600 text-gray-700-in-dark fw-semibold d-block">{{ $expedition->adresseArriveeComplet() }}</span>
             {{-- <!--end::Title--> --}}
-            {{-- <!--begin::Title--> --}}
-            <span class="fs-6 fw-bold text-gray-800">{{ $expedition->arrivee->commune->nom }}</span>
-            {{-- <!--end::Title--> --}}
+            {{-- <!--begin::Sub Title--> --}}
+            <span class="short-address fs-6 fw-bold text-gray-800 text-gray-900-in-dark">{{ $expedition->arrivee->commune->nom }}</span>
+            {{-- <!--end::Sub Title--> --}}
         </div>
         {{-- <!--end::Timeline content--> --}}
     </div>

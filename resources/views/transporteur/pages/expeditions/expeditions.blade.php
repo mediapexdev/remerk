@@ -43,26 +43,32 @@
 	<title>Expéditions - Remërk</title>
 @endsection
 
+@section('custom-css')
+<link type="text/css" rel="stylesheet" href="{{URL::asset('assets/css/custom/expeditions/expediteurs.css')}}">
+@endsection
+
 @section('component-body-content')
 {{-- <!--begin::Row--> --}}
 <div class="d-block">
     {{-- <!--begin::Toolbar--> --}}
     {{-- @include('transporteur.components.expeditions.toolbar') --}}
     {{-- <!--end::Toolbar--> --}}
+    @if(!$available_expeditions->count() && !$current_expeditions->count() && !$completed_expeditions->count())
+        @include('expediteur.components.globals.default')
+    @else
     {{-- <!--begin::Expeditions--> --}}
-    <div class="card mb-5 mb-xl-10">
+    <div class="list-expeditions-widget card container-fluid mb-5 mb-xl-10">
         {{-- <!--begin::Card header--> --}}
         <div class="card-header">
             {{-- <!--begin::Card title--> --}}
             <div class="card-title">
                 <div class="d-flex align-items-center">
-                    <img src="assets/icons/expedition03.png" style="height: 40px; widht:40px;">
-                <h2 class="fw-bold ms-2 mt-4">Liste des expéditions</h2>
+                    <img src="{{URL::asset('assets/icons/expedition03.png')}}" style="height: 40px; width:40px;">
+                    <h2 class="fw-bold ms-2 mt-4">Liste des expéditions</h2>
                 </div>
             </div>
             {{-- <!--end::Card title--> --}}
-            {{-- <div class="card-toolbar">
-            </div> --}}
+            {{-- <div class="card-toolbar"></div> --}}
         </div>
         {{-- <!--end::Card header--> --}}
         {{-- <!--begin::Card body--> --}}
@@ -93,6 +99,7 @@
         {{-- <!--end::Card body--> --}}
     </div>
     {{-- <!--end::Expeditions--> --}}
+    @endif
 </div>
 {{-- <!--end::Row--> --}}
 @endsection
@@ -100,9 +107,11 @@
 @section('component-modals')
     @include('transporteur.components.modals.postulat')
     @include('transporteur.components.modals.voir-postulat')
+    <div id="modal_details_expediteur_wrapper"></div>
 @endsection
 
 @section('custom-js')
+<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/expeditions/details-expediteur.js')}}"></script>
 <script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/expeditions/carrier/postulat.js')}}"></script>
 <script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/expeditions/carrier/listing/made.js')}}"></script>
 <script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/expeditions/carrier/listing/available.js')}}"></script>

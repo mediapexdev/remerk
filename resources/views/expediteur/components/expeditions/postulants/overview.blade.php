@@ -16,12 +16,12 @@
     <div class="card-header pt-7">
         {{-- <!--begin::Card Title--> --}}
         <div class="card-title">
-            <h3 class="fw-bold text-gray-800">Postulants</h3>
+            <h3 class="title fw-bold text-gray-800 text-gray-900-in-dark">Postulants</h3>
         </div>
         {{-- <!--end::Card Title--> --}}
         {{-- <!--begin::Card Toolbar--> --}}
         <div class="card-toolbar">
-            <a href="/expeditions/postulants" class="btn btn-sm btn-light">Voir tout</a>
+            <a href="/expeditions/postulants" class="btn-see-all btn btn-sm btn-light btn-active-light-primary">Voir tout</a>
         </div>
         {{-- <!--end::Card Toolbar--> --}}
     </div>

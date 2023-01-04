@@ -9,7 +9,7 @@
         {{-- <!--begin::Table head--> --}}
         <thead>
             {{-- <!--begin::Table row--> --}}
-            <tr class="text-start text-gray-500 fw-bold fs-7 text-uppercase gs-0">
+            <tr class="text-start text-gray-600 text-gray-700-in-dark fw-bold fs-7 text-uppercase gs-0">
                 <th class="text-truncate text-center">Expédition ID</th>
                 <th class="text-truncate">Transporteur</th>
                 {{-- <th class="text-truncate">Montant <span class="text-gray-400 text-capitalize">(frcfa)</span></th> --}}
@@ -21,7 +21,7 @@
         </thead>
         {{-- <!--end::Table head--> --}}
         {{-- <!--begin::Table body--> --}}
-        <tbody class="fw-semibold text-gray-700">
+        <tbody class="fw-semibold text-gray-700 text-gray-900-in-dark">
             @foreach ($postulants as $postulant)
             {{-- <!--begin::Table row--> --}}
             <tr>
@@ -85,8 +85,10 @@
             {{-- <!--end::Table row--> --}}
             @endforeach
             @else
-            <div class="d-flex justify-content-center">
-                <p class="h4 text-center p-5">Merci de patienter, votre demande est en cours de traitement.</p>
+            <div class="d-flex flex-column">
+                <p class="h4 text-center"><span class="p-5">Merci de patienter, votre demande est en cours de traitement.</span>
+                    <img class="" src="{{ asset('assets/images/accueil2.png') }}" alt="" height="175" width="275">
+                </p>
             </div>
             @endif
         </tbody>

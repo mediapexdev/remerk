@@ -23,8 +23,11 @@
     <title>Postulants - Remërk</title>
 @endsection
 
-@section('component-body-content')
+@section('custom-css')
+<link type="text/css" rel="stylesheet" href="{{URL::asset('assets/css/custom/expeditions/postulants.css')}}">
+@endsection
 
+@section('component-body-content')
 @if (!$expeditions->count())
     @include('expediteur.components.default')
 @else

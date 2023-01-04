@@ -145,7 +145,6 @@ class ExpeditionController extends Controller
             'etat_expedition_id'    => EtatExpedition::EN_ATTENTE
         ]);
         $notif=$this->sendNotification();
-        dd($notif);
         return redirect()->back()->with([
             'success' => "L'expédition a été ajoutée avec succès !",
             'expedition-acknowledgment-of-receipt' => true
@@ -227,10 +226,10 @@ class ExpeditionController extends Controller
         $comb1 = [];
 
         for ($i = 0; $i < 3; $i++) {
-            $comb1[] = rand(0, 9);
+            $comb1[] = \rand(0, 9);
         }
         for ($i = 0; $i < 3; $i++) {
-            $n = rand(0, $alphaLen);
+            $n = \rand(0, $alphaLen);
             $comb2[] = $alpha[$n];
         }
         $code = 'RK-'.implode($comb1).implode($comb2).'-'.$id;
@@ -242,7 +241,7 @@ class ExpeditionController extends Controller
         $SERVER_API_KEY = 'AAAAbQlH7Qw:APA91bEx9nC01HGG8Ao-tQ8ZYKExsRYxXE34nKHGI9b9oWEQWqQYAh3H1WaRW0-yD_QlMfs4UTqvoN1HxXXz1bsncnNhpIrtcHQ9rknkJTey0sE6a3dKbYxwiiaPDSRrd4AMLjOa1I3W';
 
         $data = [
-            "registration_ids" => ['evas8GMgocCOONGlQ-8sYU:APA91bFyUZO0LJ5FAO7OCTOQyOOe2e_wcJhcJqluMS27FtEELYNHoLSDCzrP15yQFVKE4tarxmjIlmHhn5H2Y9PJJ6J6elDRgp9Wm_vrXl6zilvZwif8QNJo1epHED549fUokzgmZ6eg'],
+            "registration_ids" => $firebaseToken,
             "notification" => [
                 "title" => 'expédition en cours',
                 "body" => 'Une nouvelle expédition en cours. Veuillez vérifier',

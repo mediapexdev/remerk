@@ -1,5 +1,5 @@
 <!-- Bottom Navbar -->
-<nav class="app-footer navbar navbar-expand fixed-bottom d-lg-none d-xl-none d-xxl-none p-0 h-55px">
+<nav class="app-footer navbar navbar-expand fixed-bottom d-lg-none d-xl-none d-xxl-none p-0 h-55px d-print-none">
     <ul class="navbar-nav nav-justified w-100">
         <li class="nav-item menu-here-bg">
             <a href="/"

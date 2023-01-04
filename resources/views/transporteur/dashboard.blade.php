@@ -12,7 +12,7 @@
 	<title>Dashboard - Remërk</title>
 @endsection
 
-@section('styles')
+@section('custom-css')
 <link type="text/css" rel="stylesheet" href="{{URL::asset('assets/css/custom/expeditions/overview.css')}}">
 @endsection
 

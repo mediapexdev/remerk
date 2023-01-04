@@ -32,7 +32,7 @@
                     href="#kt_tab_historique">
                     <div class="row">
                         <div class="col-4 d-flex align-items-center">
-                            <img src="assets/icons/transaction-80.png" style="height: 35px; widht:35px;">
+                            <img src="assets/icons/transaction-80.png" style="height: 35px; width:35px;">
                         </div>
                         <div class="col-8 d-flex align-items-center">
                             <h3 class="  flex-wrap">
@@ -53,7 +53,7 @@
                     href="#kt_tab_devis">
                     <div class="row">
                         <div class="col-4 d-flex align-items-center">
-                            <img src="assets/icons/devis1-80.png" style="height: 35px; widht:35px;">
+                            <img src="assets/icons/devis1-80.png" style="height: 35px; width:35px;">
                         </div>
                         <div class="col-8 d-flex align-items-center">
                             <h3 class="  text-start ">
@@ -74,7 +74,7 @@
                     href="#kt_tab_facture">
                     <div class="row">
                         <div class="col-4 d-flex align-items-center">
-                            <img src="assets/icons/facture0-80.png" style="height: 35px; widht:35px;">
+                            <img src="assets/icons/facture0-80.png" style="height: 35px; width:35px;">
                         </div>
                         <div class="col-8 d-flex align-items-center">
                             <h3 class="  flex-wrap">

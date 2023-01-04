@@ -5,6 +5,36 @@
     display: none;
 }
 
+[data-theme="dark"] .text-gray-400-in-dark
+{
+    color: var(--kt-gray-400) !important;
+}
+
+[data-theme="dark"] .text-gray-500-in-dark
+{
+    color: var(--kt-gray-500) !important;
+}
+
+[data-theme="dark"] .text-gray-600-in-dark
+{
+    color: var(--kt-gray-600) !important;
+}
+
+[data-theme="dark"] .text-gray-700-in-dark
+{
+    color: var(--kt-gray-700) !important;
+}
+
+[data-theme="dark"] .text-gray-800-in-dark
+{
+    color: var(--kt-gray-800) !important;
+}
+
+[data-theme="dark"] .text-gray-900-in-dark
+{
+    color: var(--kt-gray-900) !important;
+}
+
 [data-theme="dark"] .app-header-menu .menu .menu-item .menu-link:not(:hover):not(.active) .menu-title,
 [data-theme="dark"] #app-navbar-item-theme-menu .menu-item .menu-link:not(:hover):not(.active) .menu-title,
 [data-theme="dark"] #app-navbar-item-user-menu-toggle .menu-item .menu-link:not(:hover):not(.active),
@@ -13,18 +43,35 @@
     color: var(--kt-gray-900) !important;
 }
 
+
 [data-theme="dark"] #app-navbar-item-theme-menu .btn.btn-icon:not(:hover):not(.btn-active) .svg-icon,
 [data-theme="dark"] #app-navbar-item-theme-menu .btn.btn-icon:not(:hover):not(.btn-active) i,
 [data-theme="dark"] #app-navbar-item-theme-menu .menu-item .menu-link:not(:hover):not(.active) .menu-icon,
 [data-theme="dark"] #app-navbar-item-theme-menu .menu-item .menu-link:not(:hover):not(.active) .menu-icon .svg-icon,
 [data-theme="dark"] #app-navbar-item-theme-menu .menu-item .menu-link:not(:hover):not(.active) .menu-icon i,
 [data-theme="dark"] #app-navbar-item-chat-drawer-toggle .btn.btn-icon:not(:hover):not(.btn-active) .svg-icon,
-[data-theme="dark"] #app-navbar-item-chat-drawer-toggle .btn.btn-icon:not(:hover):not(.btn-active) i
+[data-theme="dark"] #app-navbar-item-chat-drawer-toggle .btn.btn-icon:not(:hover):not(.btn-active) i/*,
+[data-theme="dark"] table tr th .svg-icon,
+[data-theme="dark"] table tr td .svg-icon*/
 {
     color: var(--kt-gray-800) !important;
 }
 
-[data-theme="dark"] #app-navbar-item-user-menu-toggle .menu-item .menu-link .phone-number-label
+/*
+[data-theme="dark"] .card .card-header .card-title .sub-title,
+[data-theme="dark"] #app-navbar-item-user-menu-toggle .menu-item .menu-link .phone-number-label,
+[data-theme="dark"] table thead tr,
+[data-theme="dark"] table thead tr th
 {
     color: var(--kt-gray-700) !important;
+}
+*/
+[data-theme="dark"] .btn-see-all:not(:hover):not(.btn-active)
+{
+    color: var(--kt-secondary-inverse) !important;
+}
+
+[data-theme="dark"] table .fw-bold
+{
+    font-weight: 500 !important;
 }
