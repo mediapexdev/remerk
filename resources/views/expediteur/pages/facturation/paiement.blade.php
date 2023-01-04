@@ -164,8 +164,8 @@ $body_classes = 'app-default';
                         <div class="mb-8">
                             <div class="container-fluid d-none d-xl-block d-xxl-block d-lg-block">
                                 <div class="row align-items-center justify-content-center">
-                                    @if($facture->etat == 1)
                                     <div class="col-xl-4 col-xxl-4 col-4">
+                                        @if($facture->etat == 1)
                                         <button class="btn btn-sm btn-success w-100" onclick="buy(this)"><i class="bi bi-cash-stack"></i>
                                             <span>Payer</span>
                                         </button>
@@ -255,21 +255,21 @@ $body_classes = 'app-default';
 <script>
     function buy(btn) {
         (new PayTech({
-            facture_id    :   {{$expedition->id}}, //will be sent to paiement.php page
-            expedition_id    :   {{$facture->id}},
+            facture_id        : {{$expedition->id}}, //will be sent to paiement.php page
+            expedition_id     : {{$facture->id}},
         })).withOption({
-            requestTokenUrl     :   '/payer-facture',
-            method              :   'POST',
-            headers             :   {
-                "Accept"          :    "text/html",
+            requestTokenUrl   : '/payer-facture',
+            method            : 'POST',
+            headers           : {
+                "Accept"      : "text/html",
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
-            prensentationMode   :   PayTech.OPEN_IN_POPUP,
-            willGetToken        :   function () {
+            prensentationMode : PayTech.OPEN_IN_POPUP,
+            willGetToken      : function () {
             },
-            didGetToken         : function (token, redirectUrl) {
+            didGetToken       : function (token, redirectUrl) {
             },
-            didReceiveError: function (error) {
+            didReceiveError   : function (error) {
             },
             didReceiveNonSuccessResponse: function (jsonResponse) {
             }
