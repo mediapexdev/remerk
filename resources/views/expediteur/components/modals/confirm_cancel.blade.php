@@ -6,7 +6,9 @@
             <!--begin::Modal header-->
             <div class="modal-header p-1 m-2 border-0 d-flex justify-content-end">
                 <!--begin::Close-->
-                    <button class="btn px-4 py-2 btn-sm btn-facebook me-1" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
+                <button class="btn px-4 py-2 btn-sm btn-facebook me-1" data-bs-dismiss="modal">
+                    <i class="bi bi-x-lg"></i>
+                </button>
                 <!--end::Close-->
             </div>
             <!--end::Modal header-->
@@ -23,7 +25,7 @@
                                 <!--begin::Text-->
                                 <p class="h3 title fw-semibold mb-4">Cette expédition est en cours, <br> êtes-vous sûr de vouloir Annuler ?</p>
                                 <div class="img">
-                                    <img src="assets/media/illustrations/sigma-1/20-dark.png" class="img-fluid h-175px">
+                                    <img src="{{URL::asset('assets/media/illustrations/sigma-1/20-dark.png')}}" class="img-fluid h-175px" alt="Illustration">
                                 </div>
                                 <!--end::Text-->
                                 <!--begin::Tag-->

@@ -32,7 +32,7 @@
                         {{-- <!--begin::Content--> --}}
                         <div class="fw-semibold">
                             <h4 class="text-gray-900 fw-bold">Vous désactivez votre compte</h4>
-                            <div class="fs-6 text-gray-700">
+                            <div class="fs-6 text-gray-700 text-gray-800-on-dark">
                                 <span>Pour plus de sécurité, cela vous oblige à confirmer votre adresse e-mail ou votre numéro de téléphone lorsque vous désactivez votre compte.</span>
                                 <br />
                                 <a class="fw-bold" href="#">En savoir encore plus</a>

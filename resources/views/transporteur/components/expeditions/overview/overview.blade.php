@@ -44,8 +44,8 @@
         @endphp
         {{-- <!--begin::Title--> --}}
         <h3 class="card-title align-items-start flex-column">
-            <span class="title card-label fw-bold text-gray-800 text-gray-900-in-dark">Aperçu des expéditions</span>
-            <span class="sub-title text-gray-400 text-gray-700-in-dark mt-1 fw-semibold fs-6">{{ (!$expeditions_count ? 'Aucune' : $expeditions_count) . ' ' . $data_text }}</span>
+            <span class="title card-label fw-bold text-gray-800 text-gray-900-on-dark">Aperçu des expéditions</span>
+            <span class="sub-title text-gray-400 text-gray-700-on-dark mt-1 fw-semibold fs-6">{{ (!$expeditions_count ? 'Aucune' : $expeditions_count) . ' ' . $data_text }}</span>
         </h3>
         {{-- <!--end::Title--> --}}
         {{-- <!--begin::Toolbar--> --}}

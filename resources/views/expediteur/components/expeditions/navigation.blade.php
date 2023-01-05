@@ -4,7 +4,7 @@
             {{-- <!--begin::Item--> --}}
             <li class="col-5 nav-item mt-2 mx-0">
                 {{-- <!--begin::Link--> --}}
-                <a class="nav-link text-gray-700 text-gray-900-in-dark ms-0 me-1 py-5 active" href="#kt_tab_pending_expeditions" data-bs-toggle="tab">En attente
+                <a class="nav-link text-gray-700 text-gray-900-on-dark ms-0 me-1 py-5 active" href="#kt_tab_pending_expeditions" data-bs-toggle="tab">En attente
                     {{-- @if(0 !== $pending_expeditions->count())
                     <span class="m-4">
                         <span class="text-white position-absolute translate-middle badge rounded-pill bg-primary">
@@ -22,7 +22,7 @@
             {{-- <!--begin::Item--> --}}
             <li class="col-5 nav-item mt-2 m-0 ms-0">
                 {{-- <!--begin::Link--> --}}
-                <a class="nav-link text-gray-700 text-gray-900-in-dark ms-0 me-1 py-5" href="#kt_tab_expeditions_in_progress" data-bs-toggle="tab">En cours
+                <a class="nav-link text-gray-700 text-gray-900-on-dark ms-0 me-1 py-5" href="#kt_tab_expeditions_in_progress" data-bs-toggle="tab">En cours
                     {{-- @if(0 !== $current_expeditions->count())
                     <span class="m-4">
                         <span class="text-white position-absolute translate-middle badge rounded-pill bg-primary">
@@ -40,7 +40,7 @@
             {{-- <!--begin::Item--> --}}
             <li class="col-2 nav-item mt-2 mx-0">
                 {{-- <!--begin::Link--> --}}
-                <a class="nav-link text-gray-700 text-gray-900-in-dark ms-0 me-2 py-5" href="#kt_tab_expeditions_made" data-bs-toggle="tab">Effectuées
+                <a class="nav-link text-gray-700 text-gray-900-on-dark ms-0 me-2 py-5" href="#kt_tab_expeditions_made" data-bs-toggle="tab">Effectuées
                     @if(0 !== $completed_expeditions->count())
                     <span class="badge badge-circle badge-light-info ms-1">{{$completed_expeditions->count()}}</span>
                     @endif

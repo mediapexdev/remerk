@@ -15,7 +15,7 @@
         <h1 class="text-dark fw-bolder mb-3">Mot de passe oublié ?</h1>
         {{-- <!--end::Title--> --}}
         {{-- <!--begin::Link--> --}}
-        <div class="text-gray-500 fw-semibold fs-6">Entrez votre numéro de téléphone pour réinitialiser votre mot de passe.</div>
+        <div class="text-gray-600 text-gray-700-on-dark fw-semibold fs-6">Entrez votre numéro de téléphone pour réinitialiser votre mot de passe.</div>
         {{-- <!--end::Link--> --}}
     </div>
     {{-- <!--end::Heading--> --}}
@@ -23,7 +23,7 @@
     <div class="fv-row mb-8 form-floating">
         {{-- <!--begin::Phone--> --}}
         <input type="tel" name="phone" id="ipt_phone" placeholder="Numéro de téléphone"
-            autocomplete="off" class="form-control bg-transparent" :value="old('phone')" autofocus>
+            autocomplete="off" class="form-control bg-transparent text-gray-900-on-dark" :value="old('phone')" autofocus>
         <label for="floatingInput">Téléphone</label>
         {{-- <!--end::Phone--> --}}
     </div>
@@ -40,7 +40,7 @@
             </span>
             {{-- <!--end::Indicator progress--> --}}
         </button>
-        <a href="{{route('login')}}" class="btn btn-light">Annuler</a>
+        <a href="{{route('login')}}" class="btn btn-secondary">Annuler</a>
     </div>
     {{-- <!--end::Actions--> --}}
 </form>

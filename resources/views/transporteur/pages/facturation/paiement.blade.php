@@ -36,13 +36,13 @@
                                 <div class="col-sm-6">
                                     <div class="d-flex align-items-end flex-column">
                                         <div class="d-flex align-items-start flex-column">
-                                        <div class="fw-bold fs-5 text-gray-800 text-gray-900-in-dark mb-4">
+                                        <div class="fw-bold fs-5 text-gray-800 text-gray-900-on-dark mb-4">
                                             <div>
                                                 <div><span>Facture N° R-00{{$facture->id}}</span></div>
                                                 <div><span>{{\date('d/m/Y', \strtotime($facture->created_at))}}</span></div>
                                             </div>
                                         </div>
-                                            <div class="fw-bold fs-6 text-gray-800 text-gray-900-in-dark">{{$transporteur->fullName()}}</div>
+                                            <div class="fw-bold fs-6 text-gray-800 text-gray-900-on-dark">{{$transporteur->fullName()}}</div>
                                             <div class="fw-semibold fs-7 text-gray-700">{{$transporteur->adresse}}</div>
                                             <div class="fw-semibold fs-7 text-gray-700">{{$transporteur->phoneNumber(true)}}</div>
                                         </div>
@@ -58,7 +58,7 @@
                                     <div class="table-responsive border-bottom mb-9">
                                         <table class="table mb-3">
                                             <thead>
-                                                <tr class="border-bottom fs-6 fw-bold text-gray-600 text-gray-700-in-dark">
+                                                <tr class="border-bottom fs-6 fw-bold text-gray-600 text-gray-700-on-dark">
                                                     <th class="min-w-200px pb-2">Description</th>
                                                     <th class="min-w-70px text-center pb-2">Poids</th>
                                                     <th class="min-w-80px text-center pb-2">Transporteur</th>
@@ -66,7 +66,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr class="fw-bold text-gray-800 text-gray-900-in-dark fs-5 text-start">
+                                                <tr class="fw-bold text-gray-800 text-gray-900-on-dark fs-5 text-start">
                                                     <td class="pt-6">
                                                         <span>Transport de {{$expedition->matiereType()}}</span>
                                                     </td>
@@ -95,7 +95,7 @@
                                                 <div class="fw-semibold pe-10 text-gray-800 fs-6">Montant net à payer :</div>
                                                 <!--end::Code-->
                                                 <!--begin::Label-->
-                                                <div class="text-start fw-bold fs-5 text-gray-800 text-gray-900-in-dark">
+                                                <div class="text-start fw-bold fs-5 text-gray-800 text-gray-900-on-dark">
                                                     <span>{{number_format($facture->montant, 0, ',', ' ')}}</span>
                                                     <span class="text-gray-700"> Fr Cfa</span>
                                                 </div>
@@ -154,26 +154,26 @@
                             </div>
                             <!--end::Labels-->
                             <!--begin::Title-->
-                            <h6 class="mb-8 fw-bolder text-gray-800 text-gray-900-in-dark">DETAILS DU PAIEMENT</h6>
+                            <h6 class="mb-8 fw-bolder text-gray-800 text-gray-900-on-dark">DETAILS DU PAIEMENT</h6>
                             <!--end::Title-->
                             <!--begin::Item-->
                             <div class="mb-6">
-                                <div class="fw-semibold text-gray-700 text-gray-800-in-dark fs-7">Paypal:</div>
-                                <div class="fw-bold text-gray-800 text-gray-900-in-dark fs-6">codelabpay@codelab.co</div>
+                                <div class="fw-semibold text-gray-700 text-gray-800-on-dark fs-7">Paypal:</div>
+                                <div class="fw-bold text-gray-800 text-gray-900-on-dark fs-6">codelabpay@codelab.co</div>
                             </div>
                             <!--end::Item-->
                             <!--begin::Item-->
                             <div class="mb-6">
-                                <div class="fw-semibold text-gray-700 text-gray-800-in-dark fs-7">Account:</div>
-                                <div class="fw-bold text-gray-800 text-gray-900-in-dark fs-6">Nl24IBAN34553477847370033
+                                <div class="fw-semibold text-gray-700 text-gray-800-on-dark fs-7">Account:</div>
+                                <div class="fw-bold text-gray-800 text-gray-900-on-dark fs-6">Nl24IBAN34553477847370033
                                     <br />AMB NLANBZTC
                                 </div>
                             </div>
                             <!--end::Item-->
                             <!--begin::Item-->
                             <div class="mb-15">
-                                <div class="fw-semibold text-gray-700 text-gray-800-in-dark fs-7">Payment Term:</div>
-                                <div class="fw-bold fs-6 text-gray-800 text-gray-900-in-dark d-flex align-items-center">14 days
+                                <div class="fw-semibold text-gray-700 text-gray-800-on-dark fs-7">Payment Term:</div>
+                                <div class="fw-bold fs-6 text-gray-800 text-gray-900-on-dark d-flex align-items-center">14 days
                                     <span class="fs-7 text-danger d-flex align-items-center">
                                         <span class="bullet bullet-dot bg-danger mx-2"></span>
                                         Due in 7 days
@@ -182,12 +182,12 @@
                             </div>
                             <!--end::Item-->
                             <!--begin::Title-->
-                            <h6 class="mb-8 fw-bolder text-gray-800 text-gray-900-in-dark">PROJECT OVERVIEW</h6>
+                            <h6 class="mb-8 fw-bolder text-gray-800 text-gray-900-on-dark">PROJECT OVERVIEW</h6>
                             <!--end::Title-->
                             <!--begin::Item-->
                             <div class="mb-6">
-                                <div class="fw-semibold text-gray-700 text-gray-800-in-dark fs-7">Project Name</div>
-                                <div class="fw-bold fs-6 text-gray-800 text-gray-900-in-dark">
+                                <div class="fw-semibold text-gray-700 text-gray-800-on-dark fs-7">Project Name</div>
+                                <div class="fw-bold fs-6 text-gray-800 text-gray-900-on-dark">
                                     <span>SaaS App Quickstarter</span>
                                     <a href="#" class="link-primary ps-1">View Project</a>
                                 </div>
@@ -195,14 +195,14 @@
                             <!--end::Item-->
                             <!--begin::Item-->
                             <div class="mb-6">
-                                <div class="fw-semibold text-gray-700 text-gray-800-in-dark fs-7">Completed By:</div>
-                                <div class="fw-bold text-gray-800 text-gray-900-in-dark fs-6">Mr. Dewonte Paul</div>
+                                <div class="fw-semibold text-gray-700 text-gray-800-on-dark fs-7">Completed By:</div>
+                                <div class="fw-bold text-gray-800 text-gray-900-on-dark fs-6">Mr. Dewonte Paul</div>
                             </div>
                             <!--end::Item-->
                             <!--begin::Item-->
                             <div class="m-0">
-                                <div class="fw-semibold text-gray-700 text-gray-800-in-dark fs-7">Time Spent:</div>
-                                <div class="fw-bold fs-6 text-gray-800 text-gray-900-in-dark d-flex align-items-center">
+                                <div class="fw-semibold text-gray-700 text-gray-800-on-dark fs-7">Time Spent:</div>
+                                <div class="fw-bold fs-6 text-gray-800 text-gray-900-on-dark d-flex align-items-center">
                                     <span>230 Hours</span>
                                     <span class="fs-7 text-success d-flex align-items-center">
                                         <span class="bullet bullet-dot bg-success mx-2"></span>

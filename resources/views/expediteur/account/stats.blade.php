@@ -20,7 +20,7 @@
                 </div>
                 {{-- <!--end::Number--> --}}
                 {{-- <!--begin::Label--> --}}
-                <div class="fw-semibold fs-6 text-gray-400">Gains</div>
+                <div class="fw-semibold fs-6 text-gray-700 text-gray-800-on-dark">Gains</div>
                 {{-- <!--end::Label--> --}}
             </div>
             {{-- <!--end::Stat--> --}}
@@ -40,7 +40,7 @@
                 </div>
                 {{-- <!--end::Number--> --}}
                 {{-- <!--begin::Label--> --}}
-                <div class="fw-semibold fs-6 text-gray-400">Expéditions</div>
+                <div class="fw-semibold fs-6 text-gray-700 text-gray-800-on-dark">Expéditions</div>
                 {{-- <!--end::Label--> --}}
             </div>
             {{-- <!--end::Stat--> --}}
@@ -54,7 +54,7 @@
             $profileCompletion = Auth::user()->profileCompletion();
         @endphp
         <div class="d-flex justify-content-between w-100 mt-auto mb-2">
-            <span class="fw-semibold fs-6 text-gray-400">Achèvement du profil</span>
+            <span class="fw-semibold fs-6 text-gray-700 text-gray-800-on-dark">Achèvement du profil</span>
             <span class="fw-bold fs-6">{{$profileCompletion}}%</span>
         </div>
         <div class="progress h-5px mx-3 w-100 bg-light mb-3">

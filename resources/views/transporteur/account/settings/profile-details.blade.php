@@ -62,7 +62,7 @@
                         </div>
                         {{-- <!--end::Image input--> --}}
                         {{-- <!--begin::Hint--> --}}
-                        <div class="form-text">Types de fichiers autorisés: png, jpg, jpeg.</div>
+                        <div class="form-text text-gray-600 text-gray-700-on-dark">Types de fichiers autorisés: png, jpg, jpeg.</div>
                         {{-- <!--end::Hint--> --}}
                     </div>
                     {{-- <!--end::Col--> --}}
@@ -71,8 +71,7 @@
                 {{-- <!--begin::Input group--> --}}
                 <div class="row mb-6">
                     {{-- <!--begin::Label--> --}}
-                    <label for="prenom" class="col-lg-4 col-form-label fw-semibold fs-6 required">Prénom et
-                        nom</label>
+                    <label for="prenom" class="col-lg-4 col-form-label fw-semibold fs-6 required">Prénom et nom</label>
                     {{-- <!--end::Label--> --}}
                     {{-- <!--begin::Col--> --}}
                     <div class="col-lg-8">
@@ -81,15 +80,15 @@
                             {{-- <!--begin::Col--> --}}
                             <div class="col-lg-6 fv-row">
                                 <input type="text" name="prenom" id="prenom"
-                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0 text-gray-900-on-dark"
                                     placeholder="Prénom" value="{{ Auth::user()->prenom }}" required>
                             </div>
                             {{-- <!--end::Col--> --}}
                             {{-- <!--begin::Col--> --}}
                             <div class="col-lg-6 fv-row">
                                 <input type="text" name="nom" id="nom"
-                                    class="form-control form-control-lg form-control-solid" placeholder="Nom"
-                                    value="{{ Auth::user()->nom }}" required>
+                                    class="form-control form-control-lg form-control-solid text-gray-900-on-dark"
+                                    placeholder="Nom" value="{{ Auth::user()->nom }}" required>
                             </div>
                             {{-- <!--end::Col--> --}}
                         </div>
@@ -103,15 +102,14 @@
                     {{-- <!--begin::Label--> --}}
                     <label for="email" class="col-lg-4 col-form-label fw-semibold fs-6">
                         <span>Adresse e-mail</span>
-                        <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip"
-                            title="L'adresse e-mail doit être active"></i>
+                        <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="L'adresse e-mail doit être active"></i>
                     </label>
                     {{-- <!--end::Label--> --}}
                     {{-- <!--begin::Col--> --}}
                     <div class="col-lg-8 fv-row">
                         <input type="email" name="email" id="email"
-                            class="form-control form-control-lg form-control-solid" placeholder="Adresse e-mail"
-                            value="{{ Auth::user()->hasEmail() ? Auth::user()->email : '' }}">
+                            class="form-control form-control-lg form-control-solid text-gray-900-on-dark"
+                            placeholder="Adresse e-mail" value="{{ Auth::user()->hasEmail() ? Auth::user()->email : '' }}">
                     </div>
                     {{-- <!--end::Col--> --}}
                 </div>
@@ -124,8 +122,8 @@
                     {{-- <!--begin::Col--> --}}
                     <div class="col-lg-8 fv-row">
                         <input type="text" name="entreprise" id="entreprise"
-                            class="form-control form-control-lg form-control-solid" placeholder="Nom de l'entreprise"
-                            value="{{ $__transporteur->hasCompany() ? $__transporteur->entreprise : '' }}">
+                            class="form-control form-control-lg form-control-solid text-gray-900-on-dark"
+                            placeholder="Nom de l'entreprise" value="{{ $__transporteur->hasCompany() ? $__transporteur->entreprise : '' }}">
                     </div>
                     {{-- <!--end::Col--> --}}
                 </div>
@@ -138,8 +136,8 @@
                     {{-- <!--begin::Col--> --}}
                     <div class="col-lg-8 fv-row">
                         <input type="text" name="siteweb" id="siteweb"
-                            class="form-control form-control-lg form-control-solid" placeholder="Site web"
-                            value="{{ $__transporteur->hasWebsite() ? $__transporteur->siteweb : '' }}">
+                            class="form-control form-control-lg form-control-solid text-gray-900-on-dark"
+                            placeholder="Site web" value="{{ $__transporteur->hasWebsite() ? $__transporteur->siteweb : '' }}">
                     </div>
                     {{-- <!--end::Col--> --}}
                 </div>
@@ -149,15 +147,14 @@
                     {{-- <!--begin::Label--> --}}
                     <label for="adresse" class="col-lg-4 col-form-label fw-semibold fs-6">
                         <span class="required">Adresse</span>
-                        <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip"
-                            title="Adresse de résidence"></i>
+                        <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Adresse de résidence"></i>
                     </label>
                     {{-- <!--end::Label--> --}}
                     {{-- <!--begin::Col--> --}}
                     <div class="col-lg-8 fv-row">
                         <input type="text" name="adresse" id="adresse"
-                            class="form-control form-control-lg form-control-solid" placeholder="Adresse"
-                            value="{{ $__transporteur->adresse }}" required>
+                            class="form-control form-control-lg form-control-solid text-gray-900-on-dark"
+                            placeholder="Adresse" value="{{ $__transporteur->adresse }}" required>
                     </div>
                     {{-- <!--end::Col--> --}}
                 </div>

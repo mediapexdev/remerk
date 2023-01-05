@@ -35,7 +35,7 @@ class PasswordResetController extends Controller
         $request->validate([
             'phone'         => ['required', 'regex:#(^3[3]|^7[5-80])[ ]?[0-9]{3}([ ]?[0-9]{2}){2}$#', 'exists:users']
         ]);
-        $phone_number = $request['phone'];
+        $phone_number = \preg_replace('#\s+#', '', \trim($request->phone));
         return view('auth.phone-verification.reset-password', compact('phone_number'));
     }
 

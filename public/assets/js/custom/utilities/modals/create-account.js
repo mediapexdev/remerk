@@ -264,8 +264,8 @@ function submitCreateAccountForm()
     });
     ui_blocker.block();
     // format phone number
-    const ipt_phone = document.querySelector("input[name=phone]");
-    ipt_phone.value = ipt_phone.value.replace(/\s+/g, "");
+    // const ipt_phone = document.querySelector("input[name=phone]");
+    // ipt_phone.value = ipt_phone.value.replace(/\s+/g, "");
     // Submit form
     document.querySelector("#kt_create_account_form").submit();
     // ui_blocker.release();
