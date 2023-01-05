@@ -211,7 +211,7 @@ class FactureController extends Controller
      */
     public function sendPayment($expedition,$facture)
     {
-        $base_url  = 'http://127.0.0.1:8000/';
+        $base_url  = 'https://remerk.herokuapp.com';
         $jsonResponse = (new PayTech(env('PAY_TECH_API_KEY'), env('PAY_TECH_API_SECRET')))
         ->setQuery([
             'item_name'    => $expedition->string_id,
