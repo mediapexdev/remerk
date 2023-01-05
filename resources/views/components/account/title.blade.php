@@ -41,7 +41,7 @@
                     </svg>
                 </span>
                 {{-- <!--end::Svg Icon--> --}}
-                <span>{{$__transporteur->adresse}}</span>
+                <span>{{$user_by_role->adresse}}</span>
             </div>
             <div class="d-flex align-items-center text-gray-600 text-gray-700-on-dark me-5 mb-2">
                 {{-- <!--begin::Svg Icon | path: icons/duotune/electronics/elc002.svg--> --}}

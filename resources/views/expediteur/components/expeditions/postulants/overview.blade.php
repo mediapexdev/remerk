@@ -21,7 +21,7 @@
         {{-- <!--end::Card Title--> --}}
         {{-- <!--begin::Card Toolbar--> --}}
         <div class="card-toolbar">
-            <a href="/expeditions/postulants" class="btn-see-all btn btn-sm btn-light btn-active-light-primary">Voir tout</a>
+            <a href="/expeditions/postulants" class="btn btn-sm btn-light btn-active-light-primary btn-see-all clear-on-dark">Voir tout</a>
         </div>
         {{-- <!--end::Card Toolbar--> --}}
     </div>

@@ -155,10 +155,6 @@
     color: var(--kt-gray-700) !important;
 }
 */
-[data-theme="dark"] .btn-see-all:not(:hover):not(.btn-active)
-{
-    color: var(--kt-secondary-inverse) !important;
-}
 
 [data-theme="dark"] .btn.clear-on-dark:not(:hover):not(.btn-active)
 {

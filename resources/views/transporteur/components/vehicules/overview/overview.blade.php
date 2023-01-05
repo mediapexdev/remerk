@@ -15,7 +15,7 @@
         {{-- <!--end::Card Title--> --}}
         {{-- <!--begin::Card Toolbar--> --}}
         <div class="card-toolbar nav-item">
-            <a href="{{route('vehicules')}}" class="btn-see-all btn btn-sm btn-light btn-active-light-primary m-1">Voir tout</a>
+            <a href="{{route('vehicules')}}" class="btn btn-sm btn-light btn-active-light-primary btn-see-all clear-on-dark m-1">Voir tout</a>
             <button class="btn btn-sm btn-light-primary m-1" data-bs-toggle="modal" href="#kt_modal_create_camion">
                 <span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">

@@ -50,7 +50,7 @@
         {{-- <!--end::Title--> --}}
         {{-- <!--begin::Toolbar--> --}}
         <div class="card-toolbar">
-            <a href="/expeditions" class="btn-see-all btn btn-sm btn-light btn-active-light-primary">Voir tout</a>
+            <a href="/expeditions" class="btn btn-sm btn-light btn-active-light-primary btn-see-all clear-on-dark">Voir tout</a>
         </div>
         {{-- <!--end::Toolbar--> --}}
     </div>

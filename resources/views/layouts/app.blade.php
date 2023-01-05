@@ -24,7 +24,7 @@
                         {{-- <!--begin::Content--> --}}
                         <div id="kt_app_content" class="app-content flex-column-fluid">
                             {{-- <!--begin::Content container--> --}}
-                            <div id="kt_app_content_container" class="app-container container-xxxl h-100 pb-xxl-0 pb-10 pb-xl-0 pb-lg-0 ">
+                            <div id="kt_app_content_container" class="app-container container-fluid h-100 pb-xxl-0 pb-10 pb-xl-0 pb-lg-0">
                                 {{-- <!-- begin::Validation Errors --> --}}
                                 <x-auth-validation-errors class="mb-4" :errors="$errors" />
                                 {{-- <!-- end::Validation Errors --> --}}

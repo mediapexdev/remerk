@@ -68,7 +68,7 @@
                                     <label for="new_password_confirmation" class="form-label fs-6 fw-bold mb-3">Confirmer le nouveau mot de passe</label>
                                     {{-- <!--begin::Input wrapper--> --}}
                                     <div class="position-relative mb-3">
-                                        <input type="password" name="new_password_confirmation" id="new_password_confirmation" 
+                                        <input type="password" name="new_password_confirmation" id="new_password_confirmation"
                                             class="form-control form-control-lg form-control-solid text-gray-900-on-dark" required>
                                         <span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
                                             <i class="bi bi-eye-slash fs-2"></i>
@@ -94,7 +94,7 @@
                                 </span>
                                 {{-- <!--end::Indicator progress--> --}}
                             </button>
-                            <button type="reset" id="kt_password_cancel" class="btn btn-color-gray-400 btn-active-light-primary px-6">Annuler</button>
+                            <button type="reset" id="kt_password_cancel" class="btn btn-light btn-active-light-primary clear-on-dark">Annuler</button>
                         </div>
                     </form>
                     {{-- <!--end::Form--> --}}
@@ -102,7 +102,7 @@
                 {{-- <!--end::Edit--> --}}
                 {{-- <!--begin::Action--> --}}
                 <div id="kt_signin_password_button" class="ms-auto">
-                    <button type="button" class="btn btn-light btn-active-light-primary">Réinitialiser le mot de passe</button>
+                    <button type="button" class="btn btn-light btn-active-light-primary clear-on-dark">Réinitialiser le mot de passe</button>
                 </div>
                 {{-- <!--end::Action--> --}}
             </div>
