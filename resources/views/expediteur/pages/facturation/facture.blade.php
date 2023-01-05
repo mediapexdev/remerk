@@ -81,7 +81,7 @@ $expeditions_facture[] = $expedition;
                         <thead class="border-bottom border-gray-200 fs-7 fw-bold">
                             {{--
                             <!--begin::Table row--> --}}
-                            <tr class="text-start text-gray-600 text-gray-700-in-dark text-uppercase gs-0">
+                            <tr class="text-start text-gray-600 text-gray-700-on-dark text-uppercase gs-0">
                                 {{-- <th class="">No.</th> --}}
                                 <th>Expédition</th>
                                 <th>Transporteur</th>

@@ -29,7 +29,7 @@
                     {{-- <!--begin::Username--> --}}
                     <div class="d-flex flex-column">
                         <div class="full-name-label fw-bold d-flex align-items-center fs-5">{{Auth::user()->fullName()}}</div>
-                        <div class="phone-number-label fw-semibold text-muted text-gray-700-in-dark fs-7">{{Auth::user()->formattedPhoneNumber()}}</div>
+                        <div class="phone-number-label fw-semibold text-muted text-gray-700-on-dark fs-7">{{Auth::user()->formattedPhoneNumber()}}</div>
                     </div>
                     {{-- <!--end::Username--> --}}
                 </div>

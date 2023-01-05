@@ -1,4 +1,4 @@
-<div class="" data-kt-stepper-element="content">
+<div data-kt-stepper-element="content">
     {{-- <!--begin::Wrapper--> --}}
     <div class="w-100">
         {{-- <!--begin::Heading--> --}}
@@ -7,7 +7,7 @@
             <h2 class="fw-bold text-dark">Informations professionnelles</h2>
             {{-- <!--end::Title--> --}}
             {{-- <!--begin::Notice--> --}}
-            <div class="text-muted fw-semibold fs-6 mb-5">
+            <div class="text-gray-600 text-gray-700-on-dark fw-semibold fs-6 mb-5">
                 <span>Si vous avez besoin de plus d'informations cliquez sur ce</span>
                 <a href="#" class="link-primary fw-bold">lien</a>.
             </div>
@@ -27,7 +27,7 @@
                 <div class="d-flex flex-stack flex-grow-1">
                     {{-- <!--begin::Content--> --}}
                     <div class="fw-semibold">
-                        <div class="fs-6 text-gray-700">Cette étape est facultative, vous pouvez la sauter.</div>
+                        <div class="fs-6 text-gray-700 text-gray-800-on-dark">Cette étape est facultative, vous pouvez la sauter.</div>
                     </div>
                     {{-- <!--end::Content--> --}}
                 </div>
@@ -43,7 +43,7 @@
             {{-- <!--end::Label--> --}}
             {{-- <!--begin::Input--> --}}
             <input type="text" name="entreprise" id="entreprise"
-                class="form-control form-control-lg form-control-solid"
+                class="form-control form-control-lg form-control-solid text-gray-900-on-dark"
                 placeholder="" :value="old('entreprise')">
             {{-- <!--end::Input--> --}}
         </div>
@@ -55,8 +55,8 @@
             {{-- <!--end::Label--> --}}
             {{-- <!--begin::Input--> --}}
             <input type="email" name="email" id="email"
-                class="form-control form-control-lg form-control-solid"
-                placeholder="votreEmail@mail.com" :value="old('email')">
+                class="form-control form-control-lg form-control-solid text-gray-900-on-dark"
+                placeholder="email@mail.com" :value="old('email')">
             {{-- <!--end::Input--> --}}
         </div>
         {{-- <!--end::Input group--> --}}
@@ -67,8 +67,8 @@
             {{-- <!--end::Label--> --}}
             {{-- <!--begin::Input--> --}}
             <input type="url" name="siteweb" id="siteweb"
-                class="form-control form-control-lg form-control-solid"
-                placeholder="votreSiteWeb.net" :value="old('siteweb')">
+                class="form-control form-control-lg form-control-solid text-gray-900-on-dark"
+                placeholder="siteweb.net" :value="old('siteweb')">
             {{-- <!--end::Input--> --}}
         </div>
         {{-- <!--end::Input group--> --}}

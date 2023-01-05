@@ -52,8 +52,8 @@ const KTSigninGeneral = (function () {
                                 });
                                 ui_blocker.block();
                                 // format phone number
-                                let ipt_phone = form.querySelector("#phone");
-                                ipt_phone.value = ipt_phone.value.replace(/\s+/g, "");
+                                // let ipt_phone = form.querySelector("#phone");
+                                // ipt_phone.value = ipt_phone.value.replace(/\s+/g, "");
                                 // Enable button
                                 btn_submit.disabled = false;
                                 // Submit form

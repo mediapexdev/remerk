@@ -1,28 +1,28 @@
 <div id="kt_modal_send_verification_code" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
-    <!--begin::Modal Dialog-->
+    {{-- <!--begin::Modal Dialog--> --}}
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <!--begin::Modal Content-->
+        {{-- <!--begin::Modal Content--> --}}
         <div class="modal-content">
-            <!--begin::Modal Header-->
+            {{-- <!--begin::Modal Header--> --}}
             <div class="modal-header">
-                <!--begin::Modal Title-->
+                {{-- <!--begin::Modal Title--> --}}
                 <h3 class="modal-title">Vérification du numéro de téléphone</h3>
-                <!--end::Modal Title-->
+                {{-- <!--end::Modal Title--> --}}
             </div>
-            <!--end::Modal Header-->
-            <!--begin::Modal Body-->
+            {{-- <!--end::Modal Header--> --}}
+            {{-- <!--begin::Modal Body--> --}}
             <div class="modal-body">
-                <p class="fw-semibold text-dark fs-6 mb-6 ms-1">Cliquez sur le <strong> bouton envoyer </strong> pour recevoir un code de vérification du numéro de téléphone renseigné.</p>
-                <!--begin::Recaptcha-->
+                <p class="text-dark fs-6 mb-6 ms-1">Cliquez sur le <strong>bouton envoyer</strong> pour recevoir un code de vérification du numéro de téléphone renseigné.</p>
+                {{-- <!--begin::Recaptcha--> --}}
                 <div class="d-flex">
                     <div id="recaptcha-container"></div>
                 </div>
-                <!--end::Recaptcha-->
+                {{-- <!--end::Recaptcha--> --}}
             </div>
-            <!--end::Modal Body-->
-            <!--begin::Modal Footer-->
+            {{-- <!--end::Modal Body--> --}}
+            {{-- <!--begin::Modal Footer--> --}}
             <div class="modal-footer">
-                <!--begin::Submit-->
+                {{-- <!--begin::Submit--> --}}
                 <div class="d-flex flex-center">
                     <button type="button" id="kt_send_verification_code_submit" class="btn btn-lg btn-primary fw-bold">
                         <span class="indicator-label">Envoyer</span>
@@ -32,11 +32,11 @@
                         </span>
                     </button>
                 </div>
-                <!--end::Submit-->
+                {{-- <!--end::Submit--> --}}
             </div>
-            <!--end::Modal Footer-->
+            {{-- <!--end::Modal Footer--> --}}
         </div>
-        <!--end::Modal Content-->
+        {{-- <!--end::Modal Content--> --}}
     </div>
-    <!--end::Modal Dialog-->
+    {{-- <!--end::Modal Dialog--> --}}
 </div>

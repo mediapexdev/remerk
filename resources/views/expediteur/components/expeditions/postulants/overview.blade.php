@@ -16,7 +16,7 @@
     <div class="card-header pt-7">
         {{-- <!--begin::Card Title--> --}}
         <div class="card-title">
-            <h3 class="title fw-bold text-gray-800 text-gray-900-in-dark">Postulants</h3>
+            <h3 class="title fw-bold text-gray-800 text-gray-900-on-dark">Postulants</h3>
         </div>
         {{-- <!--end::Card Title--> --}}
         {{-- <!--begin::Card Toolbar--> --}}

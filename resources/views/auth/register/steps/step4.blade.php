@@ -1,4 +1,4 @@
-<div class="" data-kt-stepper-element="content">
+<div data-kt-stepper-element="content">
     {{-- <!--begin::Wrapper--> --}}
     <div class="w-100">
         {{-- <!--begin::Heading--> --}}
@@ -7,7 +7,7 @@
             <h2 class="fw-bold text-dark">Informations professionnelles</h2>
             {{-- <!--end::Title--> --}}
             {{-- <!--begin::Notice--> --}}
-            <div class="text-muted fw-semibold fs-6">
+            <div class="text-gray-600 text-gray-700-on-dark fw-semibold fs-6">
                 <span>Si vous avez besoin de plus d'informations cliquez sur ce</span>
                 <a href="#" class="link-primary fw-bold">lien</a>.
             </div>
@@ -21,7 +21,7 @@
             {{-- <!--end::Label--> --}}
             {{-- <!--begin::Input--> --}}
             <input type="tel" name="phone" id="ipt_phone"
-                class="form-control form-control-lg form-control-solid"
+                class="form-control form-control-lg form-control-solid text-gray-900-on-dark"
                 :value="old('phone')" placeholder="" required>
             {{-- <!--end::Input--> --}}
         </div>
@@ -37,7 +37,7 @@
                 <div class="position-relative mb-3">
                     {{-- <!--begin::Input--> --}}
                     <input type="password" name="password" id="password"
-                        class="form-control form-control-lg form-control-solid"
+                        class="form-control form-control-lg form-control-solid text-gray-900-on-dark"
                         placeholder="" :value="__('Password')" autocomplete="off" required>
                     <span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
                         <i class="bi bi-eye-slash fs-2"></i>
@@ -57,7 +57,7 @@
             </div>
             {{-- <!--end::Wrapper--> --}}
             {{-- <!--begin::Hint--> --}}
-            <div class="text-muted">Utilisez 8 caractères ou plus avec un mélange de lettres, de chiffres et de symboles.</div>
+            <div class="text-gray-600 text-gray-700-on-dark">Utilisez 8 caractères ou plus avec un mélange de lettres, de chiffres et de symboles.</div>
             {{-- <!--end::Hint--> --}}
         </div>
         {{-- <!--end::Input group--> --}}
@@ -71,7 +71,7 @@
                 {{-- <!--begin::Input --> --}}
                 {{-- <!--begin::Repeat Password--> --}}
                 <input type="password" name="password_confirmation"
-                    id="password_confirmation" class="form-control form-control-lg form-control-solid"
+                    id="password_confirmation" class="form-control form-control-lg form-control-solid text-gray-900-on-dark"
                     placeholder="" :value="__('Password Confirmation')" autocomplete="off" required>
                 {{-- <!--end::Repeat Password--> --}}
                 <span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">

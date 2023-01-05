@@ -16,13 +16,13 @@
             <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-0 fs-5 fw-semibold">
                 {{-- <!--begin:::Tab item--> --}}
                 <li class="nav-item mt-2">
-                    <a class="nav-link text-gray-700 text-gray-900-in-dark text-active-primary ms-0 me-10 py-5 active"
+                    <a class="nav-link text-gray-700 text-gray-900-on-dark text-active-primary ms-0 me-10 py-5 active"
                         data-bs-toggle="tab" href="#kt_expedition_summary">Récapitulatif</a>
                 </li>
                 {{-- <!--end:::Tab item--> --}}
                 {{-- <!--begin:::Tab item--> --}}
                 <li class="nav-item mt-2">
-                    <a class="nav-link text-gray-700 text-gray-900-in-dark text-active-primary ms-0 me-10 py-5"
+                    <a class="nav-link text-gray-700 text-gray-900-on-dark text-active-primary ms-0 me-10 py-5"
                         data-bs-toggle="tab" href="#kt_expedition_history">Historique</a>
                 </li>
                 {{-- <!--end:::Tab item--> --}}

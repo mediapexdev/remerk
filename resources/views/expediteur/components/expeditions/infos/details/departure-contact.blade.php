@@ -29,7 +29,7 @@ $avatar = (($expediteur->hasAvatar()) ? $expediteur->avatar() : Util::getDefault
             <table class="table align-middle fs-6 gy-5 mb-0 min-w-300px">
                 {{--
                 <!--begin::Table body--> --}}
-                <tbody class="fw-semibold text-gray-700 text-gray-800-in-dark">
+                <tbody class="fw-semibold text-gray-700 text-gray-800-on-dark">
                     {{--
                     <!--begin::Departure Contact Info--> --}}
                     @if (!$expedition->depart->hasContact())
@@ -45,7 +45,7 @@ $avatar = (($expediteur->hasAvatar()) ? $expediteur->avatar() : Util::getDefault
                         <td scope="row">
                             <div class="d-flex align-items-center">
                                 {{-- <!--begin::Svg Icon | path: icons/duotune/communication/com006.svg--> --}}
-                                <span class="svg-icon svg-icon-2 me-2 text-gray-600-in-dark">
+                                <span class="svg-icon svg-icon-2 me-2 text-gray-600-on-dark">
                                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path opacity="0.3" d="M16.5 9C16.5 13.125 13.125 16.5 9 16.5C4.875 16.5 1.5 13.125 1.5 9C1.5 4.875 4.875 1.5 9 1.5C13.125 1.5 16.5 4.875 16.5 9Z" fill="currentColor" />
                                         <path d="M9 16.5C10.95 16.5 12.75 15.75 14.025 14.55C13.425 12.675 11.4 11.25 9 11.25C6.6 11.25 4.57499 12.675 3.97499 14.55C5.24999 15.75 7.05 16.5 9 16.5Z" fill="currentColor" />
@@ -77,7 +77,7 @@ $avatar = (($expediteur->hasAvatar()) ? $expediteur->avatar() : Util::getDefault
                         <td scope="row">
                             <div class="d-flex align-items-center">
                                 {{-- <!--begin::Svg Icon | path: icons/duotune/electronics/elc002.svg--> --}}
-                                <span class="svg-icon svg-icon-2 me-2 text-gray-600-in-dark">
+                                <span class="svg-icon svg-icon-2 me-2 text-gray-600-on-dark">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M6 21C6 21.6 6.4 22 7 22H17C17.6 22 18 21.6 18 21V20H6V21Z" fill="currentColor"/>
                                         <path opacity="0.3" d="M17 2H7C6.4 2 6 2.4 6 3V20H18V3C18 2.4 17.6 2 17 2Z" fill="currentColor"/>

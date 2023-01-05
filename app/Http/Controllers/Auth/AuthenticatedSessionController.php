@@ -29,6 +29,8 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request)
     {
+        $request['phone'] = \preg_replace('#\s+#', '', \trim($request->phone));
+
         $request->authenticate();
 
         $request->session()->regenerate();

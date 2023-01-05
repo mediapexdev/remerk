@@ -66,12 +66,12 @@ $body_classes = 'app-default';
                             <div class="col-6">
                                 <div class="d-flex align-items-end flex-column">
                                     <div class="d-flex align-items-start flex-column">
-                                        <div class="fw-bold fs-5 text-gray-800 text-gray-900-in-dark mb-4">
+                                        <div class="fw-bold fs-5 text-gray-800 text-gray-900-on-dark mb-4">
                                             <span>Facture N° R-00{{$facture->id}}</span>
                                             <br>
                                             <span>Date: {{\date('d/m/Y', \strtotime($facture->created_at))}}</span>
                                         </div>
-                                        <div class="fw-bold fs-6 text-gray-800 text-gray-900-in-dark">{{$expediteur->fullName()}}</div>
+                                        <div class="fw-bold fs-6 text-gray-800 text-gray-900-on-dark">{{$expediteur->fullName()}}</div>
                                         <div class="fw-semibold fs-7 text-gray-700">{{$expediteur->adresse}}</div>
                                         <div class="fw-semibold fs-7 text-gray-700">{{$expediteur->phoneNumber(true)}}
                                         </div>
@@ -88,7 +88,7 @@ $body_classes = 'app-default';
                                 <div class="table-responsive border-bottom mb-9">
                                     <table class="table mb-3">
                                         <thead>
-                                            <tr class="border-bottom fs-6 fw-bold text-gray-600 text-gray-700-in-dark">
+                                            <tr class="border-bottom fs-6 fw-bold text-gray-600 text-gray-700-on-dark">
                                                 <th class="min-w-200px pb-2">Description</th>
                                                 <th class="min-w-70px text-center pb-2">Poids</th>
                                                 <th class="min-w-80px text-center pb-2">Transporteur</th>
@@ -96,7 +96,7 @@ $body_classes = 'app-default';
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr class="fw-bold text-gray-800 text-gray-900-in-dark fs-5 text-start">
+                                            <tr class="fw-bold text-gray-800 text-gray-900-on-dark fs-5 text-start">
                                                 <td class="pt-6">
                                                     <span>Transport de {{$expedition->matiereType()}}</span>
                                                 </td>
@@ -125,7 +125,7 @@ $body_classes = 'app-default';
                                             <div class="fw-semibold pe-10 text-gray-800 fs-6">Montant net à payer :</div>
                                             <!--end::Code-->
                                             <!--begin::Label-->
-                                            <div class="text-start fw-bold fs-5 text-gray-800 text-gray-900-in-dark">
+                                            <div class="text-start fw-bold fs-5 text-gray-800 text-gray-900-on-dark">
                                                 <span>{{number_format($facture->montant, 0, ',', ' ')}}</span>
                                                 <span class="text-gray-700"> Fr Cfa</span>
                                             </div>
@@ -164,8 +164,8 @@ $body_classes = 'app-default';
                         <div class="mb-8">
                             <div class="container-fluid d-none d-xl-block d-xxl-block d-lg-block">
                                 <div class="row align-items-center justify-content-center">
-                                    @if($facture->etat == 1)
                                     <div class="col-xl-4 col-xxl-4 col-4">
+                                        @if($facture->etat == 1)
                                         <button class="btn btn-sm btn-success w-100" onclick="buy(this)"><i class="bi bi-cash-stack"></i>
                                             <span>Payer</span>
                                         </button>
@@ -187,11 +187,11 @@ $body_classes = 'app-default';
                         </div>
                         <!--end::actions-->
                         <!--begin::Title-->
-                        <h6 class="mb-8 fw-bolder text-gray-800 text-gray-900-in-dark text-center">DETAILS DU PAIEMENT</h6>
+                        <h6 class="mb-8 fw-bolder text-gray-800 text-gray-900-on-dark text-center">DETAILS DU PAIEMENT</h6>
                         <!--end::Title-->
                         <!--begin::Item-->
                         <div class="mb-6">
-                            <p class="text-gray-700 text-gray-800-in-dark fs-6">
+                            <p class="text-gray-700 text-gray-800-on-dark fs-6">
                                 Paiement possible via Orange Money, Wave, Free-Money, Carte bancaire, Paypal, et partout au Sénégal.
                             </p>
                         </div>
@@ -255,21 +255,21 @@ $body_classes = 'app-default';
 <script>
     function buy(btn) {
         (new PayTech({
-            facture_id    :   {{$expedition->id}}, //will be sent to paiement.php page
-            expedition_id    :   {{$facture->id}},
+            facture_id        : {{$expedition->id}}, //will be sent to paiement.php page
+            expedition_id     : {{$facture->id}},
         })).withOption({
-            requestTokenUrl     :   '/payer-facture',
-            method              :   'POST',
-            headers             :   {
-                "Accept"          :    "text/html",
+            requestTokenUrl   : '/payer-facture',
+            method            : 'POST',
+            headers           : {
+                "Accept"      : "text/html",
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
-            prensentationMode   :   PayTech.OPEN_IN_POPUP,
-            willGetToken        :   function () {
+            prensentationMode : PayTech.OPEN_IN_POPUP,
+            willGetToken      : function () {
             },
-            didGetToken         : function (token, redirectUrl) {
+            didGetToken       : function (token, redirectUrl) {
             },
-            didReceiveError: function (error) {
+            didReceiveError   : function (error) {
             },
             didReceiveNonSuccessResponse: function (jsonResponse) {
             }

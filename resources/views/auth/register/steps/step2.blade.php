@@ -1,4 +1,4 @@
-<div class="" data-kt-stepper-element="content">
+<div data-kt-stepper-element="content">
     {{-- <!--begin::Wrapper--> --}}
     <div class="w-100">
         {{-- <!--begin::Heading--> --}}
@@ -7,7 +7,7 @@
             <h2 class="fw-bold text-dark">Informations personnelles</h2>
             {{-- <!--end::Title--> --}}
             {{-- <!--begin::Notice--> --}}
-            <div class="text-muted fw-semibold fs-6">
+            <div class="text-gray-600 text-gray-700-on-dark fw-semibold fs-6">
                 <span>Si vous avez besoin de plus d'informations cliquez sur ce</span>
                 <a href="#" class="link-primary fw-bold">lien</a>.
             </div>
@@ -22,8 +22,8 @@
                 {{-- <!--end::Label--> --}}
                 {{-- <!--begin::Input--> --}}
                 <input type="text" name="prenom" id="prenom"
-                    class="form-control form-control-lg form-control-solid"
-                    placeholder="" :value="old('prenom')" required>
+                    class="form-control form-control-lg form-control-solid text-gray-900-on-dark"
+                    placeholder="Prenom" :value="old('prenom')" required>
                 {{-- <!--end::Input--> --}}
             </div>
             {{-- <!--end::Input group--> --}}
@@ -34,8 +34,8 @@
                 {{-- <!--end::Label--> --}}
                 {{-- <!--begin::Input--> --}}
                 <input type="text" name="nom" id="nom"
-                    class="form-control form-control-lg form-control-solid"
-                    placeholder="" :value="old('nom')" required>
+                    class="form-control form-control-lg form-control-solid text-gray-900-on-dark"
+                    placeholder="Nom" :value="old('nom')" required>
                 {{-- <!--end::Input--> --}}
             </div>
             {{-- <!--end::Input group--> --}}
@@ -47,8 +47,8 @@
             {{-- <!--end::Label--> --}}
             {{-- <!--begin::Input--> --}}
             <input type="text" name="adresse" id="adresse"
-                class="form-control form-control-lg form-control-solid"
-                placeholder="" :value="old('adresse')" required>
+                class="form-control form-control-lg form-control-solid text-gray-900-on-dark"
+                placeholder="Rue, Quartier, Ville" :value="old('adresse')" required>
             {{-- <!--end::Input--> --}}
         </div>
         {{-- <!--end::Input group--> --}}

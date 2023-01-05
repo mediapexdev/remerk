@@ -16,11 +16,11 @@
         {{-- <!--begin::Row--> --}}
         <div class="row mb-7">
             {{-- <!--begin::Label--> --}}
-            <label class="col-lg-4 fw-semibold text-muted">Prénom et nom</label>
+            <label class="col-lg-4 fw-semibold text-gray-700 text-gray-800-on-dark">Prénom et nom</label>
             {{-- <!--end::Label--> --}}
             {{-- <!--begin::Col--> --}}
             <div class="col-lg-8">
-                <span class="fw-bold fs-6 text-gray-800">{{Auth::user()->fullName()}}</span>
+                <span class="fw-bold fs-6 text-gray-800 text-gray-900-on-dark">{{Auth::user()->fullName()}}</span>
             </div>
             {{-- <!--end::Col--> --}}
         </div>
@@ -28,14 +28,14 @@
         {{-- <!--begin::Input group--> --}}
         <div class="row mb-7">
             {{-- <!--begin::Label--> --}}
-            <label class="col-lg-4 fw-semibold text-muted">
+            <label class="col-lg-4 fw-semibold text-gray-700 text-gray-800-on-dark">
                 <span>Adresse e-mail</span>
                 <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="L'adresse e-mail doit être active"></i>
             </label>
             {{-- <!--end::Label--> --}}
             {{-- <!--begin::Col--> --}}
             <div class="col-lg-8 d-flex align-items-center">
-                <span class="fw-bold fs-6 text-gray-800 me-2">{{((Auth::user()->hasEmail()) ? Auth::user()->email : 'Aucune')}}</span>
+                <span class="fw-bold fs-6 text-gray-800 text-gray-900-on-dark me-2">{{((Auth::user()->hasEmail()) ? Auth::user()->email : 'Aucune')}}</span>
                 {{-- <span class="badge badge-success">Vérifié</span> --}}
             </div>
             <!--end::Col-->
@@ -44,14 +44,14 @@
         {{-- <!--begin::Input group--> --}}
         <div class="row mb-7">
             {{-- <!--begin::Label--> --}}
-            <label class="col-lg-4 fw-semibold text-muted">
+            <label class="col-lg-4 fw-semibold text-gray-700 text-gray-800-on-dark">
                 <span>Numéro de téléphone</span>
                 <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Le numéro de téléphone doit être actif"></i>
             </label>
             {{-- <!--end::Label--> --}}
             {{-- <!--begin::Col--> --}}
             <div class="col-lg-8 d-flex align-items-center">
-                <span class="fw-bold fs-6 text-gray-800 me-2">{{Auth::user()->formattedPhoneNumber()}}</span>
+                <span class="fw-bold fs-6 text-gray-800 text-gray-900-on-dark me-2">{{Auth::user()->formattedPhoneNumber()}}</span>
                 <span class="badge badge-success">Vérifié</span>
             </div>
             {{-- <!--end::Col--> --}}
@@ -60,11 +60,11 @@
         {{-- <!--begin::Input group--> --}}
         <div class="row mb-7">
             {{-- <!--begin::Label--> --}}
-            <label class="col-lg-4 fw-semibold text-muted">Enterprise</label>
+            <label class="col-lg-4 fw-semibold text-gray-700 text-gray-800-on-dark">Enterprise</label>
             {{-- <!--end::Label--> --}}
             {{-- <!--begin::Col--> --}}
             <div class="col-lg-8 fv-row">
-                <span class="fw-semibold text-gray-800 fs-6">
+                <span class="fw-semibold fs-6 text-gray-800 text-gray-900-on-dark">
                     {{(($__transporteur->hasCompany()) ? $__transporteur->entreprise : 'Aucune')}}
                 </span>
             </div>
@@ -74,14 +74,14 @@
         {{-- <!--begin::Input group--> --}}
         <div class="row mb-7">
             {{-- <!--begin::Label--> --}}
-            <label class="col-lg-4 fw-semibold text-muted">Site web</label>
+            <label class="col-lg-4 fw-semibold text-gray-700 text-gray-800-on-dark">Site web</label>
             {{-- <!--end::Label--> --}}
             {{-- <!--begin::Col--> --}}
             <div class="col-lg-8">
                 @php
                     $link_text = 'Aucun';
                     $link_href = $link_target = '';
-                    $link_classes = 'fw-semibold fs-6 text-gray-800';
+                    $link_classes = 'fw-semibold fs-6 text-gray-800 text-gray-900-on-dark';
 
                     if($__transporteur->hasWebsite()){
                         $link_text = $__transporteur->siteweb;
@@ -101,14 +101,14 @@
         {{-- <!--begin::Input group--> --}}
         <div class="row mb-7">
             {{-- <!--begin::Label--> --}}
-            <label class="col-lg-4 fw-semibold text-muted">
+            <label class="col-lg-4 fw-semibold text-gray-700 text-gray-800-on-dark">
                 <span>Adresse</span>
                 <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Adresse de résidence"></i>
             </label>
             {{-- <!--end::Label--> --}}
             {{-- <!--begin::Col--> --}}
             <div class="col-lg-8">
-                <span class="fw-bold fs-6 text-gray-800">{{$__transporteur->adresse}}</span>
+                <span class="fw-bold fs-6 text-gray-800 text-gray-900-on-dark">{{$__transporteur->adresse}}</span>
             </div>
             {{-- <!--end::Col--> --}}
         </div>
@@ -116,11 +116,11 @@
         {{-- <!--begin::Input group--> --}}
         <div class="row mb-7">
             {{-- <!--begin::Label--> --}}
-            <label class="col-lg-4 fw-semibold text-muted">Communication</label>
+            <label class="col-lg-4 fw-semibold text-gray-700 text-gray-800-on-dark">Communication</label>
             {{-- <!--end::Label--> --}}
             {{-- <!--begin::Col--> --}}
             <div class="col-lg-8">
-                <span class="fw-bold fs-6 text-gray-800">
+                <span class="fw-bold fs-6 text-gray-800 text-gray-900-on-dark">
                     {{(isset(Auth::user()->email) ? 'E-mail, ' : '')}}Téléphone
                 </span>
             </div>
@@ -145,7 +145,7 @@
                 {{-- <!--begin::Content--> --}}
                 <div class="fw-semibold">
                     <h4 class="text-gray-900 fw-bold">Nous avons besoin de votre attention !</h4>
-                    <div class="fs-6 text-gray-700">
+                    <div class="fs-6 text-gray-700 text-gray-800-on-dark">
                         <span>Pour changer votre numéro de téléphone, veuillez</span>
                         <a class="fw-bold">nous contacter</a>.
                     </div>

@@ -3,7 +3,7 @@
 <table id="tableVehicule" class="table align-middle gs-0 gy-4">
     <!--begin::Table head-->
     <thead>
-        <tr class="fw-bold bg-light text-gray-600 text-gray-700-in-dark">
+        <tr class="fw-bold bg-light text-gray-600 text-gray-700-on-dark">
             <th class="ps-4 rounded-start">Véhicules</th>
             <th class="">Type</th>
             <th class="">Immatriculation</th>
@@ -28,7 +28,7 @@
                     </span>
                     <div class="d-flex justify-content-start flex-column">
                         <span class="text-dark fw-bold fs-6">{{ $camion->modele }}</span>
-                        <span class="fw-semibold d-block fs-7 text-gray-700-in-dark">{{ $camion->marque->nom}}</span>
+                        <span class="fw-semibold d-block fs-7 text-gray-700-on-dark">{{ $camion->marque->nom}}</span>
                     </div>
                 </div>
             </td>

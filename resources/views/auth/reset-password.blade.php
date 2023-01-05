@@ -25,7 +25,7 @@
 		<h1 class="text-dark fw-bolder mb-3">Nouveau mot de passe</h1>
 		{{-- <!--end::Title--> --}}
 		{{-- <!--begin::Link--> --}}
-		<div class="text-gray-500 fw-semibold fs-6">
+		<div class="text-gray-600 text-gray-700-on-dark fw-semibold fs-6">
 			<span>Avez-vous déjà réinitialisé le mot de passe ?</span>
 			<a class="link-primary fw-bold" href="{{ route('login') }}">S'identifier</a>
 		</div>
@@ -38,7 +38,7 @@
 		<div class="mb-1">
 			{{-- <!--begin::Input wrapper--> --}}
 			<div class="position-relative mb-3">
-				<input type="password" name="password" id="password" class="form-control bg-transparent"
+				<input type="password" name="password" id="password" class="form-control bg-transparent text-gray-900-on-dark"
 					placeholder="Mot de passe" :value="__('Password')" autocomplete="off" required>
 				<span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
 					<i class="bi bi-eye-slash fs-2"></i>
@@ -57,7 +57,7 @@
 		</div>
 		{{-- <!--end::Wrapper--> --}}
 		{{-- <!--begin::Hint--> --}}
-		<div class="text-muted">Utilisez 8 caractères ou plus avec un mélange de lettres, de chiffres et de symboles.</div>
+		<div class="text-gray-600 text-gray-700-on-dark">Utilisez 8 caractères ou plus avec un mélange de lettres, de chiffres et de symboles.</div>
 		{{-- <!--end::Hint--> --}}
 	</div>
 	{{-- <!--end::Input group--> --}}
@@ -66,7 +66,7 @@
 		{{-- <!--begin::Input wrapper--> --}}
 		<div class="position-relative mb-3">
 			{{-- <!--begin::Repeat Password--> --}}
-			<input type="password" name="password_confirmation" id="password_confirmation" class="form-control bg-transparent"
+			<input type="password" name="password_confirmation" id="password_confirmation" class="form-control bg-transparent text-gray-900-on-dark"
 				placeholder="Répéter le mot de passe" :value="__('Password Confirmation')" autocomplete="off" required>
 			{{-- <!--end::Repeat Password--> --}}
 			<span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
@@ -81,7 +81,7 @@
 	<div class="fv-row mb-8">
 		<label class="form-check form-check-inline">
 			<input class="form-check-input" type="checkbox" name="toc" value="1" required>
-			<span class="form-check-label fw-semibold text-gray-700 fs-6 ms-1">
+			<span class="form-check-label fw-semibold text-gray-700 text-gray-800-on-dark fs-6 ms-1">
 				<span>I Agree &</span>
 				<a href="#" class="ms-1 link-primary">Terms and conditions</a>.
 			</span>

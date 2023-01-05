@@ -8,7 +8,7 @@
             data-bs-toggle="pill" href="#kt_tab_expeditions_en_attente">
             {{--
             <!--begin::Subtitle--> --}}
-            <span class="tab-title nav-text text-gray-800 text-gray-900-in-dark fw-bold fs-6 mb-3 min-w-100px">
+            <span class="tab-title nav-text text-gray-800 text-gray-900-on-dark fw-bold fs-6 mb-3 min-w-100px">
                 En attente
                 @if(0 !== $pending_expeditions->count())
                 <span class="badge badge-circle badge-light-info ms-1">{{$pending_expeditions->count()}}</span>
@@ -36,7 +36,7 @@
             href="#kt_tab_expeditions_en_cours">
             {{--
             <!--begin::Subtitle--> --}}
-            <span class="tab-title nav-text text-gray-800 text-gray-900-in-dark fw-bold fs-6 mb-3 min-w-100px ms-2 position-relative">
+            <span class="tab-title nav-text text-gray-800 text-gray-900-on-dark fw-bold fs-6 mb-3 min-w-100px ms-2 position-relative">
                 En cours
                 @if(0 !== $current_expeditions->count())
                 {{-- <span class="badge badge-circle badge-light-info position-absolute top-0 start-100 translate-middle">{{$current_expeditions->count()}}</span> --}}
@@ -65,7 +65,7 @@
             href="#kt_tab_expeditions_achevees">
             {{--
             <!--begin::Subtitle--> --}}
-            <span class="tab-title nav-text text-gray-800 text-gray-900-in-dark fw-bold fs-6 mb-3">Achevées
+            <span class="tab-title nav-text text-gray-800 text-gray-900-on-dark fw-bold fs-6 mb-3">Achevées
                 @if(0 !== $completed_expeditions->count())
                 <span class="badge badge-circle badge-light-info ms-1">{{$completed_expeditions->count()}}</span>
                 @endif

@@ -16,7 +16,7 @@
                 {{-- <!--begin::Label--> --}}
                 <div id="kt_signin_password">
                     <div class="fs-6 fw-bold mb-1">Mot de passe</div>
-                    <div class="fw-semibold text-gray-600">************</div>
+                    <div class="fw-semibold text-gray-600 text-gray-700-on-dark">************</div>
                 </div>
                 {{-- <!--end::Label--> --}}
                 {{-- <!--begin::Edit--> --}}
@@ -31,7 +31,7 @@
                                     {{-- <!--begin::Input wrapper--> --}}
                                     <div class="position-relative mb-3">
                                         <input type="password" name="current_password" id="current_password"
-                                            class="form-control form-control-lg form-control-solid" required>
+                                            class="form-control form-control-lg form-control-solid text-gray-900-on-dark" required>
                                         <span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
                                             <i class="bi bi-eye-slash fs-2"></i>
                                             <i class="bi bi-eye fs-2 d-none"></i>
@@ -46,7 +46,7 @@
                                     {{-- <!--begin::Input wrapper--> --}}
                                     <div class="position-relative mb-3">
                                         <input type="password" name="new_password" id="new_password"
-                                            class="form-control form-control-lg form-control-solid" required>
+                                            class="form-control form-control-lg form-control-solid text-gray-900-on-dark" required>
                                         <span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
                                             <i class="bi bi-eye-slash fs-2"></i>
                                             <i class="bi bi-eye fs-2 d-none"></i>
@@ -68,8 +68,8 @@
                                     <label for="new_password_confirmation" class="form-label fs-6 fw-bold mb-3">Confirmer le nouveau mot de passe</label>
                                     {{-- <!--begin::Input wrapper--> --}}
                                     <div class="position-relative mb-3">
-                                        <input type="password" name="new_password_confirmation" id="new_password_confirmation" 
-                                            class="form-control form-control-lg form-control-solid" required>
+                                        <input type="password" name="new_password_confirmation" id="new_password_confirmation"
+                                            class="form-control form-control-lg form-control-solid text-gray-900-on-dark" required>
                                         <span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
                                             <i class="bi bi-eye-slash fs-2"></i>
                                             <i class="bi bi-eye fs-2 d-none"></i>
@@ -79,7 +79,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-text mb-5">Le mot de passe doit comporter au moins 8 caractères et contenir des symboles.</div>
+                        <div class="form-text text-gray-600 text-gray-700-on-dark mb-5">Le mot de passe doit comporter au moins 8 caractères et contenir des symboles.</div>
                         <div class="d-flex">
                             @csrf
                             <input type="hidden" name="phone" value="{{Auth::user()->phone}}">
@@ -124,7 +124,7 @@
                     {{-- <!--begin::Content--> --}}
                     <div class="mb-3 mb-md-0 fw-semibold">
                         <h4 class="text-gray-900 fw-bold">Sécurise votre compte</h4>
-                        <div class="fs-6 text-gray-700 pe-7">L'authentification à deux facteurs ajoute une couche de sécurité supplémentaire à votre compte. Pour vous connecter, vous devrez en plus fournir un code à 6 chiffres.</div>
+                        <div class="fs-6 text-gray-700 text-gray-800-on-dark pe-7">L'authentification à deux facteurs ajoute une couche de sécurité supplémentaire à votre compte. Pour vous connecter, vous devrez en plus fournir un code à 6 chiffres.</div>
                     </div>
                     {{-- <!--end::Content--> --}}
                     {{-- <!--begin::Action--> --}}

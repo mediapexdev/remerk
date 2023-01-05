@@ -9,8 +9,8 @@
     <div class="card-header pt-7">
         {{-- <!--begin::Card Title--> --}}
         <h3 class="card-title align-items-start flex-column">
-            <span class="title card-label fw-bold text-gray-800 text-gray-900-in-dark">Parc de véhicules</span>
-            <span class="sub-title text-gray-400 text-gray-700-in-dark mt-1 fw-semibold fs-6">Total {{$camions->count()}} Véhicules</span>
+            <span class="title card-label fw-bold text-gray-800 text-gray-900-on-dark">Parc de véhicules</span>
+            <span class="sub-title text-gray-400 text-gray-700-on-dark mt-1 fw-semibold fs-6">Total {{$camions->count()}} Véhicules</span>
         </h3>
         {{-- <!--end::Card Title--> --}}
         {{-- <!--begin::Card Toolbar--> --}}
@@ -40,7 +40,7 @@
                     <table class="table table-row-dashed align-middle gs-0 gy-4 my-0">
                         {{-- <!--begin::Table head--> --}}
                         <thead>
-                            <tr class="fs-5 fw-bold text-gray-600 text-gray-700-in-dark border-bottom-0">
+                            <tr class="fs-5 fw-bold text-gray-600 text-gray-700-on-dark border-bottom-0">
                                 <th class="min-w-150px">Type</th>
                                 <th class="min-w-150px">Matricule</th>
                                 <th>Status</th>
