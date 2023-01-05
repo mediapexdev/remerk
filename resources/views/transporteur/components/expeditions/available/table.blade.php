@@ -6,7 +6,7 @@
     {{-- <!--begin::Table head--> --}}
     <thead>
         {{-- <!--begin::Table row--> --}}
-        <tr class="text-start text-gray-600 text-gray-700-in-dark fw-bold fs-7 text-uppercase gs-0">
+        <tr class="text-start text-gray-600 text-gray-700-on-dark fw-bold fs-7 text-uppercase gs-0">
             <th class="text-truncate">Expediteur</th>
             <th class="text-truncate">Matière</th>
             <th class="text-truncate">Poids</th>
@@ -19,7 +19,7 @@
     </thead>
     {{-- <!--end::Table head--> --}}
     {{-- <!--begin::Table body--> --}}
-    <tbody class="fw-semibold text-gray-700 text-gray-900-in-dark">
+    <tbody class="fw-semibold text-gray-700 text-gray-900-on-dark">
         @foreach ($available_expeditions as $expedition)
             @php
                 $postulant = $expedition->getPostulant($transporteur->id)
@@ -49,7 +49,7 @@
                         {{-- <!--begin::Title--> --}}
                         <div class="ms-5">
                             <span id="expediteur_title_{{ $expediteur->id }}"
-                                class="expediteur_title text-gray-800 text-gray-900-in-dark text-hover-primary fs-5 fw-bold cursor-pointer"
+                                class="expediteur_title text-gray-800 text-gray-900-on-dark text-hover-primary fs-5 fw-bold cursor-pointer"
                                 data-route="{{ route('expediteur.details', $expediteur->id) }}">{{ $expedition->expediteur->fullName() }}</span>
                         </div>
                         {{-- <!--end::Title--> --}}

@@ -19,7 +19,7 @@
     <div class="fv-row mb-8 form-floating">
         {{-- <!--begin::phone--> --}}
         <input type="tel" name="phone"
-            id="phone" class="form-control form-control-lg bg-transparent"
+            id="phone" class="form-control form-control-lg bg-transparent text-gray-900-on-dark"
             placeholder="Téléphone" :value="old('phone')" autocomplete="off" required autofocus>
         <label for="phone">Téléphone</label>
         {{-- <!--end::phone--> --}}
@@ -31,7 +31,7 @@
         <div class="position-relative mb-3 form-floating">
             {{-- <!--begin::Input--> --}}
             <input type="password" name="password"
-                id="password" class="form-control form-control-lg bg-transparent"
+                id="password" class="form-control form-control-lg bg-transparent text-gray-900-on-dark"
                 placeholder="Mot de passe" autocomplete="current-password" required>
             {{-- <!--end::Input--> --}}
             <span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
@@ -69,7 +69,7 @@
     </div>
     {{-- <!--end::Submit button--> --}}
     {{-- <!--begin::Sign up--> --}}
-    <div class="text-gray-500 text-center fw-semibold fs-6">
+    <div class="text-gray-600 text-gray-700-on-dark text-center fw-semibold fs-6">
         <span>Pas encore membre ?</span>
         <a href="{{ route('register') }}" class="link-primary">S'inscrire</a>
     </div>

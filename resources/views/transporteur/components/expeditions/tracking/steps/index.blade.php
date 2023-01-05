@@ -88,7 +88,7 @@
                     {{-- src="{{URL::asset('assets/media/illustrations/other/fablab-mobile-resized.png')}}" --}}
                     {{-- data-src="{{URL::asset('assets/media/illustrations/other/4811.jpg')}}" --}}
                     {{-- data-src="{{URL::asset('assets/media/illustrations/other/4820-resized.png')}}" --}}
-                    class="lozad rounded mw-100"
+                    class="img-fluid d-block"
                     alt="illustration">
                 </div>
             </div>

@@ -7,7 +7,7 @@
     {{-- <!--begin::Table head--> --}}
     <thead>
         {{-- <!--begin::Table row--> --}}
-        <tr class="text-start text-gray-600 text-gray-700-in-dark fw-bold fs-7 text-uppercase gs-0">
+        <tr class="text-start text-gray-600 text-gray-700-on-dark fw-bold fs-7 text-uppercase gs-0">
             <th class="text-truncate">Expediteur</th>
             <th class="text-truncate">Statut</th>
             <th class="text-truncate">Matière</th>
@@ -21,7 +21,7 @@
     </thead>
     {{-- <!--end::Table head--> --}}
     {{-- <!--begin::Table body--> --}}
-    <tbody class="fw-semibold text-gray-700 text-gray-900-in-dark">
+    <tbody class="fw-semibold text-gray-700 text-gray-900-on-dark">
         @foreach ($current_expeditions as $expedition)
             @php
                 $postulant = $expedition->getPostulant($transporteur->id)

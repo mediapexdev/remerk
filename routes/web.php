@@ -92,10 +92,10 @@ Route::get('/account', function () {
                 return view('admin.account.profile');
                 break;
             case User::EXPEDITEUR:
-                return view('expediteur.account.account');
+                return view('expediteur.account.index');
                 break;
             case User::TRANSPORTEUR:
-                return view('transporteur.account.account');
+                return view('transporteur.account.index');
                 break;
             default:
                 return view('auth.login');

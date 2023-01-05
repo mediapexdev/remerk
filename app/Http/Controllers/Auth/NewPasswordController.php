@@ -39,6 +39,7 @@ class NewPasswordController extends Controller
         $request->validate([
             'phone'         => ['required', 'regex:#(^3[3]|^7[5-80])[ ]?[0-9]{3}([ ]?[0-9]{2}){2}$#', 'exists:users']
         ]);
+        $request['phone'] = \preg_replace('#\s+#', '', \trim($request->phone));
         $user = User::where('phone', $request['phone'])->first();
         $token = Str::random(60);
 
@@ -65,6 +66,7 @@ class NewPasswordController extends Controller
             'phone'         => ['required', 'regex:#(^3[3]|^7[5-80])[ ]?[0-9]{3}([ ]?[0-9]{2}){2}$#', 'exists:users'],
             'password'      => ['required', 'confirmed', Rules\Password::defaults()]
         ]);
+        $request['phone'] = \preg_replace('#\s+#', '', \trim($request->phone));
 
         // Nouveau model de réinitialisation du mot de passe
 

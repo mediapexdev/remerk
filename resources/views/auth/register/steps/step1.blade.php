@@ -11,7 +11,7 @@
             </h2>
             {{-- <!--end::Title--> --}}
             {{-- <!--begin::Notice--> --}}
-            <div class="text-muted fw-semibold fs-6">
+            <div class="text-gray-600 text-gray-700-on-dark fw-semibold fs-6">
                 <span>Si vous avez besoin de plus d'informations cliquez sur ce</span>
                 <a href="#" class="link-primary fw-bold">lien</a>.
             </div>
@@ -31,7 +31,7 @@
                     <label for="kt_create_account_form_account_type_expediteur"
                         class="btn btn-outline btn-outline-dashed btn-active-light-primary p-7 d-flex align-items-center mb-10">
                         {{-- <!--begin::Svg Icon | path: icons/duotune/finance/fin006.svg--> --}}
-                        <span class="svg-icon svg-icon-4x me-5">
+                        <span class="svg-icon svg-icon-4x me-5 text-gray-600">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" fill="currentColor">
                                 <defs />
                                 <g fill-rule="nonzero">
@@ -45,7 +45,7 @@
                         {{-- <!--begin::Info--> --}}
                         <span class="d-block fw-semibold text-start">
                             <span class="text-dark fw-bold d-block fs-4 mb-2">Expediteur</span>
-                            <span class="text-muted fw-semibold fs-6">Créer un compte expéditeur</span>
+                            <span class="text-gray-600 text-gray-700-on-dark fw-semibold fs-6">Créer un compte expéditeur</span>
                         </span>
                         {{-- <!--end::Info--> --}}
                     </label>
@@ -61,7 +61,7 @@
                     <label for="kt_create_account_form_account_type_transporteur"
                         class="btn btn-outline btn-outline-dashed btn-active-light-primary p-7 d-flex align-items-center mb-10">
                         {{-- <!--begin::Svg Icon | path: icons/duotune/communication/com005.svg--> --}}
-                        <span class="svg-icon svg-icon-5x me-5">
+                        <span class="svg-icon svg-icon-5x me-5 text-gray-600">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 80 40" fill="currentColor">
                                 <defs>
                                     <path id="a" d="M0 0h80v40H0z" />
@@ -92,7 +92,7 @@
                         {{-- <!--begin::Info--> --}}
                         <span class="d-block fw-semibold text-start">
                             <span class="text-dark fw-bold d-block fs-4 mb-2">Transporteur</span>
-                            <span class="text-muted fw-semibold fs-6">Créer un compte transporteur</span>
+                            <span class="text-gray-600 text-gray-700-on-dark fw-semibold fs-6">Créer un compte transporteur</span>
                         </span>
                         {{-- <!--end::Info--> --}}
                     </label>

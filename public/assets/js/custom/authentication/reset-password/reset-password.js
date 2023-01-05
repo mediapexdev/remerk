@@ -45,8 +45,8 @@ const KTAuthResetPassword = (function () {
                                 });
                                 ui_blocker.block();
                                 // format phone number
-                                const ipt_phone = form.querySelector("input[name=phone]");
-                                ipt_phone.value = ipt_phone.value.replace(/\s+/g, "");
+                                // const ipt_phone = form.querySelector("input[name=phone]");
+                                // ipt_phone.value = ipt_phone.value.replace(/\s+/g, "");
                                 // Submit form
                                 form.submit();
                                 // Enable button
