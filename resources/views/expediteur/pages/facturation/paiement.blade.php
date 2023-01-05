@@ -13,6 +13,7 @@ $body_classes = 'app-default';
 @endsection
 
 @section('component-body-content')
+{{$facture->id}}
 {{--
 <!--begin::Row--> --}}
 <div class="row gy-0 g-xl-10">
@@ -254,9 +255,10 @@ $body_classes = 'app-default';
 <script type="text/javascript" src="https://paytech.sn/cdn/paytech.min.js"></script>
 <script>
     function buy(btn) {
+        alert({{$facture->id}});
         (new PayTech({
-            facture_id        : {{$expedition->id}}, //will be sent to paiement.php page
-            expedition_id     : {{$facture->id}},
+            facture_id        : {{$facture->id}}, //will be sent to paiement.php page
+            expedition_id     : {{$expedition->id}},
         })).withOption({
             requestTokenUrl   : '/payer-facture',
             method            : 'POST',

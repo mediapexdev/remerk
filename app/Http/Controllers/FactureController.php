@@ -172,12 +172,10 @@ class FactureController extends Controller
         $expedition->etat_expedition_id = 3;
         $expedition->code = $code;
         $expedition->save();
-
         $expedition_tracking = ExpeditionsTracking::where('expedition_id', $expedition->id)->first();
         $expedition_tracking->etat_expedition_id = EtatExpedition::EN_ATTENTE_DE_CHARGEMENT;
         $expedition_tracking->date_paiement = now(new \DateTimeZone('UTC'));
         $expedition_tracking->save();
-        
         $response=$this->sendPayment($expedition,$facture);
         $expedition_tracking = ExpeditionsTracking::where('expedition_id', $expedition->id)->first();
         $expedition_tracking->etat_expedition_id = EtatExpedition::EN_ATTENTE_DE_CHARGEMENT;

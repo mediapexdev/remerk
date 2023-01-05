@@ -15,8 +15,8 @@
 {{-- <!-- end::Charts Scripts --> --}}
 
 {{-- <!-- begin::Firebase scripts --> --}}
-<script type="text/javascript" src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
-<script type="text/javascript" src="https://www.gstatic.com/firebasejs/7.16.1/firebase-messaging.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.10.1/firebase-messaging.js"></script>
 {{-- <!-- end::Firebase scripts --> --}}
 
 {{-- <!-- begin::Axios script --> --}}
