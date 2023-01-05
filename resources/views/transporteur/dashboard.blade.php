@@ -18,14 +18,14 @@
 
 @section('component-body-content')
 {{-- <!--begin::Row--> --}}
-<div class="row gy-5 g-xl-10">
+<div class="row gy-5 g-xl-10 h-100 mb-xl-10">
     {{-- <!--begin::Col--> --}}
-    <div class="col-xl-4 mb-xl-10">
+    <div class="col-xl-4 ">
         @include('transporteur.components.expeditions.overview.overview')
     </div>
     {{-- <!--end::Col--> --}}
     {{-- <!--begin::Col--> --}}
-    <div class="col-xl-8 mb-5 mb-xl-10">
+    <div class="col-xl-8">
         @include('transporteur.components.vehicules.overview.overview')
     </div>
     {{-- <!--end::Col--> --}}
