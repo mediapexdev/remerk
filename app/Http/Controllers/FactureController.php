@@ -227,12 +227,36 @@ class FactureController extends Controller
         ->setTestMode(true)
         ->setRefCommand(uniqid())
         ->setNotificationUrl([
-                'ipn_url'     => 'https://www.mediapex.net', //only https
+                'ipn_url'     => $base_url.'redirect-ipn', //only https
                 'success_url' => $base_url.'factures',
                 'cancel_url'  => $base_url.'factures/'
         ])
         ->send();
         return $jsonResponse;
         //test
+    }
+    public function redirect(Request $request){
+        $type_event = $request('type_event');
+        $custom_field = json_decode($request('custom_field'), true);
+        $ref_command = $request('ref_command');
+        $item_name = $request('item_name');
+        $item_price = $request('item_price');
+        $devise = $request('devise');
+        $command_name = $request('command_name');
+        $env = $request('env');
+        $token = $request('token');
+        $api_key_sha256 = $request('api_key_sha256');
+        $api_secret_sha256 = $request('api_secret_sha256');
+
+        $my_api_key = env('API_KEY');
+        $my_api_secret = env('API_SECRET');
+
+        if(hash('sha256', $my_api_secret) === $api_secret_sha256 && hash('sha256', $my_api_key) === $api_key_sha256)
+        {
+            dd($type_event);
+        }
+        else{
+            //not from PayTech
+        }
     }
 }

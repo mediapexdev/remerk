@@ -503,6 +503,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('payer-facture', [FactureController::class, 'payer'])
         ->name('payerFacture');
 
+    Route::post('redirect-ipn',[FactureController::class,'redirect'])->name('redirect.ipn');
+
     /*
     **/
 
