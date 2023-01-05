@@ -5,7 +5,7 @@
 @extends('transporteur.layout')
 
 @section('title')
-	<title>Facture - Remërk</title>
+	<title>Facture | Remërk</title>
 @endsection
 
 @section('component-body-content')
@@ -140,15 +140,15 @@
                                     <input type="hidden" name="facture_id" value="{{$facture->id}}">
                                     <button type="submit" class="btn btn-sm btn-success">Payer</button>
                                 </form>
-                                {{-- @else
+                                @else
                                 <a href="{{route('facturation')}}" class="btn btn-sm btn-info w-100">
                                     <i class="bi bi-backspace"></i>
                                     <span>Retour</span>
-                                </a> --}}
+                                </a>
                                 @endif
                                 <button type="button" class="btn btn-sm btn-primary my-1 me-1" onclick="imprimer()">
                                     <i class="bi bi-printer-fill"></i>
-                                    <span>Imprimer ou Télécharger</span>
+                                    <span>Imprimer-Télécharger</span>
                                 </button>
                                 <!--end::Action-->
                             </div>

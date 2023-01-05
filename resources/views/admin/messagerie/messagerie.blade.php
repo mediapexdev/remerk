@@ -22,7 +22,7 @@
 @endsection
 
 @section('title')
-    <title>Messagerie - Remërk</title>
+    <title>Messagerie | Remërk</title>
 @endsection
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">

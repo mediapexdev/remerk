@@ -20,7 +20,7 @@
 @extends('expediteur.layout')
 
 @section('title')
-    <title>Postulants - Remërk</title>
+    <title>Postulants | Remërk</title>
 @endsection
 
 @section('custom-css')

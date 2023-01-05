@@ -4,9 +4,9 @@
     <div id="kt_app_header_container" class="app-container container-fluid d-flex align-items-stretch justify-content-between">
         {{-- <!--begin::Mobile logo--> --}}
         <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
-            <a href="/dashboard" class="d-lg-none">
-                <img class="h-50px theme-dark-show" src="{{URL::asset('assets/images/Logo-Officiel---R-Monochrome-Blanc.png')}}" alt="Logo">
-                <img class="h-50px theme-light-show" src="{{URL::asset('assets/images/Logo-Officiel-Normal.png')}}" alt="Logo">
+            <a href="/" class="d-lg-none my-2">
+                <img class="h-35px img-fluid theme-dark-show" src="{{URL::asset('assets/images/Logo-Officiel---Monochrome-Blanc.png')}}" alt="Logo">
+                <img class="h-35px img-fluid theme-light-show" src="{{URL::asset('assets/images/Logo-2.png')}}" alt="Logo">
             </a>
         </div>
         {{-- <!--end::Mobile logo--> --}}
@@ -15,10 +15,10 @@
             {{-- <!--begin::Logo--> --}}
             <div id="kt_app_sidebar_logo" class="app-sidebar-logo px-6">
                 {{-- <!--begin::Logo image--> --}}
-                <a class="theme-dark-show">
+                <a href="/" class="theme-dark-show">
                     <img class="h-45px img-fluid mt-2" src="{{URL::asset('assets/images/Logo-Officiel---Monochrome-Blanc.png')}}" alt="Logo">
                 </a>
-                <a class="theme-light-show">
+                <a href="/" class="theme-light-show">
                     <img class="h-45px img-fluid mt-2" src="{{URL::asset('assets/images/Logo-2.png')}}" alt="Logo">
                 </a>
                 {{-- <!--end::Logo image--> --}}

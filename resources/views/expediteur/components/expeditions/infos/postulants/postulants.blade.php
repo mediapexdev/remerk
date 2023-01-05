@@ -145,8 +145,9 @@ $postulants = Postulants::where('expedition_id', $expedition->id)->orderByDesc('
                         <!--end::Table row--> --}}
                         @endforeach
                         @else
-                        <div class="d-flex justify-content-center">
-                            <p class="h4 text-center p-5">Merci de patienter, votre demande est en cours de traitement.
+                        <div class="d-flex flex-column">
+                            <p class="h4 text-center"><span class="p-5">Merci de patienter, votre demande est en cours de traitement.</span>
+                                <img class="" src="{{ asset('assets/images/accueil2.png') }}" alt="" height="175" width="275">
                             </p>
                         </div>
                         @endif

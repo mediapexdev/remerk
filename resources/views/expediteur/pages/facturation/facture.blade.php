@@ -21,7 +21,7 @@ $expeditions_facture[] = $expedition;
 @extends('expediteur.layout')
 
 @section('title')
-<title>Mes factures - Remërk</title>
+<title>Mes factures | Remërk</title>
 @endsection
 
 @section('component-body-content')
@@ -201,13 +201,13 @@ $expeditions_facture[] = $expedition;
                             @else
                             <tr>
                                 <div class="d-flex justify-content-center">
-                                    <div class="m-0">
-                                        <p>
+                                    <div class="my-2">
+                                        <p class="h5 text-center">
                                             <span>Vous n'avez pas encore reçu de proposition ? <span>
                                                     <a href="#" class="text-primary text-hover-info">Contactez-nous</a>
                                         </p>
                                         <div>
-                                            <img class="text-center" src="{{ asset('assets/images/18770.png') }}" alt=""
+                                            <img class="text-center" src="{{ asset('assets/images/accueil2.png') }}" alt=""
                                                 height="250px">
                                             <div class="text-center">
                                                 <button class="btn btn-sm btn-light-primary" data-bs-toggle="modal"
