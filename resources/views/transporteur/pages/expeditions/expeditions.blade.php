@@ -49,7 +49,7 @@
 
 @section('component-body-content')
 {{-- <!--begin::Row--> --}}
-<div class="d-block">
+<div class="d-block h-100">
     {{-- <!--begin::Toolbar--> --}}
     {{-- @include('transporteur.components.expeditions.toolbar') --}}
     {{-- <!--end::Toolbar--> --}}
@@ -57,7 +57,7 @@
         @include('expediteur.components.globals.default')
     @else
     {{-- <!--begin::Expeditions--> --}}
-    <div class="list-expeditions-widget card container-fluid mb-5 mb-xl-10">
+    <div class="list-expeditions-widget card container-fluid mb-5 mb-xl-10 h-100">
         {{-- <!--begin::Card header--> --}}
         <div class="card-header">
             {{-- <!--begin::Card title--> --}}

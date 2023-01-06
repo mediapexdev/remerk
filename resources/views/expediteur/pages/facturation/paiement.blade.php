@@ -252,6 +252,7 @@ $body_classes = 'app-default';
 @endsection
 
 @section('custom-js')
+
 <script type="text/javascript" src="https://paytech.sn/cdn/paytech.min.js"></script>
 <script>
     function buy(btn) {

@@ -31,7 +31,7 @@ $expeditions_facture[] = $expedition;
 @else
 {{--
 <!--begin::Card--> --}}
-<div class="card card-flush">
+<div class="card card-flush h-100">
     {{-- <div class="row gy-5 g-xl-10"> --}}
         {{--
         <!--begin::Col--> --}}

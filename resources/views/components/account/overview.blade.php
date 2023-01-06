@@ -65,7 +65,7 @@
             {{-- <!--begin::Col--> --}}
             <div class="col-lg-8 fv-row">
                 <span class="fw-semibold fs-6 text-gray-800 text-gray-900-on-dark">
-                    {{(($__expediteur->hasCompany()) ? $__expediteur->entreprise : 'Aucune')}}
+                    {{(($user_by_role->hasCompany()) ? $user_by_role->entreprise : 'Aucune')}}
                 </span>
             </div>
             {{-- <!--end::Col--> --}}
@@ -83,10 +83,10 @@
                     $link_href = $link_target = '';
                     $link_classes = 'fw-semibold fs-6 text-gray-800 text-gray-900-on-dark';
 
-                    if($__expediteur->hasWebsite()){
-                        $link_text = $__expediteur->siteweb;
+                    if($user_by_role->hasWebsite()){
+                        $link_text = $user_by_role->siteweb;
                         $link_classes .= ' text-hover-primary';
-                        $link_href = ('href=' . $__expediteur->siteweb);
+                        $link_href = ('href=' . $user_by_role->siteweb);
                         $link_target = 'target=_blank';
                     }
                 @endphp
@@ -108,7 +108,7 @@
             {{-- <!--end::Label--> --}}
             {{-- <!--begin::Col--> --}}
             <div class="col-lg-8">
-                <span class="fw-bold fs-6 text-gray-800 text-gray-900-on-dark">{{$__expediteur->adresse}}</span>
+                <span class="fw-bold fs-6 text-gray-800 text-gray-900-on-dark">{{$user_by_role->adresse}}</span>
             </div>
             {{-- <!--end::Col--> --}}
         </div>

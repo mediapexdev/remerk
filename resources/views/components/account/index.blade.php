@@ -1,19 +1,35 @@
 @php
-	$body_classes = "app-default";
-
 	use App\Core\Util;
-	use App\Models\Expediteur;
+	use App\Models\User;
 	use App\Models\Expedition;
+	use App\Models\Expediteur;
+	use App\Models\Transporteur;
 
-	$__expediteur = Expediteur::where('user_id', Auth::user()->id)->first();
-	$__expeditions_count = Expedition::where('expediteur_id', $__expediteur->id)->count();
+	$user_by_role = null;
+    $__expeditions_count = null;
+
+    switch (Auth::user()->role_id) {
+        case User::EXPEDITEUR:
+            $user_by_role = Expediteur::where('user_id', Auth::user()->id)->first();
+            $__expeditions_count = Expedition::where('expediteur_id', $user_by_role->id)->count();
+            break;
+        case User::TRANSPORTEUR:
+            $user_by_role = Transporteur::where('user_id', Auth::user()->id)->first();
+            $__expeditions_count = Expedition::where('transporteur_id', $user_by_role->id)->count();
+            break;
+		case User::ADMIN:
+        default:
+			exit;
+            break;
+    }
 @endphp
 
-@extends('expediteur.layout')
+{{-- @extends('transporteur.layout') --}}
 
 @section('title')
-	<title>Remerk - Compte</title>
+	<title>Mon profile - Rëmerk</title>
 @endsection
+
 @section('component-body-content')
     {{-- <!--begin::Navbar--> --}}
 	<div class="card mb-5 mb-xl-10">
@@ -35,10 +51,10 @@
 				{{-- <!--begin::Info--> --}}
 				<div class="flex-grow-1">
 					{{-- <!--begin::Title--> --}}
-					@include('expediteur.account.title')
+					@include('components.account.title')
 					{{-- <!--end::Title--> --}}
 					{{-- <!--begin::Stats--> --}}
-					@include('expediteur.account.stats')
+					@include('components.account.stats')
 					{{-- <!--end::Stats--> --}}
 				</div>
 				{{-- <!--end::Info--> --}}
@@ -66,10 +82,10 @@
 	{{-- <!--begin::details View--> --}}
 	<div class="tab-content">
 		<div id="kt_tab_account_overview" class="tab-pane fade show active" role="tabpanel">
-			@include('expediteur.account.overview')
+			@include('components.account.overview')
 		</div>
 		<div id="kt_tab_account_settings" class="tab-pane fade" role="tabpanel">
-			@include('expediteur.account.settings.settings')
+			@include('components.account.settings.settings')
 		</div>
 	</div>
 	{{-- <!--end::details View--> --}}

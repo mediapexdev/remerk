@@ -27,16 +27,16 @@
     </div>
     @else
         {{-- <!--begin::Row--> --}}
-        <div class="row gy-5 g-xl-10">
+        <div class="row h-100 mb-xl-10 gy-5 g-xl-10">
             {{-- <!--begin::Col--> --}}
-            <div class="col-xl-4 mb-xl-10">
+            <div class="col-xl-4">
                 {{-- <!--begin::Engage widget 3--> --}}
                 @include('expediteur.components.expeditions.overview.overview')
                 {{-- <!--end::Engage widget 3--> --}}
             </div>
             {{-- <!--end::Col--> --}}
             {{-- <!--begin::Col--> --}}
-            <div class="col-xl-8 mb-5 mb-xl-10">
+            <div class="col-xl-8">
                 @include('expediteur.components.expeditions.postulants.overview')
             </div>
             {{-- <!--end::Col--> --}}
