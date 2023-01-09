@@ -10,7 +10,7 @@
         {{-- <!--begin::Card Title--> --}}
         <h3 class="card-title align-items-start flex-column">
             <span class="title card-label fw-bold text-gray-800 text-gray-900-on-dark">Parc de véhicules</span>
-            <span class="sub-title text-gray-400 text-gray-700-on-dark mt-1 fw-semibold fs-6">Total {{$camions->count()}} Véhicules</span>
+            <span class="sub-title text-gray-600 text-gray-700-on-dark mt-1 fw-semibold fs-6">Total {{$camions->count()}} Véhicules</span>
         </h3>
         {{-- <!--end::Card Title--> --}}
         {{-- <!--begin::Card Toolbar--> --}}

@@ -21,12 +21,12 @@
 <div class="row gy-5 g-xl-10">
     {{-- <!--begin::Col--> --}}
     <div class="col-xl-4 mb-xl-10">
-        @include('transporteur.components.expeditions.overview.overview')
+        @include('transporteur.components.expeditions.overview.index')
     </div>
     {{-- <!--end::Col--> --}}
     {{-- <!--begin::Col--> --}}
     <div class="col-xl-8 mb-5 mb-xl-10">
-        @include('transporteur.components.vehicules.overview.overview')
+        @include('transporteur.components.vehicules.overview.index')
     </div>
     {{-- <!--end::Col--> --}}
 </div>

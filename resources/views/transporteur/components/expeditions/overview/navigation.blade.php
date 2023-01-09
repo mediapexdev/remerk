@@ -1,10 +1,10 @@
-<ul id="expeditions_overview_nav" class="nav nav-pills nav-pills-custom item position-relative mx-9 mb-9">
+<ul id="expeditions_overview_nav" class="nav nav-pills nav-pills-custom rk-nav-pills item position-relative mx-9 mb-9">
     {{-- <!--begin::Item--> --}}
-    <li class="nav-item col-4 mx-0 p-0">
+    <li class="nav-item rk-nav-item col-4 mx-0 p-0">
         {{-- <!--begin::Link--> --}}
-        <a class="nav-link active d-flex justify-content-center w-100 border-0 h-100" data-bs-toggle="pill" href="#kt_tab_expeditions_disponibles">
+        <a class="nav-link rk-nav-link text-gray-700 text-active-primary active d-flex justify-content-center w-100 border-0 h-100" data-bs-toggle="pill" href="#kt_tab_expeditions_disponibles">
             {{-- <!--begin::Subtitle--> --}}
-            <span class="tab-title nav-text text-gray-800 text-gray-900-on-dark fw-bold fs-6 mb-3 min-w-125px min-w-100px">Disponibles
+            <span class="tab-title rk-nav-text fw-bold fs-6 mb-3 min-w-125px min-w-100px">Disponibles
                 @if(0 !== $available_expeditions->count())
                 <span class="badge badge-circle badge-light-info ms-1">{{$available_expeditions->count()}}</span>
                 @endif
@@ -18,11 +18,11 @@
     </li>
     {{-- <!--end::Item--> --}}
     {{-- <!--begin::Item--> --}}
-    <li class="nav-item col-4 mx-0 px-0">
+    <li class="nav-item rk-nav-item col-4 mx-0 px-0">
         {{-- <!--begin::Link--> --}}
-        <a class="nav-link d-flex justify-content-center w-100 border-0 h-100" data-bs-toggle="pill" href="#kt_tab_expeditions_en_cours">
+        <a class="nav-link rk-nav-link text-gray-700 text-active-primary d-flex justify-content-center w-100 border-0 h-100" data-bs-toggle="pill" href="#kt_tab_expeditions_en_cours">
             {{-- <!--begin::Subtitle--> --}}
-            <span class="tab-title nav-text text-gray-800 text-gray-900-on-dark fw-bold fs-6 mb-3 min-w-100px ms-5">En cours
+            <span class="tab-title rk-nav-text fw-bold fs-6 mb-3 min-w-100px ms-5">En cours
                 @if(0 !== $current_expeditions->count())
                 {{-- <span class="badge badge-circle badge-light-info position-absolute top-0 start-100 translate-middle">{{$current_expeditions->count()}}</span> --}}
                 <span class="badge badge-circle badge-light-info ms-1">{{$current_expeditions->count()}}</span>
@@ -37,11 +37,11 @@
     </li>
     {{-- <!--end::Item--> --}}
     {{-- <!--begin::Item--> --}}
-    <li class="nav-item col-4 mx-0 px-0">
+    <li class="nav-item rk-nav-item col-4 mx-0 px-0">
         {{-- <!--begin::Link--> --}}
-        <a class="nav-link d-flex justify-content-center w-100 border-0 h-100" data-bs-toggle="pill" href="#kt_tab_expeditions_achevees">
+        <a class="nav-link rk-nav-link text-gray-700 text-active-primary d-flex justify-content-center w-100 border-0 h-100" data-bs-toggle="pill" href="#kt_tab_expeditions_achevees">
             {{-- <!--begin::Subtitle--> --}}
-            <span class="tab-title nav-text text-gray-800 text-gray-900-on-dark fw-bold fs-6 mb-3">Achevées
+            <span class="tab-title rk-nav-text fw-bold fs-6 mb-3">Achevées
                 @if(0 !== $completed_expeditions->count())
                 <span class="badge badge-circle badge-light-info ms-1">{{$completed_expeditions->count()}}</span>
                 @endif
