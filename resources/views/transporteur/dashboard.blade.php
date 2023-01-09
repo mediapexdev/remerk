@@ -9,7 +9,6 @@ $transporteur = Transporteur::where('user_id', Auth::user()->id)->first();
 $expeditions  = Expedition::where('transporteur_id', $transporteur->id)->get();
 
 @endphp
-@endphp
 
 @extends('transporteur.layout')
 
