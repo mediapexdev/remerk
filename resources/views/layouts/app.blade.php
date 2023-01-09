@@ -18,7 +18,7 @@
             {{-- <!--begin::Wrapper--> --}}
             <div id="kt_app_wrapper" class="app-wrapper flex-column flex-row-fluid">
                 {{-- <!--begin::Main--> --}}
-                <div id="kt_app_main" class="app-main flex-column flex-row-fluid pt-2">
+                <div id="kt_app_main" class="app-main flex-column flex-row-fluid p-0">
                     {{-- <!--begin::Content wrapper--> --}}
                     <div class="d-flex flex-column flex-column-fluid">
                         {{-- <!--begin::Content--> --}}

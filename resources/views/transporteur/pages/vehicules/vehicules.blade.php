@@ -17,7 +17,7 @@ $camions = Camion::where('transporteur_id', $transporteur->id)->orderByDesc('cre
 @section('component-body-content')
 {{--
 <!--begin::Row--> --}}
-<div class="card">
+<div class="card h-100">
     {{--
     <!--begin::Card Header--> --}}
     <div class="card-header border-0 pt-5">

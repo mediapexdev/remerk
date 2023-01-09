@@ -32,7 +32,7 @@
     @include('expediteur.components.default')
 @else
 {{-- <!--begin::Card--> --}}
-<div class="card card-flush">
+<div class="card card-flush h-100">
     <div class="row gy-5 g-xl-10">
         {{-- <!--begin::Col--> --}}
         <div class="col-xl-4 mb-xl-10 d-none d-xl-block d-xxl-block">
