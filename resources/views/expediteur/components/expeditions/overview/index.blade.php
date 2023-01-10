@@ -40,7 +40,7 @@
         @endphp
         {{-- <!--begin::Title--> --}}
         <h3 class="card-title align-items-start flex-column">
-            <span class="title card-label fw-bold text-gray-800 text-gray-900-on-dark">Aperçu des expéditions</span>
+            <span class="title card-label fw-bold text-gray-800 text-white-dim-on-dark">Aperçu des expéditions</span>
             <span class="sub-title text-gray-600 text-gray-700-on-dark mt-1 fw-semibold fs-6">{{ (!$expeditions_count ? 'Aucune' : $expeditions_count) . ' ' . $data_text }}</span>
         </h3>
         {{-- <!--end::Title--> --}}
@@ -106,7 +106,7 @@
                         </form>
                         {{-- <!--end::Form Cancel Expédition--> --}}
                     @else
-                        <p class="h5 text-center">Aucune expédition disponible</p>
+                        <p class="h5 text-center text-white-dim-on-dark">Aucune expédition disponible</p>
                         @include('expediteur.components.expeditions.overview.default')
                     @endif
                     {{-- <!--begin::Contenu--> --}}
@@ -173,7 +173,7 @@
                             @endif
                         @endforeach
                     @else
-                        <p class="h5 text-center">Aucune expédition en cours</p>
+                        <p class="h5 text-center text-white-dim-on-dark">Aucune expédition en cours</p>
                         @include('expediteur.components.expeditions.overview.default')
                     @endif
                     {{-- <!--end::Contenu--> --}}
@@ -230,7 +230,7 @@
                             @endif
                         @endforeach
                     @else
-                        <p class="h5 text-center">Aucune expédition achevée</p>
+                        <p class="h5 text-center text-white-dim-on-dark">Aucune expédition achevée</p>
                         @include('expediteur.components.expeditions.overview.default')
                     @endif
                     {{-- <!--end::Contenu--> --}}
