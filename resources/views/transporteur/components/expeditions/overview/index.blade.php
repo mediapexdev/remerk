@@ -2,16 +2,24 @@
     use App\Models\Expedition;
     use App\Models\Expediteur;
     use App\Models\EtatExpedition;
+    use Illuminate\Support\Collection;
+    
+    $transporteur = isset($transporteur) ? $transporteur :
+        Transporteur::where('user_id', Auth::user()->id)->first();
+    /*$vehicles = $transporteur->vehicules;
 
-    $expediteur = ((isset($expediteur)) ? $expediteur :
-        Expediteur::where('user_id', Auth::user()->id)->first());
+    $available_expeditions = Collection::make();
+    $all_expeditions_available = Expedition::where('etat_expedition_id', EtatExpedition::EN_ATTENTE)->orderByDesc('created_at')->limit(5)->get();
 
-    $pending_expeditions = Expedition::where([
-        'expediteur_id'         => $expediteur->id,
-        'etat_expedition_id'    => EtatExpedition::EN_ATTENTE
-    ])->orderByDesc('created_at')->limit(5)->get();
+    foreach ($all_expeditions_available as $expedition) {
+        if($vehicles->contains(function ($vehicle) use($expedition) {
+            return $expedition->expeditionMatiere->types_vehicule_id == $vehicle->id; })){
+            $available_expeditions->push($expedition);
+        }
+    }*/
+    $available_expeditions = Expedition::where('etat_expedition_id', EtatExpedition::EN_ATTENTE)->orderByDesc('created_at')->limit(5)->get();
 
-    $current_expeditions = Expedition::where('expediteur_id', $expediteur->id)
+    $current_expeditions = Expedition::where('transporteur_id', $transporteur->id)
     ->whereIn('etat_expedition_id', [
         EtatExpedition::EN_ATTENTE_DE_PAIEMENT,
         EtatExpedition::EN_ATTENTE_DE_CHARGEMENT,
@@ -21,8 +29,8 @@
     ])->orderByDesc('created_at')->limit(5)->get();
 
     $completed_expeditions = Expedition::where([
-        'expediteur_id'         => $expediteur->id,
-        'etat_expedition_id'    => EtatExpedition::TERMINEE
+        'transporteur_id'       => $transporteur->id,
+        'etat_expedition_id'    => EtatExpedition::TERMINEE,
     ])->orderByDesc('created_at')->limit(5)->get();
 @endphp
 {{-- <!--begin::List widget--> --}}
@@ -30,18 +38,14 @@
     {{-- <!--begin::Header--> --}}
     <div class="card-header pt-7">
         @php
-            // $expeditions_count = $pending_expeditions->count();
-            $expeditions_count = Expedition::where([
-                'expediteur_id'         => $expediteur->id,
-                'etat_expedition_id'    => EtatExpedition::EN_ATTENTE
-            ])->count();
-            $data_text = ((1 >= $expeditions_count) ? 'expédition ' : 'expéditions ');
-            $data_text .= 'en attente';
+            // $expeditions_count = $available_expeditions->count();
+            $expeditions_count = Expedition::where('etat_expedition_id', EtatExpedition::EN_ATTENTE)->count();
+            $data_text = ((1 >= $expeditions_count) ? 'expédition disponible' : 'expéditions disponibles');
         @endphp
         {{-- <!--begin::Title--> --}}
         <h3 class="card-title align-items-start flex-column">
             <span class="title card-label fw-bold text-gray-800 text-gray-900-on-dark">Aperçu des expéditions</span>
-            <span class="sub-title text-gray-400 text-gray-700-on-dark mt-1 fw-semibold fs-6">{{ (!$expeditions_count ? 'Aucune' : $expeditions_count) . ' ' . $data_text }}</span>
+            <span class="sub-title text-gray-600 text-gray-700-on-dark mt-1 fw-semibold fs-6">{{ (!$expeditions_count ? 'Aucune' : $expeditions_count) . ' ' . $data_text }}</span>
         </h3>
         {{-- <!--end::Title--> --}}
         {{-- <!--begin::Toolbar--> --}}
@@ -54,18 +58,17 @@
     {{-- <!--begin::Body--> --}}
     <div class="card-body pt-4 px-0">
         {{-- <!--begin::Nav--> --}}
-        @include('expediteur.components.expeditions.overview.navigation')
+        @include('transporteur.components.expeditions.overview.navigation')
         {{-- <!--end::Nav--> --}}
         {{-- <!--begin::Tab Content--> --}}
         <div class="tab-content px-9 hover-scroll-overlay-y pe-7 me-3 mb-2" style="max-height: 400px;">
             {{-- <!--begin::Tap pane--> --}}
-            <div id="kt_tab_expeditions_en_attente" class="tab-pane fade show active"
-                data-text="{{ $data_text }}" data-number="{{ $expeditions_count }}">
+            <div id="kt_tab_expeditions_disponibles" class="tab-pane fade show active" data-text="{{ $data_text }}" data-number="{{ $expeditions_count }}">
                 {{-- <!--begin::Item--> --}}
                 <div class="m-0">
                     {{-- <!--begin::Contenu--> --}}
                     @if ($expeditions_count)
-                        @foreach ($pending_expeditions as $expedition)
+                        @foreach ($available_expeditions as $expedition)
                             {{-- <!--begin::Wrapper--> --}}
                             <div class="d-flex align-items-sm-center mb-1">
                                 {{-- <!--begin::Section--> --}}
@@ -79,10 +82,17 @@
                                                 </div>
                                             </div>
                                             <div class="col-4">
-                                                <button type="button"
-                                                    id="btn_submit_form_cancel_expedition_{{ $loop->index + 1 }}"
-                                                    class="btn btn-light-warning btn-sm btn_submit_form_cancel_expedition"
-                                                    data-expedition-id="{{ $expedition->id }}">Annuler</button>
+                                                @if ($postulant = $expedition->getPostulant($transporteur->id))
+                                                    <button type="button"
+                                                        class="btn btn-light-warning btn-sm btn_submit_form_cancel_postulat"
+                                                        data-postulant-id="{{ $postulant->id }}">Annuler</button>
+                                                @else
+                                                    <button type="button"
+                                                        id="btn_submit_form_postulat_{{ $loop->index + 1 }}"
+                                                        class="btn btn-light-primary btn-sm btn_submit_form_postulat"
+                                                        data-expedition-id="{{ $expedition->id }}"
+                                                        data-transporteur-id="{{ $transporteur->id }}">Postuler</button>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
@@ -91,7 +101,7 @@
                             </div>
                             {{-- <!--end::Wrapper--> --}}
                             {{-- <!--begin::Timeline--> --}}
-                            @include('expediteur.components.expeditions.overview.content')
+                            @include('transporteur.components.expeditions.overview.content')
                             {{-- <!--end::Timeline--> --}}
                             @if (!$loop->last)
                                 {{-- <!--begin::Separator--> --}}
@@ -99,15 +109,24 @@
                                 {{-- <!--end::Separator--> --}}
                             @endif
                         @endforeach
-                        {{-- <!--begin::Form Cancel Expédition--> --}}
-                        <form id="form_cancel_expedition" method="POST" action="{{ route('expedition.delete') }}" style="display: none !important;">
+                        {{-- <!--begin::Form Postulat--> --}}
+                        <form id="form_postulat" method="POST" action="{{ route('postulant.store') }}"
+                            style="display: none !important;">
                             @csrf
+                            <input type="hidden" name="transporteur_id" id="transporteur_id">
                             <input type="hidden" name="expedition_id" id="expedition_id">
+                            <input type="hidden" name="montant_propose" id="montant_propose">
                         </form>
-                        {{-- <!--end::Form Cancel Expédition--> --}}
+                        {{-- <!--end::Form Postulat--> --}}
+                        {{-- <!--begin::Form Cancel Postulat--> --}}
+                        <form id="form_cancel_postulat" method="POST" action="{{ route('postulant.delete') }}">
+                            @csrf
+                            <input type="hidden" name="postulant_id" id="postulant_id">
+                        </form>
+                        {{-- <!--end::Form Cancel Postulat--> --}}
                     @else
                         <p class="h5 text-center">Aucune expédition disponible</p>
-                        @include('expediteur.components.expeditions.overview.default')
+                        @include('transporteur.components.expeditions.overview.default')
                     @endif
                     {{-- <!--begin::Contenu--> --}}
                 </div>
@@ -116,7 +135,7 @@
             {{-- <!--end::Tap pane--> --}}
             @php
                 // $expeditions_count = $current_expeditions->count();
-                $expeditions_count = Expedition::where('expediteur_id', $expediteur->id)
+                $expeditions_count = Expedition::where('transporteur_id', $transporteur->id)
                 ->whereIn('etat_expedition_id', [
                     EtatExpedition::EN_ATTENTE_DE_PAIEMENT,
                     EtatExpedition::EN_ATTENTE_DE_CHARGEMENT,
@@ -154,7 +173,7 @@
                                                     {{-- <span class="pe-6">
                                                         <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="{{ $expedition->etat->nom }}"></i>
                                                     </span> --}}
-                                                    <a class="btn btn-light-primary btn-sm" href="{{ route('expedition.infos', $expedition->id) }}">Suivi</a>
+                                                    <a class="btn btn-light-primary btn-sm" href="{{ route('expedition.suivi', $expedition->id) }}">Suivi</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -164,7 +183,7 @@
                             </div>
                             {{-- <!--end::Wrapper--> --}}
                             {{-- <!--begin::Timeline--> --}}
-                            @include('expediteur.components.expeditions.overview.content')
+                            @include('transporteur.components.expeditions.overview.content')
                             {{-- <!--end::Timeline--> --}}
                             @if (!$loop->last)
                                 {{-- <!--begin::Separator--> --}}
@@ -174,7 +193,7 @@
                         @endforeach
                     @else
                         <p class="h5 text-center">Aucune expédition en cours</p>
-                        @include('expediteur.components.expeditions.overview.default')
+                        @include('transporteur.components.expeditions.overview.default')
                     @endif
                     {{-- <!--end::Contenu--> --}}
                 </div>
@@ -184,14 +203,14 @@
             @php
                 // $expeditions_count = $completed_expeditions->count();
                 $expeditions_count = Expedition::where([
-                    'expediteur_id'         => $expediteur->id,
-                    'etat_expedition_id'    => EtatExpedition::TERMINEE
+                    'transporteur_id'       => $transporteur->id,
+                    'etat_expedition_id'    => EtatExpedition::TERMINEE,
                 ])->count();
                 $data_text = (1 >= $expeditions_count) ? 'expédition achevée' : 'expéditions achevées';
             @endphp
             {{-- <!--begin::Tap pane--> --}}
-            <div id="kt_tab_expeditions_achevees" class="tab-pane fade show"
-                data-text="{{ $data_text }}" data-number="{{ $expeditions_count }}">
+            <div id="kt_tab_expeditions_achevees" class="tab-pane fade show" data-text="{{ $data_text }}"
+                data-number="{{ $expeditions_count }}">
                 {{-- <!--begin::Item--> --}}
                 <div class="m-0">
                     {{-- <!--begin::Contenu--> --}}
@@ -221,7 +240,7 @@
                             </div>
                             {{-- <!--end::Wrapper--> --}}
                             {{-- <!--begin::Timeline--> --}}
-                            @include('expediteur.components.expeditions.overview.content')
+                            @include('transporteur.components.expeditions.overview.content')
                             {{-- <!--end::Timeline--> --}}
                             @if (!$loop->last)
                                 {{-- <!--begin::Separator--> --}}
@@ -231,7 +250,7 @@
                         @endforeach
                     @else
                         <p class="h5 text-center">Aucune expédition achevée</p>
-                        @include('expediteur.components.expeditions.overview.default')
+                        @include('transporteur.components.expeditions.overview.default')
                     @endif
                     {{-- <!--end::Contenu--> --}}
                 </div>
