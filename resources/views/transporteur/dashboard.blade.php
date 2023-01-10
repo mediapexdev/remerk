@@ -6,7 +6,7 @@ use App\Models\Expedition;
 use App\Models\Facture;
 
 $transporteur = Transporteur::where('user_id', Auth::user()->id)->first();
-$expeditions  = Expedition::where('transporteur_id', $transporteur->id)->get();
+$expeditions = Expedition::where('transporteur_id', $transporteur->id)->get();
 
 @endphp
 
@@ -75,17 +75,10 @@ $expeditions  = Expedition::where('transporteur_id', $transporteur->id)->get();
 <script src="https://cdn.amcharts.com/lib/5/geodata/data/countries2.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/geodata/senegalHigh.js"></script>
 <script>
-    // var continents = {
-//     "AF": 0
-//   }
-
-  // Create root element
+    // Create root element
   // https://www.amcharts.com/docs/v5/getting-started/#Root_element
     var root   = am5.Root.new("chartdiv");
-    var colors = am5.ColorSet.new(root, {
-
-    });
-    
+    var colors = am5.ColorSet.new(root, {});
     
     // Set themes
     // https://www.amcharts.com/docs/v5/concepts/themes/
@@ -119,44 +112,36 @@ $expeditions  = Expedition::where('transporteur_id', $transporteur->id)->get();
     
     senegalMap.mapPolygons.template.states.create("hover", {
         fill: color,
-        toggleKey: "active",
-    });
-    
+        toggleKey: "default",
+        });
 
-    senegalMap.mapPolygons.template.events.on("click", (ev) => {
-
+    //console.log(senegalMap.mapPolygons.template.events);
+    senegalMap.mapPolygons.template.events.on("click", (ev) =>
+    {
         colorIndex = parseInt(Math.random()*30)+1;
         senegalMap.mapPolygons.template.states.create("active", {
         fill: colors.getIndex(colorIndex)
         });
 
         var dataItem = ev.target.dataItem;
-        var data     = dataItem.dataContext;
-
-        var data_    = dataItem;
-        var polygon  = dataItem.get("Polygon");
-        polygon.fill   = colors.getIndex(colorIndex);
-        console.log(polygon);
-        // data_.fill   = colors.getIndex(colorIndex);
-        //alert(polygon);
-        dataItem.fill= colors.getIndex(1);
-        //console.log(dataItem);
+        var data = dataItem.dataContext;
+        console.log(data);
         
         var zoomAnimation = senegalMap.zoomToDataItem(dataItem);
-    
+        
         Promise.all([
         zoomAnimation.waitForStop(),
         am5.net.load("https://cdn.amcharts.com/lib/5/geodata/json/senegalDepartmentsHigh.json", chart)
-        ]).then((results) => {
-        var geodata = am5.JSONParser.parse(results[1].response);
-        countrySeries.setAll({
-            geoJSON: geodata,
-            fill: data.polygonSettings.fill,
-            //toggleKey: "active",
+        ]).then((results) =>
+        {
+            var geodata = am5.JSONParser.parse(results[1].response);
+            countrySeries.setAll({
+                geoJSON: geodata,
+                fill: data.polygonSettings.fill,
+                //toggleKey: "active",
+            });
         });
-
     });
-});
 
   // Create polygon series for the country map
   // https://www.amcharts.com/docs/v5/charts/map-chart/map-polygon-series/
