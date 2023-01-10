@@ -147,7 +147,7 @@
                     <h4 class="text-gray-900 fw-bold">Nous avons besoin de votre attention !</h4>
                     <div class="fs-6 text-gray-700 text-gray-800-on-dark">
                         <span>Pour changer votre numéro de téléphone, veuillez</span>
-                        <a class="fw-bold">nous contacter</a>.
+                        <a class="fw-bold" href="tel:+221338326000">nous contacter</a>.
                     </div>
                 </div>
                 {{-- <!--end::Content--> --}}

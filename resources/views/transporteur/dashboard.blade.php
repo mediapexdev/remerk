@@ -29,10 +29,10 @@ $expeditions  = Expedition::where('transporteur_id', $transporteur->id)->get();
         <!--begin::Left Col--> --}}
         <div class="col-xl-4 gx-5 mb-5">
             <div class="col mb-5">
-                @include('transporteur.components.expeditions.overview.overview')
+                @include('transporteur.components.expeditions.overview.index')
             </div>
             <div class="col">
-                @include('transporteur.components.vehicules.overview.overview')
+                @include('transporteur.components.vehicules.overview.index')
             </div>
         </div>
         {{--

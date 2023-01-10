@@ -31,7 +31,7 @@
             {{-- <!--begin::Col--> --}}
             <div class="col-xl-4">
                 {{-- <!--begin::Engage widget 3--> --}}
-                @include('expediteur.components.expeditions.overview.overview')
+                @include('expediteur.components.expeditions.overview.index')
                 {{-- <!--end::Engage widget 3--> --}}
             </div>
             {{-- <!--end::Col--> --}}
