@@ -31,6 +31,10 @@ class Matiere extends Model
                 TypesVehicule::whereIn('id', $types_vehicule_ids)->get());
     }
 
+    public function expeditions(){
+        return $this->hasMany(ExpeditionsMatiere::class);
+    }
+
     // public function type()
     // {
     //     return $this->belongsTo(ExpeditionsMatiere::class,'matiere_id');
