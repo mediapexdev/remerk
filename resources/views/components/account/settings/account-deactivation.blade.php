@@ -4,7 +4,7 @@
         data-bs-toggle="collapse" data-bs-target="#kt_account_deactivate"
         aria-expanded="true" aria-controls="kt_account_deactivate">
         <div class="card-title m-0">
-            <h3 class="fw-bold m-0">Désactiver le compte</h3>
+            <h3 class="fw-bold fw-medium-on-dark m-0">Désactiver le compte</h3>
         </div>
     </div>
     {{-- <!--end::Card header--> --}}
@@ -31,11 +31,11 @@
                     <div class="d-flex flex-stack flex-grow-1">
                         {{-- <!--begin::Content--> --}}
                         <div class="fw-semibold">
-                            <h4 class="text-gray-900 fw-bold">Vous désactivez votre compte</h4>
+                            <h4 class="text-gray-900 fw-bold fw-medium-on-dark">Vous désactivez votre compte</h4>
                             <div class="fs-6 text-gray-700 text-gray-800-on-dark">
                                 <span>Pour plus de sécurité, cela vous oblige à confirmer votre adresse e-mail ou votre numéro de téléphone lorsque vous désactivez votre compte.</span>
                                 <br />
-                                <a class="fw-bold" href="#">En savoir encore plus</a>
+                                <a class="fw-bold fw-medium-on-dark" href="#">En savoir encore plus</a>
                             </div>
                         </div>
                         {{-- <!--end::Content--> --}}

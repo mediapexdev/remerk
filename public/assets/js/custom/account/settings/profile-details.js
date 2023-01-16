@@ -122,7 +122,12 @@ const KTAccountSettingsProfileDetails = (function () {
                     );
                 });
             }),
-            document.querySelector('#btn_edit_profile')
+            document.querySelector('#btn_light_edit_profile')
+            .addEventListener('click', function(e){
+                e.preventDefault();
+                document.querySelector('a[href="#kt_tab_account_settings"]').click();
+            }),
+            document.querySelector('#btn_dark_edit_profile')
             .addEventListener('click', function(e){
                 e.preventDefault();
                 document.querySelector('a[href="#kt_tab_account_settings"]').click();

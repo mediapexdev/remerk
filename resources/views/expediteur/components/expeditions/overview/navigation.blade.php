@@ -5,9 +5,9 @@
         <a class="nav-link rk-nav-link text-gray-700 text-active-primary active d-flex justify-content-center w-100 border-0 h-100 position-relative"
             data-bs-toggle="pill" href="#kt_tab_expeditions_en_attente">
             {{-- <!--begin::Subtitle--> --}}
-            <span class="tab-title rk-nav-text fw-bold fs-6 mb-3 min-w-100px">En attente
+            <span class="tab-title rk-nav-text fw-bold fw-medium-on-dark fs-6 mb-3 position-relative text-nowrap pt-1 pe-1">En attente
                 @if(0 !== $pending_expeditions->count())
-                <span class="badge badge-circle badge-light-info ms-1">{{$pending_expeditions->count()}}</span>
+                <span class="position-absolute top-0 start-100 translate-middle badge badge-sm badge-circle badge-light-info">{{$pending_expeditions->count()}}</span>
                 @endif
                 {{-- <!--end::Subtitle--> --}}
             </span>
@@ -24,10 +24,9 @@
         <a class="nav-link rk-nav-link text-gray-700 text-active-primary d-flex justify-content-center w-100 border-0 h-100 ms-2" data-bs-toggle="pill"
             href="#kt_tab_expeditions_en_cours">
             {{-- <!--begin::Subtitle--> --}}
-            <span class="tab-title rk-nav-text fw-bold fs-6 mb-3 min-w-100px ms-2 position-relative">En cours
+            <span class="tab-title rk-nav-text fw-bold fw-medium-on-dark fs-6 mb-3 position-relative pt-1 pe-1 text-nowrap">En cours
                 @if(0 !== $current_expeditions->count())
-                {{-- <span class="badge badge-circle badge-light-info position-absolute top-0 start-100 translate-middle">{{$current_expeditions->count()}}</span> --}}
-                <span class="badge badge-circle badge-light-info ms-1">{{$current_expeditions->count()}}</span>
+                <span class="position-absolute top-0 start-100 translate-middle badge badge-sm badge-circle badge-light-info">{{$current_expeditions->count()}}</span>
                 @endif
             </span>
             {{-- <!--end::Subtitle--> --}}
@@ -44,9 +43,9 @@
         <a class="nav-link rk-nav-link text-gray-700 text-active-primary d-flex justify-content-center w-100 border-0 h-100" data-bs-toggle="pill"
             href="#kt_tab_expeditions_achevees">
             {{-- <!--begin::Subtitle--> --}}
-            <span class="tab-title rk-nav-text fw-bold fs-6 mb-3">Achevées
+            <span class="tab-title rk-nav-text fw-bold fw-medium-on-dark fs-6 mb-3 position-relative pt-1 pe-1">Achevées
                 @if(0 !== $completed_expeditions->count())
-                <span class="badge badge-circle badge-light-info ms-1">{{$completed_expeditions->count()}}</span>
+                <span class="position-absolute top-0 start-100 translate-middle badge badge-sm badge-circle badge-light-info">{{$completed_expeditions->count()}}</span>
                 @endif
             </span>
             {{-- <!--end::Subtitle--> --}}

@@ -68,7 +68,7 @@
   /* --bs-link-color: #009ef7; */
   --bs-link-color: #068C94;
   /* --bs-link-hover-color: #0095e8; */
-  --bs-link-hover-color: #0d828a;
+  --bs-link-hover-color: #167C84;
   --bs-code-color: #b93993;
   --bs-highlight-bg: #fff3cd;
 }
@@ -3394,10 +3394,10 @@ textarea.form-control-lg {
   --bs-btn-bg: transparent;
   --bs-btn-border-color: transparent;
   /* --bs-btn-hover-color: #0095e8; */
-  --bs-btn-hover-color: #0d828a;
+  --bs-btn-hover-color: #167C84;
   --bs-btn-hover-border-color: transparent;
   /* --bs-btn-active-color: #0095e8; */
-  --bs-btn-active-color: #0d828a;
+  --bs-btn-active-color: #167C84;
   --bs-btn-active-border-color: transparent;
   --bs-btn-disabled-color: #7E8299;
   --bs-btn-disabled-border-color: transparent;
@@ -7042,8 +7042,19 @@ textarea.form-control-lg {
   /* color: #009ef7 !important; */
   color: #068C94 !important;
 }
+
 .link-primary:hover, .link-primary:focus {
-  color: #33b1f9 !important;
+  /* color: #33b1f9 !important; */
+  color: #167C84 !important;
+}
+
+[data-theme="dark"] .link-primary {
+  /* color: #009ef7 !important; */
+  color: #F9B233 !important;
+}
+
+[data-theme="dark"] .link-primary:hover, [data-theme="dark"] .link-primary:focus {
+  color: #E4A02B !important;
 }
 
 .link-secondary {
@@ -26676,7 +26687,7 @@ textarea.form-control-lg {
   --kt-danger: #f1416c;
   --kt-dark: #181C32;
   /* --kt-primary-active: #0095e8; */
-  --kt-primary-active: #0d828a;
+  --kt-primary-active: #167C84;
   --kt-secondary-active: #B5B5C3;
   --kt-light-active: #F4F4F4;
   --kt-success-active: #47be7d;
@@ -26734,7 +26745,7 @@ textarea.form-control-lg {
   /* --kt-link-color: #009ef7; */
   --kt-link-color: #068C94;
   /* --kt-link-hover-color: #0095e8; */
-  --kt-link-hover-color: #0d828a;
+  --kt-link-hover-color: #167C84;
   --kt-border-color: #F4F4F4;
   --kt-border-dashed-color: #E1E3EA;
   --kt-component-active-color: #ffffff;
@@ -26778,7 +26789,7 @@ textarea.form-control-lg {
   /* --kt-btn-link-color: #009ef7; */
   --kt-btn-link-color: #068C94;
   /* --kt-btn-link-hover-color: #0095e8; */
-  --kt-btn-link-hover-color: #0d828a;
+  --kt-btn-link-hover-color: #167C84;
   --kt-btn-link-disabled-color: #7E8299;
   --kt-form-label-color: #3F4254;
   --kt-form-text-color: #A1A5B7;

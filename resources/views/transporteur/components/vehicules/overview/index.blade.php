@@ -37,6 +37,7 @@
                         {{-- <!--begin::Table head--> --}}
                         <thead>
                             <tr class="fs-5 fw-bold text-gray-600 text-gray-700-on-dark border-bottom-0">
+                                <th class="min-w-150px">Marque</th>
                                 <th class="min-w-150px">Type</th>
                                 <th class="min-w-150px">Matricule</th>
                                 <th>Status</th>
@@ -47,9 +48,9 @@
                         @foreach ($camions as $camion)
                         <tbody>
                             <tr>
-                                {{-- <td>
+                                <td>
                                     <p class="text-gray-800 fw-bold d-block mb-1 fs-6">{{$camion->marque->nom}}</p>
-                                </td> --}}
+                                </td>
                                 <td>
                                     <div class="d-flex align-items-center">
                                         <div class="d-flex justify-content-start flex-column">

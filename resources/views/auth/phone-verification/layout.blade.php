@@ -14,19 +14,19 @@
     @csrf
     {{-- <!--begin::Icon--> --}}
     <div class="text-center mb-10">
-        <img class="mh-125px" src="assets/media/svg/misc/smartphone-2.svg" alt="Logo" title="Logo">
+        <img class="mh-125px" src="{{URL::asset('assets/media/svg/misc/smartphone-2.svg')}}" alt="Logo" title="Logo">
     </div>
     {{-- <!--end::Icon--> --}}
     {{-- <!--begin::Heading--> --}}
     <div class="text-center mb-10">
         {{-- <!--begin::Title--> --}}
-        <h1 class="text-dark mb-3">Vérification en deux étapes</h1>
+        <h1 class="text-dark fw-medium-on-dark mb-3">Vérification en deux étapes</h1>
         {{-- <!--end::Title--> --}}
         {{-- <!--begin::Sub-title--> --}}
-        <div class="text-gray-600 text-gray-700-on-dark fw-semibold fs-5 mb-5">Entrez le code de vérification que nous avons envoyé à</div>
+        <div class="text-gray-600 text-gray-700-on-dark fw-semibold fs-5 mb-5">Entrez le code de vérification que nous avons envoyé au</div>
         {{-- <!--end::Sub-title--> --}}
         {{-- <!--begin::Mobile no--> --}}
-        <div class="fw-bold text-dark fs-3">{{ \substr($phone_number, 0, 2) . ' ***** ' . \substr($phone_number, 7, 2) }}</div>
+        <div class="fw-bold text-dark text-white-dim-on-dark fs-3">{{ \substr($phone_number, 0, 2) . ' ***** ' . \substr($phone_number, 7, 2) }}</div>
         {{-- <!--end::Mobile no--> --}}
     </div>
     {{-- <!--end::Heading--> --}}
@@ -37,16 +37,16 @@
     {{-- <!--begin::Section--> --}}
     <div class="mb-10">
         {{-- <!--begin::Label--> --}}
-        <div class="fw-bold text-start text-dark fs-6 mb-1 ms-1">Tapez votre code de sécurité à 6 chiffres</div>
+        <div class="fw-bold fw-medium-on-dark text-start text-dark text-white-dim-on-dark fs-6 mb-1 ms-1">Tapez votre code de sécurité à 6 chiffres</div>
         {{-- <!--end::Label--> --}}
         {{-- <!--begin::Input group--> --}}
         <div class="d-flex flex-wrap flex-stack">
-            <input type="text" name="code_1" id="code_1" class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2 text-gray-900-on-dark" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" value="" required autofocus>
-            <input type="text" name="code_2" id="code_2" class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2 text-gray-900-on-dark" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" value="" required>
-            <input type="text" name="code_3" id="code_3" class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2 text-gray-900-on-dark" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" value="" required>
-            <input type="text" name="code_4" id="code_4" class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2 text-gray-900-on-dark" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" value="" required>
-            <input type="text" name="code_5" id="code_5" class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2 text-gray-900-on-dark" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" value="" required>
-            <input type="text" name="code_6" id="code_6" class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2 text-gray-900-on-dark" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" value="" required>
+            <input type="text" name="code_1" id="code_1" class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2 text-white-dim-on-dark" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" value="" required autofocus>
+            <input type="text" name="code_2" id="code_2" class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2 text-white-dim-on-dark" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" value="" required>
+            <input type="text" name="code_3" id="code_3" class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2 text-white-dim-on-dark" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" value="" required>
+            <input type="text" name="code_4" id="code_4" class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2 text-white-dim-on-dark" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" value="" required>
+            <input type="text" name="code_5" id="code_5" class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2 text-white-dim-on-dark" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" value="" required>
+            <input type="text" name="code_6" id="code_6" class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2 text-white-dim-on-dark" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" value="" required>
         </div>
         {{-- <!--end::Input group--> --}}
     </div>
@@ -65,7 +65,7 @@
 </form>
 {{-- <!--end::Form--> --}}
 {{-- <!--begin::Notice--> --}}
-<div class="text-center fw-semibold fs-5">
+<div class="text-center fw-semibold fw-normal-on-dark fs-5">
     <span class="text-gray-600 text-gray-700-on-dark me-1">Je n'ai pas reçu le code ?</span>
     <a href="#" class="link-primary fs-5 me-1">Renvoyer</a>
     <span class="text-gray-600 text-gray-700-on-dark me-1">ou</span>

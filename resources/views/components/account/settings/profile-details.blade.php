@@ -4,7 +4,7 @@
         data-bs-target="#kt_account_profile_details" aria-expanded="true" aria-controls="kt_account_profile_details">
         {{-- <!--begin::Card title--> --}}
         <div class="card-title m-0">
-            <h3 class="fw-bold m-0">Détails du profil</h3>
+            <h3 class="fw-bold fw-medium-on-dark m-0">Détails du profil</h3>
         </div>
         {{-- <!--end::Card title--> --}}
     </div>
@@ -80,14 +80,14 @@
                             {{-- <!--begin::Col--> --}}
                             <div class="col-lg-6 fv-row">
                                 <input type="text" name="prenom" id="prenom"
-                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0 text-gray-900-on-dark"
+                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0 text-white-dim-on-dark"
                                     placeholder="Prénom" value="{{ Auth::user()->prenom }}" required>
                             </div>
                             {{-- <!--end::Col--> --}}
                             {{-- <!--begin::Col--> --}}
                             <div class="col-lg-6 fv-row">
                                 <input type="text" name="nom" id="nom"
-                                    class="form-control form-control-lg form-control-solid text-gray-900-on-dark"
+                                    class="form-control form-control-lg form-control-solid text-white-dim-on-dark"
                                     placeholder="Nom" value="{{ Auth::user()->nom }}" required>
                             </div>
                             {{-- <!--end::Col--> --}}
@@ -108,7 +108,7 @@
                     {{-- <!--begin::Col--> --}}
                     <div class="col-lg-8 fv-row">
                         <input type="email" name="email" id="email"
-                            class="form-control form-control-lg form-control-solid text-gray-900-on-dark"
+                            class="form-control form-control-lg form-control-solid text-white-dim-on-dark"
                             placeholder="Adresse e-mail" value="{{ Auth::user()->hasEmail() ? Auth::user()->email : '' }}">
                     </div>
                     {{-- <!--end::Col--> --}}
@@ -122,7 +122,7 @@
                     {{-- <!--begin::Col--> --}}
                     <div class="col-lg-8 fv-row">
                         <input type="text" name="entreprise" id="entreprise"
-                            class="form-control form-control-lg form-control-solid text-gray-900-on-dark"
+                            class="form-control form-control-lg form-control-solid text-white-dim-on-dark"
                             placeholder="Nom de l'entreprise" value="{{ $user_by_role->hasCompany() ? $user_by_role->entreprise : '' }}">
                     </div>
                     {{-- <!--end::Col--> --}}
@@ -136,7 +136,7 @@
                     {{-- <!--begin::Col--> --}}
                     <div class="col-lg-8 fv-row">
                         <input type="text" name="siteweb" id="siteweb"
-                            class="form-control form-control-lg form-control-solid text-gray-900-on-dark"
+                            class="form-control form-control-lg form-control-solid text-white-dim-on-dark"
                             placeholder="Site web" value="{{ $user_by_role->hasWebsite() ? $user_by_role->siteweb : '' }}">
                     </div>
                     {{-- <!--end::Col--> --}}
@@ -153,7 +153,7 @@
                     {{-- <!--begin::Col--> --}}
                     <div class="col-lg-8 fv-row">
                         <input type="text" name="adresse" id="adresse"
-                            class="form-control form-control-lg form-control-solid text-gray-900-on-dark"
+                            class="form-control form-control-lg form-control-solid text-white-dim-on-dark"
                             placeholder="Adresse" value="{{ $user_by_role->adresse }}" required>
                     </div>
                     {{-- <!--end::Col--> --}}

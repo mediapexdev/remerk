@@ -21,7 +21,7 @@
         </thead>
         {{-- <!--end::Table head--> --}}
         {{-- <!--begin::Table body--> --}}
-        <tbody class="fw-semibold text-gray-700 text-gray-900-on-dark">
+        <tbody class="fw-semibold text-gray-700 text-white-dim-on-dark">
             @foreach ($postulants as $postulant)
             {{-- <!--begin::Table row--> --}}
             <tr>
@@ -86,8 +86,9 @@
             @endforeach
             @else
             <div class="d-flex flex-column">
-                <p class="h4 text-center"><span class="p-5">Merci de patienter, votre demande est en cours de traitement.</span>
-                    <img class="" src="{{ asset('assets/images/accueil2.png') }}" alt="" height="175" width="275">
+                <p class="h4 text-center fw-normal-on-dark">
+                    <span class="p-5 text-white-dim-on-dark">Merci de patienter, votre demande est en cours de traitement.</span>
+                    <img class="" src="{{ asset('assets/images/accueil2.png') }}" alt="Illustration" height="175" width="275">
                 </p>
             </div>
             @endif
