@@ -15,19 +15,31 @@ am5.ready(async function () {
     root.setThemes([
         am5themes_Animated.new(root),
     ]);
-    KTThemeMode.on("kt.thememode.change", function(){
-        if("dark" === KTThemeMode.getMode()){
-            root.setThemes([
-                am5themes_Animated.new(root),
-                am5themes_Dark.new(root)
-            ]);
-        }
-        else{
-            root.setThemes([
-                am5themes_Animated.new(root),
-            ]);
-        }
-    });
+    if(KTThemeMode.getMode())
+    if("dark" === KTThemeMode.getMode()){
+        root.setThemes([
+            am5themes_Animated.new(root),
+            am5themes_Dark.new(root)
+        ]);
+    }
+    else{
+        root.setThemes([
+            am5themes_Animated.new(root),
+        ]);
+    }
+    // KTThemeMode.on("kt.thememode.change", function(){
+    //     if("dark" === KTThemeMode.getMode()){
+    //         root.setThemes([
+    //             am5themes_Animated.new(root),
+    //             am5themes_Dark.new(root)
+    //         ]);
+    //     }
+    //     else{
+    //         root.setThemes([
+    //             am5themes_Animated.new(root),
+    //         ]);
+    //     }
+    // });
         
 
     // Create chart
