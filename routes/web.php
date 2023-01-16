@@ -17,6 +17,7 @@ use App\Http\Controllers\SuiviExpeditionController;
 use App\Models\Camion;
 use App\Models\Expediteur;
 use App\Models\Expedition;
+use App\Models\Matiere;
 use App\Models\Transporteur;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -631,7 +632,23 @@ Route::get('/noscript', function () {
     else {
         return redirect()->route('login');
     }
-})->middleware(['auth'])->name('noscript');
 
+})->middleware(['auth'])->name('noscript');
+Route::get('/getMatieres',function(){
+    if (null !== ($user = Auth::user())) {
+        if($user->role_id==User::TRANSPORTEUR){
+            // $transporteur=Transporteur::where('user_id',$user->id)->first();
+            $matieres=Matiere::with('expeditions')->get();
+
+            return $matieres;
+        }
+        else{
+            return view('notFound');
+        }
+    }
+    else {
+        return redirect()->route('login');
+    }
+});
 
 require __DIR__ . '/auth.php';
