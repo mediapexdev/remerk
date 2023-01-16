@@ -61,7 +61,7 @@ $expeditions_facture[] = $expedition;
                     <div class="card-title">
                         <div class="d-flex align-items-center">
                             <img src="{{URL::asset('assets/icons/facture01.png')}}" style="height: 35px; width:35px;">
-                            <h2 class="ms-2">Mes factures</h2>
+                            <h2 class="ms-2 text-white-dim-on-dark">Mes factures</h2>
                         </div>
                     </div>
                     {{--
@@ -202,9 +202,9 @@ $expeditions_facture[] = $expedition;
                             <tr>
                                 <div class="d-flex justify-content-center">
                                     <div class="my-2">
-                                        <p class="h5 text-center">
+                                        <p class="h5 text-center text-white-dim-on-dark fw-medium-on-dark">
                                             <span>Vous n'avez pas encore reçu de proposition ? <span>
-                                                    <a href="#" class="text-primary text-hover-info">Contactez-nous</a>
+                                            <a href="tel:+221338326000">Contactez-nous</a>
                                         </p>
                                         <div>
                                             <img class="text-center" src="{{ asset('assets/images/accueil2.png') }}" alt=""

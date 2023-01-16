@@ -3,7 +3,7 @@
     <div class="card-header border-0 cursor-pointer" role="button"
         data-bs-toggle="collapse" data-bs-target="#kt_account_signin_method">
         <div class="card-title m-0">
-            <h3 class="fw-bold m-0">Méthode de connexion</h3>
+            <h3 class="fw-bold fw-medium-on-dark m-0">Méthode de connexion</h3>
         </div>
     </div>
     {{-- <!--end::Card header--> --}}
@@ -15,7 +15,7 @@
             <div class="d-flex flex-wrap align-items-center mb-10">
                 {{-- <!--begin::Label--> --}}
                 <div id="kt_signin_password">
-                    <div class="fs-6 fw-bold mb-1">Mot de passe</div>
+                    <div class="text-white-dim-on-dark fs-6 fw-bold mb-1">Mot de passe</div>
                     <div class="fw-semibold text-gray-600 text-gray-700-on-dark">************</div>
                 </div>
                 {{-- <!--end::Label--> --}}
@@ -27,13 +27,13 @@
                         <div class="row mb-1">
                             <div class="col-lg-4">
                                 <div class="fv-row mb-3" data-kt-password-meter="true">
-                                    <label for="current_password" class="form-label fs-6 fw-bold mb-3">Mot de passe actuel</label>
+                                    <label for="current_password" class="form-label fs-6 fw-semibold mb-3">Mot de passe actuel</label>
                                     {{-- <!--begin::Input wrapper--> --}}
                                     <div class="position-relative mb-3">
                                         <input type="password" name="current_password" id="current_password"
-                                            class="form-control form-control-lg form-control-solid text-gray-900-on-dark" required>
+                                            class="form-control form-control-lg form-control-solid text-white-dim-on-dark" required>
                                         <span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
-                                            <i class="bi bi-eye-slash fs-2"></i>
+                                            <i class="bi bi-eye-slash fs-2 text-gray-600-on-dark"></i>
                                             <i class="bi bi-eye fs-2 d-none"></i>
                                         </span>
                                     </div>
@@ -42,13 +42,13 @@
                             </div>
                             <div class="col-lg-4">
                                 <div class="fv-row mb-3" data-kt-password-meter="true">
-                                    <label for="new_password" class="form-label fs-6 fw-bold mb-3">Nouveau mot de passe</label>
+                                    <label for="new_password" class="form-label fs-6 fw-semibold mb-3">Nouveau mot de passe</label>
                                     {{-- <!--begin::Input wrapper--> --}}
                                     <div class="position-relative mb-3">
                                         <input type="password" name="new_password" id="new_password"
-                                            class="form-control form-control-lg form-control-solid text-gray-900-on-dark" required>
+                                            class="form-control form-control-lg form-control-solid text-white-dim-on-dark" required>
                                         <span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
-                                            <i class="bi bi-eye-slash fs-2"></i>
+                                            <i class="bi bi-eye-slash fs-2 text-gray-600-on-dark"></i>
                                             <i class="bi bi-eye fs-2 d-none"></i>
                                         </span>
                                     </div>
@@ -65,13 +65,13 @@
                             </div>
                             <div class="col-lg-4">
                                 <div class="fv-row mb-3" data-kt-password-meter="true">
-                                    <label for="new_password_confirmation" class="form-label fs-6 fw-bold mb-3">Confirmer le nouveau mot de passe</label>
+                                    <label for="new_password_confirmation" class="form-label fs-6 fw-semibold mb-3">Confirmer le nouveau mot de passe</label>
                                     {{-- <!--begin::Input wrapper--> --}}
                                     <div class="position-relative mb-3">
                                         <input type="password" name="new_password_confirmation" id="new_password_confirmation"
-                                            class="form-control form-control-lg form-control-solid text-gray-900-on-dark" required>
+                                            class="form-control form-control-lg form-control-solid text-white-dim-on-dark" required>
                                         <span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
-                                            <i class="bi bi-eye-slash fs-2"></i>
+                                            <i class="bi bi-eye-slash fs-2 text-gray-600-on-dark"></i>
                                             <i class="bi bi-eye fs-2 d-none"></i>
                                         </span>
                                     </div>
@@ -123,7 +123,7 @@
                 <div class="d-flex flex-stack flex-grow-1 flex-wrap flex-md-nowrap">
                     {{-- <!--begin::Content--> --}}
                     <div class="mb-3 mb-md-0 fw-semibold">
-                        <h4 class="text-gray-900 fw-bold">Sécurise votre compte</h4>
+                        <h4 class="text-gray-900 fw-bold fw-medium-on-dark">Sécurise votre compte</h4>
                         <div class="fs-6 text-gray-700 text-gray-800-on-dark pe-7">L'authentification à deux facteurs ajoute une couche de sécurité supplémentaire à votre compte. Pour vous connecter, vous devrez en plus fournir un code à 6 chiffres.</div>
                     </div>
                     {{-- <!--end::Content--> --}}

@@ -64,7 +64,7 @@
             <div class="card-title">
                 <div class="d-flex align-items-center">
                     <img src="{{URL::asset('assets/icons/expedition03.png')}}" style="height: 40px; width:40px;">
-                    <h2 class="fw-bold ms-2 mt-4">Liste des expéditions</h2>
+                    <h2 class="text-white-dim-on-dark fw-medium-on-dark ms-2 mt-4">Liste des expéditions</h2>
                 </div>
             </div>
             {{-- <!--end::Card title--> --}}

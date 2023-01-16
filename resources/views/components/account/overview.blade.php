@@ -3,11 +3,12 @@
     <div class="card-header">
         {{-- <!--begin::Card title--> --}}
         <div class="card-title m-0">
-            <h3 class="fw-bold m-0">Détails du profil</h3>
+            <h3 class="fw-bold fw-medium-on-dark m-0">Détails du profil</h3>
         </div>
         {{-- <!--end::Card title--> --}}
         {{-- <!--begin::Action--> --}}
-        <button type="button" id="btn_edit_profile" class="btn btn-primary align-self-center">Editer le profil</button>
+        <button type="button" id="btn_dark_edit_profile" class="btn btn-sm btn-light-primary btn-edit-profile align-self-center theme-dark-show">Editer le profil</button>
+        <button type="button" id="btn_light_edit_profile" class="btn btn-sm btn-primary btn-edit-profile align-self-center theme-light-show">Editer le profil</button>
         {{-- <!--end::Action--> --}}
     </div>
     {{-- <!--begin::Card header--> --}}
@@ -20,7 +21,7 @@
             {{-- <!--end::Label--> --}}
             {{-- <!--begin::Col--> --}}
             <div class="col-lg-8">
-                <span class="fw-bold fs-6 text-gray-800 text-gray-900-on-dark">{{Auth::user()->fullName()}}</span>
+                <span class="fw-bold fw-medium-on-dark fs-6 text-gray-800 text-white-dim-on-dark">{{Auth::user()->fullName()}}</span>
             </div>
             {{-- <!--end::Col--> --}}
         </div>
@@ -35,7 +36,7 @@
             {{-- <!--end::Label--> --}}
             {{-- <!--begin::Col--> --}}
             <div class="col-lg-8 d-flex align-items-center">
-                <span class="fw-bold fs-6 text-gray-800 text-gray-900-on-dark me-2">{{((Auth::user()->hasEmail()) ? Auth::user()->email : 'Aucune')}}</span>
+                <span class="fw-bold fw-medium-on-dark fs-6 text-gray-800 text-white-dim-on-darkk me-2">{{((Auth::user()->hasEmail()) ? Auth::user()->email : 'Aucune')}}</span>
                 {{-- <span class="badge badge-success">Vérifié</span> --}}
             </div>
             <!--end::Col-->
@@ -51,8 +52,9 @@
             {{-- <!--end::Label--> --}}
             {{-- <!--begin::Col--> --}}
             <div class="col-lg-8 d-flex align-items-center">
-                <span class="fw-bold fs-6 text-gray-800 text-gray-900-on-dark me-2">{{Auth::user()->formattedPhoneNumber()}}</span>
-                <span class="badge badge-success">Vérifié</span>
+                <span class="fw-bold fw-medium-on-dark fs-6 text-gray-800 text-white-dim-on-dark me-2">{{Auth::user()->formattedPhoneNumber()}}</span>
+                <span class="theme-light-show badge badge-success">Vérifié</span>
+                <span class="theme-dark-show badge badge-light-success">Vérifié</span>
             </div>
             {{-- <!--end::Col--> --}}
         </div>
@@ -64,7 +66,7 @@
             {{-- <!--end::Label--> --}}
             {{-- <!--begin::Col--> --}}
             <div class="col-lg-8 fv-row">
-                <span class="fw-semibold fs-6 text-gray-800 text-gray-900-on-dark">
+                <span class="fw-semibold fs-6 text-gray-800 text-white-dim-on-dark">
                     {{(($user_by_role->hasCompany()) ? $user_by_role->entreprise : 'Aucune')}}
                 </span>
             </div>
@@ -81,7 +83,7 @@
                 @php
                     $link_text = 'Aucun';
                     $link_href = $link_target = '';
-                    $link_classes = 'fw-semibold fs-6 text-gray-800 text-gray-900-on-dark';
+                    $link_classes = 'fw-semibold fs-6 text-gray-800 text-white-dim-on-dark';
 
                     if($user_by_role->hasWebsite()){
                         $link_text = $user_by_role->siteweb;
@@ -108,7 +110,7 @@
             {{-- <!--end::Label--> --}}
             {{-- <!--begin::Col--> --}}
             <div class="col-lg-8">
-                <span class="fw-bold fs-6 text-gray-800 text-gray-900-on-dark">{{$user_by_role->adresse}}</span>
+                <span class="fw-bold fw-medium-on-dark fs-6 text-gray-800 text-white-dim-on-dark">{{$user_by_role->adresse}}</span>
             </div>
             {{-- <!--end::Col--> --}}
         </div>
@@ -120,7 +122,7 @@
             {{-- <!--end::Label--> --}}
             {{-- <!--begin::Col--> --}}
             <div class="col-lg-8">
-                <span class="fw-bold fs-6 text-gray-800 text-gray-900-on-dark">
+                <span class="fw-bold fw-medium-on-dark fs-6 text-gray-800 text-white-dim-on-dark">
                     {{(isset(Auth::user()->email) ? 'E-mail, ' : '')}}Téléphone
                 </span>
             </div>
@@ -144,10 +146,10 @@
             <div class="d-flex flex-stack flex-grow-1">
                 {{-- <!--begin::Content--> --}}
                 <div class="fw-semibold">
-                    <h4 class="text-gray-900 fw-bold">Nous avons besoin de votre attention !</h4>
+                    <h4 class="text-gray-900 fw-bold fw-medium-on-dark">Nous avons besoin de votre attention !</h4>
                     <div class="fs-6 text-gray-700 text-gray-800-on-dark">
                         <span>Pour changer votre numéro de téléphone, veuillez</span>
-                        <a class="fw-bold" href="tel:+221338326000">nous contacter</a>.
+                        <a class="fw-bold fw-medium-on-dark" href="tel:+221338326000">nous contacter</a>.
                     </div>
                 </div>
                 {{-- <!--end::Content--> --}}

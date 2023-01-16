@@ -33,28 +33,24 @@
     {{-- end::Head --}}
 
     {{-- begin::Body --}}
-    @if(!isset($body_classes))
-    <body id="kt_body" data-kt-name="remerk">
-    @else
-    <body id="kt_body" data-kt-name="remerk" class="{{$body_classes}}">
-    @endif
+    <body id="kt_body" data-kt-name="remerk" data-kt-app-header-fixed="true" {{ isset($body_classes) ? 'class=' . $body_classes : ''}}>
         {{-- begin::Theme mode setup on page load --}}
         <script>
             let themeMode = null;
             const defaultThemeMode = "light";
 
-        if(document.documentElement) {
-            if(document.documentElement.hasAttribute("data-theme-mode")) {
-                themeMode = document.documentElement.getAttribute("data-theme-mode");
+            if(document.documentElement) {
+                if(document.documentElement.hasAttribute("data-theme-mode")) {
+                    themeMode = document.documentElement.getAttribute("data-theme-mode");
+                }
+                else{
+                    themeMode = (null !== localStorage.getItem("data-theme")) ? localStorage.getItem("data-theme") : defaultThemeMode;
+                }
+                if(themeMode === "system"){
+                    themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+                }
+                document.documentElement.setAttribute("data-theme", themeMode);
             }
-            else{
-                themeMode = (null !== localStorage.getItem("data-theme")) ? localStorage.getItem("data-theme") : defaultThemeMode;
-            }
-            if(themeMode === "system"){
-                themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-            }
-            document.documentElement.setAttribute("data-theme", themeMode);
-        }
         </script>
         {{-- end::Theme mode setup on page load --}}
         {{-- <!-- begin::Whatsapp chat widget --> --}}

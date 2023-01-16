@@ -5,7 +5,7 @@
 @endsection
 
 @section('custom-css')
-<link type="text/css" rel="stylesheet" href="assets/plugins/custom/datatables/datatables.bundle.css">
+<link type="text/css" rel="stylesheet" href="{{URL::asset('assets/plugins/custom/datatables/datatables.bundle.css')}}">
 @endsection
 {{-- <!--begin::Authentication - New password --> --}}
 @section('card-body-content')
@@ -22,12 +22,12 @@
 	{{-- <!--begin::Heading--> --}}
 	<div class="text-center mb-10">
 		{{-- <!--begin::Title--> --}}
-		<h1 class="text-dark fw-bolder mb-3">Nouveau mot de passe</h1>
+		<h1 class="text-dark fw-bolder fw-semibold-on-dark mb-3">Nouveau mot de passe</h1>
 		{{-- <!--end::Title--> --}}
 		{{-- <!--begin::Link--> --}}
 		<div class="text-gray-600 text-gray-700-on-dark fw-semibold fs-6">
 			<span>Avez-vous déjà réinitialisé le mot de passe ?</span>
-			<a class="link-primary fw-bold" href="{{ route('login') }}">S'identifier</a>
+			<a class="link-primary fw-bold fw-medium-on-dark" href="{{ route('login') }}">S'identifier</a>
 		</div>
 		{{-- <!--end::Link--> --}}
 	</div>
@@ -38,10 +38,10 @@
 		<div class="mb-1">
 			{{-- <!--begin::Input wrapper--> --}}
 			<div class="position-relative mb-3">
-				<input type="password" name="password" id="password" class="form-control bg-transparent text-gray-900-on-dark"
+				<input type="password" name="password" id="password" class="form-control bg-transparent text-white-dim-on-dark"
 					placeholder="Mot de passe" :value="__('Password')" autocomplete="off" required>
 				<span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
-					<i class="bi bi-eye-slash fs-2"></i>
+					<i class="bi bi-eye-slash fs-2 text-gray-600-on-dark"></i>
 					<i class="bi bi-eye fs-2 d-none"></i>
 				</span>
 			</div>
@@ -66,11 +66,11 @@
 		{{-- <!--begin::Input wrapper--> --}}
 		<div class="position-relative mb-3">
 			{{-- <!--begin::Repeat Password--> --}}
-			<input type="password" name="password_confirmation" id="password_confirmation" class="form-control bg-transparent text-gray-900-on-dark"
+			<input type="password" name="password_confirmation" id="password_confirmation" class="form-control bg-transparent text-white-dim-on-dark"
 				placeholder="Répéter le mot de passe" :value="__('Password Confirmation')" autocomplete="off" required>
 			{{-- <!--end::Repeat Password--> --}}
 			<span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
-				<i class="bi bi-eye-slash fs-2"></i>
+				<i class="bi bi-eye-slash fs-2 text-gray-600-on-dark"></i>
 				<i class="bi bi-eye fs-2 d-none"></i>
 			</span>
 		</div>
@@ -81,7 +81,7 @@
 	<div class="fv-row mb-8">
 		<label class="form-check form-check-inline">
 			<input class="form-check-input" type="checkbox" name="toc" value="1" required>
-			<span class="form-check-label fw-semibold text-gray-700 text-gray-800-on-dark fs-6 ms-1">
+			<span class="form-check-label fw-semibold text-gray-700 text-white-dim-on-dark fs-6 ms-1">
 				<span>I Agree &</span>
 				<a href="#" class="ms-1 link-primary">Terms and conditions</a>.
 			</span>
@@ -108,5 +108,5 @@
 @endsection
 {{-- <!--end::Authentication - New password--> --}}
 @section('scripts')
-<script src="assets/js/custom/authentication/reset-password/new-password.js"></script>
+<script src="{{URL::asset('assets/js/custom/authentication/reset-password/new-password.js')}}"></script>
 @endsection

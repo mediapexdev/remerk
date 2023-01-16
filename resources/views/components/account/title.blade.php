@@ -2,9 +2,9 @@
     {{-- <!--begin::User--> --}}
     <div class="d-flex flex-column">
         {{-- <!--begin::Name--> --}}
-        <div class="d-flex align-items-center mb-2">
-            <a class="text-gray-900 text-hover-primary fs-2 fw-bold me-1">{{Auth::user()->fullName()}}</a>
-            <a>
+        <div class="d-flex flex-wrap align-items-center mb-2">
+            <a class="text-gray-900 fs-2 fw-bold me-1">{{Auth::user()->fullName()}}</a>
+            <a class="me-2">
                 {{-- <!--begin::Svg Icon | path: icons/duotune/general/gen026.svg--> --}}
                 <span class="svg-icon svg-icon-1 svg-icon-primary">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24">
@@ -14,7 +14,7 @@
                 </span>
                 {{-- <!--end::Svg Icon--> --}}
             </a>
-            <a class="btn btn-sm btn-light-success fw-bold ms-2 fs-8 py-1 px-3"
+            <a class="btn btn-sm btn-light-success fw-bold ms-0 fs-8 py-1 px-3"
                 data-bs-toggle="modal" data-bs-target="#kt_modal_upgrade_plan">Passer à Premium</a>
         </div>
         {{-- <!--end::Name--> --}}
