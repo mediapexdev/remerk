@@ -12,34 +12,27 @@ am5.ready(async function () {
 
     // Set themes
     // https://www.amcharts.com/docs/v5/concepts/themes/
-    root.setThemes([
-        am5themes_Animated.new(root),
-    ]);
-    if(KTThemeMode.getMode())
-    if("dark" === KTThemeMode.getMode()){
-        root.setThemes([
-            am5themes_Animated.new(root),
-            am5themes_Dark.new(root)
-        ]);
+    // root.setThemes([
+    //     am5themes_Animated.new(root),
+    // ]);
+    changemode();
+    function changemode(){
+        if("dark" === KTThemeMode.getMode()){
+            root.setThemes([
+                am5themes_Animated.new(root),
+                am5themes_Dark.new(root)
+            ]);
+        }
+        else{
+            root.setThemes([
+                am5themes_Animated.new(root),
+            ]);
+        }
     }
-    else{
-        root.setThemes([
-            am5themes_Animated.new(root),
-        ]);
-    }
-    // KTThemeMode.on("kt.thememode.change", function(){
-    //     if("dark" === KTThemeMode.getMode()){
-    //         root.setThemes([
-    //             am5themes_Animated.new(root),
-    //             am5themes_Dark.new(root)
-    //         ]);
-    //     }
-    //     else{
-    //         root.setThemes([
-    //             am5themes_Animated.new(root),
-    //         ]);
-    //     }
-    // });
+    
+    KTThemeMode.on("kt.thememode.change", function(){
+       changemode();
+    });
         
 
     // Create chart
