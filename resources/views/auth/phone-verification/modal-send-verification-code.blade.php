@@ -6,13 +6,13 @@
             {{-- <!--begin::Modal Header--> --}}
             <div class="modal-header">
                 {{-- <!--begin::Modal Title--> --}}
-                <h3 class="modal-title">Vérification du numéro de téléphone</h3>
+                <h3 class="modal-title fw-medium-on-dark">Vérification du numéro de téléphone</h3>
                 {{-- <!--end::Modal Title--> --}}
             </div>
             {{-- <!--end::Modal Header--> --}}
             {{-- <!--begin::Modal Body--> --}}
             <div class="modal-body">
-                <p class="text-dark fs-6 mb-6 ms-1">Cliquez sur le <strong>bouton envoyer</strong> pour recevoir un code de vérification du numéro de téléphone renseigné.</p>
+                <p class="text-dark text-white-dim-on-dark fs-6 mb-6 ms-1">Cliquez sur le <strong>bouton envoyer</strong> pour recevoir un code de vérification du numéro de téléphone renseigné.</p>
                 {{-- <!--begin::Recaptcha--> --}}
                 <div class="d-flex">
                     <div id="recaptcha-container"></div>

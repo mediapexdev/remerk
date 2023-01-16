@@ -11,7 +11,7 @@
     {{-- <!--begin::Heading--> --}}
     <div class="text-center mb-11">
         {{-- <!--begin::Title--> --}}
-        <h1 class="text-dark fw-bolder mb-3">Se connecter</h1>
+        <h1 class="text-dark fw-bolder fw-semibold-on-dark mb-3">Se connecter</h1>
         {{-- <!--end::Title--> --}}
     </div>
     {{-- <!--end::Heading--> --}}
@@ -19,7 +19,7 @@
     <div class="fv-row mb-8 form-floating">
         {{-- <!--begin::phone--> --}}
         <input type="tel" name="phone"
-            id="phone" class="form-control form-control-lg bg-transparent text-gray-900-on-dark"
+            id="phone" class="form-control form-control-lg bg-transparent text-white-dim-on-dark"
             placeholder="Téléphone" :value="old('phone')" autocomplete="off" required autofocus>
         <label for="phone">Téléphone</label>
         {{-- <!--end::phone--> --}}
@@ -31,11 +31,11 @@
         <div class="position-relative mb-3 form-floating">
             {{-- <!--begin::Input--> --}}
             <input type="password" name="password"
-                id="password" class="form-control form-control-lg bg-transparent text-gray-900-on-dark"
+                id="password" class="form-control form-control-lg bg-transparent text-white-dim-on-dark"
                 placeholder="Mot de passe" autocomplete="current-password" required>
             {{-- <!--end::Input--> --}}
             <span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
-                <i class="bi bi-eye-slash fs-2"></i>
+                <i class="bi bi-eye-slash fs-2 text-gray-600-on-dark"></i>
                 <i class="bi bi-eye fs-2 d-none"></i>
             </span>
             {{-- <!--begin::Label--> --}}
@@ -79,5 +79,5 @@
 @endsection
 {{-- <!--end::Authentication - Sign-in--> --}}
 @section('scripts')
-<script src="assets/js/custom/authentication/sign-in/general.js"></script>
+<script src="{{URL::asset('assets/js/custom/authentication/sign-in/general.js')}}"></script>
 @endsection

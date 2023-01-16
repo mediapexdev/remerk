@@ -4,48 +4,48 @@
     <thead>
         {{-- <!--begin::Table row--> --}}
         <tr class="text-start text-gray-600 text-gray-700-on-dark fw-bold fs-7 text-uppercase gs-0">
-            <th class="text-truncate">Matière</th>
-            <th class="text-truncate">Poids</th>
-            <th class="text-truncate">Départ</th>
-            <th class="text-truncate">Arrivée</th>
-            <th class="text-truncate">Date prévue</th>
-            <th class="text-truncate text-center">Actions</th>
+            <th class="text-nowrap">Matière</th>
+            <th class="text-nowrap">Poids</th>
+            <th class="text-nowrap">Départ</th>
+            <th class="text-nowrap">Arrivée</th>
+            <th class="text-nowrap">Date prévue</th>
+            <th class="text-nowrap text-center">Actions</th>
         </tr>
         {{-- <!--end::Table row--> --}}
     </thead>
     {{-- <!--end::Table head--> --}}
     {{-- <!--begin::Table body--> --}}
-    <tbody class="fw-semibold text-gray-700 text-gray-900-on-dark">
+    <tbody class="fw-semibold fw-medium-on-dark text-gray-700 text-white-dim-on-dark">
         @foreach ($completed_expeditions as $expedition)
             {{-- <!--begin::Table row--> --}}
             <tr>
                 {{-- <!--begin::Matière Type--> --}}
-                <td class="text-truncate">
-                    <span class="fw-bold">{{ $expedition->matiereType() }}</span>
+                <td class="text-nowrap">
+                    <span class="fw-bold fw-medium-on-dark">{{ $expedition->matiereType() }}</span>
                 </td>
                 {{-- <!--end::Matière Type--> --}}
                 {{-- <!--begin::Poids Matière--> --}}
-                <td class="text-truncate">
-                    <span class="fw-bold">{{ $expedition->matiereWeight() }}</span>
+                <td class="text-nowrap">
+                    <span class="fw-bold fw-medium-on-dark">{{ $expedition->matiereWeight() }}</span>
                 </td>
                 {{-- <!--end::Poids Type--> --}}
                 {{-- <!--begin::Adresse Départ--> --}}
-                <td class="text-truncate">
-                    <span class="fw-bold">{{ $expedition->adresseDepartComplet() }}</span>
+                <td class="text-nowrap">
+                    <span class="fw-bold fw-medium-on-dark">{{ $expedition->adresseDepartComplet() }}</span>
                 </td>
                 {{-- <!--end::Adresse Départ--> --}}
                 {{-- <!--begin::Adresse Arrivée--> --}}
-                <td class="text-truncate">
-                    <span class="fw-bold">{{ $expedition->adresseArriveeComplet() }}</span>
+                <td class="text-nowrap">
+                    <span class="fw-bold fw-medium-on-dark">{{ $expedition->adresseArriveeComplet() }}</span>
                 </td>
                 {{-- <!--end::Adresse Arrivée--> --}}
                 {{-- <!--begin::Date--> --}}
-                <td class="text-truncate" data-order="{{$expedition->depart->date_depart}}">
-                    <span class="fw-bold">{{ (new \DateTime($expedition->depart->date_depart, new \DateTimeZone('UTC')))->format('d-m-Y') }}</span>
+                <td class="text-nowrap" data-order="{{$expedition->depart->date_depart}}">
+                    <span class="fw-bold fw-medium-on-dark">{{ (new \DateTime($expedition->depart->date_depart, new \DateTimeZone('UTC')))->format('d-m-Y') }}</span>
                 </td>
                 {{-- <!--end::Date--> --}}
                 {{-- <!--begin::Actions--> --}}
-                <td class="text-truncate text-center">
+                <td class="text-nowrap text-center">
                     <a class="btn btn-light-primary btn-sm" href="{{ route('expedition.infos', $expedition->id) }}">Détails</a>
                 </td>
                 {{-- <!--end::Actions--> --}}

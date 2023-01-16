@@ -112,17 +112,19 @@ $expeditions = Expedition::where('transporteur_id', $transporteur->id)->get();
     
     senegalMap.mapPolygons.template.states.create("hover", {
         fill: color,
-        toggleKey: "default",
+        // toggleKey: "default",
         });
+
+    let colorIndex = parseInt(Math.random()*30)+1;
+
+    senegalMap.mapPolygons.template.states.create("active", {
+        fill: colors.getIndex(parseInt(Math.random()*30)+1)
+    });
 
     //console.log(senegalMap.mapPolygons.template.events);
     senegalMap.mapPolygons.template.events.on("click", (ev) =>
     {
-        colorIndex = parseInt(Math.random()*30)+1;
-        senegalMap.mapPolygons.template.states.create("active", {
-        fill: colors.getIndex(colorIndex)
-        });
-
+        console.log("Clicked on a column", ev.target);
         var dataItem = ev.target.dataItem;
         var data = dataItem.dataContext;
         console.log(data);

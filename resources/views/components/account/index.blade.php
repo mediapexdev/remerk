@@ -61,10 +61,10 @@
 			</div>
 			{{-- <!--end::Details--> --}}
 			{{-- <!--begin::Navs--> --}}
-			<ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x rk-nav-tabs border-transparent fs-5 fw-bold">
+			<ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x rk-nav-tabs border-transparent fs-5 fw-bold fw-medium-on-dark">
 				{{-- <!--begin::Nav item--> --}}
 				<li class="nav-item rk-nav-item mt-2">
-					<a class="nav-link rk-nav-link text-active-primary ms-0 me-10 py-5 active"
+					<a class="nav-link rk-nav-link text-gary-700 text-active-primary ms-0 me-10 py-5 active"
 						data-bs-toggle="tab" href="#kt_tab_account_overview">
 						<span class="nav-text">Aperçu</span>
 					</a>
@@ -72,7 +72,7 @@
 				{{-- <!--end::Nav item--> --}}
 				{{-- <!--begin::Nav item--> --}}
 				<li class="nav-item rk-nav-item mt-2">
-					<a class="nav-link rk-nav-link text-active-primary ms-0 me-10 py-5"
+					<a class="nav-link rk-nav-link text-gray-700 text-active-primary ms-0 me-10 py-5"
 						data-bs-toggle="tab" href="#kt_tab_account_settings">
 						<span class="nav-text">Paramètres</span>
 					</a>

@@ -23,10 +23,10 @@
             <span class="fs-8 fw-bolder text-info text-uppercase">Départ</span>
             {{-- <!--begin::Label--> --}}
             {{-- <!--begin::Title--> --}}
-            <span class="full-address fs-6 text-gray-600 text-gray-700-on-dark fw-semibold d-block">{{ $expedition->adresseDepartComplet() }}</span>
+            <span class="full-address fs-6 text-gray-600 text-gray-700-on-dark fw-semibold fw-normal-on-dark d-block">{{ $expedition->adresseDepartComplet() }}</span>
             {{-- <!--end::Title--> --}}
             {{-- <!--begin::Sub Title--> --}}
-            <span class="short-address fs-6 fw-bold text-gray-800 text-white-dim-on-dark">{{ $expedition->depart->commune->nom }}</span>
+            <span class="short-address fs-6 fw-bold fw-medium-on-dark text-gray-800 text-white-dim-on-dark">{{ $expedition->depart->commune->nom }}</span>
             {{-- <!--end::Sub Title--> --}}
         </div>
         {{-- <!--end::Timeline content--> --}}
@@ -55,10 +55,10 @@
             <span class="fs-8 fw-bolder text-success text-uppercase">Arrivée</span>
             {{-- <!--begin::Label--> --}}
             {{-- <!--begin::Title--> --}}
-            <span class="full-address fs-6 text-gray-600 text-gray-700-on-dark fw-semibold d-block">{{ $expedition->adresseArriveeComplet() }}</span>
+            <span class="full-address fs-6 text-gray-600 text-gray-700-on-dark fw-semibold fw-normal-on-dark d-block">{{ $expedition->adresseArriveeComplet() }}</span>
             {{-- <!--end::Title--> --}}
             {{-- <!--begin::Sub Title--> --}}
-            <span class="short-address fs-6 fw-bold text-gray-800 text-white-dim-on-dark">{{ $expedition->arrivee->commune->nom }}</span>
+            <span class="short-address fs-6 fw-bold fw-medium-on-dark text-gray-800 text-white-dim-on-dark">{{ $expedition->arrivee->commune->nom }}</span>
             {{-- <!--end::Sub Title--> --}}
         </div>
         {{-- <!--end::Timeline content--> --}}

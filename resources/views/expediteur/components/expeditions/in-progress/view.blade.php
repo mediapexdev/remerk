@@ -34,10 +34,10 @@
         <div class="d-flex flex-stack flex-grow-1">
             {{-- <!--begin::Content--> --}}
             <div class="fw-semibold">
-                <h4 class="text-gray-900 fw-bold">Nous avons besoin de votre attention !</h4>
-                <div class="fs-6 text-gray-700">
+                <h4 class="text-gray-900 fw-bold fw-medium-on-dark">Nous avons besoin de votre attention !</h4>
+                <div class="fs-6 text-gray-700 text-gray-800-on-dark">
                     <span>À ce niveau pour annuler une expédition, veuillez</span>
-                    <a class="fw-bold">nous contacter</a>.
+                    <a class="fw-bold fw-medium-on-dark" href="tel:+221338326000">nous contacter</a>.
                 </div>
             </div>
             {{-- <!--end::Content--> --}}

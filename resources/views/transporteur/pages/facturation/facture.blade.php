@@ -178,7 +178,7 @@ $expeditions = Expedition::where([
                     <div class="my-2 text-center">
                         <p class="h5 text-center text-white-dim-on-dark fw-medium-on-dark">
                             <span>Vous n'avez pas encore reçu de proposition ? <span>
-                                    <a href="tel:+221338326000">Contactez-nous</a>
+                            <a href="tel:+221338326000">Contactez-nous</a>
                         </p>
                         <div>
                             <img class="text-center" src="{{ asset('assets/images/accueil2.png') }}" alt=""

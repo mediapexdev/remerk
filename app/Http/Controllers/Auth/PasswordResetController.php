@@ -33,7 +33,11 @@ class PasswordResetController extends Controller
     public function phoneNumberVerification(Request $request)
     {
         $request->validate([
-            'phone'         => ['required', 'regex:#(^3[3]|^7[5-80])[ ]?[0-9]{3}([ ]?[0-9]{2}){2}$#', 'exists:users']
+            'phone'         => ['required', 'regex:#(^3[3]|^7[5-80])[ ]?[0-9]{3}([ ]?[0-9]{2}){2}$#']
+        ]);
+        $request['phone'] = \preg_replace('#\s+#', '', \trim($request->phone));
+        $request->validate([
+            'phone'         => ['exists:users']
         ]);
         $phone_number = \preg_replace('#\s+#', '', \trim($request->phone));
         return view('auth.phone-verification.reset-password', compact('phone_number'));

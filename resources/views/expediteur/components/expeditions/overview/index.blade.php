@@ -40,7 +40,7 @@
         @endphp
         {{-- <!--begin::Title--> --}}
         <h3 class="card-title align-items-start flex-column">
-            <span class="title card-label fw-bold text-gray-800 text-white-dim-on-dark">Aperçu des expéditions</span>
+            <span class="title card-label fw-bold fw-medium-on-dark text-gray-800 text-white-dim-on-dark">Aperçu des expéditions</span>
             <span class="sub-title text-gray-600 text-gray-700-on-dark mt-1 fw-semibold fs-6">{{ (!$expeditions_count ? 'Aucune' : $expeditions_count) . ' ' . $data_text }}</span>
         </h3>
         {{-- <!--end::Title--> --}}
@@ -74,7 +74,7 @@
                                         <div class="row align-items-center">
                                             <div class="d-flex col-8">
                                                 <div class="d-block fs-6">
-                                                    <div class="fw-semibold">{{ $expedition->matiereType() }}</div>
+                                                    <div class="fw-semibold text-white-dim-on-dark">{{ $expedition->matiereType() }}</div>
                                                     <div class="text-gray-700 fw-bold">[{{ $expedition->matiereWeight() }}]</div>
                                                 </div>
                                             </div>
