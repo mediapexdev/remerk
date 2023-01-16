@@ -125,6 +125,7 @@
 
 /* */
 
+[data-theme="dark"] .text-white-dim-on-dark,
 [data-theme="dark"] .app-header-menu .menu .menu-item .menu-link:not(:hover):not(.active) .menu-title,
 [data-theme="dark"] #app-navbar-item-theme-menu .menu-item .menu-link:not(:hover):not(.active) .menu-title,
 [data-theme="dark"] #app-navbar-item-user-menu-toggle .menu-item .menu-link:not(:hover):not(.active),
@@ -132,7 +133,7 @@
 [data-theme="dark"] .nav.rk-nav-tabs .rk-nav-item .rk-nav-link:not(.active),
 [data-theme="dark"] .nav.rk-nav-pills .rk-nav-item .rk-nav-link:not(.active)
 {
-    color: var(--kt-gray-900) !important;
+    color : #DEDEDE !important;
 }
 
 [data-theme="dark"] #app-navbar-item-theme-menu .btn.btn-icon:not(:hover):not(.btn-active) .svg-icon,
@@ -151,9 +152,4 @@
 [data-theme="dark"] .btn.clear-on-dark:not(:hover):not(.btn-active)
 {
     color: var(--kt-secondary-inverse) !important;
-}
-
-[data-theme="dark"] table .fw-bold
-{
-    font-weight: 500 !important;
 }

@@ -3,15 +3,15 @@
 <table id="tableVehicule" class="table align-middle gs-0 gy-4">
     <!--begin::Table head-->
     <thead>
-        <tr class="fw-bold bg-light text-gray-600 text-gray-700-on-dark">
-            <th class="ps-4 rounded-start">Véhicules</th>
+        <tr class="fw-bold fs-6 text-gray-600 text-gray-700-on-dark">
+            <th class="">Véhicules</th>
             <th class="">Type</th>
             <th class="">Immatriculation</th>
             <th class="">Poids à vide</th>
             <th class="">Capacité</th>
-            <th class="">Date mise en circulation</th>
+            <th class="">Date de mise en circulation</th>
             <th class="">Status</th>
-            <th class="text-center rounded-end">Actions</th>
+            <th class="text-center">Actions</th>
         </tr>
     </thead>
     <!--end::Table head-->
@@ -28,25 +28,25 @@
                     </span>
                     <div class="d-flex justify-content-start flex-column">
                         <span class="text-dark fw-bold fs-6">{{ $camion->modele }}</span>
-                        <span class="fw-semibold d-block fs-7 text-gray-700-on-dark">{{ $camion->marque->nom}}</span>
+                        <span class="fw-semibold d-block fs-7 text-gray-800-on-dark">{{ $camion->marque->nom}}</span>
                     </div>
                 </div>
             </td>
             <td>
-                <span class="text-dark fw-bold d-block mb-1 fs-6">{{ $camion->type->nom }}</span>
+                <span class="text-gray-800 text-white-dim-on-dark fw-bold fw-medium-on-dark fs-6">{{ $camion->type->nom }}</span>
             </td>
             <td>
-                <span class="text-dark fw-bold d-block mb-1 fs-6">{{$camion->immatriculation}}</span>
+                <span class="text-gray-800 text-white-dim-on-dark fw-bold fw-medium-on-dark fs-6">{{$camion->immatriculation}}</span>
             </td>
             <td>
-                <span class="text-dark fw-bold d-block mb-1 fs-6">{{ $camion->poids_a_vide }} Tonnes</span>
+                <span class="text-gray-800 text-white-dim-on-dark fw-bold fw-medium-on-dark fs-6">{{ $camion->poids_a_vide }} Tonnes</span>
             </td>
             <td>
-                <span class="badge badge-light text-dark fs-7 fw-bold">{{ $camion->capacite }} Tonnes</span>
+                <span class="badge badge-pill badge-light-info">{{ $camion->capacite }}Tonnes</span>
             </td>
-            <td class="">
-                <span class="fs-7 fw-bold">
-                    {{(new \DateTime($camion->date_mis_en_circulation, new \DateTimeZone('UTC')))->format('d/m/Y')}}
+            <td>
+                <span class="text-gray-800 text-white-dim-on-dark fw-bold fw-medium-on-dark fs-6">
+                    {{(new \DateTime($camion->date_mis_en_circulation, new \DateTimeZone('UTC')))->format('d-m-Y')}}
                 </span>
             </td>
             <td>

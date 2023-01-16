@@ -456,8 +456,8 @@ class ComposerStaticInitd24768bd777e44a14ac330ae12fbff5c
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -731,6 +731,7 @@ class ComposerStaticInitd24768bd777e44a14ac330ae12fbff5c
         'App\\Actions\\Fortify\\UpdateUserPassword' => __DIR__ . '/../..' . '/app/Actions/Fortify/UpdateUserPassword.php',
         'App\\Actions\\Fortify\\UpdateUserProfileInformation' => __DIR__ . '/../..' . '/app/Actions/Fortify/UpdateUserProfileInformation.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'App\\Core\\PayTech' => __DIR__ . '/../..' . '/app/Core/PayTech.php',
         'App\\Core\\Util' => __DIR__ . '/../..' . '/app/Core/Util.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminController.php',
@@ -755,7 +756,6 @@ class ComposerStaticInitd24768bd777e44a14ac330ae12fbff5c
         'App\\Http\\Controllers\\ExpeditionsTrackingController' => __DIR__ . '/../..' . '/app/Http/Controllers/ExpeditionsTrackingController.php',
         'App\\Http\\Controllers\\FCMController' => __DIR__ . '/../..' . '/app/Http/Controllers/FCMController.php',
         'App\\Http\\Controllers\\FactureController' => __DIR__ . '/../..' . '/app/Http/Controllers/FactureController.php',
-        'App\\Http\\Controllers\\FirebaseAuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/FirebaseAuthController.php',
         'App\\Http\\Controllers\\LocaliteExpeditionController' => __DIR__ . '/../..' . '/app/Http/Controllers/LocaliteExpeditionController.php',
         'App\\Http\\Controllers\\LocaliteVehiculeController' => __DIR__ . '/../..' . '/app/Http/Controllers/LocaliteVehiculeController.php',
         'App\\Http\\Controllers\\MarqueCamionController' => __DIR__ . '/../..' . '/app/Http/Controllers/MarqueCamionController.php',

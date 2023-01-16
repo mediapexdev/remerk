@@ -59,9 +59,9 @@
         {{-- <!--begin:Menu item--> --}}
         <div class="menu-item">
             {{-- <!--begin:Menu link--> --}}
-            <a class="menu-link btn btn-sm btn-primary"
+            <a class="menu-link rk-special-menu-link btn btn-sm btn-light-primary btn-active-light-primary"
                 data-bs-toggle="modal" data-bs-target="#kt_modal_create_expedition">
-                <span class="menu-title text-white">Faire une expédition</span>
+                <span class="menu-title">Faire une expédition</span>
             </a>
             {{-- <!--end:Menu link--> --}}
         </div>

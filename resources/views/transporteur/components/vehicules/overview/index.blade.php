@@ -9,7 +9,7 @@
     <div class="card-header pt-7">
         {{-- <!--begin::Card Title--> --}}
         <h3 class="card-title align-items-start flex-column">
-            <span class="title card-label fw-bold text-gray-800 text-gray-900-on-dark">Parc de véhicules</span>
+            <span class="title card-label fw-bold text-gray-800 text-white-dim-on-dark">Parc de véhicules</span>
             <span class="sub-title text-gray-600 text-gray-700-on-dark mt-1 fw-semibold fs-6">Total {{$camions->count()}} Véhicules</span>
         </h3>
         {{-- <!--end::Card Title--> --}}
@@ -17,12 +17,8 @@
         <div class="card-toolbar nav-item">
             <a href="{{route('vehicules')}}" class="btn btn-sm btn-light btn-active-light-primary btn-see-all clear-on-dark m-1">Voir tout</a>
             <button class="btn btn-sm btn-light-primary m-1" data-bs-toggle="modal" href="#kt_modal_create_camion">
-                <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
-                        <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
-                    </svg>
-                </span>
-                Ajouter un véhicule
+                <i class="bi bi-plus-square-fill fs-6"></i>
+                <span>Ajouter un véhicule</span>
             </button>
         </div>
         {{-- <!--end::Card Toolbar--> --}}
@@ -57,14 +53,14 @@
                                 <td>
                                     <div class="d-flex align-items-center">
                                         <div class="d-flex justify-content-start flex-column">
-                                            <p class="text-dark fw-bold mb-1 fs-6">{{$camion->type->nom}}</p>
+                                            <p class="text-gray-800 text-white-dim-on-dark fw-bold mb-1 fs-6">{{$camion->type->nom}}</p>
                                         </div>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="d-flex align-items-center">
                                         <div class="d-flex justify-content-start flex-column">
-                                            <p class="text-dark fw-bold mb-1 fs-6">{{$camion->immatriculation}}</p>
+                                            <p class="text-gray-800 text-white-dim-on-dark fw-bold mb-1 fs-6">{{$camion->immatriculation}}</p>
                                         </div>
                                     </div>
                                 </td>
