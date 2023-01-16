@@ -12,10 +12,11 @@ am5.ready(async function () {
 
     // Set themes
     // https://www.amcharts.com/docs/v5/concepts/themes/
-    root.setThemes([
-        am5themes_Animated.new(root),
-    ]);
-    KTThemeMode.on("kt.thememode.change", function(){
+    // root.setThemes([
+    //     am5themes_Animated.new(root),
+    // ]);
+    changemode();
+    function changemode(){
         if("dark" === KTThemeMode.getMode()){
             root.setThemes([
                 am5themes_Animated.new(root),
@@ -27,6 +28,10 @@ am5.ready(async function () {
                 am5themes_Animated.new(root),
             ]);
         }
+    }
+    
+    KTThemeMode.on("kt.thememode.change", function(){
+       changemode();
     });
         
 

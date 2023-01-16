@@ -47,7 +47,8 @@
 
             var dataItem = ev.target.dataItem;
             var data = dataItem.dataContext;
-            colorIndex = parseInt(Math.random()*30)+1;
+            colorIndex = Math.floor((Math.random() * 30) + 1);;
+            console.log(colorIndex);
             // senegalMap.mapPolygons.template.states.create("active", {
             // fill: colors.getIndex(colorIndex)
             // });
