@@ -1,5 +1,5 @@
 <!--begin::Chart widget 36-->
-<div class="card card-flush overflow-hidden h-lg-100">
+<div class="card card-flush overflow-hidden h-100">
     <!--begin::Header-->
     <div class="card-header pt-5">
         <!--begin::Title-->
