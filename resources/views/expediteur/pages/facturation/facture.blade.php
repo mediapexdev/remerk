@@ -111,7 +111,7 @@ $expeditions_facture[] = $expedition;
                                 <!--begin::order--> --}}
                                 {{--
                                 <!--begin::Expédition id--> --}}
-                                <td class="text-truncate">
+                                <td class="text-nowrap">
                                     <a class="text-gray-700 text-hover-primary"
                                         href="{{ route('expedition.infos', $facture->expedition->id) }}">{{$facture->expedition->string_id}}</a>
                                 </td>
@@ -160,7 +160,7 @@ $expeditions_facture[] = $expedition;
                                 <!--end::Transporteur--> --}}
                                 {{--
                                 <!--begin::Status--> --}}
-                                <td class="text-truncate">
+                                <td class="text-nowrap">
                                     @if(1 == $facture->etat)
                                     <span class="badge bordered badge-warning">Non Payée</span>
                                     @elseIf(2 == $facture->etat)
@@ -179,7 +179,7 @@ $expeditions_facture[] = $expedition;
                                 <!--end::Amount--> --}}
                                 {{--
                                 <!--begin::Date--> --}}
-                                <td class="text-truncate"><span>{{\date('d-m-Y',
+                                <td class="text-nowrap"><span>{{\date('d-m-Y',
                                         \strtotime($facture->created_at))}}</span></td>
                                 {{--
                                 <!--end::Date--> --}}

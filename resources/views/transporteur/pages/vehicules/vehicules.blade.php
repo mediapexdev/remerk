@@ -83,8 +83,8 @@ $camions = Camion::where('transporteur_id', $transporteur->id)->orderByDesc('cre
 @endsection
 
 @section('custom-js')
-    {{-- <script type="text/javascript" src="{{ URL::asset('assets/js/custom/utilities/modals/edit-camion.js') }}"></script> --}}
-    <script type="text/javascript" src="{{ URL::asset('assets/js/custom/utilities/modals/create-camion.js') }}"></script>
+    {{-- <script src="{{ URL::asset('assets/js/custom/utilities/modals/edit-camion.js') }}"></script> --}}
+    <script src="{{ URL::asset('assets/js/custom/utilities/modals/create-camion.js') }}"></script>
 
 <script>
     function delete_camion(id_camion)

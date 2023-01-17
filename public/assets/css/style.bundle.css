@@ -7257,7 +7257,7 @@ textarea.form-control-lg {
   content: "";
 }
 
-.text-truncate {
+.text-nowrap {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

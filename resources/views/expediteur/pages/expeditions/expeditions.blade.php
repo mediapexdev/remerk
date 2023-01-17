@@ -90,8 +90,8 @@
 @endsection
 
 @section('custom-js')
-<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/expeditions/sender/expeditions.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/expeditions/sender/listing/made.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/expeditions/sender/listing/pending.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/expeditions/sender/listing/in-progress.js')}}"></script>
+<script src="{{URL::asset('assets/js/custom/apps/expeditions/sender/expeditions.js')}}"></script>
+<script src="{{URL::asset('assets/js/custom/apps/expeditions/sender/listing/made.js')}}"></script>
+<script src="{{URL::asset('assets/js/custom/apps/expeditions/sender/listing/pending.js')}}"></script>
+<script src="{{URL::asset('assets/js/custom/apps/expeditions/sender/listing/in-progress.js')}}"></script>
 @endsection

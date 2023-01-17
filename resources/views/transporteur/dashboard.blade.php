@@ -57,11 +57,10 @@ $expeditions = Expedition::where('transporteur_id', $transporteur->id)->get();
 @endsection
 
 @section('custom-js')
-<script type="text/javascript" src="{{ URL::asset('assets/js/custom/dashboard/expeditions-overview.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('assets/js/custom/apps/expeditions/carrier/postulat.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('assets/js/custom/utilities/modals/create-camion.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('assets/js/custom/apps/chart/performance_transporteur.js') }}">
-</script>
+<script src="{{ URL::asset('assets/js/custom/dashboard/expeditions-overview.js') }}"></script>
+<script src="{{ URL::asset('assets/js/custom/apps/expeditions/carrier/postulat.js') }}"></script>
+<script src="{{ URL::asset('assets/js/custom/utilities/modals/create-camion.js') }}"></script>
+<script src="{{ URL::asset('assets/js/custom/apps/chart/performance_transporteur.js') }}"></script>
 <script src="{{URL::asset('assets/js/custom/apps/chart/pie_chart.js')}}"></script>
 
 
@@ -71,6 +70,6 @@ $expeditions = Expedition::where('transporteur_id', $transporteur->id)->get();
 <script src="https://cdn.amcharts.com/lib/5/themes/Dark.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/geodata/data/countries2.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/geodata/senegalHigh.js"></script>
-<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/chart/map.js')}}"></script>
+<script src="{{URL::asset('assets/js/custom/apps/chart/map.js')}}"></script>
 
 @endsection

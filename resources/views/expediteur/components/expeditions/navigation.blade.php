@@ -6,7 +6,8 @@
             {{-- <!--begin::Link--> --}}
             <a class="nav-link rk-nav-link text-gray-700 text-active-primary ms-0 me-10 py-5 active" href="#kt_tab_pending_expeditions" data-bs-toggle="tab">
                 {{-- <!--begin::Subtitle--> --}}
-                <span class="tab-title rk-nav-text position-relative pt-2 pe-1 text-nowrap">En attente
+                <span class="tab-title rk-nav-text position-relative pt-2 pe-1">
+                    <span class="text-nowrap">En attente</span>
                     @if(0 !== $pending_expeditions->count())
                     <span class="position-absolute top-0 start-100 translate-middle badge badge-sm badge-circle badge-light-info">{{$pending_expeditions->count()}}</span>
                     @endif
@@ -21,7 +22,8 @@
             {{-- <!--begin::Link--> --}}
             <a class="nav-link rk-nav-link text-gray-700 text-active-primary ms-0 me-10 py-5" href="#kt_tab_expeditions_in_progress" data-bs-toggle="tab">
                 {{-- <!--begin::Subtitle--> --}}
-                <span class="tab-title rk-nav-text position-relative pt-2 pe-1 text-nowrap">En cours
+                <span class="tab-title rk-nav-text position-relative pt-2 pe-1">
+                    <span class="text-nowrap">En cours</span>
                     @if(0 !== $current_expeditions->count())
                     <span class="position-absolute top-0 start-100 translate-middle badge badge-sm badge-circle badge-light-info">{{$current_expeditions->count()}}</span>
                     @endif
@@ -36,7 +38,8 @@
             {{-- <!--begin::Link--> --}}
             <a class="nav-link rk-nav-link text-gray-700 text-active-primary ms-0 me-10 py-5" href="#kt_tab_expeditions_made" data-bs-toggle="tab">
                 {{-- <!--begin::Subtitle--> --}}
-                <span class="tab-title rk-nav-text position-relative pt-2 pe-1 text-nowrap">Effectuées
+                <span class="tab-title rk-nav-text position-relative pt-2 pe-1">
+                    <span class="text-nowrap">Effectuées</span>
                     @if(0 !== $completed_expeditions->count())
                     <span class="position-absolute top-0 start-100 translate-middle badge badge-sm badge-circle badge-light-info">{{$completed_expeditions->count()}}</span>
                     @endif
@@ -49,7 +52,7 @@
     </ul>
     {{-- <!--end::Menu--> --}}
     {{-- <!--begin::Button Wrapper--> --}}
-    <div class="">
+    <div class="d-block">
         {{-- <!--begin::Button--> --}}
         <a href="/expeditions/postulants" class="btn btn-primary btn-sm mb-2 mb-xl-7">Postulants</a>
         {{-- <!--end::Button--> --}}

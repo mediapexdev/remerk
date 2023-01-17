@@ -368,7 +368,7 @@ Route::middleware(['auth'])->group(function () {
         if (null !== ($user = Auth::user())) {
             switch ($user->role_id) {
                 case User::EXPEDITEUR:
-                    return view('expediteur.pages.expeditions.postulants.postulants');
+                    return view('expediteur.pages.expeditions.postulants.index');
                     break;
                 case User::ADMIN:
                 case User::TRANSPORTEUR:

@@ -61,6 +61,6 @@
 @endsection
 
 @section('custom-js')
-<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/expeditions/carrier/tracking.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('assets/plugins/custom/vis-timeline/vis-timeline.bundle.js')}}"></script>
+<script src="{{URL::asset('assets/js/custom/apps/expeditions/carrier/tracking.js')}}"></script>
+<script src="{{URL::asset('assets/plugins/custom/vis-timeline/vis-timeline.bundle.js')}}"></script>
 @endsection

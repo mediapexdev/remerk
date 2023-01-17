@@ -14,7 +14,7 @@
             {{-- <!--begin::Modal header--> --}}
             <div class="modal-header">
                 {{-- <!--begin::Modal Title--> --}}
-                <h5 class="modal-title h3">Détails postulant</h5>
+                <h5 class="modal-title h3 fw-medium-on-dark text-white-dim-on-dark">Détails postulant</h5>
                 {{-- <!--end::Modal Title--> --}}
                 {{-- <!--begin::Button close--> --}}
                 {{-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> --}}
@@ -44,7 +44,7 @@
                             {{-- <!--begin::Table--> --}}
                             <table class="table table-sm align-middle fs-6 gy-5 mb-0 min-w-300px">
                                 {{-- <!--begin::Table body--> --}}
-                                <tbody class="fw-semibold text-gray-700 text-gray-800-on-dark">
+                                <tbody class="fw-semibold fw-medium-on-dark text-gray-700 text-white-dim-on-dark">
                                     {{-- <!--begin::transporteur Info--> --}}
                                     <tr>
                                         <td>
@@ -61,7 +61,7 @@
                                                 <span>Transporteur</span>
                                             </div>
                                         </td>
-                                        <td class="fw-bold text-end">
+                                        <td class="fw-bold fw-medium-on-dark text-end">
                                             <div class="d-flex align-items-center justify-content-end">
                                                 {{-- <!--begin::Full Name--> --}}
                                                 <span>{{ $transporteur->fullName() }}</span>
@@ -91,7 +91,7 @@
                                                 <span>Nombre de véhicules</span>
                                             </div>
                                         </td>
-                                        <td class="fw-bold text-end">
+                                        <td class="fw-bold fw-medium-on-dark text-end">
                                             <span>{{ $transporteur->vehicules()->count() }}</span>
                                         </td>
                                     </tr>
@@ -117,7 +117,7 @@
                                                 <span>Nombre d'expédition</span>
                                             </div>
                                         </td>
-                                        <td class="fw-bold text-end">
+                                        <td class="fw-bold fw-medium-on-dark text-end">
                                             <span>{{ $transporteur->expeditionsEndedCount() }}</span>
                                         </td>
                                     </tr>
@@ -143,7 +143,7 @@
                                                 <span>Notes</span>
                                             </div>
                                         </td>
-                                        <td class="fw-bold text-end">
+                                        <td class="fw-bold fw-medium-on-dark text-end">
                                             <div class="d-flex justify-content-end">
                                                 {{-- <!--begin::Note--> --}}
                                                 <div class="rating">

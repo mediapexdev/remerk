@@ -50,8 +50,8 @@
 @endsection
 
 @section('custom-js')
-<script type="text/javascript" src="{{URL::asset('assets/js/custom/dashboard/expeditions-overview.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/expeditions/sender/expeditions.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/expeditions/sender/postulants/postulants.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/expeditions/sender/postulants/listing/postulants-all.js')}}"></script>
+<script src="{{URL::asset('assets/js/custom/dashboard/expeditions-overview.js')}}"></script>
+<script src="{{URL::asset('assets/js/custom/apps/expeditions/sender/expeditions.js')}}"></script>
+<script src="{{URL::asset('assets/js/custom/apps/expeditions/sender/postulants/postulants.js')}}"></script>
+<script src="{{URL::asset('assets/js/custom/apps/expeditions/sender/postulants/listing/postulants-all.js')}}"></script>
 @endsection
