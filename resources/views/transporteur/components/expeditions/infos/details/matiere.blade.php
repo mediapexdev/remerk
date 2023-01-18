@@ -3,7 +3,7 @@
     <div class="card-header">
         {{-- <!--begin::Card Title--> --}}
         <div class="card-title">
-            <h3>Détails du produit/matériel</h3>
+            <h3 class="fw-medium-on-dark">Détails du produit/matériel</h3>
         </div>
         {{-- <!--end::Card Title--> --}}
     </div>
@@ -15,10 +15,10 @@
             {{-- <!--begin::Table--> --}}
             <table class="table align-middle fs-6 gy-5 mb-0 min-w-300px">
                 {{-- <!--begin::Table body--> --}}
-                <tbody class="fw-semibold text-gray-700 text-gray-800-on-dark">
+                <tbody class="fw-semibold text-gray-700 text-white-dim-on-dark">
                     {{-- <!--begin::Material Type--> --}}
                     <tr>
-                        <td>
+                        <td class="fw-medium-on-dark" scope="row">
                             <div class="d-flex align-items-center">
                                 {{-- <!--begin::Svg Icon | Bootstrap Icon: Box fill (<i class="bi bi-box-fill"></i>)--> --}}
                                 <span class="svg-icon svg-icon-2 me-2 pt-1 text-gray-600-on-dark">
@@ -30,7 +30,7 @@
                                 <span>Type de produit</span>
                             </div>
                         </td>
-                        <td class="fw-bold text-end">
+                        <td class="fw-bold fw-medium-on-dark text-end">
                             <span>{{ $expedition->matiereType() }}</span>
                         </td>
                     </tr>
@@ -44,7 +44,7 @@
                     {{-- <!--end::Separator--> --}}
                     {{-- <!--begin::Material Weight--> --}}
                     <tr>
-                        <td>
+                        <td class="fw-medium-on-dark" scope="row">
                             <div class="d-flex align-items-center">
                                 {{-- <!--begin::Svg Icon | Font Awesome Icon: weight (<i class="fa-solid fa-weight-scale"></i>)--> --}}
                                 <span class="svg-icon svg-icon-2 me-2 text-gray-600-on-dark">
@@ -56,7 +56,7 @@
                                 <span>Poids</span>
                             </div>
                         </td>
-                        <td class="fw-bold text-end">
+                        <td class="fw-bold fw-medium-on-dark text-end">
                             <span>{{ $expedition->matiereWeight() }}</span>
                         </td>
                     </tr>
@@ -70,7 +70,7 @@
                     {{-- <!--end::Separator--> --}}
                     {{-- <!--begin::Vehicle Type--> --}}
                     <tr>
-                        <td>
+                        <td class="fw-medium-on-dark" scope="row">
                             <div class="d-flex align-items-center">
                                 {{-- <!--begin::Svg Icon | Font Awesome Icon: truck (<i class="fa-solid fa-truck"></i>)--> --}}
                                 <span class="svg-icon svg-icon-2 me-2 text-gray-600-on-dark">
@@ -82,7 +82,7 @@
                                 <span>Type de camion</span>
                             </div>
                         </td>
-                        <td class="fw-bold text-end">
+                        <td class="fw-bold fw-medium-on-dark text-end">
                             <span>{{ $expedition->typeVehiculeName() }}</span>
                         </td>
                     </tr>
@@ -96,7 +96,7 @@
                     {{-- <!--end::Separator--> --}}
                     {{-- <!--begin::Vehicles Number--> --}}
                     <tr>
-                        <td>
+                        <td class="fw-medium-on-dark" scope="row">
                             <div class="d-flex align-items-center">
                                 {{-- <!--begin::Svg Icon | Bootstrap Icon: number (<i class="bi bi-123"></i>)--> --}}
                                 <span class="svg-icon svg-icon-2 me-2 text-gray-600 text-gray-700-on-dark">
@@ -108,7 +108,7 @@
                                 <span>Nombre de camions</span>
                             </div>
                         </td>
-                        <td class="fw-bold text-end">
+                        <td class="fw-bold fw-medium-on-dark text-end">
                             <span>{{ $expedition->numberOfVehicles() }}</span>
                         </td>
                     </tr>

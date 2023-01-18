@@ -9,7 +9,7 @@
     <div class="card-header">
         {{-- <!--begin::Card Title--> --}}
         <div class="card-title">
-            <h3>Contact à l'arrivée</h3>
+            <h3 class="fw-medium-on-dark">Contact à l'arrivée</h3>
         </div>
         {{-- <!--end::Card Title--> --}}
     </div>
@@ -21,18 +21,18 @@
             {{-- <!--begin::Table--> --}}
             <table class="table align-middle fs-6 gy-5 mb-0 min-w-300px">
                 {{-- <!--begin::Table body--> --}}
-                <tbody class="fw-semibold text-gray-700 text-gray-800-on-dark">
+                <tbody class="fw-semibold text-gray-700 text-white-dim-on-dark">
                     {{-- <!--begin::Arrival Contact Info--> --}}
                     @if (!$expedition->arrivee->hasContact())
                     <tr>
-                        <td class="fw-bold text-center" scope="row" colspan="2">
+                        <td class="fw-bold fw-medium-on-dark text-center" scope="row" colspan="2">
                             <span>Aucun</span>
                         </td>
                     </tr>
                     @else
                     {{-- <!--begin::Contact Full Name--> --}}
                     <tr>
-                        <td scope="row">
+                        <td class="fw-medium-on-dark" scope="row">
                             <div class="d-flex align-items-center">
                                 {{-- <!--begin::Svg Icon | path: icons/duotune/communication/com006.svg--> --}}
                                 <span class="svg-icon svg-icon-2 me-2 text-gray-600-on-dark">
@@ -46,7 +46,7 @@
                                 <span>Prénom et Nom</span>
                             </div>
                         </td>
-                        <td class="fw-bold text-end">
+                        <td class="fw-bold fw-medium-on-dark text-end">
                             <span>{{ $expedition->arrivee->nom_contact_sur_place }}</span>
                         </td>
                     </tr>
@@ -60,7 +60,7 @@
                     {{-- <!--end::Separator--> --}}
                     {{-- <!--begin::Contact Phone Number--> --}}
                     <tr>
-                        <td scope="row">
+                        <td class="fw-medium-on-dark" scope="row">
                             <div class="d-flex align-items-center">
                                 {{-- <!--begin::Svg Icon | path: icons/duotune/electronics/elc002.svg--> --}}
                                 <span class="svg-icon svg-icon-2 me-2 text-gray-600-on-dark">
@@ -74,7 +74,7 @@
                                 <span>Numéro de téléphone</span>
                             </div>
                         </td>
-                        <td class="fw-bold text-end">
+                        <td class="fw-bold fw-medium-on-dark text-end">
                             <span>{{ Util::formatPhoneNumber($expedition->arrivee->phone_contact_sur_place) }}</span>
                         </td>
                     </tr>

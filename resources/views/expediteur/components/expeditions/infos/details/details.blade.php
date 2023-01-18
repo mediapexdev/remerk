@@ -10,7 +10,7 @@
     <div class="card-header">
         {{-- <!--begin::Card Title--> --}}
         <div class="card-title">
-            <h3>Détails de l'expédition</h3>
+            <h3 class="fw-medium-on-dark">Détails de l'expédition</h3>
         </div>
         {{-- <!--end::Card Title--> --}}
     </div>
@@ -22,10 +22,10 @@
             {{-- <!--begin::Table--> --}}
             <table class="table align-middle fs-6 gy-5 mb-0 min-w-300px">
                 {{-- <!--begin::Table body--> --}}
-                <tbody class="fw-semibold text-gray-700 text-gray-800-on-dark">
+                <tbody class="fw-semibold text-gray-700 text-white-dim-on-dark">
                     {{-- <!--begin::Expediteur Info--> --}}
                     <tr>
-                        <td>
+                        <td class="fw-medium-on-dark" scope="row">
                             <div class="d-flex align-items-center">
                                 {{-- <!--begin::Svg Icon | path: icons/duotune/communication/com006.svg--> --}}
                                 <span class="svg-icon svg-icon-2 me-2 text-gray-600-on-dark">
@@ -39,37 +39,20 @@
                                 <span>Transporteur</span>
                             </div>
                         </td>
-                        @if (isset($transporteur))
-                        <td class="fw-bold text-end">
+                        <td class="fw-bold fw-medium-on-dark text-end">
                             <div class="d-flex align-items-center justify-content-end">
                                 {{-- <!--begin:: Avatar --> --}}
                                 <div class="symbol symbol-circle symbol-25px overflow-hidden me-3">
                                     <div class="symbol-label">
-                                        <img class="w-100" src="{{ $avatar }}" alt="{{ $transporteur->fullName() }}">
+                                        <img class="w-100" src="{{ $avatar }}" alt="{{ (isset($transporteur)) ? $transporteur->fullName() : 'Aucun' }}">
                                     </div>
                                 </div>
                                 {{-- <!--end::Avatar--> --}}
                                 {{-- <!--begin::Full Name--> --}}
-                                <span>{{ $transporteur->fullName() }}</span>
+                                <span>{{ (isset($transporteur)) ? $transporteur->fullName() : 'Aucun pour le moment' }}</span>
                                 {{-- <!--end::Full Name--> --}}
                             </div>
                         </td>
-                        @else
-                        <td class="fw-bold text-end">
-                            <div class="d-flex align-items-center justify-content-end">
-                                {{-- <!--begin:: Avatar --> --}}
-                                <div class="symbol symbol-circle symbol-25px overflow-hidden me-3">
-                                    <div class="symbol-label">
-                                        <img class="w-100" src="{{ $avatar }}" alt="aucun">
-                                    </div>
-                                </div>
-                                {{-- <!--end::Avatar--> --}}
-                                {{-- <!--begin::Full Name--> --}}
-                                <span>Aucun pour le moment</span>
-                                {{-- <!--end::Full Name--> --}}
-                            </div>
-                        </td>
-                        @endif
                     </tr>
                     {{-- <!--end::Expediteur Info--> --}}
                     {{-- <!--begin::Separator--> --}}
@@ -81,7 +64,7 @@
                     {{-- <!--end::Separator--> --}}
                     {{-- <!--begin::Departure Date--> --}}
                     <tr>
-                        <td scope="row">
+                        <td class="fw-medium-on-dark" scope="row">
                             <div class="d-flex align-items-center">
                                 {{-- <!--begin::Svg Icon | Font Awesome Icon: calendar-days (<i class="fa-solid fa-calendar-days"></i>)--> --}}
                                 <span class="svg-icon svg-icon-2 me-2 text-gray-600-on-dark">
@@ -93,7 +76,7 @@
                                 <span>Date prévue</span>
                             </div>
                         </td>
-                        <td class="fw-bold text-end">
+                        <td class="fw-bold fw-medium-on-dark text-end">
                             <span>{{ (new \DateTime($expedition->scheduledDate(), new \DateTimeZone('UTC')))->format('d-m-Y') }}</span>
                         </td>
                     </tr>
@@ -106,7 +89,7 @@
                     </tr>
                     {{-- <!--end::Separator--> --}}
                     <tr>
-                        <td>
+                        <td class="fw-medium-on-dark" scope="row">
                             <div class="d-flex align-items-center">
                                 {{-- <!--begin::Svg Icon | Bootstrap icon: Cash stack (<i class="bi bi-cash-stack"></i>)--> --}}
                                 {{-- <span class="svg-icon svg-icon-2 me-2">
@@ -126,8 +109,8 @@
                                 <span>Montant</span>
                             </div>
                         </td>
-                        <td class="fw-bold text-end">
-                            <span>{{number_format($expedition->facture()->montant, 0, ',', ' ') }} FrCfa</span>
+                        <td class="fw-bold fw-medium-on-dark text-end">
+                            <span>{{number_format($expedition->facture()->montant, 0, ',', ' ') }} Fr Cfa</span>
                         </td>
                     </tr>
                     @endif
@@ -141,7 +124,7 @@
                     {{-- <!--end::Departure Date--> --}}
                     {{-- <!--begin::Departure Address--> --}}
                     <tr>
-                        <td>
+                        <td class="fw-medium-on-dark" scope="row">
                             <div class="d-flex align-items-center">
                                 {{-- <!--begin::Svg Icon | Font Awesome Icon: map-location-dot (<i class="fa-solid fa-map-location-dot"></i>)--> --}}
                                 <span class="svg-icon svg-icon-2 me-2 text-gray-600-on-dark">
@@ -153,7 +136,7 @@
                                 <span>Adresse de départ</span>
                             </div>
                         </td>
-                        <td class="fw-bold text-end">
+                        <td class="fw-bold fw-medium-on-dark text-end">
                             <span>{{ $expedition->adresseDepartComplet() }}</span>
                         </td>
                     </tr>
@@ -167,7 +150,7 @@
                     {{-- <!--end::Separator--> --}}
                     {{-- <!--begin::Arrival Address--> --}}
                     <tr>
-                        <td scope="row">
+                        <td class="fw-medium-on-dark" scope="row">
                             <div class="d-flex align-items-center">
                                 {{-- <!--begin::Svg Icon | Font Awesome Icon: map-location-dot (<i class="fa-solid fa-map-location-dot"></i>)--> --}}
                                 <span class="svg-icon svg-icon-2 me-2 text-gray-600-on-dark">
@@ -179,7 +162,7 @@
                                 <span>Adresse d'arrivée</span>
                             </div>
                         </td>
-                        <td class="fw-bold text-end">
+                        <td class="fw-bold fw-medium-on-dark text-end">
                             <span>{{ $expedition->adresseArriveeComplet() }}</span>
                         </td>
                     </tr>

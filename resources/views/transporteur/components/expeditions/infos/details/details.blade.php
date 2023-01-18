@@ -9,7 +9,7 @@
     <div class="card-header">
         {{-- <!--begin::Card Title--> --}}
         <div class="card-title">
-            <h3>Détails de l'expédition</h3>
+            <h3 class="fw-medium-on-dark">Détails de l'expédition</h3>
         </div>
         {{-- <!--end::Card Title--> --}}
     </div>
@@ -21,10 +21,10 @@
             {{-- <!--begin::Table--> --}}
             <table class="table align-middle fs-6 gy-5 mb-0 min-w-300px">
                 {{-- <!--begin::Table body--> --}}
-                <tbody class="fw-semibold text-gray-700 text-gray-800-on-dark">
+                <tbody class="fw-semibold text-gray-700 text-white-dim-on-dark">
                     {{-- <!--begin::Expediteur Info--> --}}
                     <tr>
-                        <td>
+                        <td class="fw-medium-on-dark" scope="row">
                             <div class="d-flex align-items-center">
                                 {{-- <!--begin::Svg Icon | path: icons/duotune/communication/com006.svg--> --}}
                                 <span class="svg-icon svg-icon-2 me-2 text-gray-600-on-dark">
@@ -38,7 +38,7 @@
                                 <span>Expéditeur</span>
                             </div>
                         </td>
-                        <td class="fw-bold text-end">
+                        <td class="fw-bold fw-medium-on-dark text-end">
                             <div class="d-flex align-items-center justify-content-end">
                                 {{-- <!--begin:: Avatar --> --}}
                                 <div class="symbol symbol-circle symbol-25px overflow-hidden me-3">
@@ -63,7 +63,7 @@
                     {{-- <!--end::Separator--> --}}
                     {{-- <!--begin::Departure Date--> --}}
                     <tr>
-                        <td scope="row">
+                        <td class="fw-medium-on-dark" scope="row">
                             <div class="d-flex align-items-center">
                                 {{-- <!--begin::Svg Icon | Font Awesome Icon: calendar-days (<i class="fa-solid fa-calendar-days"></i>)--> --}}
                                 <span class="svg-icon svg-icon-2 me-2 text-gray-600-on-dark">
@@ -75,7 +75,7 @@
                                 <span>Date prévue</span>
                             </div>
                         </td>
-                        <td class="fw-bold text-end">
+                        <td class="fw-bold fw-medium-on-dark text-end">
                             <span>{{ (new \DateTime($expedition->scheduledDate(), new \DateTimeZone('UTC')))->format('d-m-Y') }}</span>
                         </td>
                     </tr>
@@ -89,7 +89,7 @@
                     {{-- <!--end::Departure Date--> --}}
                     {{-- <!--begin::Departure Address--> --}}
                     <tr>
-                        <td>
+                        <td class="fw-medium-on-dark" scope="row">
                             <div class="d-flex align-items-center">
                                 {{-- <!--begin::Svg Icon | Font Awesome Icon: map-location-dot (<i class="fa-solid fa-map-location-dot"></i>)--> --}}
                                 <span class="svg-icon svg-icon-2 me-2 text-gray-600-on-dark">
@@ -101,7 +101,7 @@
                                 <span>Adresse de départ</span>
                             </div>
                         </td>
-                        <td class="fw-bold text-end">
+                        <td class="fw-bold fw-medium-on-dark text-end">
                             <span>{{ $expedition->adresseDepartComplet() }}</span>
                         </td>
                     </tr>
@@ -115,7 +115,7 @@
                     {{-- <!--end::Separator--> --}}
                     {{-- <!--begin::Arrival Address--> --}}
                     <tr>
-                        <td scope="row">
+                        <td class="fw-medium-on-dark" scope="row">
                             <div class="d-flex align-items-center">
                                 {{-- <!--begin::Svg Icon | Font Awesome Icon: map-location-dot (<i class="fa-solid fa-map-location-dot"></i>)--> --}}
                                 <span class="svg-icon svg-icon-2 me-2 text-gray-600-on-dark">
@@ -127,7 +127,7 @@
                                 <span>Adresse d'arrivée</span>
                             </div>
                         </td>
-                        <td class="fw-bold text-end">
+                        <td class="fw-bold fw-medium-on-dark text-end">
                             <span>{{ $expedition->adresseArriveeComplet() }}</span>
                         </td>
                     </tr>
