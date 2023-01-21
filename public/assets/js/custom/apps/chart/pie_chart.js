@@ -1,4 +1,3 @@
-
 am5.ready(async function () {
     // Create root element
     const baseUrl='/getMatieres';
@@ -8,7 +7,10 @@ am5.ready(async function () {
     // console.log(expeditions);
     // console.log(getExp);
     // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-    var root = am5.Root.new("kt_amcharts_3");
+    var root = am5.Root.new("pie_chart");
+
+    // hide amchart logo
+    root._logo.dispose();
 
     // Set themes
     // https://www.amcharts.com/docs/v5/concepts/themes/
@@ -31,7 +33,7 @@ am5.ready(async function () {
     }
     
     KTThemeMode.on("kt.thememode.change", function(){
-       changemode();
+        changemode();
     });
         
 
@@ -70,31 +72,10 @@ am5.ready(async function () {
         return radius;
     });
 
-    // Set data
-    // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/#Setting_data
-    // series.data.setAll([{
-    //     value: 30,
-    //     category: "One"
-    // }, {
-    //     value: 9,
-    //     category: "Two"
-    // }, {
-    //     value: 10,
-    //     category: "Three"
-    // }, {
-    //     value: 5,
-    //     category: "Four"
-    // }, {
-    //     value: 4,
-    //     category: "Five"
-    // }, {
-    //     value: 3,
-    //     category: "Six"
-    // }]);
     let data=[];
     matieres.forEach(element => {
         if(element.expeditions.length>0){
-            console.log(element.type+': '+element.expeditions.length);
+            //console.log(element.type+': '+element.expeditions.length);
         data.push({value:element.expeditions.length,category:element.type});
         }
     });

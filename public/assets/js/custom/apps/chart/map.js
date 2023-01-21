@@ -1,7 +1,7 @@
 
         // Create root element
         // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-        var root = am5.Root.new("chartdiv");
+        var root = am5.Root.new("map_chart");
         var colors = am5.ColorSet.new(root, {
 
         });

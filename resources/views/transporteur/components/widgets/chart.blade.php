@@ -1,3 +1,5 @@
+<link href="assets/plugins/custom/bootstrap-select/bootstrap-select.bundle.css" rel="stylesheet" type="text/css"/>
+
 <!--begin::Chart widget 36-->
 <div class="card card-flush overflow-hidden h-100">
     <!--begin::Header-->
@@ -11,7 +13,12 @@
         <!--begin::Toolbar-->
         <div class="card-toolbar">
             <!--begin::Daterangepicker(defined in src/js/layout/app.js)-->
-            <div data-kt-daterangepicker="true" data-kt-daterangepicker-opens="left" data-kt-daterangepicker-range="today" class="btn btn-sm btn-light d-flex align-items-center px-4">
+            <select class="selectpicker">
+                <option>Mustard</option>
+                <option>Ketchup</option>
+                <option>Relish</option>
+            </select>
+            <div data-kt-daterangepicker="true" data-kt-daterangepicker-opens="none" data-kt-daterangepicker-range="today" class="btn btn-sm btn-light d-flex align-items-center px-4">
                 <!--begin::Display range-->
                 <div class="text-gray-600 fw-bold">Chargement...</div>
                 <!--end::Display range-->
@@ -39,3 +46,4 @@
     <!--end::Card body-->
 </div>
 <!--end::Chart widget 36-->
+<script src="assets/plugins/custom/bootstrap-select/bootstrap-select.bundle.js"></script>

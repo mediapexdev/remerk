@@ -1,0 +1,97 @@
+// Create root element
+var root = am5.Root.new("dailyChart");
+
+// Create chart
+// https://www.amcharts.com/docs/v5/charts/xy-chart/
+var chart = root.container.children.push(
+    am5xy.XYChart.new(root, {
+        panX: true,
+        panY: true,
+        wheelX: "panX",
+        wheelY: "zoomX",
+    })
+);
+
+// Add cursor
+var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
+cursor.lineY.set("visible", false);
+
+// Create axes
+var xRenderer = am5xy.AxisRendererX.new(root, { minGridDistance: 30 });
+
+var xAxis = chart.xAxes.push(
+    am5xy.CategoryAxis.new(root, {
+        maxDeviation: 0.3,
+        categoryField: "hours",
+        renderer: xRenderer,
+        tooltip: am5.Tooltip.new(root, {}),
+    })
+);
+
+var yAxis = chart.yAxes.push(
+    am5xy.ValueAxis.new(root, {
+        maxDeviation: 1,
+        renderer: am5xy.AxisRendererY.new(root, {}),
+    })
+);
+
+// Create series
+// https://www.amcharts.com/docs/v5/charts/xy-chart/series/
+var series = chart.series.push(
+    am5xy.ColumnSeries.new(root, {
+        name: "Series 1",
+        xAxis: xAxis,
+        yAxis: yAxis,
+        valueYField: "value",
+        sequencedInterpolation: true,
+        categoryXField: "hours",
+    })
+);
+
+series.columns.template.setAll({
+    width: am5.percent(120),
+    fillOpacity: 0.9,
+    strokeOpacity: 0,
+});
+series.columns.template.adapters.add("fill", (fill, target) => {
+    return chart.get("colors").getIndex(series.columns.indexOf(target));
+});
+
+series.columns.template.adapters.add("stroke", (stroke, target) => {
+    return chart.get("colors").getIndex(series.columns.indexOf(target));
+});
+
+
+
+// Set data
+var data = [
+    {
+        hours: "08:00",
+        value: 2,
+    },
+    {
+        hours: "12:00",
+        value: 1,
+    },
+    {
+        hours: "16:00",
+        value: 3,
+    },
+    {
+        hours: "20:00",
+        value: 1,
+    },
+    {
+        hours: "00:00",
+        value: 0,
+    },
+];
+
+xAxis.data.setAll(data);
+series.data.setAll(data);
+
+// Make stuff animate on load
+// https://www.amcharts.com/docs/v5/concepts/animations/
+series.appear(1000);
+chart.appear(1000, 100);
+//-------------------------------------------------------------------------------------------

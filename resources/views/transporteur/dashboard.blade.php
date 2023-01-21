@@ -29,8 +29,8 @@ $expeditions = Expedition::where('transporteur_id', $transporteur->id)->get();
         </div>
         <div class="col col-xl-8 col-lg-8 col-xxl-8 g-5">
             <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-xl-2 row-cols-xxl-2 g-5">
-                <div class="col">
-                    @include('transporteur.components.widgets.map')
+                <div class="col h-586px">
+                    @include('transporteur.components.widgets.charts.index')
                 </div>
                 <div class="col">
                     @include('transporteur.components.widgets.pie_chart')
@@ -43,7 +43,7 @@ $expeditions = Expedition::where('transporteur_id', $transporteur->id)->get();
             @include('transporteur.components.vehicules.overview.index')
         </div>
         {{-- <div class="col">
-            @include('transporteur.components.widgets.overview')
+            @include('transporteur.components.widgets.map')
         </div> --}}
     </div>
 </div>
@@ -57,20 +57,23 @@ $expeditions = Expedition::where('transporteur_id', $transporteur->id)->get();
 @endsection
 
 @section('custom-js')
+{{-- <script type="module" src="src/js/moments.js"></script> --}}
+
 <script type="text/javascript" src="{{ URL::asset('assets/js/custom/dashboard/expeditions-overview.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('assets/js/custom/apps/expeditions/carrier/postulat.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('assets/js/custom/utilities/modals/create-camion.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('assets/js/custom/apps/chart/performance_transporteur.js') }}">
-</script>
-<script src="{{URL::asset('assets/js/custom/apps/chart/pie_chart.js')}}"></script>
-
+{{-- <script type="text/javascript" src="{{ URL::asset('assets/js/custom/apps/chart/performance_chart.js') }}"></script> --}}
+<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/chart/dailychart.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/chart/weeklychart.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/chart/pie_chart.js')}}"></script>
 
 <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/themes/Dark.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/geodata/data/countries2.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/geodata/senegalHigh.js"></script>
-<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/chart/map.js')}}"></script>
+{{-- <script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/chart/map.js')}}"></script> --}}
+
+<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/chart/monthlychart.js')}}"></script>
+
 
 @endsection

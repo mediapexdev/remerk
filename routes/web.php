@@ -354,7 +354,7 @@ Route::middleware(['auth'])->group(function () {
                     return (!$expedition) ?
                         redirect()->back()->withErrors('404 not found') :
                         view('transporteur.components.expeditions.tracking.view', compact('expedition'));
-                        break;
+                    break;
             }
         } else {
             return redirect()->route('login');
@@ -376,8 +376,7 @@ Route::middleware(['auth'])->group(function () {
                     return redirect()->back()->withErrors('404 not found');
                     break;
             }
-        }
-        else {
+        } else {
             return redirect()->route('login');
         }
     })->name('expeditions.postulants');
@@ -395,13 +394,12 @@ Route::middleware(['auth'])->group(function () {
                     return (!$expediteur) ?
                         redirect()->back()->withErrors('404 not found') :
                         view('expediteur.components.modals.details-expediteur', compact('expediteur'));
-                break;
+                    break;
                 default:
                     return redirect()->back()->withErrors('404 not found');
-                break;
+                    break;
             }
-        }
-        else {
+        } else {
             return redirect()->route('login');
         }
     })->name('expediteur.details');
@@ -419,13 +417,12 @@ Route::middleware(['auth'])->group(function () {
                     return (!$transporteur) ?
                         redirect()->back()->withErrors('404 not found') :
                         view('transporteur.components.modals.details-transporteur', compact('transporteur'));
-                break;
+                    break;
                 default:
                     return redirect()->back()->withErrors('404 not found');
-                break;
+                    break;
             }
-        }
-        else {
+        } else {
             return redirect()->route('login');
         }
     })->name('transporteur.details');
@@ -504,7 +501,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('payer-facture', [FactureController::class, 'payer'])
         ->name('payerFacture');
 
-    Route::post('redirect-ipn',[FactureController::class,'redirect'])->name('redirect.ipn');
+    Route::post('redirect-ipn', [FactureController::class, 'redirect'])->name('redirect.ipn');
 
     /*
     **/
@@ -628,27 +625,94 @@ Route::get('/noscript', function () {
                 return redirect()->route('login');
                 break;
         }
-    }
-    else {
+    } else {
         return redirect()->route('login');
     }
-
 })->middleware(['auth'])->name('noscript');
-Route::get('/getMatieres',function(){
+
+Route::get('/getMatieres', function () {
     if (null !== ($user = Auth::user())) {
-        if($user->role_id==User::TRANSPORTEUR){
+        if ($user->role_id == User::TRANSPORTEUR) {
             // $transporteur=Transporteur::where('user_id',$user->id)->first();
-            $matieres=Matiere::with('expeditions')->get();
+            $matieres = Matiere::with('expeditions')->get();
 
             return $matieres;
-        }
-        else{
+        } else {
             return view('notFound');
         }
-    }
-    else {
+    } else {
         return redirect()->route('login');
     }
 });
 
-require __DIR__ . '/auth.php';
+Route::get('/getTodayExpeditions', function () {
+    if (null !== ($user = Auth::user())) {
+        if ($user->role_id== User::TRANSPORTEUR) {
+        $transporteur = Transporteur::where('user_id', $user->id)->first();
+        $expeditions = [];
+        $expeditions[] = Expedition::where('transporteur_id', $transporteur->id)
+        ->whereBetween('created_at', [date('Y-m-d 08:00:00'), date('Y-m-d 12:00:00')])
+        ->count();
+        $expeditions[] = Expedition::where('transporteur_id', $transporteur->id)
+        ->whereBetween('created_at', [date('Y-m-d 12:00:00'), date('Y-m-d 16:00:00')])
+        ->count();
+        $expeditions[] = Expedition::where('transporteur_id', $transporteur->id)
+        ->whereBetween('created_at', [date('Y-m-d 16:00:00'), date('Y-m-d 18:00:00')])
+        ->count();
+        $expeditions[] = Expedition::where('transporteur_id', $transporteur->id)
+        ->whereBetween('created_at', [date('Y-m-d 18:00:00'), date('Y-m-d 20:00:00')])
+        ->count();
+        return $expeditions;
+        } else {
+            return view('notFound');
+        }
+    } else {
+        return redirect()->route('login');
+    }
+});
+
+Route::get('/getWeekExpeditions', function () {
+    if (null !== ($user = Auth::user())) {
+    if ($user->role_id== User::TRANSPORTEUR) {
+    $transporteur = Transporteur::where('user_id', $user->id)->first();
+    $expeditions = [];
+    for ($i = 0; $i < 7; $i++) {
+    $expeditions[] = Expedition::where('transporteur_id', $transporteur->id)
+    ->whereDate('created_at', Carbon\Carbon::now()->subDays($i)->toDateString())
+    ->count();
+    }
+    return $expeditions;
+    } else {
+    return view('notFound');
+    }
+    } else {
+    return redirect()->route('login');
+    }
+    });
+
+    Route::get('/getMonthlyExpeditionCount', function () {
+        if (null !== ($user = Auth::user())) {
+            if ($user->role_id== User::TRANSPORTEUR) {
+                $transporteur = Transporteur::where('user_id', $user->id)->first();
+                $currentYear = Carbon\Carbon::now()->year;
+                $monthlyExpeditions = [];
+                for ($i = 1; $i <= 12; $i++) {
+                    $monthlyExpeditions[] = [
+                        'month' => Carbon\Carbon::createFromDate($currentYear, $i)->format('F'),
+                        'total' => Expedition::where('transporteur_id', $transporteur->id)
+                            ->whereMonth('created_at', $i)
+                            ->whereYear('created_at', $currentYear)
+                            ->count()
+                    ];
+                }
+                return $monthlyExpeditions;
+            } else {
+                return view('notFound');
+            }
+        } else {
+            return redirect()->route('login');
+        }
+    });
+    
+
+        require __DIR__ . '/auth.php';

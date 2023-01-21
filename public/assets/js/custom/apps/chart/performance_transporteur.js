@@ -1,184 +1,99 @@
-"use strict";
+am5.ready(async function () {
+    // Create root element
+    var root = am5.Root.new("rk_performance_transporteur");
+    // hide amchart logo
+    root._logo.dispose();
+    // const response = await axios.get("/getExpeditions");
+    // let expeditions = response.data;
+    // console.log(expeditions);
+    // let today = new Date().toISOString().slice(0,10);
+    // });
+    
+    // Set themes
+    // https://www.amcharts.com/docs/v5/concepts/themes/
+    root.setThemes([am5themes_Animated.new(root)]);
 
-// Class definition
-var KTChartsWidget36 = function () {
-    var chart = {
-        self: null,
-        rendered: false
-    };
+    // Create chart
+    // https://www.amcharts.com/docs/v5/charts/xy-chart/
+    var chart = root.container.children.push(
+        am5xy.XYChart.new(root, {
+            panX: true,
+            panY: true,
+            wheelX: "panX",
+            wheelY: "zoomX",
+        })
+    );
 
-    // Private methods
-    var initChart = function(chart) {
-        var element = document.getElementById("rk_performance_transporteur");
+    // Add cursor
+    // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
+    var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
+    cursor.lineY.set("visible", false);
 
-        if (!element) {
-            return;
+    // Create axes
+    // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
+    var xRenderer = am5xy.AxisRendererX.new(root, { minGridDistance: 30 });
+
+    var xAxis = chart.xAxes.push(
+        am5xy.CategoryAxis.new(root, {
+            maxDeviation: 0.3,
+            categoryField: "Expeditions",
+            renderer: xRenderer,
+            tooltip: am5.Tooltip.new(root, {}),
+        })
+    );
+
+    var yAxis = chart.yAxes.push(
+        am5xy.ValueAxis.new(root, {
+            maxDeviation: 0.3,
+            renderer: am5xy.AxisRendererY.new(root, {}),
+        })
+    );
+
+    // Create series
+    // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
+    var series = chart.series.push(
+        am5xy.ColumnSeries.new(root, {
+            name: "Series 1",
+            xAxis: xAxis,
+            yAxis: yAxis,
+            valueYField: "value",
+            sequencedInterpolation: true,
+            categoryXField: "Expedition",
+        })
+    );
+
+    series.columns.template.setAll({
+        width: am5.percent(120),
+        fillOpacity: 0.9,
+        strokeOpacity: 0,
+    });
+    series.columns.template.adapters.add("fill", (fill, target) => {
+        return chart.get("colors").getIndex(series.columns.indexOf(target));
+    });
+
+    series.columns.template.adapters.add("stroke", (stroke, target) => {
+        return chart.get("colors").getIndex(series.columns.indexOf(target));
+    });
+
+    series.columns.template.set("draw", function (display, target) {
+        var w = target.getPrivate("width", 0);
+        var h = target.getPrivate("height", 0);
+        display.moveTo(0, h);
+        display.bezierCurveTo(w / 4, h, w / 4, 0, w / 2, 0);
+        display.bezierCurveTo(w - w / 4, 0, w - w / 4, h, w, h);
+    });
+
+    // Set data
+    var data = [];
+    expeditions.forEach(element => {
+        if(element.expeditions){
+        data.push({value:element.length, category:element.type});
         }
-        
-        var height = parseInt(KTUtil.css(element, 'height'));
-        var labelColor = KTUtil.getCssVariableValue('--kt-gray-500');
-        var borderColor = KTUtil.getCssVariableValue('--kt-border-dashed-color');
-        var baseprimaryColor = KTUtil.getCssVariableValue('--kt-primary');
-        var lightprimaryColor = KTUtil.getCssVariableValue('--kt-primary');
-        var basesuccessColor = KTUtil.getCssVariableValue('--kt-success');
-        var lightsuccessColor = KTUtil.getCssVariableValue('--kt-success');
+    });
+    xAxis.data.setAll(data);
+    series.data.setAll(data);
 
-        var options = {
-            series: [{
-                name: 'Expéditions',
-                data: [1, 15, 42, 32, 22,0,20]
-            }],
-            chart: {
-                fontFamily: 'inherit',
-                type: 'area',
-                height: height,
-                toolbar: {
-                    show: false
-                }
-            },
-            plotOptions: {
-
-            },
-            legend: {
-                show: false
-            },
-            dataLabels: {
-                enabled: false
-            },
-            fill: {
-                type: "gradient",
-                gradient: {
-                    shadeIntensity: 1,
-                    opacityFrom: 0.4,
-                    opacityTo: 0.2,
-                    stops: [15, 120, 100]
-                }
-            },
-            stroke: {
-                curve: 'smooth',
-                show: true,
-                width: 3,
-                colors: [baseprimaryColor, basesuccessColor]
-            },
-            xaxis: {
-                categories: ['', '8 AM', '81 AM', '9 AM', '10 AM', '11 AM', '12 PM', '13 PM', '14 PM', '15 PM', '16 PM', '17 PM', '18 PM', '18:20 PM', '18:20 PM', '19 PM', '20 PM', '21 PM', ''],
-                axisBorder: {
-                    show: false,
-                },
-                axisTicks: {
-                    show: false
-                },
-                tickAmount: 6,
-                labels: {
-                    rotate: 0,
-                    rotateAlways: true,
-                    style: {
-                        colors: labelColor,
-                        fontSize: '12px'
-                    }
-                },
-                crosshairs: {
-                    position: 'front',
-                    stroke: {
-                        color: [baseprimaryColor, basesuccessColor],
-                        width: 1,
-                        dashArray: 3
-                    }
-                },
-                tooltip: {
-                    enabled: true,
-                    formatter: undefined,
-                    offsetY: 0,
-                    style: {
-                        fontSize: '12px'
-                    }
-                }
-            },
-            yaxis: {
-                max: 50,
-                min: 0,
-                tickAmount: 5,
-                labels: {
-                    style: {
-                        colors: labelColor,
-                        fontSize: '12px'
-                    } 
-                }
-            },
-            states: {
-                normal: {
-                    filter: {
-                        type: 'none',
-                        value: 0
-                    }
-                },
-                hover: {
-                    filter: {
-                        type: 'none',
-                        value: 0
-                    }
-                },
-                active: {
-                    allowMultipleDataPointsSelection: false,
-                    filter: {
-                        type: 'none',
-                        value: 0
-                    }
-                }
-            },
-            tooltip: {
-                style: {
-                    fontSize: '12px'
-                } 
-            },
-            colors: [lightprimaryColor, lightsuccessColor],
-            grid: {
-                borderColor: borderColor,
-                strokeDashArray: 4,
-                yaxis: {
-                    lines: {
-                        show: true
-                    }
-                }
-            },
-            markers: {
-                strokeColor: [baseprimaryColor, basesuccessColor],
-                strokeWidth: 3
-            }
-        };
-
-        chart.self = new ApexCharts(element, options);
-
-        // Set timeout to properly get the parent elements width
-        setTimeout(function() {
-            chart.self.render();
-            chart.rendered = true;
-        }, 200);      
-    }
-
-    // Public methods
-    return {
-        init: function () {
-            initChart(chart);
-
-            // Update chart on theme mode change
-            KTThemeMode.on("kt.thememode.change", function() {                
-                if (chart.rendered) {
-                    chart.self.destroy();
-                }
-
-                initChart(chart);
-            });
-        }   
-    }
-}();
-
-// Webpack support
-if (typeof module !== 'undefined') {
-    module.exports = KTChartsWidget36;
-}
-
-// On document ready
-KTUtil.onDOMContentLoaded(function() {
-    KTChartsWidget36.init();
+    // Make stuff animate on load
+    series.appear(1000);
+    chart.appear(1000, 100);
 });
