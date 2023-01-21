@@ -78,7 +78,7 @@ $expeditions = Expedition::where([
                     <tr>
                         {{--
                         <!--begin::Expédition--> --}}
-                        <td class="text-truncate">
+                        <td class="text-nowrap">
                             <a class="text-gray-700 text-hover-primary"
                                 href="{{ route('expedition.infos', $facture->expedition->id) }}">{{$facture->expedition->string_id}}</a>
                         </td>
@@ -125,7 +125,7 @@ $expeditions = Expedition::where([
                         <!--end::Expéditeur--> --}}
                         {{--
                         <!--begin::Status--> --}}
-                        <td class="text-truncate">
+                        <td class="text-nowrap">
                             @if(1 == $facture->etat)
                             <span class="badge bordered badge-da">Non Payée</span>
                             @elseIf(2 == $facture->etat)
@@ -145,7 +145,7 @@ $expeditions = Expedition::where([
                         <!--end::Amount--> --}}
                         {{--
                         <!--begin::Date--> --}}
-                        <td class="text-truncate"><span>{{\date('d-m-Y', \strtotime($facture->created_at))}}</span></td>
+                        <td class="text-nowrap"><span>{{\date('d-m-Y', \strtotime($facture->created_at))}}</span></td>
                         {{--
                         <!--end::Date--> --}}
                         <td>
@@ -204,7 +204,7 @@ $expeditions = Expedition::where([
 @endsection
 
 @section('custom-js')
-<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/expeditions/details-expediteur.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/expeditions/carrier/facturation/facturation.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/expeditions/carrier/facturation/listing/factures.js')}}"></script>
+<script src="{{URL::asset('assets/js/custom/apps/expeditions/details-expediteur.js')}}"></script>
+<script src="{{URL::asset('assets/js/custom/apps/expeditions/carrier/facturation/facturation.js')}}"></script>
+<script src="{{URL::asset('assets/js/custom/apps/expeditions/carrier/facturation/listing/factures.js')}}"></script>
 @endsection

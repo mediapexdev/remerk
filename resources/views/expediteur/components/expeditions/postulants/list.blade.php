@@ -9,29 +9,29 @@
         {{-- <!--begin::Table head--> --}}
         <thead>
             {{-- <!--begin::Table row--> --}}
-            <tr class="text-start text-gray-600 text-gray-700-on-dark fw-bold fs-7 text-uppercase gs-0">
-                <th class="text-truncate text-center">Expédition ID</th>
-                <th class="text-truncate">Transporteur</th>
-                {{-- <th class="text-truncate">Montant <span class="text-gray-400 text-capitalize">(frcfa)</span></th> --}}
-                <th class="text-truncate">Destination</th>
-                <th class="text-truncate">Montant</th>
-                <th class="text-truncate text-center">Actions</th>
+            <tr class="text-start text-gray-600 text-gray-700-on-dark fw-bold fw-medium-on-dark fs-7 text-uppercase gs-0">
+                <th class="text-nowrap text-center">Expédition ID</th>
+                <th class="text-nowrap">Transporteur</th>
+                {{-- <th class="text-nowrap">Montant <span class="text-gray-400 text-capitalize">(frcfa)</span></th> --}}
+                <th class="text-nowrap">Destination</th>
+                <th class="text-nowrap">Montant</th>
+                <th class="text-nowrap text-center">Actions</th>
             </tr>
             {{-- <!--end::Table row--> --}}
         </thead>
         {{-- <!--end::Table head--> --}}
         {{-- <!--begin::Table body--> --}}
-        <tbody class="fw-semibold text-gray-700 text-white-dim-on-dark">
+        <tbody class="fw-semibold fw-medium-on-dark text-gray-700 text-white-dim-on-dark">
             @foreach ($postulants as $postulant)
             {{-- <!--begin::Table row--> --}}
             <tr>
                 {{-- <!--begin::Expédition ID--> --}}
-                <td class="text-truncate text-center">
-                    <span class="fw-bold fs-5">Expédition: {{ $postulant->expedition->string_id }}</span>
+                <td class="text-nowrap text-center">
+                    <span class="fw-bold fw-medium-on-dark fs-5">Expédition: {{ $postulant->expedition->string_id }}</span>
                 </td>
                 {{-- <!--end::Expédition ID--> --}}
                 {{-- <!--begin::Transporteur--> --}}
-                <td class="text-truncate">
+                <td class="text-nowrap">
                     <div class="d-flex align-items-center">
                         {{-- <!--begin:: Avatar --> --}}
                         <div id="postulant_avatar_{{ $postulant->id }}"
@@ -53,7 +53,7 @@
                         {{-- <!--begin::Title--> --}}
                         <div class="ms-5">
                             <span id="postulant_title_{{ $postulant->id }}"
-                                class="postulant_title text-gray-800 text-hover-primary fs-5 fw-bold cursor-pointer" data-method="GET"
+                                class="postulant_title text-gray-800 text-hover-primary fs-5 fw-bold fw-medium-on-dark cursor-pointer" data-method="GET"
                                 data-route="{{ route('postulant.details', $postulant->id) }}">{{ $transporteur->fullName() }}</span>
                         </div>
                         {{-- <!--end::Title--> --}}
@@ -61,17 +61,17 @@
                 </td>
                 {{-- <!--end::Transporteur--> --}}
                 {{-- <!--begin::destination--> --}}
-                <td class="text-truncate">
-                    <span class="fw-bold">{{$postulant->expedition->depart->adresseComplet() .' - ' .$postulant->expedition->arrivee->adresseComplet()}}</span>
+                <td class="text-nowrap">
+                    <span class="fw-bold fw-medium-on-dark">{{$postulant->expedition->depart->adresseComplet() .' - ' .$postulant->expedition->arrivee->adresseComplet()}}</span>
                 </td>
                 {{-- <!--end::destination--> --}}
                 {{-- <!--begin::Montant--> --}}
-                <td class="text-truncate">
-                    <span class="fw-bold">{{number_format($postulant->montant_propose, 0, ',', ' ')}}</span>
+                <td class="text-nowrap">
+                    <span class="fw-bold fw-medium-on-dark">{{number_format($postulant->montant_propose, 0, ',', ' ')}}</span>
                 </td>
                 {{-- <!--end::Montant--> --}}
                 {{-- <!--begin::Actions--> --}}
-                <td class="text-truncate text-center">
+                <td class="text-nowrap text-center">
                     @if(!$postulant->is_choosen)
                     <button type="button" id="btn_select_postulant_{{$postulant->id}}"
                         class="btn btn-sm btn-light-primary btn_select_postulant"

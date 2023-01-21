@@ -54,11 +54,11 @@ $postulants = Postulants::where('expedition_id', $expedition->id)->orderByDesc('
                         {{--
                         <!--begin::Table row--> --}}
                         <tr class="text-start text-gray-500 fw-bold fs-7 text-uppercase gs-0">
-                            <th class="text-truncate">Transporteur</th>
-                            <th class="text-truncate">Montant <span class="text-gray-400 text-capitalize">(frcfa)</span>
+                            <th class="text-nowrap">Transporteur</th>
+                            <th class="text-nowrap">Montant <span class="text-gray-400 text-capitalize">(frcfa)</span>
                             </th>
-                            <th class="text-truncate">Date</th>
-                            <th class="text-truncate text-center">Actions</th>
+                            <th class="text-nowrap">Date</th>
+                            <th class="text-nowrap text-center">Actions</th>
                         </tr>
                         {{--
                         <!--end::Table row--> --}}
@@ -74,7 +74,7 @@ $postulants = Postulants::where('expedition_id', $expedition->id)->orderByDesc('
                         <tr>
                             {{--
                             <!--begin::Transporteur--> --}}
-                            <td class="text-truncate">
+                            <td class="text-nowrap">
                                 <div class="d-flex align-items-center">
                                     {{--
                                     <!--begin:: Avatar --> --}}
@@ -114,21 +114,21 @@ $postulants = Postulants::where('expedition_id', $expedition->id)->orderByDesc('
                             <!--end::Transporteur--> --}}
                             {{--
                             <!--begin::Montant--> --}}
-                            <td class="text-truncate">
+                            <td class="text-nowrap">
                                 <span class="fw-bold">{{ $postulant->montant_propose }}</span>
                             </td>
                             {{--
                             <!--end::Montant--> --}}
                             {{--
                             <!--begin::Date--> --}}
-                            <td class="text-truncate">
+                            <td class="text-nowrap">
                                 <span class="fw-bold">{{\date('d-m-Y', \strtotime($postulant->created_at))}}</span>
                             </td>
                             {{--
                             <!--end::Date--> --}}
                             {{--
                             <!--begin::Actions--> --}}
-                            <td class="text-truncate text-center">
+                            <td class="text-nowrap text-center">
                                 @if(!$postulant->is_choosen)
                                 <button type="button" id="btn_select_postulant_{{$postulant->id}}"
                                     class="btn btn-sm btn-light-primary btn_select_postulant"

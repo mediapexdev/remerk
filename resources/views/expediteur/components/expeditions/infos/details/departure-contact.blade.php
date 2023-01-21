@@ -1,48 +1,38 @@
 @php
-use App\Core\Util;
+    use App\Core\Util;
 
-$expediteur = $expedition->expediteur;
-$avatar = (($expediteur->hasAvatar()) ? $expediteur->avatar() : Util::getDefaultUserAvatar());
+    $expediteur = $expedition->expediteur;
+    $avatar = (($expediteur->hasAvatar()) ? $expediteur->avatar() : Util::getDefaultUserAvatar());
 @endphp
 <div class="card card-flush py-4 flex-row-fluid">
-    {{--
-    <!--begin::Card header--> --}}
+    {{-- <!--begin::Card header--> --}}
     <div class="card-header">
-        {{--
-        <!--begin::Card Title--> --}}
+        {{-- <!--begin::Card Title--> --}}
         <div class="card-title">
-            <h3>Contact au départ</h3>
+            <h3 class="fw-medium-on-dark">Contact au départ</h3>
         </div>
-        {{--
-        <!--end::Card Title--> --}}
+        {{-- <!--end::Card Title--> --}}
     </div>
-    {{--
-    <!--end::Card header--> --}}
-    {{--
-    <!--begin::Card body--> --}}
+    {{-- <!--end::Card header--> --}}
+    {{-- <!--begin::Card body--> --}}
     <div class="card-body pt-0">
-        {{--
-        <!--begin::Table Wrapper--> --}}
+        {{-- <!--begin::Table Wrapper--> --}}
         <div class="table-responsive">
-            {{--
-            <!--begin::Table--> --}}
+            {{-- <!--begin::Table--> --}}
             <table class="table align-middle fs-6 gy-5 mb-0 min-w-300px">
-                {{--
-                <!--begin::Table body--> --}}
-                <tbody class="fw-semibold text-gray-700 text-gray-800-on-dark">
-                    {{--
-                    <!--begin::Departure Contact Info--> --}}
+                {{-- <!--begin::Table body--> --}}
+                <tbody class="fw-semibold text-gray-700 text-white-dim-on-dark">
+                    {{-- <!--begin::Departure Contact Info--> --}}
                     @if (!$expedition->depart->hasContact())
                     <tr>
-                        <td class="fw-bold text-center" scope="row" colspan="2">
+                        <td class="fw-bold fw-medium-on-dark text-center" scope="row" colspan="2">
                             <span>Aucun</span>
                         </td>
                     </tr>
                     @else
-                    {{--
-                    <!--begin::Departure Full Name--> --}}
+                    {{-- <!--begin::Departure Full Name--> --}}
                     <tr>
-                        <td scope="row">
+                        <td class="fw-medium-on-dark" scope="row">
                             <div class="d-flex align-items-center">
                                 {{-- <!--begin::Svg Icon | path: icons/duotune/communication/com006.svg--> --}}
                                 <span class="svg-icon svg-icon-2 me-2 text-gray-600-on-dark">
@@ -56,25 +46,21 @@ $avatar = (($expediteur->hasAvatar()) ? $expediteur->avatar() : Util::getDefault
                                 <span>Prénom et Nom</span>
                             </div>
                         </td>
-                        <td class="fw-bold text-end">
+                        <td class="fw-bold fw-medium-on-dark text-end">
                             <span>{{ $expedition->depart->nom_contact_sur_place }}</span>
                         </td>
                     </tr>
-                    {{--
-                    <!--end::Departure Full Name--> --}}
-                    {{--
-                    <!--begin::Separator--> --}}
+                    {{-- <!--end::Departure Full Name--> --}}
+                    {{-- <!--begin::Separator--> --}}
                     <tr>
                         <td class="py-0" scope="row" colspan="2">
                             <div class="separator my-0"></div>
                         </td>
                     </tr>
-                    {{--
-                    <!--end::Separator--> --}}
-                    {{--
-                    <!--begin::Departure Phone Number--> --}}
+                    {{-- <!--end::Separator--> --}}
+                    {{-- <!--begin::Departure Phone Number--> --}}
                     <tr>
-                        <td scope="row">
+                        <td class="fw-medium-on-dark" scope="row">
                             <div class="d-flex align-items-center">
                                 {{-- <!--begin::Svg Icon | path: icons/duotune/electronics/elc002.svg--> --}}
                                 <span class="svg-icon svg-icon-2 me-2 text-gray-600-on-dark">
@@ -88,25 +74,19 @@ $avatar = (($expediteur->hasAvatar()) ? $expediteur->avatar() : Util::getDefault
                                 <span>Numéro de téléphone</span>
                             </div>
                         </td>
-                        <td class="fw-bold text-end">
+                        <td class="fw-bold fw-medium-on-dark text-end">
                             <span>{{ Util::formatPhoneNumber($expedition->depart->phone_contact_sur_place) }}</span>
                         </td>
                     </tr>
-                    {{--
-                    <!--end::Departure Phone Number--> --}}
+                    {{-- <!--end::Departure Phone Number--> --}}
                     @endif
-                    {{--
-                    <!--end::Departure Contact Info--> --}}
+                    {{-- <!--end::Departure Contact Info--> --}}
                 </tbody>
-                {{--
-                <!--end::Table body--> --}}
+                {{-- <!--end::Table body--> --}}
             </table>
-            {{--
-            <!--end::Table--> --}}
+            {{-- <!--end::Table--> --}}
         </div>
-        {{--
-        <!--end::Table Wrapper--> --}}
+        {{-- <!--end::Table Wrapper--> --}}
     </div>
-    {{--
-    <!--end::Card body--> --}}
+    {{-- <!--end::Card body--> --}}
 </div>

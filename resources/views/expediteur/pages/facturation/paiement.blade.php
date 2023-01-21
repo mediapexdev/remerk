@@ -13,7 +13,6 @@ $body_classes = 'app-default';
 @endsection
 
 @section('component-body-content')
-{{$facture->id}}
 {{--
 <!--begin::Row--> --}}
 <div class="row gy-0 g-xl-10">
@@ -54,8 +53,7 @@ $body_classes = 'app-default';
                             <!--begin::Logo-->
                             <div class="col-6">
                                 <div class="container-fluid">
-                                    <img class="d-block h-50px"
-                                        src="{{URL::asset('assets/images/Logo-2-removebg.png')}}" alt="Logo">
+                                    <img class="d-block h-50px" src="{{URL::asset('assets/images/Logo-2-removebg.png')}}" alt="Logo">
                                     <div class="fw-semibold fs-7 text-gray-700 m-3">
                                         <div><span>S15 Hann Maristes</span></div>
                                         <div><span>Dakar, Sénégal</span></div>
@@ -67,21 +65,19 @@ $body_classes = 'app-default';
                             <div class="col-6">
                                 <div class="d-flex align-items-end flex-column">
                                     <div class="d-flex align-items-start flex-column">
-                                        <div class="fw-bold fs-5 text-gray-800 text-gray-900-on-dark mb-4">
-                                            <span>Facture N° R-00{{$facture->id}}</span>
-                                            <br>
-                                            <span>Date: {{\date('d/m/Y', \strtotime($facture->created_at))}}</span>
+                                        <div class="fw-bold fw-medium-on-dark fs-5 text-gray-800 text-white-dim-on-dark mb-4">
+                                            <div><span>Facture N° R-00{{$facture->id}}</span></div>
+                                            <div><span>Date: {{\date('d/m/Y', \strtotime($facture->created_at))}}</span></div>
                                         </div>
-                                        <div class="fw-bold fs-6 text-gray-800 text-gray-900-on-dark">{{$expediteur->fullName()}}</div>
+                                        <div class="fw-bold fs-6 text-gray-800 text-white-dim-on-dark">{{$expediteur->fullName()}}</div>
                                         <div class="fw-semibold fs-7 text-gray-700">{{$expediteur->adresse}}</div>
-                                        <div class="fw-semibold fs-7 text-gray-700">{{$expediteur->phoneNumber(true)}}
-                                        </div>
+                                        <div class="fw-semibold fs-7 text-gray-700">{{$expediteur->phoneNumber(true)}}</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <!--begin::Wrapper-->
-                        <hr class="h-75px">
+                        <hr class="h-50px">
                         <div class="mt-5">
                             <!--begin::Content-->
                             <div class="flex-grow-1">
@@ -89,7 +85,7 @@ $body_classes = 'app-default';
                                 <div class="table-responsive border-bottom mb-9">
                                     <table class="table mb-3">
                                         <thead>
-                                            <tr class="border-bottom fs-6 fw-bold text-gray-600 text-gray-700-on-dark">
+                                            <tr class="border-bottom fs-6 fw-bold fw-medium-on-dark text-gray-600 text-gray-700-on-dark">
                                                 <th class="min-w-200px pb-2">Description</th>
                                                 <th class="min-w-70px text-center pb-2">Poids</th>
                                                 <th class="min-w-80px text-center pb-2">Transporteur</th>
@@ -97,9 +93,9 @@ $body_classes = 'app-default';
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr class="fw-bold text-gray-800 text-gray-900-on-dark fs-5 text-start">
+                                            <tr class="fw-bold fw-medium-on-dark text-gray-800 text-white-dim-on-dark fs-5 text-start">
                                                 <td class="pt-6">
-                                                    <span>Transport de {{$expedition->matiereType()}}</span>
+                                                    <span>{{$expedition->matiereType()}}</span>
                                                 </td>
                                                 <td class="pt-6">
                                                     <span>{{$expedition->matiereWeight()}}</span>
@@ -107,9 +103,9 @@ $body_classes = 'app-default';
                                                 <td class="pt-6">
                                                     <span>{{$transporteur->fullName()}}</span>
                                                 </td>
-                                                <td class="pt-6 fw-semi-bold fs-6">
+                                                <td class="pt-6 fs-6">
                                                     <span>{{number_format($facture->montant, 0, ',', ' ')}}</span>
-                                                    <span class="text-gray-700"> Fr Cfa</span>
+                                                    <span class="text-gray-700">Fr Cfa</span>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -126,9 +122,9 @@ $body_classes = 'app-default';
                                             <div class="fw-semibold pe-10 text-gray-800 fs-6">Montant net à payer :</div>
                                             <!--end::Code-->
                                             <!--begin::Label-->
-                                            <div class="text-start fw-bold fs-5 text-gray-800 text-gray-900-on-dark">
+                                            <div class="text-start fw-bold fs-5 text-gray-800 text-white-dim-on-dark">
                                                 <span>{{number_format($facture->montant, 0, ',', ' ')}}</span>
-                                                <span class="text-gray-700"> Fr Cfa</span>
+                                                <span class="text-gray-700">Fr Cfa</span>
                                             </div>
                                             <!--end::Label-->
                                         </div>
@@ -144,8 +140,8 @@ $body_classes = 'app-default';
                     </div>
                     <!--end::Invoice2content-->
                     <div class="mt-20">
-                        <div class="text-gray-600">
-                            <p class="fs-8 my-5">Conditions de paiement: </p>
+                        <div class="text-gray-600 text-gray-700-on-dark">
+                            <p class="fs-8 my-5">Conditions de paiement</p>
                             <p class="fs-9">
                                 Les paiements doivent être effectués en Franc CFA.
                                 Le paiement de la totalité du prix doit être reçu avant la livraison de la marchandise.
@@ -165,7 +161,8 @@ $body_classes = 'app-default';
                         <div class="mb-8">
                             <div class="container-fluid d-none d-xl-block d-xxl-block d-lg-block">
                                 <div class="row align-items-center justify-content-center">
-                                    <div class="col-xl-4 col-xxl-4 col-4">
+                                    {{-- <div class="col-xl-4 col-xxl-4 col-4"> --}}
+                                    <div class="col">
                                         @if($facture->etat == 1)
                                         <button class="btn btn-sm btn-success w-100" onclick="buy(this)"><i class="bi bi-cash-stack"></i>
                                             <span>Payer</span>
@@ -177,8 +174,9 @@ $body_classes = 'app-default';
                                         </a>
                                         @endif
                                     </div>
-                                    <div class="col-xl-8 col-xxl-8 col-8">
-                                        <button type="button" class="btn btn-sm btn-primary my-1 me-12" onclick="imprimer()">
+                                    {{-- <div class="col-xl-8 col-xxl-8 col-8"> --}}
+                                    <div class="col">
+                                        <button type="button" class="btn btn-sm btn-primary w-100 my-1" onclick="imprimer()">
                                             <i class="bi bi-printer-fill"></i>
                                             <span>Imprimer-Télécharger</span>
                                         </button>
@@ -188,11 +186,11 @@ $body_classes = 'app-default';
                         </div>
                         <!--end::actions-->
                         <!--begin::Title-->
-                        <h6 class="mb-8 fw-bolder text-gray-800 text-gray-900-on-dark text-center">DETAILS DU PAIEMENT</h6>
+                        <h6 class="mb-8 fw-bolder fw-medium-on-dark text-gray-800 text-gray-900-on-dark text-center">DETAILS DU PAIEMENT</h6>
                         <!--end::Title-->
                         <!--begin::Item-->
                         <div class="mb-6">
-                            <p class="text-gray-700 text-gray-800-on-dark fs-6">
+                            <p class="text-gray-700 text-white-dim-on-dark fw-normal-on-dark fs-6">
                                 Paiement possible via Orange Money, Wave, Free-Money, Carte bancaire, Paypal, et partout au Sénégal.
                             </p>
                         </div>
@@ -201,30 +199,28 @@ $body_classes = 'app-default';
                         <div class="my-5 container-fluid">
                             <div class="d-flex flex-column">
                                 <div class="d-flex justify-content-around m-2">
-                                    <img src="assets/images/mobile_money/om.png" alt="" class="img" height="90px">
-                                    <img src="assets/images/mobile_money/wave.png" alt="" class="img" height="90px">
-                                    <img src="assets/images/mobile_money/free.png" alt="" class="img" height="90px">
+                                    <img src="{{URL::asset('assets/images/mobile_money/om.png')}}" alt="Orange Money" class="img" height="90px">
+                                    <img src="{{URL::asset('assets/images/mobile_money/wave.png')}}" alt="Wave" class="img" height="90px">
+                                    <img src="{{URL::asset('assets/images/mobile_money/free.png')}}" alt="Free Money" class="img" height="90px">
                                 </div>
                                 <div class="d-flex justify-content-around m-2">
-                                    <img src="assets/images/mobile_money/e-money.png" alt="" class="img" height="90px">
-                                    <img src="assets/images/mobile_money/wizall.png" alt="" class="img" height="90px">
-                                    <img src="assets/images/mobile_money/ecobank.png" alt="" class="img" height="90px">
+                                    <img src="{{URL::asset('assets/images/mobile_money/e-money.png')}}" alt="Expresso Money" class="img" height="90px">
+                                    <img src="{{URL::asset('assets/images/mobile_money/wizall.png')}}" alt="Wizall Money" class="img" height="90px">
+                                    <img src="{{URL::asset('assets/images/mobile_money/ecobank.png')}}" alt="Ecobank" class="img" height="90px">
                                 </div>
                                 <div class="d-flex justify-content-around m-2">
-                                    <img src="assets/images/mobile_money/visa.png" alt="" class="img" height="90px">
-                                    <img src="assets/images/mobile_money/mastercard.png" alt="" class="img"
-                                        height="90px">
-                                    <img src="assets/images/mobile_money/orabank.png" alt="" class="img" height="90px">
+                                    <img src="{{URL::asset('assets/images/mobile_money/visa.png')}}" alt="Visa" class="img" height="90px">
+                                    <img src="{{URL::asset('assets/images/mobile_money/mastercard.png')}}" alt="Mastercard" class="img" height="90px">
+                                    <img src="{{URL::asset('assets/images/mobile_money/orabank.png')}}" alt="Orabank" class="img" height="90px">
                                 </div>
-
                             </div>
                         </div>
                         <!--end::Item-->
                         <!--begin::Item-->
                         <div class="m-0 d-none">
-                            <div class="text-gray-400 fs-10">
-                                <p class="m-5">Conditions de paiement: </p>
-                                <p class="">
+                            <div class="text-gray-600 text-gray-700-on-dark">
+                                <p class="fs-8 my-5">Conditions de paiement</p>
+                                <p class="fs-9">
                                     Les paiements doivent être effectués en Franc CFA.
                                     Le paiement de la totalité du prix doit être reçu avant la livraison de la marchandise.
                                     Une retenue de 10% sera appliquée en cas de paiement tardif.
@@ -253,7 +249,7 @@ $body_classes = 'app-default';
 
 @section('custom-js')
 
-<script type="text/javascript" src="https://paytech.sn/cdn/paytech.min.js"></script>
+<script src="https://paytech.sn/cdn/paytech.min.js"></script>
 <script>
     function buy(btn) {
         alert({{$facture->id}});

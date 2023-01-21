@@ -3,7 +3,7 @@
     <div class="card-header">
         {{-- <!--begin::Card title--> --}}
         <div class="card-title">
-            <h2 class="fw-bold">Expédition : {{$expedition->string_id}}</h2>
+            <h2 class="fw-bold fw-medium-on-dark">Expédition : {{$expedition->string_id}}</h2>
         </div>
         {{-- <!--end::Card title--> --}}
     </div>
@@ -13,16 +13,16 @@
         {{-- <!--begin::Nav--> --}}
         <div class="d-flex flex-wrap flex-stack gap-5 gap-lg-10">
             {{-- <!--begin:::Tabs--> --}}
-            <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-0 fs-5 fw-semibold">
+            <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x rk-nav-tabs border-transparent fs-5 fw-semibold">
                 {{-- <!--begin:::Tab item--> --}}
-                <li class="nav-item mt-2">
-                    <a class="nav-link text-gray-700 text-gray-900-on-dark text-active-primary ms-0 me-10 py-5 active"
+                <li class="nav-item rk-nav-item mt-2">
+                    <a class="nav-link rk-nav-link text-gray-700 text-active-primary ms-0 me-10 py-5 active"
                         data-bs-toggle="tab" href="#kt_expedition_summary">Récapitulatif</a>
                 </li>
                 {{-- <!--end:::Tab item--> --}}
                 {{-- <!--begin:::Tab item--> --}}
-                <li class="nav-item mt-2">
-                    <a class="nav-link text-gray-700 text-gray-900-on-dark text-active-primary ms-0 me-10 py-5"
+                <li class="nav-item rk-nav-item mt-2">
+                    <a class="nav-link rk-nav-link text-gray-700 text-active-primary ms-0 me-10 py-5"
                         data-bs-toggle="tab" href="#kt_expedition_history">Historique</a>
                 </li>
                 {{-- <!--end:::Tab item--> --}}

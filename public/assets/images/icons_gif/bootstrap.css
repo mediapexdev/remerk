@@ -7887,7 +7887,7 @@ button.bg-dark:focus {
   white-space: nowrap !important;
 }
 
-.text-truncate {
+.text-nowrap {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

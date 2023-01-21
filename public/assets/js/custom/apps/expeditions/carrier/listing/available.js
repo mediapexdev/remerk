@@ -36,8 +36,8 @@ const KTAppAvailableExpeditionsListing = (function () {
                                 const data = $.map(columns, function(col, i) {
                                     return col.hidden ?
                                         '<tr data-dt-row="' + col.rowIndex + '" data-dt-column="' + col.columnIndex + '">' +
-                                            '<td class="text-start text-gray-500 fw-bold fs-7 text-uppercase text-truncate gs-0 w-125px" scope="row">' + col.title + '</td>' +
-                                            '<td class="text-start fw-semibold text-gray-700 text-truncate">' + col.data + '</td>' +
+                                            '<td class="text-start text-gray-500 fw-bold fs-7 text-uppercase text-nowrap gs-0 w-125px" scope="row">' + col.title + '</td>' +
+                                            '<td class="text-start fw-semibold text-gray-700 text-nowrap">' + col.data + '</td>' +
                                         '</tr>' :
                                         '';
                                 }).join('');
