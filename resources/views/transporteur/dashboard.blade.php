@@ -57,7 +57,6 @@ $expeditions = Expedition::where('transporteur_id', $transporteur->id)->get();
 @endsection
 
 @section('custom-js')
-<<<<<<< HEAD
 {{-- <script type="module" src="src/js/moments.js"></script> --}}
 
 <script type="text/javascript" src="{{ URL::asset('assets/js/custom/dashboard/expeditions-overview.js') }}"></script>
@@ -67,28 +66,14 @@ $expeditions = Expedition::where('transporteur_id', $transporteur->id)->get();
 <script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/chart/dailychart.js')}}"></script>
 <script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/chart/weeklychart.js')}}"></script>
 <script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/chart/pie_chart.js')}}"></script>
-=======
-<script src="{{ URL::asset('assets/js/custom/dashboard/expeditions-overview.js') }}"></script>
-<script src="{{ URL::asset('assets/js/custom/apps/expeditions/carrier/postulat.js') }}"></script>
-<script src="{{ URL::asset('assets/js/custom/utilities/modals/create-camion.js') }}"></script>
-<script src="{{ URL::asset('assets/js/custom/apps/chart/performance_transporteur.js') }}"></script>
-<script src="{{URL::asset('assets/js/custom/apps/chart/pie_chart.js')}}"></script>
-
->>>>>>> d157985929dc4c1a7517c82004ccd0846e4f235d
 
 <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/themes/Dark.js"></script>
-<<<<<<< HEAD
 {{-- <script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/chart/map.js')}}"></script> --}}
 
 <script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/chart/monthlychart.js')}}"></script>
 
-=======
-<script src="https://cdn.amcharts.com/lib/5/geodata/data/countries2.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/geodata/senegalHigh.js"></script>
-<script src="{{URL::asset('assets/js/custom/apps/chart/map.js')}}"></script>
->>>>>>> d157985929dc4c1a7517c82004ccd0846e4f235d
 
 @endsection
