@@ -63,8 +63,8 @@ $expeditions = Expedition::where('transporteur_id', $transporteur->id)->get();
 <script type="text/javascript" src="{{ URL::asset('assets/js/custom/apps/expeditions/carrier/postulat.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('assets/js/custom/utilities/modals/create-camion.js') }}"></script>
 {{-- <script type="text/javascript" src="{{ URL::asset('assets/js/custom/apps/chart/performance_chart.js') }}"></script> --}}
-<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/chart/dailychart.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/chart/weeklychart.js')}}"></script>
+{{-- <script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/chart/dailychart.js')}}"></script> --}}
+{{-- <script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/chart/weeklychart.js')}}"></script> --}}
 <script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/chart/pie_chart.js')}}"></script>
 
 <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
@@ -73,7 +73,8 @@ $expeditions = Expedition::where('transporteur_id', $transporteur->id)->get();
 <script src="https://cdn.amcharts.com/lib/5/themes/Dark.js"></script>
 {{-- <script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/chart/map.js')}}"></script> --}}
 
-<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/chart/monthlychart.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/chart/perMonth.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/chart/perYear.js')}}"></script>
 
 
 @endsection
