@@ -609,8 +609,10 @@ Route::middleware(['auth'])->group(function () {
             return redirect()->route('login');
         }
     })->name('admin.transporteur.approuver-camion');
-
-
+    
+    /**
+     * 
+     */
     Route::get('/getMatieres', function () {
         if (null !== ($user = Auth::user())) {
             if ($user->role_id == User::TRANSPORTEUR) {
@@ -626,107 +628,30 @@ Route::middleware(['auth'])->group(function () {
         }
     });
     
-    Route::get('/getTodayExpeditions', function () {
-        if (null !== ($user = Auth::user())) {
-            if ($user->role_id == User::TRANSPORTEUR) {
-                $transporteur = Transporteur::where('user_id', $user->id)->first();
-                $expeditions = [];
-                $expeditions[] = Expedition::where('transporteur_id', $transporteur->id)
-                    ->whereBetween('created_at', [\date('Y-m-d 08:00:00'), \date('Y-m-d 12:00:00')])
-                    ->count();
-                $expeditions[] = Expedition::where('transporteur_id', $transporteur->id)
-                    ->whereBetween('created_at', [\date('Y-m-d 12:00:00'), \date('Y-m-d 16:00:00')])
-                    ->count();
-                $expeditions[] = Expedition::where('transporteur_id', $transporteur->id)
-                    ->whereBetween('created_at', [\date('Y-m-d 16:00:00'), \date('Y-m-d 18:00:00')])
-                    ->count();
-                $expeditions[] = Expedition::where('transporteur_id', $transporteur->id)
-                    ->whereBetween('created_at', [\date('Y-m-d 18:00:00'), \date('Y-m-d 20:00:00')])
-                    ->count();
-                return $expeditions;
-            } else {
-                return view('notFound');
-            }
-        } else {
-            return redirect()->route('login');
-        }
+    /**
+     * 
+     */
+    Route::get('/getExpeditionsPerMonth', function () { 
     });
-    
-    Route::get('/getWeekExpeditions', function () {
-        if (null !== ($user = Auth::user())) {
-            if ($user->role_id == User::TRANSPORTEUR) {
-                $transporteur = Transporteur::where('user_id', $user->id)->first();
-                $expeditions = [];
-                $i = 0;
-                switch ((new \DateTime('now', new \DateTimeZone('UTC')))->format('w')) {
-                    case '0':
-                        $i = 7;
-                        break;
-                    case '1':
-                    case '2':
-                    case '3':
-                    case '4':
-                    case '5':
-                    case '6':
-                        $i = 6;
-                        break;
-                    default:
-                        break;
-                }
-                // dd(Carbon\Carbon::now()->subDays($i)->toDateString());
 
-                /*if($i == 1){
-                    $expeditions[] = Expedition::where('transporteur_id', $transporteur->id)
-                    ->whereDate('created_at', Carbon::now()->toDateString())
-                    ->count();
-                }
-                else{*/
-                    for ($y = 0; $y < $i; $y++) {
-                        // dd($y);
-                        $expeditions[] = Expedition::where('transporteur_id', $transporteur->id)
-                        ->whereDate('created_at', Carbon::now()->subDays($i - $y)->toDateString())
-                        ->count();
-                    }
-                //}
-                /*for ($y = $i; $y < 7; $y++) {
-                    if($y == $i){
-                        $expeditions[] = Expedition::where('transporteur_id', $transporteur->id)
-                        ->whereDate('created_at', Carbon::now()->toDateString())
-                        ->count();
-                    }
-                    else{
-                        $expeditions[] = Expedition::where('transporteur_id', $transporteur->id)
-                        ->whereDate('created_at', Carbon::now()->addDays($y)->toDateString())
-                        ->count();
-                    }
-                }*/
-                return $expeditions;
-            }
-            else {
-                return view('notFound');
-            }
-        }
-        else {
-            return redirect()->route('login');
-        }
-    });
-    
-    Route::get('/getMonthlyExpeditionCount', function () {
+    /**
+     * 
+     */
+    Route::get('/getExpeditionsPerYear', function () {
         if (null !== ($user = Auth::user())) {
             if ($user->role_id == User::TRANSPORTEUR) {
                 $transporteur = Transporteur::where('user_id', $user->id)->first();
                 $currentYear = Carbon::now()->year;
-                $monthlyExpeditions = [];
+                $expeditions = [];
                 for ($i = 1; $i <= 12; $i++) {
-                    $monthlyExpeditions[] = [
-                        'month' => Carbon::createFromDate($currentYear, $i)->format('F'),
-                        'total' => Expedition::where('transporteur_id', $transporteur->id)
+                    $expeditions[] =
+                        Expedition::where('transporteur_id', $transporteur->id)
                             ->whereMonth('created_at', $i)
                             ->whereYear('created_at', $currentYear)
                             ->count()
-                    ];
+                    ;
                 }
-                return $monthlyExpeditions;
+                return $expeditions;
             }
             else {
                 return view('notFound');
