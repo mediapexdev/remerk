@@ -1,7 +1,7 @@
 @php
-    use App\Models\SuiviExpedition;
+    use App\Models\ExpeditionsTracking;
 
-    $suivi = SuiviExpedition::where('expedition_id', $expedition->id)->orderBy('created_at')->get();
+    $suivi = ExpeditionsTracking::where('expedition_id', $expedition->id)->orderBy('created_at')->get();
 @endphp
 <div class="card card-flush py-4 flex-row-fluid">
     <!--begin::Card header-->

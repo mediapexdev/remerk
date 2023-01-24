@@ -18,31 +18,11 @@ var borderColor = KTUtil.getCssVariableValue("--kt-gray-200");
 var baseColor = KTUtil.getCssVariableValue("--kt-primary");
 var secondaryColor = KTUtil.getCssVariableValue("--kt-gray-300");
 
-//Fetch data from the API using Axios
-// var data = async function getPerYearExpedition() {
-//     var response = await axios.get("/getExpeditionsPerYear")
-//     var data = response.data;
-//     return Object.values(data);
-// }
-
-// data = getPerYearExpedition();
-//let data = getPerYearExpedition();
-axios.get("/getPerYearExpedition").then(function (response) {
-    var data = response.data;
-    console.log(data);
-    options.series.data = data.map(function (exp) {
-        return exp;
-    });
-    chart.updateOptions(options);
-});
-
-// console.log(data);
-
 var options = {
     series: [
         {
             name: "Expeditions",
-            data: [],
+            data: []
         },
     ],
     chart: {
@@ -141,4 +121,30 @@ var options = {
 };
 
 var chart = new ApexCharts(document.querySelector("#perYear_chart"), options);
-chart.render();
+//chart.render();
+
+//Fetch data from the API using Axios
+// axios
+//     .get("/getExpeditionsPerYear")
+//     .then(function (response) {
+//         var data = response.data;
+//         options.series.data = data;
+//         //console.log(options.series.data);
+//         //return data;
+//         chart.render();
+//     })
+//     .catch(function (error) {
+//         console.log(error);
+//     });
+
+// console.log(data)
+
+async function getData() {
+    try {
+        const response = await axios.get('/getExpeditionsPerYear')
+        let data = response.data;
+        options.series.data = data;
+    } catch (error) {
+        console.error(error)
+    }
+}
