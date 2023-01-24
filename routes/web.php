@@ -22,6 +22,7 @@ use App\Models\Transporteur;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 /*
@@ -608,6 +609,58 @@ Route::middleware(['auth'])->group(function () {
             return redirect()->route('login');
         }
     })->name('admin.transporteur.approuver-camion');
+    
+    /**
+     * 
+     */
+    Route::get('/getMatieres', function () {
+        if (null !== ($user = Auth::user())) {
+            if ($user->role_id == User::TRANSPORTEUR) {
+                // $transporteur=Transporteur::where('user_id',$user->id)->first();
+                $matieres = Matiere::with('expeditions')->get();
+    
+                return $matieres;
+            } else {
+                return view('notFound');
+            }
+        } else {
+            return redirect()->route('login');
+        }
+    });
+    
+    /**
+     * 
+     */
+    Route::get('/getExpeditionsPerMonth', function () { 
+    });
+
+    /**
+     * 
+     */
+    Route::get('/getExpeditionsPerYear', function () {
+        if (null !== ($user = Auth::user())) {
+            if ($user->role_id == User::TRANSPORTEUR) {
+                $transporteur = Transporteur::where('user_id', $user->id)->first();
+                $currentYear = Carbon::now()->year;
+                $expeditions = [];
+                for ($i = 1; $i <= 12; $i++) {
+                    $expeditions[] =
+                        Expedition::where('transporteur_id', $transporteur->id)
+                            ->whereMonth('created_at', $i)
+                            ->whereYear('created_at', $currentYear)
+                            ->count()
+                    ;
+                }
+                return $expeditions;
+            }
+            else {
+                return view('notFound');
+            }
+        }
+        else {
+            return redirect()->route('login');
+        }
+    });
 });
 
 /**
@@ -630,47 +683,5 @@ Route::get('/noscript', function () {
     }
 })->middleware(['auth'])->name('noscript');
 
-Route::get('/getMatieres', function () {
-    if (null !== ($user = Auth::user())) {
-        if ($user->role_id == User::TRANSPORTEUR) {
-            // $transporteur=Transporteur::where('user_id',$user->id)->first();
-            $matieres = Matiere::with('expeditions')->get();
-
-            return $matieres;
-        } else {
-            return view('notFound');
-        }
-    } else {
-        return redirect()->route('login');
-    }
-});
-
-
-Route::get('/getExpeditionsPerMonth', function () {
-    
-});
-
-Route::get('/getExpeditionsPerYear', function () {
-    if (null !== ($user = Auth::user())) {
-        if ($user->role_id == User::TRANSPORTEUR) {
-            $transporteur = Transporteur::where('user_id', $user->id)->first();
-            $currentYear = Carbon\Carbon::now()->year;
-            $expeditions = [];
-            for ($i = 1; $i <= 12; $i++) {
-                $expeditions[] =
-                    Expedition::where('transporteur_id', $transporteur->id)
-                        ->whereMonth('created_at', $i)
-                        ->whereYear('created_at', $currentYear)
-                        ->count()
-                ;
-            }
-            return $expeditions;
-        } else {
-            return view('notFound');
-        }
-    } else {
-        return redirect()->route('login');
-    }
-});
 
 require __DIR__ . '/auth.php';
