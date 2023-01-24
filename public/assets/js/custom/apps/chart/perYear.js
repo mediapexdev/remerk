@@ -22,7 +22,7 @@ var options = {
     series: [
         {
             name: "Expeditions",
-            data: []
+            data: [7,5,5,9,4,3,2,4,6,2,3,12]
         },
     ],
     chart: {
