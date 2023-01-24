@@ -673,5 +673,4 @@ Route::get('/getExpeditionsPerYear', function () {
     }
 });
 
-
 require __DIR__ . '/auth.php';
