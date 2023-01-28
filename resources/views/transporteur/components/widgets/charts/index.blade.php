@@ -12,11 +12,11 @@
             <ul class="nav">
                 <li class="nav-item">
                     <a class="nav-link btn btn-sm btn-color-muted btn-active btn-active-light fw-bold px-4 me-1 active"
-                        data-bs-toggle="tab" href="#monthlyChart_tab">Ce mois</a>
+                        data-bs-toggle="tab" href="#thisMonthChart_tab">Ce mois</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link btn btn-sm btn-color-muted btn-active btn-active-light fw-bold px-4 me-1"
-                        data-bs-toggle="tab" href="#yearlyChart_tab">L'année</a>
+                        data-bs-toggle="tab" href="#monthlyChart_tab">L'année</a>
                 </li>
             </ul>
         </div>
@@ -28,10 +28,10 @@
         <!--begin::Tab content-->
         <div class="tab-content">
             <!--begin::Tab Monthly-->
-            @include('transporteur.components.widgets.charts.monthly')
+            @include('transporteur.components.widgets.charts.thisMonth')
             <!--end::Tab Monthly-->
             <!--begin::Tab yearly-->
-            @include('transporteur.components.widgets.charts.yearly')
+            @include('transporteur.components.widgets.charts.monthly')
             <!--end::Tab yearly-->
         </div>
         <!--end::Tab content-->

@@ -631,13 +631,13 @@ Route::middleware(['auth'])->group(function () {
     /**
      * 
      */
-    Route::get('/getExpeditionsPerMonth', function () { 
-    });
+    // Route::get('/getExpeditionsPerMonth', function () { 
+    // });
 
     /**
      * 
      */
-    Route::get('/getExpeditionsPerYear', function () {
+    Route::get('/getExpeditionsPerMonth', function () {
         if (null !== ($user = Auth::user())) {
             if ($user->role_id == User::TRANSPORTEUR) {
                 $transporteur = Transporteur::where('user_id', $user->id)->first();
