@@ -35,7 +35,8 @@
         @endphp
         {{-- <!--begin::Title--> --}}
         <h3 class="card-title align-items-start flex-column">
-            <span class="card-label fw-bold text-gray-800">Aperçu des expéditions</span>
+            <span class="card-label fw-bold text-gray-800">
+                Aperçu des expéditions</span>
             <span class="text-gray-400 mt-1 fw-semibold fs-6">{{ (!$expeditions_count ? 'Aucune' : $expeditions_count) . ' ' . $data_text }}</span>
         </h3>
         {{-- <!--end::Title--> --}}

@@ -1,10 +1,8 @@
-
-                            <!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-                            <svg fill="currentColor" height="30" width="30" version="1.1" id="Capa_1"
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                y="0px" viewBox="0 0 374.413 374.413" style="enable-background:new 0 0 374.413 374.413;"
-                                xml:space="preserve">
-                                <path d="M160.324,245.714c-38.796,32.637-84.045,59.819-134.49,80.791c-1.129,0.469-2.3,0.692-3.451,0.692
+<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg fill="currentColor" height="30" width="30" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 374.413 374.413"
+    style="enable-background:new 0 0 374.413 374.413;" xml:space="preserve">
+    <path d="M160.324,245.714c-38.796,32.637-84.045,59.819-134.49,80.791c-1.129,0.469-2.3,0.692-3.451,0.692
                                 c-3.528,0-6.876-2.087-8.314-5.547c-1.908-4.59,0.266-9.857,4.855-11.766c1.243-0.517,2.488-1.04,3.726-1.565
                                 c0.097-0.369,0.219-0.737,0.366-1.1l33.634-82.897c10.352-25.508,21.27-43.559,34.358-56.81
                                 c17.28-17.494,38.646-26.364,63.502-26.364h30.258c4.971,0,9,4.029,9,9s-4.029,9-9,9h-30.256c-36.439,0-60.719,21.515-81.183,71.942
@@ -30,4 +28,4 @@
                                 c-11.316,5.933-24.814,3.59-33.523-4.854l-25.574,13.411c16.456,22.06,47.037,29.552,72.168,16.374
                                 C303.039,334.211,314.264,304.794,305.473,278.713z" />
 
-                            </svg>
+</svg>

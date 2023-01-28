@@ -3,7 +3,10 @@
     <div class="card-header pt-5">
         <!--begin::Title-->
         <h3 class="card-title align-items-start flex-column">
-            <span class="card-label fw-bold text-dark">Performance</span>
+            <span class="card-label fw-bold text-dark">
+                @include('components.svg.performance0')
+                Performance
+            </span>
             <span class="text-gray-400 mt-1 fw-semibold fs-6">Aperçue des performances</span>
         </h3>
         <!--end::Title-->
