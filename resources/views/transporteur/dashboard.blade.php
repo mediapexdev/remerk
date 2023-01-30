@@ -17,28 +17,30 @@ $expeditions = Expedition::where('transporteur_id', $transporteur->id)->get();
 @endsection
 
 @section('custom-css')
-<link type="text/css" rel="stylesheet" href="{{ URL::asset('assets/css/custom/expeditions/overview.css') }}">
+<link type="text/css" rel="stylesheet" href="{{URL::asset('assets/css/custom/expeditions/overview.css')}}">
 @endsection
 
 @section('component-body-content')
 
 <div class="h-100">
-    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-xl-2 row-cols-xxl-2 mb-5 g-5">
-        <div class="col col-xl-4 col-lg-4 col-xxl-4">
+    {{-- <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-xl-2 row-cols-xxl-2 mb-5 g-5"> --}}
+    <div class="row g-5 mb-5">
+        <div class="col-xl-4 mb-5 mb-xl-10">
             @include('transporteur.components.expeditions.overview.index')
         </div>
-        <div class="col col-xl-8 col-lg-8 col-xxl-8 g-5">
-            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-xl-2 row-cols-xxl-2 g-5">
-                <div class="col h-586px">
+        <div class="col-xl-8 mb-5 mb-xl-10">
+            {{-- <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-xl-2 row-cols-xxl-2 g-5"> --}}
+                {{-- <div class="col h-586px">
                     @include('transporteur.components.widgets.charts.index')
-                </div>
-                <div class="col">
+                </div> --}}
+                {{-- <div class="col"> --}}
                     @include('transporteur.components.widgets.pie_chart')
-                </div>
-            </div>
+                {{-- </div> --}}
+            {{-- </div> --}}
         </div>
     </div>
-    <div class="row mb-10 mb-xxl-0 mb-xl-0 mb-lg-0 g-5">
+    {{-- <div class="row mb-10 mb-xxl-0 mb-xl-0 mb-lg-0 g-5"> --}}
+    <div class="row g-5">
         <div class="col">
             @include('transporteur.components.vehicules.overview.index')
         </div>
@@ -73,8 +75,8 @@ $expeditions = Expedition::where('transporteur_id', $transporteur->id)->get();
 <script src="https://cdn.amcharts.com/lib/5/themes/Dark.js"></script>
 {{-- <script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/chart/map.js')}}"></script> --}}
 
-<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/chart/perMonth.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/chart/perYear.js')}}"></script>
+{{-- <script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/chart/perMonth.js')}}"></script> --}}
+{{-- <script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/chart/perYear.js')}}"></script> --}}
 
 
 @endsection
