@@ -1,4 +1,4 @@
-<div class="card card-flush h-100">
+<div class="card card-flush h-xl-100">
     <!--begin::Header-->
     <div class="card-header pt-5">
         <!--begin::Title-->

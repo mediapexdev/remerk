@@ -24,7 +24,7 @@ $expeditions = Expedition::where('transporteur_id', $transporteur->id)->get();
 
 <div class="h-100">
     {{-- <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-xl-2 row-cols-xxl-2 mb-5 g-5"> --}}
-    <div class="row g-5 mb-5">
+    <div class="row gy-5 g-xl-10 mb-5">
         <div class="col-xl-4 mb-5 mb-xl-10">
             @include('transporteur.components.expeditions.overview.index')
         </div>

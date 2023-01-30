@@ -27,7 +27,7 @@
     </div>
     @else
         {{-- <!--begin::Row--> --}}
-        <div class="row h-100 mb-xl-10 gy-5 g-xl-10">
+        <div class="row gy-5 g-xl-10 mb-5">
             {{-- <!--begin::Col--> --}}
             <div class="col-xl-4">
                 {{-- <!--begin::Engage widget 3--> --}}

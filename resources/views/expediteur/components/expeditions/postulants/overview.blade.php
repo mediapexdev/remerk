@@ -11,7 +11,7 @@
     }
 @endphp
 {{-- <!--begin::Card--> --}}
-<div class="card card-flush h-100">
+<div class="card card-flush h-xl-100">
     {{-- <!--begin::Card Header--> --}}
     <div class="card-header pt-7">
         {{-- <!--begin::Card Title--> --}}

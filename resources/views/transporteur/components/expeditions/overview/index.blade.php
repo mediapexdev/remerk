@@ -34,7 +34,7 @@
     ])->orderByDesc('created_at')->limit(5)->get();
 @endphp
 {{-- <!--begin::List widget--> --}}
-<div id="expeditions_overview_widget" class="card card-flush max-h-586px">
+<div id="expeditions_overview_widget" class="card card-flush h-xl-100">
     {{-- <!--begin::Header--> --}}
     <div class="card-header pt-7">
         @php
