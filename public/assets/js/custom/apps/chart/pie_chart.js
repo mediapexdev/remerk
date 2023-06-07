@@ -8,7 +8,7 @@ am5.ready(async function () {
     // console.log(getExp);
     // https://www.amcharts.com/docs/v5/getting-started/#Root_element
     var root = am5.Root.new("pie_chart");
-
+    
     // hide amchart logo
     root._logo.dispose();
 

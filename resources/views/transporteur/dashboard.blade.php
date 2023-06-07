@@ -44,9 +44,9 @@ $expeditions = Expedition::where('transporteur_id', $transporteur->id)->get();
         <div class="col">
             @include('transporteur.components.vehicules.overview.index')
         </div>
-        {{-- <div class="col">
+        <div class="col">
             @include('transporteur.components.widgets.map')
-        </div> --}}
+        </div>
     </div>
 </div>
 
@@ -73,7 +73,8 @@ $expeditions = Expedition::where('transporteur_id', $transporteur->id)->get();
 <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/themes/Dark.js"></script>
-{{-- <script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/chart/map.js')}}"></script> --}}
+<script src="https://cdn.amcharts.com/lib/5/geodata/senegalHigh.js"></script>
+<script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/chart/map.js')}}"></script>
 
 {{-- <script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/chart/perMonth.js')}}"></script> --}}
 {{-- <script type="text/javascript" src="{{URL::asset('assets/js/custom/apps/chart/perYear.js')}}"></script> --}}

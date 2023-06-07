@@ -266,4 +266,8 @@ class ExpeditionController extends Controller
         $response = curl_exec($ch);
         return $response;
     }
+    public function lastFive(){
+        $expeditions=Expedition::get();
+        return $expeditions;
+    }
 }

@@ -247,4 +247,5 @@ class Expedition extends Model
     // public function facture(){
     //     return $this->hasOne(Facture::class);
     // }
+    
 }
