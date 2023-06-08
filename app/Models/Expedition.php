@@ -67,7 +67,7 @@ class Expedition extends Model
 
     public function arrivee()
     {
-        return $this->hasOne(ExpeditionsArrivee::class);
+        return $this->hasOne(ExpeditionsArrivee::class)->with('departement','commune','region');
     }
 
     /**
@@ -95,7 +95,7 @@ class Expedition extends Model
 
     public function depart()
     {
-        return $this->hasOne(ExpeditionsDepart::class);
+        return $this->hasOne(ExpeditionsDepart::class)->with('departement','commune','region');
     }
 
     /**
