@@ -128,7 +128,7 @@ class Expedition extends Model
 
     public function expeditionMatiere()
     {
-        return $this->hasOne(ExpeditionsMatiere::class, 'expedition_id');
+        return $this->hasOne(ExpeditionsMatiere::class, 'expedition_id')->with('matiere','poidsMatiere');
     }
 
     public function getPostulant($id_transporteur)
