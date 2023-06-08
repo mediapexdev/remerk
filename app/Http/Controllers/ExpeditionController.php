@@ -256,7 +256,6 @@ class ExpeditionController extends Controller
         ];
 
         $ch = curl_init();
-
         curl_setopt($ch, CURLOPT_URL, 'https://fcm.googleapis.com/fcm/send');
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
@@ -267,7 +266,7 @@ class ExpeditionController extends Controller
         return $response;
     }
     public function lastFive(){
-        $expeditions=Expedition::get();
+        $expeditions=Expedition::orderBy('created_at','desc')->limit(5)->get();
         return $expeditions;
     }
 }
