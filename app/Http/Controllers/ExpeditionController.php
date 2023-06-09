@@ -266,7 +266,7 @@ class ExpeditionController extends Controller
         return $response;
     }
     public function lastFive(){
-        $expeditions=Expedition::with('expediteur','expeditionMatiere','depart','arrivee')->orderByDesc('created_at')->limit(5)->get();
+        $expeditions=Expedition::with('expediteur','expeditionMatiere','depart','arrivee')->orderByDesc('created_at')->limit(10)->get();
         return $expeditions;
     }
 }
